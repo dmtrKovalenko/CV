@@ -7,25 +7,25 @@ import { deerParticles } from "../utils/particlesParams";
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
     background: "#161616",
-    color: 'white',
+    color: "white",
     height: "100vh",
     width: "100vw",
 
-    '& div:first-child': {
+    "& div:first-child": {
       height: "100vh",
-      width: "100vw",
+      width: "100vw"
     },
     "& canvas": {
       marginTop: -150,
       marginBottom: -150,
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down("sm")]: {
         marginTop: 0,
-        marginBottom: 0,
+        marginBottom: 0
       }
     }
   },
   title: {
-    height: '30%',
+    height: "30%",
     position: "absolute",
     bottom: 0,
     left: 0,
@@ -42,15 +42,14 @@ function IndexPage() {
 
   return (
     <div className={styles.container}>
-      {process.browser && // do not render large canvas on server
-        <Particles params={deerParticles} />
-      }
+      {process.browser && <Particles params={deerParticles} />}
 
       <div className={styles.title}>
         <Typography variant="h3" align="center" color="inherit" gutterBottom>
           Hi! I'm
           <Typography display="inline" variant="inherit" color="primary">
-            {" "}Dima{" "}
+            {" "}
+            Dima{" "}
           </Typography>
         </Typography>
         <Typography id="typing" align="center" color="inherit" variant="h4" />
