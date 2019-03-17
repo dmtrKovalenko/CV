@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Document, { Head, Main, NextScript } from 'next/document';
 // @ts-ignore
 import flush from 'styled-jsx/server';
-import { PageContext } from '../utils/getPageContext';
+import { PageContext } from '../src/utils/getPageContext';
 
 class MyDocument extends Document<{ pageContext: PageContext }> {
   render() {

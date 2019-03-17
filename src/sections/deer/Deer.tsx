@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Particles from "react-particles-js";
 
-import { Typography, Theme, NoSsr, Grid } from "@material-ui/core";
+import { Typography, Theme, NoSsr } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import { deerParticles } from "../../../../utils/particlesParams";
 import { MouseIcon } from "./MouseIcon";
+import { deerParticles } from "../..//utils/particlesParams";
 
 const useStyles = makeStyles((theme: Theme) => ({
   landingContainer: {
@@ -39,7 +39,7 @@ export function Deer() {
   const styles = useStyles();
 
   useEffect(() => {
-    import("../../../../utils/typeit");
+    import("../../utils/typeit");
   }, []);
 
   return (

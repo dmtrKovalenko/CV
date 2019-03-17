@@ -3,7 +3,7 @@ import App, { Container } from "next/app";
 import Head from "next/head";
 import { StylesProvider, ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import getPageContext, { PageContext } from "../utils/getPageContext";
+import getPageContext, { PageContext } from "../src/utils/getPageContext";
 // @ts-ignore
 import { MuiThemeProvider } from "@material-ui/core";
 
@@ -33,10 +33,9 @@ class MyApp extends App {
         <StylesProvider
           generateClassName={this.pageContext.generateClassName}
           sheetsRegistry={this.pageContext.sheetsRegistry}
-          // sheetsManager={this.pageContext.sheetsManager}
+          sheetsManager={this.pageContext.sheetsManager}
         >
           <MuiThemeProvider
-            sheetsManager={this.pageContext.sheetsManager}
             theme={this.pageContext.theme}
           >
             {/* ThemeProvider makes the theme available down the React

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Deer } from './sections/deer/Deer';
-import { AboutMe } from './sections/about/AboutMe';
+import { Deer } from '../src/sections/deer/Deer';
+import { AboutMe } from '../src/sections/about/AboutMe';
 
 interface LandingProps {
 }

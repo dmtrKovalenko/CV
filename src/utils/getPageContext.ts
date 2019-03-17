@@ -30,4 +30,4 @@ export default function(): PageContext {
     generateClassName: createGenerateClassName(),
     children: undefined,
   };
-}
+};

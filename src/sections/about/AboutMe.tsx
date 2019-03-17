@@ -1,6 +1,6 @@
 import * as React from "react";
-import Photo from "../../../../assets/Photo.jpg";
-import { Page } from "../../../_shared/Page";
+import Photo from "../../../assets/Photo.jpg";
+import { Page } from "../../_shared/Page";
 import { Typography, Grid, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
