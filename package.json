@@ -1,0 +1,25 @@
+{
+  "name": "nextjs",
+  "version": "3.0.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.0.0-alpha.3",
+    "@material-ui/styles": "^3.0.0-alpha.10",
+    "@types/next": "^8.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "jss": "^9.8.7",
+    "next": "latest",
+    "next-images": "^1.1.1",
+    "prop-types": "latest",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-jss": "^8.1.0",
+    "react-particles-js": "^2.5.1",
+    "typeit": "^6.0.2"
+  },
+  "scripts": {
+    "dev": "next -p 4000",
+    "build": "next build",
+    "start": "next start"
+  }
+}
