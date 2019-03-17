@@ -32,7 +32,7 @@ export const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
       </Typography>
 
       <Grid container justify="center">
-        <Grid xs={12} md={3} item container justify="center" alignItems="center">
+        <Grid xs={12} md={4} lg={3} item container justify="center" alignItems="center">
           <Avatar alt="My photo" src={Photo} className={styles.avatar} />
         </Grid>
 
