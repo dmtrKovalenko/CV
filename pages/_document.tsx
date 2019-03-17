@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Document, { Head, Main, NextScript } from 'next/document';
+// @ts-ignore
 import flush from 'styled-jsx/server';
+import { PageContext } from '../utils/getPageContext';
 
-class MyDocument extends Document {
+class MyDocument extends Document<{ pageContext: PageContext }> {
   render() {
     const { pageContext } = this.props;
 
@@ -16,14 +18,15 @@ class MyDocument extends Document {
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
           <meta
-            name="theme-color"
+            name="theme-color" 
+            // @ts-ignore
             content={pageContext ? pageContext.theme.palette.primary.main : null}
           />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+          <link rel="stylesheet" href="/static/global.css" />
           <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js" />
         </Head>
         <body>
@@ -37,9 +40,9 @@ class MyDocument extends Document {
 
 MyDocument.getInitialProps = ctx => {
   // Render app and page and get the context of the page with collected side effects.
-  let pageContext;
+  let pageContext: PageContext | undefined = undefined;
   const page = ctx.renderPage(Component => {
-    const WrappedComponent = props => {
+    const WrappedComponent = (props: any) => {
       pageContext = props.pageContext;
       return <Component {...props} />;
     };
@@ -51,10 +54,10 @@ MyDocument.getInitialProps = ctx => {
     return WrappedComponent;
   });
 
-  let css;
+  let css: string;
   // It might be undefined, e.g. after an error.
   if (pageContext) {
-    css = pageContext.sheetsRegistry.toString();
+    css = pageContext!.sheetsRegistry.toString();
   }
 
   return {
@@ -66,7 +69,7 @@ MyDocument.getInitialProps = ctx => {
         <style
           id="jss-server-side"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: css }}
+          dangerouslySetInnerHTML={{ __html: css! }}
         />
         {flush() || null}
       </React.Fragment>

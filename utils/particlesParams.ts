@@ -1,7 +1,7 @@
 import { IParticlesParams } from "react-particles-js";
 
 export const deerParticles: IParticlesParams = {
-  fps_limit: 28,
+  fps_limit: 34,
   particles: {
     number: {
       value: 200,
@@ -41,7 +41,7 @@ export const deerParticles: IParticlesParams = {
     draw: {
       enable: true,
       stroke: {
-        color: "rgba(255, 255, 255, .2)"
+        color: "rgba(255, 255, 255, .3)"
       }
     }
   },
@@ -54,7 +54,7 @@ export const deerParticles: IParticlesParams = {
       },
       onclick: {
         enable: true,
-        mode: "push"
+        mode: "push",
       }
     },
     modes: {
