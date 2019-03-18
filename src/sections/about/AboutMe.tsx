@@ -1,7 +1,7 @@
 import * as React from "react";
 import Photo from "../../../assets/Photo.jpg";
 import { Page } from "../../_shared/Page";
-import { Typography, Grid, Avatar } from "@material-ui/core";
+import { Typography, Grid, Avatar, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 interface AboutMeProps {}
@@ -14,6 +14,9 @@ const useStyles = makeStyles({
     marginBottom: 16,
     width: 240,
     height: 240
+  },
+  hrBtn: {
+    marginTop: 64
   }
 });
 
@@ -56,6 +59,12 @@ export const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </Typography>
+        </Grid>
+
+        <Grid item container xs={12} justify="center" className={styles.hrBtn}>
+          <Button size="large" variant="outlined" color="primary">
+            Button for HR managers
+          </Button>
         </Grid>
       </Grid>
     </Page>
