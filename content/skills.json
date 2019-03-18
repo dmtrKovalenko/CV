@@ -1,0 +1,8 @@
+{
+  "languages": ["JavaScript", "TypeScript", "ReasonML"],
+  "frontend": ["React", "Webpack", "Parcel", "Babel", "Redux", "MobX", "VueJS (less)", "VueX (less)"],
+  "backend": ["NodeJS", "Express", "Koa", "PostgreSQl", "Redis", "Socket-io", "Nginx", "InversifyJS (DI)"],
+  "mobile": ["React Native", "Firebase", "Expo", "FastLane", "Fabrick"],
+  "testing": ["Cypress", "Jest", "Mocha", "Supertest", "Detox"],
+  "tools": ["Git", "CI/CD", "GitHub", "GitLab", "Jira", "...and many more"]
+}

@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from 'next/link'
 import Photo from "../../../assets/Photo.jpg";
 import { Page } from "../../_shared/Page";
 import { Typography, Grid, Avatar, Button } from "@material-ui/core";
@@ -62,9 +63,11 @@ export const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
         </Grid>
 
         <Grid item container xs={12} justify="center" className={styles.hrBtn}>
-          <Button size="large" variant="outlined" color="primary">
-            Button for HR managers
-          </Button>
+          <Link href="/forHrs" prefetch>
+            <Button size="large" variant="outlined" color="primary">
+              Button for HR managers
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </Page>
