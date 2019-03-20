@@ -46,9 +46,7 @@ export function Deer() {
 
   return (
     <div className={styles.landingContainer}>
-      <NoSsr>
-        <Particles params={deerParticles} />
-      </NoSsr>
+      <Particles params={deerParticles} />
 
       <div className={styles.title}>
         <Typography variant="h3" align="center" color="inherit" gutterBottom>
