@@ -2,19 +2,19 @@
   "contacts": [
     {
       "name": "Twitter",
-      "url": "kek"
+      "url": "https://twitter.com/dmtrKovalenko"
     },
     {
       "name": "E-mail",
-      "url": "kek"
+      "url": "mailto:dmtr.kovalenko@outlook.com"
     },
     {
       "name": "LinkedIn",
-      "url": "kek"
+      "url": "https://www.linkedin.com/in/dmtrKovalenko/"
     },
     {
       "name": "Github",
-      "url": "kek"
+      "url": "https://github.com/dmtrKovalenko"
     }
   ]
 }

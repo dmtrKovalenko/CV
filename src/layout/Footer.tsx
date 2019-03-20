@@ -23,6 +23,18 @@ const useStyles = makeStyles((theme: Theme) => ({
   container: {
     backgroundColor: "black"
   },
+  social: {
+    [theme.breakpoints.down('sm')]: {
+      order: 1,
+      marginBottom: 32
+    },
+  },
+  animation: {
+    marginTop: -50,
+    [theme.breakpoints.down('sm')]: {
+      margin: '-100px 0'
+    }
+  },
   socialContact: {
     marginTop: 32,
     marginBottom: 8,
@@ -62,14 +74,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     textDecoration: "none"
   },
   socialLabel: {
-    marginLeft: 16
+    marginLeft: 20
   }
 }));
-
-type SocialContact = {
-  name: string;
-  url: string;
-};
 
 const icons: Record<string, React.ComponentType> = {
   Twitter: TwitterIconSvg,
@@ -80,7 +87,7 @@ const icons: Record<string, React.ComponentType> = {
   Facebook: FacebookSvgIcon
 };
 
-const SocialContact: React.FC<SocialContact> = ({ name, url }) => {
+const SocialContact: React.FC<{ name: string; url: string }> = ({ name, url }) => {
   const styles = useStyles();
   const Icon = icons[name];
 
@@ -91,7 +98,7 @@ const SocialContact: React.FC<SocialContact> = ({ name, url }) => {
   }
 
   return (
-    <a className={styles.socialLink} href={url}>
+    <a rel="noopenner noreferrer" target="_blank" className={styles.socialLink} href={url}>
       <div className={styles.socialContact}>
         <Grid container>
           <Icon />
@@ -114,11 +121,12 @@ export const Footer: React.FunctionComponent<{}> = () => {
         <Grid item md={1} />
         <Grid
           item
+          md={4}
           container
           direction="column"
           alignItems="center"
           justify="center"
-          md={4}
+          className={styles.social}
         >
           <Typography variant="h4" gutterBottom>
             Contact me
@@ -133,7 +141,7 @@ export const Footer: React.FunctionComponent<{}> = () => {
           ))}
         </Grid>
 
-        <Grid item container md={6} justify="center">
+        <Grid item container md={6} className={styles.animation} justify="center">
           <DeerToRabbit />
         </Grid>
       </Grid>
