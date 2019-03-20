@@ -13,6 +13,9 @@ const useStyles = makeStyles({
   title: {
     paddingBottom: 70
   },
+  section: {
+    paddingTop: 90
+  },
   avatar: {
     marginBottom: 16,
     width: 240,
@@ -27,7 +30,7 @@ export const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
   const styles = useStyles();
 
   return (
-    <Page>
+    <Page className={styles.section}>
       <Typography
         variant="h2"
         align="center"
@@ -43,7 +46,7 @@ export const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
         </Grid>
 
         <Grid xs={12} md={6} xl={4} item>
-          <Typography component="span" variant="body1" gutterBottom>
+          <Typography component="span" variant="subtitle1" gutterBottom>
             <ReactMarkDown source={aboutMeMd} />
           </Typography>
         </Grid>
