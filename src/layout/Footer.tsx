@@ -27,10 +27,39 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: 32,
     marginBottom: 8,
     paddingBottom: 16,
-    borderBottom: "1px solid white",
     display: "flex",
-    alignItems: "flex-end",
-    width: 300
+    flexDirection: "column",
+    width: 300,
+    borderBottom: "3px solid white",
+
+    "&:after": {
+      top: 19,
+      content: '""',
+      position: "relative",
+      borderBottom: `3px solid ${theme.palette.primary.light}`,
+      transformOrigin: "0% 100%",
+      transform: "scale(0)",
+      transition: theme.transitions.create("transform")
+    },
+
+    "& svg": {
+      transition: theme.transitions.create("transform"),
+    },
+
+    "&:hover": {
+      "& svg": {
+        willChange: 'transform',
+        transform: "translateY(-10px)"
+      },
+
+      "&:after": {
+        willChange: 'transform',
+        transform: "scale(1)"
+      }
+    }
+  },
+  socialLink: {
+    textDecoration: "none"
   },
   socialLabel: {
     marginLeft: 16
@@ -43,12 +72,12 @@ type SocialContact = {
 };
 
 const icons: Record<string, React.ComponentType> = {
-  "Twitter": TwitterIconSvg,
+  Twitter: TwitterIconSvg,
   "E-mail": EmailSvgIcon,
-  "LinkedIn": LinkedinSvgIcon,
-  "Instagram": InstagramSvgIcon,
-  "Github": GithubSvgIcon,
-  "Facebook": FacebookSvgIcon
+  LinkedIn: LinkedinSvgIcon,
+  Instagram: InstagramSvgIcon,
+  Github: GithubSvgIcon,
+  Facebook: FacebookSvgIcon
 };
 
 const SocialContact: React.FC<SocialContact> = ({ name, url }) => {
@@ -56,16 +85,22 @@ const SocialContact: React.FC<SocialContact> = ({ name, url }) => {
   const Icon = icons[name];
 
   if (!Icon) {
-    throw new Error("Hey, you likely forgot to add the new social contact icon to icons map at Footer.tsx")
+    throw new Error(
+      "Hey, you likely forgot to add the new social contact icon to icons map at Footer.tsx"
+    );
   }
-  
+
   return (
-    <div className={styles.socialContact}>
-      <Icon />
-      <Typography className={styles.socialLabel} variant="subtitle1">
-        {"On " + name}
-      </Typography>
-    </div>
+    <a className={styles.socialLink} href={url}>
+      <div className={styles.socialContact}>
+        <Grid container>
+          <Icon />
+          <Typography className={styles.socialLabel} variant="subtitle1">
+            {"On " + name}
+          </Typography>
+        </Grid>
+      </div>
+    </a>
   );
 };
 
