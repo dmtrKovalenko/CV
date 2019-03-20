@@ -3,21 +3,13 @@ import { Page } from "../src/_shared/Page";
 import { Typography, Grid } from "@material-ui/core";
 import { ChipArray } from "../src/_shared/ChipArray";
 import { styled, makeStyles } from "@material-ui/styles";
-
 import WebIcon from "@material-ui/icons/Web";
 import CodeIcon from "@material-ui/icons/Code";
 import ToolsIcon from "@material-ui/icons/Settings";
 import CloudIcon from "@material-ui/icons/CloudQueue";
 import PhoneIcon from "@material-ui/icons/DeveloperMode";
 import TestingIcon from "@material-ui/icons/Cached";
-import {
-  languages,
-  frontend,
-  backend,
-  mobile,
-  tools,
-  testing
-} from "../content/skills.json";
+import skills from "../content/skills.json";
 
 const GridItem = styled(Grid)({ marginBottom: 32 });
 
@@ -54,7 +46,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Languages
           </Typography>
 
-          <ChipArray items={languages} />
+          <ChipArray items={skills.languages} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -63,7 +55,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Front-End
           </Typography>
 
-          <ChipArray items={frontend} />
+          <ChipArray items={skills.frontend} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -72,7 +64,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Back-End
           </Typography>
 
-          <ChipArray items={backend} />
+          <ChipArray items={skills.backend} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -81,7 +73,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Mobile
           </Typography>
 
-          <ChipArray items={mobile} />
+          <ChipArray items={skills.mobile} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -90,7 +82,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Testing
           </Typography>
 
-          <ChipArray items={testing} />
+          <ChipArray items={skills.testing} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -99,7 +91,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Tools
           </Typography>
 
-          <ChipArray items={tools} />
+          <ChipArray items={skills.tools} />
         </GridItem>
       </Grid>
     </Page>

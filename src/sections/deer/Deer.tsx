@@ -40,7 +40,8 @@ export function Deer() {
   const styles = useStyles();
 
   useEffect(() => {
-    import("../../utils/typeit");
+    import("../../utils/typeit")
+      .then(({ start }) => start())
   }, []);
 
   return (
