@@ -5,10 +5,13 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import flush from 'styled-jsx/server';
 import { PageContext } from '../src/utils/getPageContext';
 
+const title = "Dmitriy Kovalenko"
+const description = "Dmitriy Kovalenko - Software Engineer, Speaker and open-source contributor. Javascript/Ocaml lover"
+
 class MyDocument extends Document<{ pageContext: PageContext }> {
   render() {
     const { pageContext } = this.props;
-
+   
     return (
       <html lang="en" dir="ltr">
         <Head>
@@ -22,17 +25,30 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             // @ts-ignore
             content={pageContext ? pageContext.theme.palette.primary.main : null}
           />
+
+          <title> {title} </title>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="description" content={description} />
+          <meta name="og:description" content={description} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content="/static/og_image.png" />
+          <meta name="twitter:title" content={title} />
+          <meta property="og:image" content="/static/og_image.png" />
+          <meta property="og:title" content={title} />
+          <meta property="og:type" content="website" />
+
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
-          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js" />
-
           <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png"/>
           <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png"/>
           <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"/>
           <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#5bbad5"/>
           <link rel="stylesheet" href="/static/global.css" />
+
+          {/* Required to make particles polygon works */}
+          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js" />
         </Head>
         <body>
           <Main />

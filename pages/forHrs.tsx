@@ -10,6 +10,7 @@ import CloudIcon from "@material-ui/icons/CloudQueue";
 import PhoneIcon from "@material-ui/icons/DeveloperMode";
 import TestingIcon from "@material-ui/icons/Cached";
 import skills from "../content/skills.json";
+import Head from "next/head";
 
 const GridItem = styled(Grid)({ marginBottom: 32 });
 
@@ -30,6 +31,10 @@ const forHrs: React.FunctionComponent<{}> = () => {
 
   return (
     <Page>
+      <Head>
+        <title> Dmitriy Kovalenko - Skills </title>
+      </Head>
+
       <Typography
         className={styles.title}
         variant="h2"

@@ -2,4 +2,4 @@ Hello, another time! My name is Dmitriy and I am 22 y.o. software engineer from 
 
 By the way, I am a fan of open-source. Now I am the collaborator of [material-ui](https://material-ui.com/discover-more/team/) - the most popular UI kit for React in the world. Creator + maintainer of [material-ui-pickers](https://material-ui-pickers.dev/) - set of date/time pickers for Material-UI. Also member of react-native-community and maintainer of [react-native-status-bar](https://github.com/react-native-community/react-native-statusbar). I love to make the software world better.
 
-In short: holistic open-source contributor. Typescript/Ocaml, react and react-native fan. Also volleyball player and [amateur photographer](https://www.instagram.com/dmtr._.kovalenkoo/) (ᵔᴥᵔ)
+In short: speaker, holistic open-source contributor. Typescript/Ocaml, react and react-native fan. Also volleyball player and [amateur photographer](https://www.instagram.com/dmtr._.kovalenkoo/) (ᵔᴥᵔ)
