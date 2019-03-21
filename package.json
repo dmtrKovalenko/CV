@@ -8,7 +8,6 @@
     "@types/jss": "^9.5.8",
     "@types/next": "^8.0.1",
     "animejs": "^3.0.1",
-
     "next-images": "^1.1.1",
     "prop-types": "latest",
     "raw-loader": "^2.0.0",

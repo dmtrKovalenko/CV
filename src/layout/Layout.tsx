@@ -17,7 +17,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   homeBtn: {
     display: 'flex',
     justifyContent: 'center',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    transition: theme.transitions.create('transform'),
+
+    "&:hover": {
+      transform: 'translateY(-10px)'
+    }
   }
 }));
 

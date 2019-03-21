@@ -8,7 +8,10 @@
     "Redux",
     "MobX",
     "VueJS (less)",
-    "VueX (less)"
+    "VueX (less)",
+    "CSS",
+    "SCSS",
+    "CSS-in-JS"
   ],
   "backend": [
     "NodeJS",
