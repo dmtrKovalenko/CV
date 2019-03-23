@@ -1,19 +1,17 @@
-import { SheetsRegistry, GenerateClassName } from "jss";
-import {
-  createMuiTheme,
-} from "@material-ui/core/styles";
 import yellow from "@material-ui/core/colors/yellow";
+import { SheetsRegistry } from "jss";
+import { createMuiTheme, Theme } from "@material-ui/core/styles";
 import { ThemeProviderProps } from "@material-ui/styles/ThemeProvider";
 import { createGenerateClassName } from "@material-ui/styles";
 
 const theme = createMuiTheme({
   palette: {
-    type: 'dark',
+    type: "dark",
     primary: yellow
   }
 });
 
-export interface PageContext extends ThemeProviderProps {
+export interface PageContext extends ThemeProviderProps<Theme> {
   generateClassName: any;
   sheetsManager: Map<string, string>;
   sheetsRegistry: SheetsRegistry;
@@ -28,6 +26,6 @@ export default function(): PageContext {
     sheetsRegistry: new SheetsRegistry(),
     // The standard class name generator.
     generateClassName: createGenerateClassName(),
-    children: undefined,
+    children: undefined
   };
-};
+}

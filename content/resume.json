@@ -1,0 +1,30 @@
+{
+  "summary": "Advanced JavaScript developer, experienced in creation of modern, fast and scalable applications. OSS contributor of such projects like Material-UI, React-native, Formik, i18next and creator of material-ui-pickers. Good understanding of both OOP and FP paradigms, design patterns and architecture concepts. Experienced in developing large, scalable and sound web/mobile applications with a help of cutting-edge technologies.",
+  "employment": [
+    {
+      "when": "Sep 2015 - December 2015",
+      "company": "Syject company",
+      "position": "Junior Web developer",
+      "responsibilities": "Studying and development of large, scaling web application."
+    },
+    {
+      "when": "April 2016 - now",
+      "company": "Under the terms of NDA",
+      "position": "Javascript Developer",
+      "responsibilities": "Full-stack javascript development, team leadership, designing project architecture and development flow"
+    },
+    {
+      "when": "Forever",
+      "company": "Open-source",
+      "position": "Javascript Contributor",
+      "responsibilities": "Support and maintain popular open-source projects"
+    }
+  ],
+  "education": [
+    {
+      "place": "Kharkiv computer and technology college - Ukraine",
+      "when": "2013-2017",
+      "position": "Software development"
+    }
+  ]
+}
