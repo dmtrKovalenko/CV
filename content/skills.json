@@ -1,5 +1,5 @@
 {
-  "Programming languages": ["JavaScript", "TypeScript", "ReasonML"],
+  "Languages": ["JavaScript", "TypeScript", "ReasonML"],
   "Front-end": [
     "React",
     "Webpack",
