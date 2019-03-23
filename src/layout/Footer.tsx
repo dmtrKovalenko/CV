@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: 200,
     backgroundColor: "black",
     clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 100% 0)",
+    "-webkit-clip-path": "polygon(0 100%, 100% 100%, 100% 100%, 100% 0)",
     [theme.breakpoints.down("sm")]: {
       height: 100
     }

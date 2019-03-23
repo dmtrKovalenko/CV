@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Layout: React.FunctionComponent<LayoutProps> = ({ router, children }) => {
   const styles = useStyles();
 
+  if (router!.pathname === "/resume") {
+    return <>{children}</>
+  }
+
   return (
     <main>
       {router!.pathname !== "/" && (
