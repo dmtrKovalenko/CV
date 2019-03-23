@@ -1,6 +1,6 @@
 {
-  "languages": ["JavaScript", "TypeScript", "ReasonML"],
-  "frontend": [
+  "Programming languages": ["JavaScript", "TypeScript", "ReasonML"],
+  "Front-end": [
     "React",
     "Webpack",
     "Parcel",
@@ -13,7 +13,7 @@
     "SCSS",
     "CSS-in-JS"
   ],
-  "backend": [
+  "Back-end": [
     "NodeJS",
     "Express",
     "Koa",
@@ -23,7 +23,7 @@
     "Nginx",
     "InversifyJS (DI)"
   ],
-  "mobile": ["React Native", "Firebase", "Expo", "FastLane", "Fabrick"],
-  "testing": ["Cypress", "Jest", "Mocha", "Supertest", "Detox"],
-  "tools": ["Git", "CI/CD", "GitHub", "GitLab", "Jira", "...and many more"]
+  "Mobile": ["React Native", "Firebase", "Expo", "FastLane", "Fabrick"],
+  "Testing": ["Cypress", "Jest", "Mocha", "Supertest", "Detox", "Docker"],
+  "Tools": ["Git", "CI/CD", "GitHub", "GitLab", "Jira", "...and many more"]
 }

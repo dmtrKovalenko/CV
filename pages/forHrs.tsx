@@ -51,7 +51,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Languages
           </Typography>
 
-          <ChipArray items={skills.languages} />
+          <ChipArray items={skills["Programming languages"]} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -60,7 +60,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Front-End
           </Typography>
 
-          <ChipArray items={skills.frontend} />
+          <ChipArray items={skills["Front-end"]} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -69,7 +69,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Back-End
           </Typography>
 
-          <ChipArray items={skills.backend} />
+          <ChipArray items={skills["Back-end"]} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -78,7 +78,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Mobile
           </Typography>
 
-          <ChipArray items={skills.mobile} />
+          <ChipArray items={skills["Mobile"]} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -87,7 +87,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Testing
           </Typography>
 
-          <ChipArray items={skills.testing} />
+          <ChipArray items={skills["Testing"]} />
         </GridItem>
 
         <GridItem item xs={12} sm={4}>
@@ -96,7 +96,7 @@ const forHrs: React.FunctionComponent<{}> = () => {
             Tools
           </Typography>
 
-          <ChipArray items={skills.tools} />
+          <ChipArray items={skills['Tools']} />
         </GridItem>
       </Grid>
     </Page>
