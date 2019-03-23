@@ -1,13 +1,14 @@
 import * as React from "react";
-import { Typography, Grid, Avatar } from "@material-ui/core";
-import { makeStyles, styled, ThemeProvider } from "@material-ui/styles";
-// @ts-ignore
-import { MuiThemeProvider } from "@material-ui/core";
-import { createMuiTheme } from "@material-ui/core/styles";
 import blue from "@material-ui/core/colors/blue";
 import Photo from "../assets/Photo.jpg";
 import resume from "../content/resume.json";
 import skills from "../content/skills.json";
+
+// @ts-ignore
+import { MuiThemeProvider } from "@material-ui/core";
+import { Typography, Grid, Avatar } from "@material-ui/core";
+import { makeStyles, styled } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   container: {

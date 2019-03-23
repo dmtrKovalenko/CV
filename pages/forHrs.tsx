@@ -8,12 +8,13 @@ import PhoneIcon from "@material-ui/icons/DeveloperMode";
 import TestingIcon from "@material-ui/icons/Cached";
 import skills from "../content/skills.json";
 import { Page } from "../src/_shared/Page";
-import { Typography, Grid } from "@material-ui/core";
-import { ChipArray } from "../src/_shared/ChipArray";
-import { styled, makeStyles } from "@material-ui/styles";
 import { GridSize } from "@material-ui/core/Grid";
-import { SvgIconProps } from "@material-ui/core/SvgIcon";
+import { ChipArray } from "../src/_shared/ChipArray";
 import { Breakpoint } from "@material-ui/core/styles/createBreakpoints";
+import { SvgIconProps } from "@material-ui/core/SvgIcon";
+import { Typography, Grid } from "@material-ui/core";
+import { styled, makeStyles } from "@material-ui/styles";
+import { ResumePreview } from "../src/sections/resume/ResumePreview";
 
 const GridItem = styled(Grid)({ marginBottom: 32 });
 
@@ -21,6 +22,10 @@ const iconSize = 60;
 const useStyles = makeStyles(theme => ({
   title: {
     marginBottom: 64
+  },
+  subTitle: {
+    marginTop: 64,
+    marginBottom: 32
   },
   icon: {
     fontSize: iconSize,
@@ -37,6 +42,7 @@ type SkillSetProps = {
 
 const SkillSet: React.FC<SkillSetProps> = ({ skill, Icon, GridProps }) => {
   const styles = useStyles()
+
   return ( 
     <GridItem item xs={12} sm={4} {...GridProps}>
       <Icon className={styles.icon} />
@@ -75,6 +81,17 @@ const forHrs: React.FC = () => {
         <SkillSet skill="Testing" Icon={TestingIcon} />
         <SkillSet skill="Tools" Icon={ToolsIcon} />
       </Grid>
+
+      <Typography
+        gutterBottom
+        variant="h2"
+        align="center"
+        className={styles.subTitle}
+      >
+        Resume
+      </Typography>
+
+      <ResumePreview />
     </Page>
   );
 };
