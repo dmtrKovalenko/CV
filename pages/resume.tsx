@@ -9,6 +9,7 @@ import { MuiThemeProvider } from "@material-ui/core";
 import { Typography, Grid, Avatar } from "@material-ui/core";
 import { makeStyles, styled } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
+import { Title } from "../src/_shared/Common";
 
 const useStyles = makeStyles({
   container: {
@@ -24,10 +25,6 @@ const useStyles = makeStyles({
     height: 180,
     marginBottom: 16
   }
-});
-
-const Title = styled(Typography)({
-  marginTop: 32
 });
 
 const Link = styled('a')({
