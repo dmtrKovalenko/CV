@@ -4,19 +4,26 @@ import SaveIcon from "@material-ui/icons/Save";
 import { makeStyles } from "@material-ui/styles";
 import { PDF_FORMATTER_API_URL } from "../../constants";
 import { RESUME_URL } from "../../constants";
+import { NoDecorationLink } from "../../_shared/Common";
+import { styledBy } from "../../utils/helpers";
 import {
   Paper,
   Theme,
   Button,
   ClickAwayListener,
-  Hidden
+  Hidden,
+  Typography
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
   downloadButton: {
     display: "flex",
-    justifyContent: "center",
-    marginBottom: 16
+    flexDirection: "column",
+    alignItems: "center",
+    marginBottom: 16,
+    "& > *": {
+      marginBottom: 8
+    }
   },
   saveIcon: {
     marginRight: 8
@@ -30,45 +37,50 @@ const useStyles = makeStyles((theme: Theme) => ({
     zIndex: 1,
     width: 800,
     margin: "0 auto",
-    transform: `scale(0.3)`,
-    transition: theme.transitions.create("transform"),
-    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
-    bottom: "100%"
+    bottom: "100%",
+    transformOrigin: "50% 0",
+    transition: theme.transitions.create("transform"),
+    position: styledBy("isClicked", {
+      true: "unset",
+      false: "absolute"
+    }),
+    transform: styledBy("isClicked", {
+      true: "scale(1)",
+      false: "scale(0.3)"
+    })
   }
 }));
 
 export const ResumePreview: React.FC = () => {
-  const styles = useStyles();
   const [isClicked, setIsClicked] = React.useState(false);
+  const styles = useStyles({ isClicked });
 
   return (
     <>
       <div className={styles.downloadButton}>
-        <a
+        <NoDecorationLink
           download
           href={`${PDF_FORMATTER_API_URL}/api/render?url=${RESUME_URL}&attachmentName=DmitriyKovalenko.pdf`}
         >
           <Button color="primary" variant="contained">
             <SaveIcon className={styles.saveIcon} /> Download .pdf
           </Button>
-        </a>
+        </NoDecorationLink>
+
+        <Typography variant="caption">
+          This may take a while, please be patient
+        </Typography>
       </div>
 
       <Hidden mdDown>
         <ClickAwayListener onClickAway={() => setIsClicked(false)}>
           <div className={styles.container}>
             <Paper
-              id="resume"
-              className={styles.scaleContainer}
               elevation={24}
-              style={{
-                transform: isClicked ? "scale(1)" : undefined,
-                position: isClicked ? "unset" : undefined,
-                transformOrigin: isClicked ? "50% 0" : undefined
-              }}
+              className={styles.scaleContainer}
               onClick={() => setIsClicked(true)}
             >
               <Resume />
