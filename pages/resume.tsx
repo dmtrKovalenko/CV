@@ -10,6 +10,7 @@ import { Typography, Grid, Avatar } from "@material-ui/core";
 import { makeStyles, styled } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { Title } from "../src/_shared/Common";
+import { withRouter, WithRouterProps } from "next/router";
 
 const useStyles = makeStyles({
   container: {
@@ -24,22 +25,25 @@ const useStyles = makeStyles({
     width: 180,
     height: 180,
     marginBottom: 16
+  },
+  notBold: {
+    fontWeight: "normal"
   }
 });
 
-const Link = styled('a')({
-  color: 'blue'
-})
+const Link = styled("a")({
+  color: "blue"
+});
 
 const renderSkills = (key: keyof typeof skills) => skills[key].join(", ");
 const resumeMuiTheme = createMuiTheme({
-  palette: { 
-    type: 'light',
+  palette: {
+    type: "light",
     primary: blue
   }
-})
+});
 
-const Resume = () => {
+const Resume = ({ isFullCV }: { isFullCV: boolean }) => {
   const styles = useStyles();
 
   return (
@@ -57,26 +61,24 @@ const Resume = () => {
             alignItems="center"
             justify="center"
           >
-            <Typography variant="h4">
-              Dmitriy Kovalenko
-            </Typography>
+            <Typography variant="h4">Dmitriy Kovalenko</Typography>
             <Typography variant="h6" gutterBottom>
-              JavScript engineer
+              JavaScript engineer
             </Typography>
           </Grid>
         </Grid>
 
         <Typography align="center">
           Check out my online CV{" "}
-          <Link href="https://dmtrkovalenko.dev"> https://dmtrkovalenko.dev </Link>
+          <Link href="https://dmtrkovalenko.dev">
+            https://dmtrkovalenko.dev
+          </Link>
         </Typography>
 
         <Title variant="h5" gutterBottom>
           Summary
         </Title>
-        <Typography gutterBottom>
-          {resume.summary}
-        </Typography>
+        <Typography gutterBottom>{resume.summary}</Typography>
 
         <Title variant="h5" gutterBottom>
           Technical skills
@@ -91,16 +93,39 @@ const Resume = () => {
           Work experience
         </Title>
 
-        {resume.employment.map(employment => (
-          <React.Fragment key={employment.company}>
-            <Typography variant="subtitle1">
-              <b>{employment.company}</b>, {employment.when}
-            </Typography>
-            <Typography gutterBottom variant="body2">
-              {employment.responsibilities}
-            </Typography>
-          </React.Fragment>
-        ))}
+        {resume.employment
+          .filter(employment => isFullCV || !employment.showOnlyOnCV)
+          .map(employment => (
+            <React.Fragment key={employment.company}>
+              <Typography variant="subtitle1">
+                <b>{employment.company}</b>, {employment.when}
+              </Typography>
+              <Typography gutterBottom variant="body2">
+                {employment.responsibilities}
+              </Typography>
+
+              <ul>
+                {isFullCV &&
+                  employment.projects.map(project => (
+                    <li key={project.idea}>
+                      <Typography variant="subtitle2">
+                        {project.idea}
+                      </Typography>
+                      <Typography variant="body2" gutterBottom>
+                        {project.responsibilities}
+                      </Typography>
+
+                      <Typography variant="subtitle2" gutterBottom>
+                        Stack:{" "}
+                        <span className={styles.notBold}>
+                          {project.stack.join(", ")}
+                        </span>
+                      </Typography>
+                    </li>
+                  ))}
+              </ul>
+            </React.Fragment>
+          ))}
 
         <Title variant="h5" gutterBottom>
           Languages
@@ -115,9 +140,7 @@ const Resume = () => {
 
         {resume.education.map(education => (
           <React.Fragment key={education.place}>
-            <Typography variant="subtitle1">
-              {education.place}
-            </Typography>
+            <Typography variant="subtitle1">{education.place}</Typography>
             <Typography gutterBottom variant="body2">
               {education.position}, {education.when}
             </Typography>

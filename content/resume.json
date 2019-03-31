@@ -5,19 +5,129 @@
       "when": "Sep 2015 - December 2015",
       "company": "Syject company",
       "position": "Junior Web developer",
-      "responsibilities": "Studying and development of large, scaling web application."
+      "responsibilities": "Studying and development of large, scaling web application.",
+      "projects": [
+        {
+          "idea": "Customer-to-customer delivery service",
+          "responsibilities": "Back-end and front-end development",
+          "stack": [".Net", "ASP .Net MVC", "MySql", "Bootstrap", "D3"]
+        }
+      ]
     },
     {
       "when": "April 2016 - now",
       "company": "Under the terms of NDA",
       "position": "Javascript Developer",
-      "responsibilities": "Full-stack javascript development, team leadership, designing project architecture and development flow"
+      "responsibilities": "Full-stack javascript development, team leadership, designing project architecture and development flow",
+      "projects": [
+        {
+          "idea": "System for matching credit unions with customers",
+          "stack": [
+            ".Net",
+            "ASP .Net MVC",
+            "React",
+            "JQuery",
+            "D3",
+            "Bootstrap"
+          ],
+          "responsibilities": "Back-end and front-end development, designing separate parts of system."
+        },
+        {
+          "idea": "Bus and train tickets selling platform",
+          "stack": ["Angular", "Typescript", "Karma", "jasmine", "Bootstrap"],
+          "responsibilities": "Front-end development, code review and new features design."
+        },
+        {
+          "idea": "Syncing slides with video integration for video-hosting platform",
+          "stack": [
+            "React",
+            "Redux",
+            "SCSS",
+            "Redux-thunk",
+            "S3",
+            "Mocha",
+            "Karma"
+          ],
+          "responsibilities": "Whole application development and architecture design."
+        },
+        {
+          "idea": "Online systems health monitoring and statistics collector.",
+          "stack": [
+            "React",
+            "Flow",
+            "Redux",
+            "Redux-thunk",
+            "SCSS",
+            "NodeJS",
+            "Express",
+            "Sequelize",
+            "Socket-io",
+            "PostgreSQL",
+            "Redis",
+            "NginX",
+            "Jest",
+            "Mocha"
+          ],
+          "responsibilities": "Front-end sub-team leadership. Front-end design and architecture, back-end development."
+        },
+        {
+          "idea": "B2B platform for user-oriented integrations. (B2B advertisements)",
+          "stack": [
+            "React",
+            "MobX",
+            "Typescript",
+            "CSS-in-JS (JSS)",
+            "Formik",
+            "NodeJS",
+            "Koa",
+            "TypeORM",
+            "Inversify",
+            "Jest",
+            "Cypress",
+            "Docker"
+          ],
+          "responsibilities": "Technical team leadership. Product architecture and development"
+        }
+      ]
+    },
+    {
+      "showOnlyOnCV": true,
+      "when": "Some weekends 😴",
+      "company": "Freelance",
+      "position": "Javascript Developer",
+      "projects": [
+        {
+          "idea": "Landing survey for job searching system",
+          "responsibilities": "Whole application development and architecture design.",
+          "stack": [
+            "VueJS",
+            "Typescript",
+            "Vuetify",
+            "VueX",
+            "SCSS"
+          ]
+        },
+        {
+          "idea": "Uber for massage therapists, both client massage ordering flow and admin dashboard.",
+          "responsibilities": "Whole application development and architecture design.",
+          "stack": [
+            "React",
+            "Typescript",
+            "Redux",
+            "Redux-sagas",
+            "SCSS",
+            "Formik",
+            "Jest"
+          ]         
+        }
+      ]
     },
     {
       "when": "Forever",
       "company": "Open-source",
       "position": "Javascript Contributor",
-      "responsibilities": "Support and maintain popular open-source projects"
+      "responsibilities": "Support and maintain popular open-source projects",
+      "projects": []
     }
   ],
   "education": [

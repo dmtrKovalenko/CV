@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Layout: React.FunctionComponent<LayoutProps> = ({ router, children }) => {
   const styles = useStyles();
 
-  if (router!.pathname === "/resume") {
+  if (['/resume', '/resumeFullCv'].includes(router!.pathname)) {
     return <>{children}</>
   }
 
