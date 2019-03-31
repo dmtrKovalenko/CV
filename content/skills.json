@@ -17,13 +17,13 @@
     "NodeJS",
     "Express",
     "Koa",
-    "PostgreSQl",
+    "PostgreSQL",
     "Redis",
     "Socket-io",
     "Nginx",
     "InversifyJS (DI)"
   ],
-  "Mobile": ["React Native", "Firebase", "Expo", "FastLane", "Fabrick"],
+  "Mobile": ["React Native", "Firebase", "Expo", "FastLane", "Fabric"],
   "Testing": ["Cypress", "Jest", "Mocha", "Supertest", "Detox", "Docker"],
   "Tools": ["Git", "CI/CD", "GitHub", "GitLab", "Jira", "...and many more"]
 }
