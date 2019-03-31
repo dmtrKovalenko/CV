@@ -48,7 +48,7 @@
             "Mocha",
             "Karma"
           ],
-          "responsibilities": "Whole application development and design."
+          "responsibilities": "Whole application development and architecture design."
         },
         {
           "idea": "Online systems health monitoring and statistics collector.",
@@ -63,23 +63,12 @@
             "Sequelize",
             "Socket-io",
             "PostgreSQL",
+            "Redis",
+            "NginX",
             "Jest",
             "Mocha"
           ],
           "responsibilities": "Front-end sub-team leadership. Front-end design and architecture, back-end development."
-        },
-        {
-          "idea": "Uber for massage therapists, both client massage ordering flow and admin dashboard.",
-          "stack": [
-            "React",
-            "Typescript",
-            "Redux",
-            "Redux-sagas",
-            "SCSS",
-            "Formik",
-            "Jest"
-          ],
-          "responsibilities": "Whole application development and design."
         },
         {
           "idea": "B2B platform for user-oriented integrations. (B2B advertisements)",
@@ -90,8 +79,8 @@
             "CSS-in-JS (JSS)",
             "Formik",
             "NodeJS",
-            "TypeORM",
             "Koa",
+            "TypeORM",
             "Inversify",
             "Jest",
             "Cypress",
@@ -102,10 +91,43 @@
       ]
     },
     {
+      "showOnlyOnCV": true,
+      "when": "Some weekends 😴",
+      "company": "Freelance",
+      "position": "Javascript Developer",
+      "projects": [
+        {
+          "idea": "Landing survey for job searching system",
+          "responsibilities": "Whole application development and architecture design.",
+          "stack": [
+            "VueJS",
+            "Typescript",
+            "Vuetify",
+            "VueX",
+            "SCSS"
+          ]
+        },
+        {
+          "idea": "Uber for massage therapists, both client massage ordering flow and admin dashboard.",
+          "responsibilities": "Whole application development and architecture design.",
+          "stack": [
+            "React",
+            "Typescript",
+            "Redux",
+            "Redux-sagas",
+            "SCSS",
+            "Formik",
+            "Jest"
+          ]         
+        }
+      ]
+    },
+    {
       "when": "Forever",
       "company": "Open-source",
       "position": "Javascript Contributor",
-      "responsibilities": "Support and maintain popular open-source projects"
+      "responsibilities": "Support and maintain popular open-source projects",
+      "projects": []
     }
   ],
   "education": [
