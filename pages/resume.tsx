@@ -43,10 +43,8 @@ const resumeMuiTheme = createMuiTheme({
   }
 });
 
-const Resume = ({ router }: WithRouterProps) => {
+const Resume = ({ isFullCV }: { isFullCV: boolean }) => {
   const styles = useStyles();
-  // TODO use query params when bug (https://github.com/zeit/next.js/issues/4804) will be fixed
-  const isFullCV = router && router.asPath && router.asPath.includes('?fullCV=true')
 
   return (
     <MuiThemeProvider theme={resumeMuiTheme}>
@@ -109,7 +107,7 @@ const Resume = ({ router }: WithRouterProps) => {
               <ul>
                 {isFullCV &&
                   employment.projects.map(project => (
-                    <li>
+                    <li key={project.idea}>
                       <Typography variant="subtitle2">
                         {project.idea}
                       </Typography>
@@ -153,4 +151,4 @@ const Resume = ({ router }: WithRouterProps) => {
   );
 };
 
-export default withRouter(Resume);
+export default Resume;
