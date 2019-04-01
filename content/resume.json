@@ -51,6 +51,17 @@
           "responsibilities": "Whole application development and architecture design."
         },
         {
+          "idea": "Multi-platform chat-bot for company workflow organization and reporting",
+          "stack": [
+            "NodeJS",
+            "Typescript",
+            "Jest",
+            "Now",
+            "Docker"
+          ],
+          "responsibilities": "Whole application development and architecture design."
+        },
+        {
           "idea": "Online systems health monitoring and statistics collector.",
           "stack": [
             "React",
@@ -98,7 +109,7 @@
       "projects": [
         {
           "idea": "Landing survey for job searching system",
-          "responsibilities": "Whole application development and architecture design.",
+          "responsibilities": "Front-end application development and architecture design.",
           "stack": [
             "VueJS",
             "Typescript",
@@ -108,8 +119,22 @@
           ]
         },
         {
+          "idea": "Streaming and online listening meetings application",
+          "responsibilities": "Mobile application development and architecture design.",
+          "stack": [
+            "React Native", "Typescript", "Firebase", "FastLane", "Fabric"
+          ]
+        },
+        {
+          "idea": "Fitness motivator and calories calculator app",
+          "responsibilities": "Mobile application development and architecture design.",
+          "stack": [
+            "React Native", "Typescript", "GraphQl", "Expo", "MobX"
+          ]
+        },
+        {
           "idea": "Uber for massage therapists, both client massage ordering flow and admin dashboard.",
-          "responsibilities": "Whole application development and architecture design.",
+          "responsibilities": "Front-end application development and architecture design.",
           "stack": [
             "React",
             "Typescript",
