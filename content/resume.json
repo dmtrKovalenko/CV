@@ -2,19 +2,6 @@
   "summary": "Advanced JavaScript developer, experienced in creation of modern, fast and scalable applications. OSS contributor of such projects like Material-UI, React-native, Formik, i18next and creator of material-ui-pickers. Good understanding of both OOP and FP paradigms, design patterns and architecture concepts. Experienced in developing large, scalable and sound web/mobile applications with a help of cutting-edge technologies.",
   "employment": [
     {
-      "when": "Sep 2015 - December 2015",
-      "company": "Syject company",
-      "position": "Junior Web developer",
-      "responsibilities": "Studying and development of large, scaling web application.",
-      "projects": [
-        {
-          "idea": "Customer-to-customer delivery service",
-          "responsibilities": "Back-end and front-end development",
-          "stack": [".Net", "ASP .Net MVC", "MySql", "Bootstrap", "D3"]
-        }
-      ]
-    },
-    {
       "when": "April 2016 - now",
       "company": "Under the terms of NDA",
       "position": "Javascript Developer",
@@ -98,6 +85,19 @@
             "Docker"
           ],
           "responsibilities": "Technical team leadership. Product architecture and development"
+        }
+      ]
+    },
+    {
+      "when": "Sep 2015 - December 2015",
+      "company": "Syject company",
+      "position": "Junior Web developer",
+      "responsibilities": "Studying and development of large, scaling web application.",
+      "projects": [
+        {
+          "idea": "Customer-to-customer delivery service",
+          "responsibilities": "Back-end and front-end development",
+          "stack": [".Net", "ASP .Net MVC", "MySql", "Bootstrap", "D3"]
         }
       ]
     },
