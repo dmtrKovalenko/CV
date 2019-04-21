@@ -26,7 +26,11 @@ const useStyles = makeStyles({
   }
 });
 
-export const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
+const currentAge = new Date().getFullYear() - 1998;
+const processedAboutText = aboutMeMd
+  .replace('%TOKEN_AGE%', currentAge.toString())
+
+export const AboutMe: React.FC<AboutMeProps> = () => {
   const styles = useStyles();
 
   return (
@@ -47,7 +51,7 @@ export const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
 
         <Grid xs={12} md={6} xl={4} item>
           <Typography component="span" variant="subtitle1" gutterBottom>
-            <ReactMarkDown source={aboutMeMd} />
+            <ReactMarkDown source={processedAboutText} />
           </Typography>
         </Grid>
 
