@@ -22,9 +22,9 @@ export const DeerToRabbit: React.FunctionComponent<DeerToRabbitProps> = () => {
   const styles = useStyles()
   React.useEffect(() => {
     const timeline = anime.timeline({
+      loop: true,
       autoplay: true,
       direction: "alternate",
-      loop: true
     });
 
     rabbitPaths.forEach((path, index) => {
