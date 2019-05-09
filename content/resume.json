@@ -2,7 +2,13 @@
   "summary": "Advanced JavaScript developer, experienced in creation of modern, fast and scalable applications. OSS contributor of such projects like Material-UI, React-native, Formik, i18next and creator of material-ui-pickers. Good understanding of both OOP and FP paradigms, design patterns and architecture concepts. Experienced in developing large, scalable and sound web/mobile applications with a help of cutting-edge technologies.",
   "employment": [
     {
-      "when": "April 2016 - now",
+      "when": "April 2016 - May 2019",
+      "company": "Cypress",
+      "position": "Senior Javascript Developer",
+      "responsibilities": "Full-stack Javascript development",
+    },
+    {
+      "when": "April 2016 - May 2019",
       "company": "Under the terms of NDA",
       "position": "Javascript Developer",
       "responsibilities": "Full-stack javascript development, team leadership, designing project architecture and development flow",
