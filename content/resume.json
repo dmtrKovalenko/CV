@@ -15,7 +15,7 @@
       ]
     },
     {
-      "when": "April 2016 - now",
+      "when": "April 2016 - May 2019",
       "company": "Under the terms of NDA",
       "position": "Javascript Developer",
       "responsibilities": "Full-stack javascript development, team leadership, designing project architecture and development flow",
@@ -146,6 +146,13 @@
           ]         
         }
       ]
+    },
+    {
+      "when": "May 2019 - now",
+      "company": "Cypress.io",
+      "position": "Senior Software developer",
+      "responsibilities": "Software development for cypress products",
+      "projects": []
     },
     {
       "when": "Forever",
