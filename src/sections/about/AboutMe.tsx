@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   }
 });
 
-const currentAge = new Date().getFullYear() - 1998;
+const currentAge = new Date().getFullYear() - 1997;
 const processedAboutText = aboutMeMd
   .replace('%TOKEN_AGE%', currentAge.toString())
 
