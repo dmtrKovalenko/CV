@@ -1,12 +1,12 @@
 import * as React from "react";
 import Resume from "../../../pages/resume";
 import SaveIcon from "@material-ui/icons/Save";
-import { makeStyles } from "@material-ui/styles";
 import { PDF_FORMATTER_API_URL } from "../../constants";
 import { RESUME_URL } from "../../constants";
 import { NoDecorationLink } from "../../_shared/Common";
 import { styledBy } from "../../utils/helpers";
 import {
+  makeStyles,
   Paper,
   Theme,
   Button,
@@ -15,7 +15,7 @@ import {
   Typography
 } from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   downloadButton: {
     display: "flex",
     flexDirection: "column",

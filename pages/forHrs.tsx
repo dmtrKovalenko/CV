@@ -7,19 +7,18 @@ import CloudIcon from "@material-ui/icons/CloudQueue";
 import PhoneIcon from "@material-ui/icons/DeveloperMode";
 import TestingIcon from "@material-ui/icons/Cached";
 import skills from "../content/skills.json";
-import { Page } from "../src/_shared/Page";
+import { Page } from "../components/_shared/Page";
 import { GridSize } from "@material-ui/core/Grid";
-import { ChipArray } from "../src/_shared/ChipArray";
+import { ChipArray } from "../components/_shared/ChipArray";
 import { Breakpoint } from "@material-ui/core/styles/createBreakpoints";
 import { SvgIconProps } from "@material-ui/core/SvgIcon";
-import { Typography, Grid } from "@material-ui/core";
-import { styled, makeStyles } from "@material-ui/styles";
-import { ResumePreview } from "../src/sections/resume/ResumePreview";
+import { Typography, Grid, Theme, styled, makeStyles } from "@material-ui/core";
+import { ResumePreview } from "../components/sections/resume/ResumePreview";
 
 const GridItem = styled(Grid)({ marginBottom: 32 });
 
 const iconSize = 60;
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles<Theme>(theme => ({
   title: {
     marginBottom: 64
   },

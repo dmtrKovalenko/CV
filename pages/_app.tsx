@@ -3,10 +3,10 @@ import App, { Container } from "next/app";
 import Head from "next/head";
 import { StylesProvider, ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import getPageContext, { PageContext } from "../src/utils/getPageContext";
+import getPageContext, { PageContext } from "../components/utils/getPageContext";
 // @ts-ignore
 import { MuiThemeProvider } from "@material-ui/core";
-import Layout from "../src/layout/Layout";
+import Layout from "../components/layout/Layout";
 
 class MyApp extends App {
   constructor() {
@@ -27,7 +27,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <Container>
+      <>
         <Head>
           <title> Dmitriy Kovalenko </title>
         </Head>
@@ -46,7 +46,7 @@ class MyApp extends App {
             </ThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
-      </Container>
+      </>
     );
   }
 

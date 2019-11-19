@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Main, NextScript, DocumentContext } from 'next/document';
 // @ts-ignore
 import flush from 'styled-jsx/server';
-import { PageContext } from '../src/utils/getPageContext';
+import { PageContext } from '../components/utils/getPageContext';
 
 const title = "Dmitriy Kovalenko"
 const description = "Dmitriy Kovalenko - Software Engineer, Speaker and open-source contributor. Javascript/Ocaml lover"
@@ -26,7 +26,6 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             content={pageContext ? pageContext.theme.palette.primary.main : null}
           />
 
-          <title> {title} </title>
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="description" content={description} />
           <meta name="og:description" content={description} />
@@ -41,11 +40,11 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
-          <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png"/>
-          <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png"/>
-          <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"/>
-          <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#5bbad5"/>
-          <link rel="stylesheet" href="/static/global.css" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+          <link rel="stylesheet" href="/global.css" />
 
           {/* Required to make particles polygon works */}
           <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js" />
@@ -59,7 +58,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
   }
 }
 
-MyDocument.getInitialProps = ctx => {
+MyDocument.getInitialProps = (ctx: DocumentContext) => {
   // Render app and page and get the context of the page with collected side effects.
   let pageContext: PageContext | undefined = undefined;
   const page = ctx.renderPage(Component => {

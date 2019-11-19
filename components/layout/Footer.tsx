@@ -1,14 +1,13 @@
 import * as React from "react";
-import { Grid, Theme, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { Grid, Theme, Typography, makeStyles } from "@material-ui/core";
 import { DeerToRabbit } from "./DeerToRabit";
 import { TwitterIconSvg } from "../_shared/icons/Twitter";
 import { contacts } from "../../content/contacts.json";
-import { LinkedinSvgIcon } from "../../src/_shared/icons/LinkedinLogo";
-import { InstagramSvgIcon } from "../../src/_shared/icons/Instagram";
-import { GithubSvgIcon } from "../../src/_shared/icons/Github";
-import { FacebookSvgIcon } from "../../src/_shared/icons/Facebook";
-import { EmailSvgIcon } from "../../src/_shared/icons/Email";
+import { LinkedinSvgIcon } from "../_shared/icons/LinkedinLogo";
+import { InstagramSvgIcon } from "../_shared/icons/Instagram";
+import { GithubSvgIcon } from "../_shared/icons/Github";
+import { FacebookSvgIcon } from "../_shared/icons/Facebook";
+import { EmailSvgIcon } from "../_shared/icons/Email";
 
 const useStyles = makeStyles((theme: Theme) => ({
   clipPath: {
@@ -75,7 +74,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     textDecoration: "none"
   },
   socialLabel: {
-    marginLeft: 20
+    marginLeft: 20,
+    color: 'white'
   }
 }));
 
@@ -114,7 +114,6 @@ const SocialContact: React.FC<{ name: string; url: string }> = ({ name, url }) =
 
 export const Footer: React.FunctionComponent<{}> = () => {
   const styles = useStyles();
-
   return (
     <>
       <div className={styles.clipPath} />

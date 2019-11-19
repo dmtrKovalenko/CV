@@ -1,17 +1,16 @@
-import * as React from 'react';
-import { Deer } from '../src/sections/deer/Deer';
-import { AboutMe } from '../src/sections/about/AboutMe';
+import * as React from "react";
+import { Landing } from "../components/sections/deer/Landing";
+import { AboutMe } from "../components/sections/about/AboutMe";
 
-interface LandingProps {
-}
+interface LandingProps {}
 
-const Landing: React.FunctionComponent<LandingProps> = (props) => {
+const Main: React.FunctionComponent<LandingProps> = () => {
   return (
     <>
-      <Deer />
+      <Landing />
       <AboutMe />
     </>
-  )
+  );
 };
 
-export default Landing;
+export default Main;

@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Chip, Grid } from "@material-ui/core";
-import { styled } from "@material-ui/styles";
+import { Chip,styled, Grid } from "@material-ui/core";
 
 const PrimaryChip = styled(Chip)({
   marginLeft: 8,

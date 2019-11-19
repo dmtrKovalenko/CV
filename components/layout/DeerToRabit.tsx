@@ -1,11 +1,10 @@
 import * as React from "react";
 import anime from "animejs";
-import { makeStyles } from "@material-ui/styles";
-import { Theme } from "@material-ui/core";
+import { Theme, makeStyles } from "@material-ui/core";
 
 interface DeerToRabbitProps {}
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles((theme) => ({
   deerToRabitSvg: {
     '& path': {
       willChange: 'd',
@@ -54,6 +53,7 @@ export const DeerToRabbit: React.FunctionComponent<DeerToRabbitProps> = () => {
       width={700}
       height={600}
       viewBox="0 0 700 600"
+      stroke="yellow"
       className={styles.deerToRabitSvg}
     >
       {deerPaths.map(path => (

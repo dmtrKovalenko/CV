@@ -1,18 +1,16 @@
-const withImages = require('next-images');
-const withTypescript = require('@zeit/next-typescript');
+const withCSS = require("@zeit/next-css");
+const withImages = require("next-images");
 
-module.exports = withImages(
-  withTypescript({
-    pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-    webpack: (config) => {
-      config.module.rules.push(
-        {
-          test: /\.md$/,
-          use: 'raw-loader'
-        }
-      )
-  
-      return config
-    },
+module.exports = withCSS(
+  withImages({
+    pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+    webpack: config => {
+      config.module.rules.push({
+        test: /\.md$/,
+        use: "raw-loader"
+      });
+
+      return config;
+    }
   })
 );

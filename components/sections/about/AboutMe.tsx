@@ -2,8 +2,7 @@ import * as React from "react";
 import Link from 'next/link'
 import Photo from "../../../assets/Photo.jpg";
 import { Page } from "../../_shared/Page";
-import { Typography, Grid, Avatar, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles, Typography, Grid, Avatar, Button } from "@material-ui/core";
 import ReactMarkDown from 'react-markdown'
 import aboutMeMd from '../../../content/about.md'
 
