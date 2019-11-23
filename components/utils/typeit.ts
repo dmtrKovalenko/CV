@@ -16,7 +16,7 @@ export const start = () => {
     .pause(1000)
     .delete()
     .type(
-      `and I am <span style='color:${theme.palette.primary.main}'> JavaScript </span> Developer`
+      `and I am <span style='color:${theme.palette.primary.light}'> JavaScript </span> Developer`
     )
     .pause(100)
     .go();
