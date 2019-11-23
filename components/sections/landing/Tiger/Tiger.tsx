@@ -1,6 +1,9 @@
 import "./tiger.css";
 import "./tiger-animations.css";
 import React from "react";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles()
 
 function Tiger() {
   return (

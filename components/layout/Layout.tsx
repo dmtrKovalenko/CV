@@ -8,11 +8,6 @@ import Link from "next/link";
 interface LayoutProps {}
 
 const useStyles = makeStyles((theme: Theme) => ({
-  "@global": {
-    a: {
-      color: theme.palette.primary.light
-    }
-  },
   homeBtn: {
     display: "flex",
     justifyContent: "center",

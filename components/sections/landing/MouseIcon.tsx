@@ -1,10 +1,11 @@
-import './mouse-icon.css'
+// import './mouse-icon.css'
 import { styled } from "@material-ui/core";
 import { isChrome } from '../../utils/helpers'
+import jss from 'jss';
+
 
 export const MouseIcon = styled("div")((props) => ({
   opacity: 0,
-  top: "-70px",
   width: "40px",
   height: "70px",
   marginLeft: 'auto',
@@ -14,7 +15,7 @@ export const MouseIcon = styled("div")((props) => ({
   borderRadius: "25px",
   display: 'flex',
   justifyContent: 'center',
-  animationName: "mouse-appear",
+  animationName: "mouse-icon-appear",
   animationDuration: '.5s',
   animationDelay: '5s',
   animationIterationCount: 1,
@@ -29,7 +30,7 @@ export const MouseIcon = styled("div")((props) => ({
     borderRadius: "4px",
     animationDuration: "2s",
     animationIterationCount: "infinite",
-    animationName: (isChrome ?? true) ? undefined : "mouse-scroll" 
+    animationName: (isChrome ?? true) ? undefined : "mouse-icon-scroll" 
   }
 }));
 

@@ -44,7 +44,6 @@
 }
 
 /* LEFT SIDE */
-
 .tiger-animation-layer:hover > svg #left-side polygon:nth-of-type(5n + 1),
 .tiger-animation-layer:hover > svg #left-side path:nth-of-type(5n + 1) {
   will-change: transform, opacity;
