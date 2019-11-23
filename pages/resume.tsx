@@ -4,8 +4,13 @@ import Photo from "../assets/Photo.jpg";
 import resume from "../content/resume.json";
 import skills from "../content/skills.json";
 import { MuiThemeProvider } from "@material-ui/core";
-import { Typography, Grid, Avatar } from "@material-ui/core";
-import { makeStyles, styled } from "@material-ui/styles";
+import {
+  Typography,
+  Grid,
+  Avatar,
+  makeStyles,
+  styled
+} from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { Title } from "../components/_shared/Common";
 

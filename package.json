@@ -6,11 +6,9 @@
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
     "@material-ui/core": "^4.0.0-alpha.5",
     "@material-ui/icons": "^3.0.2",
-    "@material-ui/styles": "^4.0.0-alpha.5",
     "@types/animejs": "^2.0.2",
     "@types/jss": "^9.5.8",
     "@types/next": "^8.0.1",
-    "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "animejs": "^3.0.1",
     "global": "^4.4.0",
@@ -23,7 +21,6 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-markdown": "^4.0.6",
-    "react-particles-js": "2.5.1",
     "typeit": "6.0.2"
   },
   "scripts": {

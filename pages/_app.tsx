@@ -1,11 +1,11 @@
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
-import { StylesProvider, ThemeProvider } from "@material-ui/styles";
+import { StylesProvider, MuiThemeProvider } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import getPageContext, { PageContext } from "../components/utils/getPageContext";
-// @ts-ignore
-import { MuiThemeProvider } from "@material-ui/core";
+import getPageContext, {
+  PageContext
+} from "../components/utils/getPageContext";
 import Layout from "../components/layout/Layout";
 
 class MyApp extends App {
@@ -18,7 +18,7 @@ class MyApp extends App {
   componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
-    
+
     if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
@@ -38,12 +38,10 @@ class MyApp extends App {
           sheetsManager={this.pageContext.sheetsManager}
         >
           <MuiThemeProvider theme={this.pageContext.theme}>
-            <ThemeProvider theme={this.pageContext.theme}>
-              <CssBaseline />
-              <Layout>
-                <Component pageContext={this.pageContext} {...pageProps} />
-              </Layout>
-            </ThemeProvider>
+            <CssBaseline />
+            <Layout>
+              <Component pageContext={this.pageContext} {...pageProps} />
+            </Layout>
           </MuiThemeProvider>
         </StylesProvider>
       </>
