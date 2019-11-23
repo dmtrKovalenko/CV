@@ -1,9 +1,9 @@
 import './mouse-icon.css'
 import { styled } from "@material-ui/core";
+import { isChrome } from '../../utils/helpers'
 
 export const MouseIcon = styled("div")((props) => ({
-  // position: "relative",
-  overflow: 'hidden',
+  opacity: 0,
   top: "-70px",
   width: "40px",
   height: "70px",
@@ -16,21 +16,20 @@ export const MouseIcon = styled("div")((props) => ({
   justifyContent: 'center',
   animationName: "mouse-appear",
   animationDuration: '.5s',
-  animationDelay: '2s',
+  animationDelay: '5s',
   animationIterationCount: 1,
-  animationFillMode: 'forwards',
-  // visibility: 'hidden',
+  animationFillMode: 'forwards',                  
 
   "&::before": {
     content: '""',
+    marginTop: "10px",
     width: "8px",
     height: "8px",
     backgroundColor: props.theme.palette.primary.main,
     borderRadius: "4px",
     animationDuration: "2s",
     animationIterationCount: "infinite",
-    // animationName: "mouse-scroll"
+    animationName: (isChrome ?? true) ? undefined : "mouse-scroll" 
   }
 }));
-
 

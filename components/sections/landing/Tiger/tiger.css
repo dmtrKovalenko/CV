@@ -106,7 +106,7 @@
 }
 
 .tiger-animation-layer {
-  /* position: relative; */
+  position: relative;
   width: auto;
   margin: auto;
   z-index: 2;
@@ -117,7 +117,6 @@
   overflow: visible;
   z-index: 1;
   width: 300px;
-  /* position: absolute; */
 }
 
 @media (min-width: 899px) and (max-width: 1299px) {
@@ -138,9 +137,9 @@ ellipse {
   fill-opacity: 1;
   -webkit-transform: translate(0);
   transform: translate(0);
-  -webkit-transition: -webkit-transform 2s ease, opacity 0.5s ease,
+  -webkit-transition: -webkit-transform 2.5s ease, opacity 0.5s ease,
     stroke-dashoffset 1s ease-in-out;
-  transition: -webkit-transform 2s ease, opacity 0.2s ease,
+  transition: -webkit-transform 2.5s ease, opacity 0.2s ease,
     stroke-dashoffset 1s ease-in-out;
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;

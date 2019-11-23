@@ -11,7 +11,8 @@ const useStyles = makeStyles({
     background: "#1a1a1a",
     color: "white",
     minHeight: "100vh",
-    width: "100%"
+    width: "100%",
+    paddingBottom: 32
   },
   title: {
     marginTop: "auto",
@@ -27,7 +28,7 @@ export function Landing() {
   }, []);
 
   return (
-    <div className={styles.landingContainer}>
+    <div id="landing" className={styles.landingContainer}>
       <Tiger />
       <div className={styles.title}>
         <Typography variant="h3" align="center" color="inherit" gutterBottom>

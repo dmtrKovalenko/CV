@@ -4,6 +4,17 @@
   }
   100% {
     opacity: 0;
-    transform: translateY(46px);
+    transform: translateY(30px);
+  }
+}
+
+@keyframes mouse-appear {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
   }
 }
