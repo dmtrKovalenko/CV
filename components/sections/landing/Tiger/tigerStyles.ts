@@ -1,6 +1,126 @@
 import { makeStyles } from "@material-ui/core";
 
 export const useTigerStyles = makeStyles({
+  "@keyframes dash": {
+    to: {
+      strokeDashoffset: 0,
+      fillOpacity: 1,
+      strokeWidth: 0
+    }
+  },
+  tigerAnimationLayer: {
+    position: "relative",
+    width: "auto",
+    margin: "auto",
+    zIndex: 2,
+    cursor: "pointer",
+
+    "& > svg": {
+      overflow: "visible",
+      zIndex: 1,
+      width: 300,
+
+      "@media (min-width: 899px) and (max-width: 1299px)": {
+        width: 450
+      },
+      "@media (min-width: 1299px)": {
+        width: 550
+      },
+
+      "& polygon, path, ellipse": {
+        fillOpacity: 1,
+        W: "50% 50%",
+        transform: "translate(0)",
+        transition:
+          "-webkit-transform 2.5s ease, opacity 0.2s ease,\n    stroke-dashoffset 1s ease-in-out",
+        transformOrigin: "50% 50%",
+        strokeDasharray: "500",
+        strokeDashoffset: "500"
+      },
+      "& #left-side polygon:nth-of-type(n + 1), & #left-side path:nth-of-type(n + 1), & #left-side ellipse": {
+        willChange: "transform, opacity",
+        fillOpacity: 0,
+        stroke: "#fafafa",
+        strokeWidth: 0.5,
+        strokeDasharray: "600",
+        strokeDashoffset: "600",
+        W: "forwards",
+        animation: "$dash 8s ease-in-out 1", // goto line :4
+        animationFillMode: "forwards"
+      }
+    },
+    // If you are here, then sit and listen my friend
+    // All that we do is only taking each 5th, 4th, ... 1st svg path and pushing it out of screen 
+    // with some directory. For some of them also change stroke width, opacity.
+    // You can also try to rotate and scale them, but it works awful in safari
+    "&:hover > svg #right-side polygon:nth-of-type(5n + 1), &:hover > svg #right-side path:nth-of-type(5n + 1)": {
+      willChange: "transform, opacity",
+      transform: "translate(2000px, -6000px) translateZ(0)",
+      opacity: "0.3"
+    },
+    "&:hover > svg #right-side polygon:nth-of-type(5n + 2), &:hover > svg #right-side path:nth-of-type(5n + 2)": {
+      willChange: "transform, opacity",
+      transform: "translate(8000px, -6000px) translateZ(0)",
+      opacity: "0.3",
+      fillOpacity: 0,
+      strokeWidth: 0.5,
+      stroke: "#fff",
+      strokeDashoffset: 0
+    },
+    "&:hover > svg #right-side polygon:nth-of-type(5n + 3), &:hover > svg #right-side path:nth-of-type(5n + 3)": {
+      willChange: "transform, opacity",
+      transform: "translate(10000px, 0) translateZ(0)",
+      opacity: "0.3"
+    },
+    "&:hover > svg #right-side polygon:nth-of-type(5n + 4), &:hover > svg #right-side path:nth-of-type(5n + 4)": {
+      willChange: "transform, opacity",
+      transform: "translate(10000px, 6000px) translateZ(0)",
+      opacity: "0.3",
+      fillOpacity: 0,
+      strokeWidth: 0.5,
+      stroke: "#fff",
+      strokeDashoffset: 0
+    },
+    "&:hover > svg #right-side polygon:nth-of-type(5n + 5), &:hover > svg #right-side path:nth-of-type(5n + 5), &:hover > svg #right-side ellipse": {
+      willChange: "transform, opacity",
+      transform: "translate(0, 10000px) translateZ(0)",
+      opacity: "0.3"
+    },
+    "&:hover > svg #left-side polygon:nth-of-type(5n + 1), &:hover > svg #left-side path:nth-of-type(5n + 1)": {
+      willChange: "transform, opacity",
+      transform: "translate(-4000px, -4000px) translateZ(0)",
+      opacity: "0.3"
+    },
+    "&:hover > svg #left-side polygon:nth-of-type(5n + 2), &:hover > svg #left-side path:nth-of-type(5n + 2)": {
+      willChange: "transform, opacity",
+      transform: "translate(-8000px, -1000px) translateZ(0)",
+      opacity: "0.3",
+      fillOpacity: 0,
+      strokeWidth: 0.5,
+      stroke: "#fff",
+      strokeDashoffset: 0
+    },
+    "&:hover > svg #left-side polygon:nth-of-type(5n + 3), &:hover > svg #left-side path:nth-of-type(5n + 3)": {
+      willChange: "transform, opacity",
+      transform: "translate(-8000px, 1000px) translateZ(0)",
+      opacity: "0.3",
+      fillOpacity: 0,
+      strokeWidth: 0.5,
+      stroke: "#fff",
+      strokeDashoffset: 0
+    },
+    "&:hover > svg #left-side polygon:nth-of-type(5n + 4), &:hover > svg #left-side path:nth-of-type(5n + 4)": {
+      willChange: "transform, opacity",
+      transform: "translate(-8000px, 5000px) translateZ(0)",
+      opacity: "0.5"
+    },
+    "&:hover > svg #left-side polygon:nth-of-type(5n + 5), &:hover > svg #left-side path:nth-of-type(5n + 5), &:hover > svg #left-side ellipse": {
+      willChange: "transform, opacity",
+      transform: "translate(0, 9000px) translateZ(0)",
+      opacity: "0.3"
+    }
+  },
+  // not interesting vector colors
   st0: {
     fill: "#ffe475"
   },
@@ -105,115 +225,5 @@ export const useTigerStyles = makeStyles({
   },
   st34: {
     fill: "#56481c"
-  },
-
-  tigerAnimationLayer: {
-    position: "relative",
-    width: "auto",
-    margin: "auto",
-    zIndex: 2,
-    cursor: "pointer",
-
-    "& > svg": {
-      overflow: "visible",
-      zIndex: 1,
-      width: 300,
-
-      "@media (min-width: 899px) and (max-width: 1299px)": {
-        width: 450
-      },
-      "@media (min-width: 1299px)": {
-        width: 550
-      },
-
-      "& polygon, path, ellipse": {
-        fillOpacity: 1,
-        W: "50% 50%",
-        transform: "translate(0)",
-        transition:
-          "-webkit-transform 2.5s ease, opacity 0.2s ease,\n    stroke-dashoffset 1s ease-in-out",
-        transformOrigin: "50% 50%",
-        strokeDasharray: "500",
-        strokeDashoffset: "500"
-      },
-      "& #left-side polygon:nth-of-type(n + 1), & #left-side path:nth-of-type(n + 1), & #left-side ellipse": {
-        willChange: "transform, opacity",
-        fillOpacity: 0,
-        stroke: "#fafafa",
-        strokeWidth: 0.5,
-        strokeDasharray: "600",
-        strokeDashoffset: "600",
-        W: "forwards",
-        animation: "dash 8s ease-in-out 1",
-        animationFillMode: "forwards"
-      }
-    },
-
-    "&:hover > svg #right-side polygon:nth-of-type(5n + 1), &:hover > svg #right-side path:nth-of-type(5n + 1)": {
-      willChange: "transform, opacity",
-      transform: "translate(2000px, -6000px) translateZ(0)",
-      opacity: "0.3"
-    },
-    "&:hover > svg #right-side polygon:nth-of-type(5n + 2), &:hover > svg #right-side path:nth-of-type(5n + 2)": {
-      willChange: "transform, opacity",
-      transform: "translate(8000px, -6000px) translateZ(0)",
-      opacity: "0.3",
-      fillOpacity: 0,
-      strokeWidth: 0.5,
-      stroke: "#fff",
-      strokeDashoffset: 0
-    },
-    "&:hover > svg #right-side polygon:nth-of-type(5n + 3), &:hover > svg #right-side path:nth-of-type(5n + 3)": {
-      willChange: "transform, opacity",
-      transform: "translate(10000px, 0) translateZ(0)",
-      opacity: "0.3"
-    },
-    "&:hover > svg #right-side polygon:nth-of-type(5n + 4), &:hover > svg #right-side path:nth-of-type(5n + 4)": {
-      willChange: "transform, opacity",
-      transform: "translate(10000px, 6000px) translateZ(0)",
-      opacity: "0.3",
-      fillOpacity: 0,
-      strokeWidth: 0.5,
-      stroke: "#fff",
-      strokeDashoffset: 0
-    },
-    "&:hover > svg #right-side polygon:nth-of-type(5n + 5), &:hover > svg #right-side path:nth-of-type(5n + 5), &:hover > svg #right-side ellipse": {
-      willChange: "transform, opacity",
-      transform: "translate(0, 10000px) translateZ(0)",
-      opacity: "0.3"
-    },
-    "&:hover > svg #left-side polygon:nth-of-type(5n + 1), &:hover > svg #left-side path:nth-of-type(5n + 1)": {
-      willChange: "transform, opacity",
-      transform: "translate(-4000px, -4000px) translateZ(0)",
-      opacity: "0.3"
-    },
-    "&:hover > svg #left-side polygon:nth-of-type(5n + 2), &:hover > svg #left-side path:nth-of-type(5n + 2)": {
-      willChange: "transform, opacity",
-      transform: "translate(-8000px, -1000px) translateZ(0)",
-      opacity: "0.3",
-      fillOpacity: 0,
-      strokeWidth: 0.5,
-      stroke: "#fff",
-      strokeDashoffset: 0
-    },
-    "&:hover > svg #left-side polygon:nth-of-type(5n + 3), &:hover > svg #left-side path:nth-of-type(5n + 3)": {
-      willChange: "transform, opacity",
-      transform: "translate(-8000px, 1000px) translateZ(0)",
-      opacity: "0.3",
-      fillOpacity: 0,
-      strokeWidth: 0.5,
-      stroke: "#fff",
-      strokeDashoffset: 0
-    },
-    "&:hover > svg #left-side polygon:nth-of-type(5n + 4), &:hover > svg #left-side path:nth-of-type(5n + 4)": {
-      willChange: "transform, opacity",
-      transform: "translate(-8000px, 5000px) translateZ(0)",
-      opacity: "0.5"
-    },
-    "&:hover > svg #left-side polygon:nth-of-type(5n + 5), &:hover > svg #left-side path:nth-of-type(5n + 5), &:hover > svg #left-side ellipse": {
-      willChange: "transform, opacity",
-      transform: "translate(0, 9000px) translateZ(0)",
-      opacity: "0.3"
-    }
   }
 });

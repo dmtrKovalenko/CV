@@ -13,12 +13,5 @@ export const withGlobalStylesAndKeyframes = withStyles(theme => ({
       from: { opacity: 0 },
       to: { opacity: 1 }
     },
-    "@keyframes dash": {
-      to: {
-        strokeDashoffset: 0,
-        fillOpacity: 1,
-        strokeWidth: 0
-      }
-    }
   }
 }));
