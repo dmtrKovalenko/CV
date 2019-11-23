@@ -1,0 +1,90 @@
+/* RIGHT SIDE */
+.tiger-animation-layer:hover > svg #right-side polygon:nth-of-type(5n + 1),
+.tiger-animation-layer:hover > svg #right-side path:nth-of-type(5n + 1) {
+  will-change: transform, opacity;
+  transform: translate(2000px, -6000px) translateZ(0);
+  opacity: 0.3;
+}
+
+.tiger-animation-layer:hover > svg #right-side polygon:nth-of-type(5n + 2),
+.tiger-animation-layer:hover > svg #right-side path:nth-of-type(5n + 2) {
+  will-change: transform, opacity;
+  transform: translate(8000px, -6000px) translateZ(0);
+  opacity: 0.3;
+  fill-opacity: 0;
+  stroke-width: 0.5px;
+  stroke: #fff;
+  stroke-dashoffset: 0;
+}
+
+.tiger-animation-layer:hover > svg #right-side polygon:nth-of-type(5n + 3),
+.tiger-animation-layer:hover > svg #right-side path:nth-of-type(5n + 3) {
+  will-change: transform, opacity;
+  transform: translate(10000px, 0) translateZ(0);
+  opacity: 0.3;
+}
+
+.tiger-animation-layer:hover > svg #right-side polygon:nth-of-type(5n + 4),
+.tiger-animation-layer:hover > svg #right-side path:nth-of-type(5n + 4) {
+  will-change: transform, opacity;
+  transform: translate(10000px, 6000px) translateZ(0);
+  opacity: 0.3;
+  fill-opacity: 0;
+  stroke-width: 0.5px;
+  stroke: #fff;
+  stroke-dashoffset: 0;
+}
+
+.tiger-animation-layer:hover > svg #right-side polygon:nth-of-type(5n + 5),
+.tiger-animation-layer:hover > svg #right-side path:nth-of-type(5n + 5),
+.tiger-animation-layer:hover > svg #right-side ellipse {
+  will-change: transform, opacity;
+  transform: translate(0, 10000px) translateZ(0);
+  opacity: 0.3;
+}
+
+/* LEFT SIDE */
+
+.tiger-animation-layer:hover > svg #left-side polygon:nth-of-type(5n + 1),
+.tiger-animation-layer:hover > svg #left-side path:nth-of-type(5n + 1) {
+  will-change: transform, opacity;
+  transform: translate(-4000px, -4000px) translateZ(0);
+  opacity: 0.3;
+}
+
+.tiger-animation-layer:hover > svg #left-side polygon:nth-of-type(5n + 2),
+.tiger-animation-layer:hover > svg #left-side path:nth-of-type(5n + 2) {
+  will-change: transform, opacity;
+  transform: translate(-8000px, -1000px) translateZ(0);
+  opacity: 0.3;
+  fill-opacity: 0;
+  stroke-width: 0.5px;
+  stroke: #fff;
+  stroke-dashoffset: 0;
+}
+
+.tiger-animation-layer:hover > svg #left-side polygon:nth-of-type(5n + 3),
+.tiger-animation-layer:hover > svg #left-side path:nth-of-type(5n + 3) {
+  will-change: transform, opacity;
+  transform: translate(-8000px, 1000px) translateZ(0);
+  opacity: 0.3;
+  fill-opacity: 0;
+  stroke-width: 0.5px;
+  stroke: #fff;
+  stroke-dashoffset: 0;
+}
+
+.tiger-animation-layer:hover > svg #left-side polygon:nth-of-type(5n + 4),
+.tiger-animation-layer:hover > svg #left-side path:nth-of-type(5n + 4) {
+  will-change: transform, opacity;
+  transform: translate(-8000px, 5000px) translateZ(0);
+  opacity: 0.5;
+}
+
+.tiger-animation-layer:hover > svg #left-side polygon:nth-of-type(5n + 5),
+.tiger-animation-layer:hover > svg #left-side path:nth-of-type(5n + 5),
+.tiger-animation-layer:hover > svg #left-side ellipse {
+  will-change: transform, opacity;
+  transform: translate(0, 9000px) translateZ(0);
+  opacity: 0.3;
+}

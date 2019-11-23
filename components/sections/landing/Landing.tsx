@@ -1,5 +1,5 @@
 import * as React from "react";
-import Tiger from "./Tiger";
+import Tiger from "./Tiger/Tiger";
 import { MouseIcon } from "./MouseIcon";
 import { Typography, makeStyles } from "@material-ui/core";
 

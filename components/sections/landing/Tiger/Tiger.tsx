@@ -1,4 +1,5 @@
 import "./tiger.css";
+import "./tiger-animations.css";
 import React from "react";
 
 function Tiger() {

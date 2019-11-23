@@ -12,7 +12,7 @@ export const start = () => {
     .delete()
     .type("it's a")
     .pause(800)
-    .type("n awesome low-poly deer")
+    .type("n awesome tiger, tap or hover it to see some magic")
     .pause(1000)
     .delete()
     .type(
