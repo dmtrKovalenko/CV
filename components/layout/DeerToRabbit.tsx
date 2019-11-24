@@ -5,7 +5,7 @@ import { Theme, makeStyles } from "@material-ui/core";
 interface DeerToRabbitProps {}
 
 const useStyles = makeStyles((theme) => ({
-  deerToRabitSvg: {
+  deerToRabbitSvg: {
     '& path': {
       willChange: 'd',
       stroke: theme.palette.primary.light,
@@ -54,7 +54,7 @@ export const DeerToRabbit: React.FunctionComponent<DeerToRabbitProps> = () => {
       height={600}
       viewBox="0 0 700 600"
       stroke="yellow"
-      className={styles.deerToRabitSvg}
+      className={styles.deerToRabbitSvg}
     >
       {deerPaths.map(path => (
         <path key={path.id} id={path.id} d={path.d} />

@@ -5,6 +5,7 @@ import { Page } from "../../_shared/Page";
 import { makeStyles, Typography, Grid, Avatar, Button } from "@material-ui/core";
 import ReactMarkDown from 'react-markdown'
 import aboutMeMd from '../../../content/about.md'
+import { Image } from '../../_shared/Image'
 
 interface AboutMeProps {}
 

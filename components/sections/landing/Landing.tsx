@@ -17,6 +17,9 @@ const useStyles = makeStyles({
   title: {
     marginTop: "auto",
     marginBottom: 160
+  },
+  typingTitle: {
+    minHeight: 42
   }
 });
 
@@ -37,7 +40,7 @@ export function Landing() {
             {" Dima "}
           </Typography>
         </Typography>
-        <Typography id="typing" align="center" color="inherit" variant="h4" />
+        <Typography id="typing" className={styles.typingTitle} align="center" color="inherit" variant="h4" />
       </div>
 
       <MouseIcon />

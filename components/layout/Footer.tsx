@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Grid, Theme, Typography, makeStyles } from "@material-ui/core";
-import { DeerToRabbit } from "./DeerToRabit";
+import { DeerToRabbit } from "./DeerToRabbit";
 import { TwitterIconSvg } from "../_shared/icons/Twitter";
 import { contacts } from "../../content/contacts.json";
 import { LinkedinSvgIcon } from "../_shared/icons/LinkedinLogo";
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   animation: {
     marginTop: -50,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       margin: '-100px 0'
     }
   },

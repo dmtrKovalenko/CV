@@ -8,7 +8,7 @@ import Document, {
 } from "next/document";
 // @ts-ignore
 import flush from "styled-jsx/server";
-import { PageContext } from "../components/utils/getPageContext";
+import { PageContext, theme } from "../components/utils/getPageContext";
 
 const title = "Dmitriy Kovalenko";
 const description =
@@ -85,10 +85,6 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
           <meta property="og:type" content="website" />
 
           <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-          />
-          <link
             rel="apple-touch-icon"
             sizes="180x180"
             href="/apple-touch-icon.png"
@@ -105,11 +101,9 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             sizes="16x16"
             href="/favicon-16x16.png"
           />
+          <link rel="manifest" href="/site.webmanifest" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-          <link rel="stylesheet" href="/global.css" />
-
-          {/* Required to make particles polygon works */}
-          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js" />
+          <meta name="theme-color" content={theme.palette.primary.light} />
         </Head>
         <body>
           <Main />

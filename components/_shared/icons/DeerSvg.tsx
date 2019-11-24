@@ -1,5 +1,11 @@
 export const DeerSvg: React.FC = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" id="svg2" width="150px" height="150px" viewBox="0 0 744.09 1052.4">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="svg2"
+    width="150px"
+    height="150px"
+    viewBox="0 0 744.09 1052.4"
+  >
     <g id="layer1">
       <path
         fill="white"

@@ -1,9 +1,9 @@
 import * as React from "react";
+import Link from "next/link";
+import CuteTiger from "../_shared/icons/CuteTigerSvg";
 import { Theme, makeStyles } from "@material-ui/core";
 import { Footer } from "./Footer";
 import { useRouter } from "next/router";
-import { DeerSvg } from "../_shared/icons/DeerSvg";
-import Link from "next/link";
 
 interface LayoutProps {}
 
@@ -33,7 +33,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
       {router!.pathname !== "/" && (
         <Link href="/">
           <div className={styles.homeBtn}>
-            <DeerSvg />
+            <CuteTiger />
           </div>
         </Link>
       )}
