@@ -1,7 +1,7 @@
 import Resume from "./resume";
 
 function ResumeFullCv() {
-  return <Resume isFullCV />
+  return <Resume renderFullCV />
 }
 
 export default ResumeFullCv

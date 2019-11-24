@@ -3,14 +3,16 @@ import blue from "@material-ui/core/colors/blue";
 import Photo from "../assets/Photo.jpg";
 import resume from "../content/resume.json";
 import skills from "../content/skills.json";
-
-// @ts-ignore
 import { MuiThemeProvider } from "@material-ui/core";
-import { Typography, Grid, Avatar } from "@material-ui/core";
-import { makeStyles, styled } from "@material-ui/styles";
+import {
+  Typography,
+  Grid,
+  Avatar,
+  makeStyles,
+  styled
+} from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
-import { Title } from "../src/_shared/Common";
-import { withRouter, WithRouterProps } from "next/router";
+import { Title } from "../components/_shared/Common";
 
 const useStyles = makeStyles({
   container: {
@@ -43,7 +45,7 @@ const resumeMuiTheme = createMuiTheme({
   }
 });
 
-const Resume = ({ isFullCV }: { isFullCV: boolean }) => {
+const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
   const styles = useStyles();
 
   return (
@@ -94,7 +96,7 @@ const Resume = ({ isFullCV }: { isFullCV: boolean }) => {
         </Title>
 
         {resume.employment
-          .filter(employment => isFullCV || !employment.showOnlyOnCV)
+          .filter(employment => renderFullCV || !employment.showOnlyOnCV)
           .map(employment => (
             <React.Fragment key={employment.company}>
               <Typography variant="subtitle1">
@@ -105,7 +107,7 @@ const Resume = ({ isFullCV }: { isFullCV: boolean }) => {
               </Typography>
 
               <ul>
-                {isFullCV &&
+                {renderFullCV &&
                   employment.projects.map(project => (
                     <li key={project.idea}>
                       <Typography variant="subtitle2">
