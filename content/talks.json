@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Unit tests are useless. Change my mind (RU)",
+    "slides": "https://slides.com/dkovalenko/unit-tests-are-usless",
+    "presentations": [
+      {
+        "when": "09/11/2019",
+        "conference": "JS Fest Autumn 2019",
+        "video": null
+      }
+    ]
+  },
+  {
+    "title": "Functional and Visual testing for web with Cypress (EN)",
+    "slides": "https://slides.com/dkovalenko/functional-and-visual-testing-with-cypress",
+    "presentations": [
+      {
+        "when": "16/10/2019",
+        "conference": "TestCon Europe 2019",
+        "video": "https://www.youtube.com/watch?v=2FxOZcZcxuc"
+      }
+    ]
+  },
+  {
+    "title": "How to fall in love with UI testing in 30 minutes (RU)",
+    "slides": "https://www.icloud.com/keynote/0DEV9N7OGfyaC415ZdaSrDcrw#Chernihiv_2019",
+    "presentations": [
+      {
+        "when": "25/05/2019",
+        "conference": "Chernihiv IT 2019",
+        "video": null
+      }
+    ]
+  },
+  {
+    "title": "Time collapse in Javascript (RU)",
+    "slides": "https://www.icloud.com/keynote/0Yh9-BlX2FWfVqmZbZwpio3WA#Time_collapse",
+    "presentations": [
+      {
+        "when": "05/04/2019",
+        "conference": "JS Fest Spring 2019",
+        "video": "https://www.youtube.com/watch?v=iq3h1NqZuRI"
+      },
+      {
+        "when": "13/04/2019",
+        "conference": "ThinkJS #1",
+        "video": "https://www.youtube.com/watch?v=XGgYApfwEJE"
+      }
+    ]
+  },
+  {
+    "title": "How to be productive JS developer (RU)",
+    "slides": "https://www.icloud.com/keynote/02FJl7uaioEMdr8Js4ITXq4PQ#productivity",
+    "presentations": [
+      {
+        "when": "18/11/2018",
+        "conference": "ThinkPHP #17",
+        "video": "https://www.youtube.com/watch?v=HFVIkvr5Y4g"
+      }
+    ]
+  }
+]

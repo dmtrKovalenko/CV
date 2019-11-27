@@ -1,5 +1,5 @@
 import React from "react";
-import App from "next/app";
+import App, { AppProps } from "next/app";
 import Head from "next/head";
 import { StylesProvider, MuiThemeProvider } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -9,9 +9,10 @@ import getPageContext, {
 import Layout from "../components/layout/Layout";
 
 class MyApp extends App {
-  constructor() {
-    // @ts-ignore
-    super();
+  private pageContext: PageContext;
+  
+  constructor(props: AppProps) {
+    super(props);
     this.pageContext = getPageContext();
   }
 
@@ -25,7 +26,7 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const  { Component, pageProps } = this.props;
     return (
       <>
         <Head>
@@ -47,8 +48,6 @@ class MyApp extends App {
       </>
     );
   }
-
-  private pageContext: PageContext;
 }
 
 export default MyApp;

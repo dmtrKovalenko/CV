@@ -80,8 +80,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 const icons: Record<string, React.ComponentType> = {
-  Twitter: TwitterIconSvg,
   "E-mail": EmailSvgIcon,
+  Twitter: TwitterIconSvg,
   LinkedIn: LinkedinSvgIcon,
   Instagram: InstagramSvgIcon,
   Github: GithubSvgIcon,
@@ -129,7 +129,7 @@ export const Footer: React.FunctionComponent<{}> = () => {
           className={styles.social}
         >
           <Typography variant="h4" gutterBottom>
-            Contact me
+            Find me
           </Typography>
 
           {contacts.map(contact => (

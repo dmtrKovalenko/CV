@@ -1,10 +1,10 @@
 import * as React from "react";
-import Resume from "../../../pages/resume";
+import Resume from "../pages/resume";
 import SaveIcon from "@material-ui/icons/Save";
-import { PDF_FORMATTER_API_URL } from "../../constants";
-import { RESUME_URL } from "../../constants";
-import { NoDecorationLink } from "../../_shared/Common";
-import { styledBy } from "../../utils/helpers";
+import { PDF_FORMATTER_API_URL } from "./constants";
+import { RESUME_URL } from "./constants";
+import { NoDecorationLink } from "./_shared/Common";
+import { styledBy } from "./utils/helpers";
 import {
   makeStyles,
   Paper,

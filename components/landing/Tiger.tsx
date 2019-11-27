@@ -10,8 +10,6 @@ function Tiger() {
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="-34 122.4 542 548.6"
-        // // @ts-ignore
-        // style={{ enableBackground: "new 0 0 542 548.6" }}
         xmlSpace="preserve"
       >
         <g id="left-side">

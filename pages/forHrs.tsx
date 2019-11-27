@@ -7,13 +7,13 @@ import CloudIcon from "@material-ui/icons/CloudQueue";
 import PhoneIcon from "@material-ui/icons/DeveloperMode";
 import TestingIcon from "@material-ui/icons/Cached";
 import skills from "../content/skills.json";
-import { Page } from "../components/_shared/Page";
+import { Page } from "../components/_shared/Common";
 import { GridSize } from "@material-ui/core/Grid";
 import { ChipArray } from "../components/_shared/ChipArray";
 import { Breakpoint } from "@material-ui/core/styles/createBreakpoints";
 import { SvgIconProps } from "@material-ui/core/SvgIcon";
 import { Typography, Grid, Theme, styled, makeStyles } from "@material-ui/core";
-import { ResumePreview } from "../components/sections/resume/ResumePreview";
+import { ResumePreview } from "../components/ResumePreview";
 
 const GridItem = styled(Grid)({ marginBottom: 32 });
 

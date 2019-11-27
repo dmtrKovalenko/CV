@@ -1,5 +1,5 @@
 import * as React from "react";
-import Tiger from "./Tiger/Tiger";
+import Tiger from "./Tiger";
 import { MouseIcon } from "./MouseIcon";
 import { Typography, makeStyles } from "@material-ui/core";
 
@@ -27,7 +27,7 @@ export function Landing() {
   const styles = useStyles();
 
   React.useEffect(() => {
-    import("../../utils/typeit").then(({ start }) => start());
+    import("../utils/typeit").then(({ start }) => start());
   }, []);
 
   return (
