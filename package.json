@@ -6,7 +6,7 @@
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
     "@babel/plugin-proposal-optional-chaining": "^7.7.4",
     "@material-ui/core": "^4.0.0-alpha.5",
-    "@material-ui/icons": "^3.0.2",
+    "@material-ui/icons": "^4.5.1",
     "@types/animejs": "^2.0.2",
     "@types/jss": "^9.5.8",
     "@types/next": "^8.0.1",

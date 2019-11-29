@@ -1,4 +1,5 @@
 import * as React from "react";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import { Grid, Theme, Typography, makeStyles } from "@material-ui/core";
 import { DeerToRabbit } from "./DeerToRabbit";
 import { TwitterIconSvg } from "../_shared/icons/Twitter";
@@ -24,15 +25,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: "black"
   },
   social: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       order: 1,
       marginBottom: 32
-    },
+    }
   },
   animation: {
     marginTop: -50,
-    [theme.breakpoints.down('xs')]: {
-      margin: '-100px 0'
+    [theme.breakpoints.down("xs")]: {
+      margin: "-100px 0"
     }
   },
   socialContact: {
@@ -55,17 +56,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 
     "& svg": {
-      transition: theme.transitions.create("transform"),
+      transition: theme.transitions.create("transform")
     },
 
     "&:hover": {
       "& svg": {
-        willChange: 'transform',
+        willChange: "transform",
         transform: "translateY(-10px)"
       },
 
       "&:after": {
-        willChange: 'transform',
+        willChange: "transform",
         transform: "scale(1)"
       }
     }
@@ -75,7 +76,19 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   socialLabel: {
     marginLeft: 20,
-    color: 'white'
+    color: "white"
+  },
+  heartIcon: {
+    transform: "translateY(5px)",
+    fill: `url(#svg-gradient)`
+  },
+  hint: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    [theme.breakpoints.down("sm")]: {
+      order: 2,
+      padding: "0 48px"
+    }
   }
 }));
 
@@ -88,7 +101,10 @@ const icons: Record<string, React.ComponentType> = {
   Facebook: FacebookSvgIcon
 };
 
-const SocialContact: React.FC<{ name: string; url: string }> = ({ name, url }) => {
+const SocialContact: React.FC<{ name: string; url: string }> = ({
+  name,
+  url
+}) => {
   const styles = useStyles();
   const Icon = icons[name];
 
@@ -99,7 +115,12 @@ const SocialContact: React.FC<{ name: string; url: string }> = ({ name, url }) =
   }
 
   return (
-    <a rel="noopenner noreferrer" target="_blank" className={styles.socialLink} href={url}>
+    <a
+      rel="noopenner noreferrer"
+      target="_blank"
+      className={styles.socialLink}
+      href={url}
+    >
       <div className={styles.socialContact}>
         <Grid container>
           <Icon />
@@ -141,9 +162,23 @@ export const Footer: React.FunctionComponent<{}> = () => {
           ))}
         </Grid>
 
-        <Grid item container md={6} className={styles.animation} justify="center">
+        <Grid
+          item
+          container
+          md={6}
+          className={styles.animation}
+          justify="center"
+        >
           <DeerToRabbit />
         </Grid>
+
+        <Typography gutterBottom className={styles.hint} align="center">
+          Built with <FavoriteIcon className={styles.heartIcon} /> and
+          typescript. Check the code on{" "}
+          <a href="https://github.com/dmtrKovalenko/CV">
+            github
+          </a>
+        </Typography>
       </Grid>
     </>
   );

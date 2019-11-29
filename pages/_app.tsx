@@ -7,10 +7,11 @@ import getPageContext, {
   PageContext
 } from "../components/utils/getPageContext";
 import Layout from "../components/layout/Layout";
+import { gradientColors } from "../components/utils/theme";
 
 class MyApp extends App {
   private pageContext: PageContext;
-  
+
   constructor(props: AppProps) {
     super(props);
     this.pageContext = getPageContext();
@@ -26,7 +27,7 @@ class MyApp extends App {
   }
 
   render() {
-    const  { Component, pageProps } = this.props;
+    const { Component, pageProps } = this.props;
     return (
       <>
         <Head>
@@ -45,6 +46,23 @@ class MyApp extends App {
             </Layout>
           </MuiThemeProvider>
         </StylesProvider>
+
+        {/* needs to fill svg values with gradient */}
+        <svg
+          aria-hidden
+          focusable="false"
+          style={{
+            width: 0,
+            position: "absolute",
+            visibility: "hidden",
+            height: 0
+          }}
+        >
+          <linearGradient id="svg-gradient" x2="1" y2="1">
+            <stop offset="0%" stop-color={gradientColors.from} />
+            <stop offset="100%" stop-color={gradientColors.to} />
+          </linearGradient>
+        </svg>
       </>
     );
   }

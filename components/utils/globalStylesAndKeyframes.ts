@@ -1,9 +1,15 @@
 import { withStyles } from "@material-ui/core";
+import { gradientColors } from "./theme";
 
 export const withGlobalStylesAndKeyframes = withStyles(theme => ({
   "@global": {
     a: {
       color: theme.palette.primary.light
+    },
+    '.gradientText': {
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`
     },
     "@keyframes mouse-icon-scroll": {
       from: { opacity: 1 },
@@ -12,6 +18,6 @@ export const withGlobalStylesAndKeyframes = withStyles(theme => ({
     "@keyframes mouse-icon-appear": {
       from: { opacity: 0 },
       to: { opacity: 1 }
-    },
+    }
   }
 }));

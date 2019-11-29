@@ -5,6 +5,7 @@ import { PDF_FORMATTER_API_URL } from "./constants";
 import { RESUME_URL } from "./constants";
 import { NoDecorationLink } from "./_shared/Common";
 import { styledBy } from "./utils/helpers";
+import { gradientColors } from "./utils/theme";
 import {
   makeStyles,
   Paper,
@@ -15,7 +16,7 @@ import {
   Typography
 } from "@material-ui/core";
 
-const useStyles = makeStyles<Theme>((theme) => ({
+const useStyles = makeStyles<Theme>(theme => ({
   downloadButton: {
     display: "flex",
     flexDirection: "column",
@@ -24,6 +25,9 @@ const useStyles = makeStyles<Theme>((theme) => ({
     "& > *": {
       marginBottom: 8
     }
+  },
+  gradientButton: {
+    background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`
   },
   saveIcon: {
     marginRight: 8
@@ -65,7 +69,11 @@ export const ResumePreview: React.FC = () => {
           download
           href={`${PDF_FORMATTER_API_URL}/api/render?url=${RESUME_URL}&attachmentName=DmitriyKovalenko.pdf`}
         >
-          <Button color="primary" variant="contained">
+          <Button
+            className={styles.gradientButton}
+            color="primary"
+            variant="contained"
+          >
             <SaveIcon className={styles.saveIcon} /> Download .pdf
           </Button>
         </NoDecorationLink>

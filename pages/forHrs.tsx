@@ -36,23 +36,27 @@ const useStyles = makeStyles<Theme>(theme => ({
 type SkillSetProps = {
   skill: keyof typeof skills;
   Icon: React.ComponentType<SvgIconProps>;
-  GridProps?: Partial<Record<Breakpoint, boolean | GridSize>>
-}
+  GridProps?: Partial<Record<Breakpoint, boolean | GridSize>>;
+};
 
 const SkillSet: React.FC<SkillSetProps> = ({ skill, Icon, GridProps }) => {
-  const styles = useStyles()
+  const styles = useStyles();
 
-  return ( 
+  return (
     <GridItem item xs={12} sm={4} {...GridProps}>
       <Icon className={styles.icon} />
-      <Typography variant="h5" align="center" gutterBottom>
+      <Typography
+        variant="h5"
+        align="center"
+        gutterBottom
+      >
         {skill}
       </Typography>
 
       <ChipArray items={skills[skill]} />
     </GridItem>
-  )
-}
+  );
+};
 
 const forHrs: React.FC = () => {
   const styles = useStyles();
