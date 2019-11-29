@@ -1,22 +1,11 @@
-import * as React from 'react'
-import amber from "@material-ui/core/colors/amber";
+import * as React from "react";
+import { theme } from "./theme";
 import { SheetsRegistry } from "jss";
-import {
-  createMuiTheme,
-  Theme,
-  createGenerateClassName
-} from "@material-ui/core";
-
-export const theme = createMuiTheme({
-  palette: {
-    type: "dark",
-    primary: amber
-  }
-});
+import { Theme, createGenerateClassName } from "@material-ui/core";
 
 export interface PageContext {
-  theme: Theme,
-  children: React.ReactNode,
+  theme: Theme;
+  children: React.ReactNode;
   generateClassName: any;
   sheetsManager: Map<string, string>;
   sheetsRegistry: SheetsRegistry;

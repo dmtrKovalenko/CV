@@ -7,7 +7,8 @@ import Document, {
   DocumentContext
 } from "next/document";
 import flush from "styled-jsx/server";
-import { PageContext, theme } from "../components/utils/getPageContext";
+import { PageContext } from "../components/utils/getPageContext";
+import { theme } from "../components/utils/theme";
 
 const title = "Dmitriy Kovalenko";
 const description =

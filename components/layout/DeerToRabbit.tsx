@@ -1,50 +1,56 @@
 import * as React from "react";
 import anime from "animejs";
-import { Theme, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
 interface DeerToRabbitProps {}
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   deerToRabbitSvg: {
-    '& path': {
-      willChange: 'd',
+    "& path": {
+      willChange: "d",
       stroke: theme.palette.primary.light,
-      fill: 'none',
+      fill: "none",
       strokeWidth: 3,
       strokeLinecap: "round",
-      strokeLinejoin: "round",
+      strokeLinejoin: "round"
     }
   }
-}))
+}));
 
 export const DeerToRabbit: React.FunctionComponent<DeerToRabbitProps> = () => {
-  const styles = useStyles()
+  const styles = useStyles();
   React.useEffect(() => {
     const timeline = anime.timeline({
       loop: true,
       autoplay: true,
-      direction: "alternate",
+      direction: "alternate"
     });
 
     rabbitPaths.forEach((path, index) => {
-      timeline.add({
-        targets: path.id,
-        d: {
-          value: path.d,
+      timeline.add(
+        {
+          targets: path.id,
+          d: {
+            value: path.d,
+            duration: 1000,
+            easing: "easeInOutQuad"
+          }
+        },
+        1000 + 10 * index
+      );
+    });
+
+    timeline.add(
+      {
+        targets: "path:first-child",
+        opacity: {
+          value: 1,
           duration: 1000,
           easing: "easeInOutQuad"
-        },
-      }, 1000 + 10 * index);
-    },);
-
-    timeline.add({
-      targets: "path:first-child",
-      opacity: {
-        value: 1,
-        duration: 1000,
-        easing: "easeInOutQuad"
+        }
       },
-    }, 2000 + 10 * rabbitPaths.length);
+      2000 + 10 * rabbitPaths.length
+    );
   }, []);
 
   return (

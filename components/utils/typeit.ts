@@ -1,5 +1,4 @@
 import TypeIt from "typeit";
-import { theme } from "./getPageContext";
 
 export const start = () => {
   new TypeIt("#typing", {
@@ -15,9 +14,7 @@ export const start = () => {
     .type("n awesome tiger, tap or hover it to see some magic")
     .pause(1000)
     .delete()
-    .type(
-      `and I am <span style='color:${theme.palette.primary.light}'> JavaScript </span> Developer`
-    )
+    .type(`and I am <span class="gradientText"> JavaScript </span> Developer`)
     .pause(100)
     .go();
 };

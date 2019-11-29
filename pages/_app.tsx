@@ -1,5 +1,5 @@
 import React from "react";
-import App from "next/app";
+import App, { AppProps } from "next/app";
 import Head from "next/head";
 import { StylesProvider, MuiThemeProvider } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -7,11 +7,13 @@ import getPageContext, {
   PageContext
 } from "../components/utils/getPageContext";
 import Layout from "../components/layout/Layout";
+import { gradientColors } from "../components/utils/theme";
 
 class MyApp extends App {
-  constructor() {
-    // @ts-ignore
-    super();
+  private pageContext: PageContext;
+
+  constructor(props: AppProps) {
+    super(props);
     this.pageContext = getPageContext();
   }
 
@@ -44,11 +46,26 @@ class MyApp extends App {
             </Layout>
           </MuiThemeProvider>
         </StylesProvider>
+
+        {/* needs to fill svg values with gradient */}
+        <svg
+          aria-hidden
+          focusable="false"
+          style={{
+            width: 0,
+            position: "absolute",
+            visibility: "hidden",
+            height: 0
+          }}
+        >
+          <linearGradient id="svg-gradient" x2="1" y2="1">
+            <stop offset="0%" stop-color={gradientColors.from} />
+            <stop offset="100%" stop-color={gradientColors.to} />
+          </linearGradient>
+        </svg>
       </>
     );
   }
-
-  private pageContext: PageContext;
 }
 
 export default MyApp;

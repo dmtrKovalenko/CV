@@ -1,21 +1,20 @@
 import * as React from "react";
-import Link from 'next/link'
-import Photo from "../../../assets/Photo.jpg";
-import { Page } from "../../_shared/Page";
-import { makeStyles, Typography, Grid, Avatar, Button } from "@material-ui/core";
-import ReactMarkDown from 'react-markdown'
-import aboutMeMd from '../../../content/about.md'
-import { Image } from '../../_shared/Image'
+import Link from "next/link";
+import { Page, PageTitle } from "../_shared/Common";
+import {
+  makeStyles,
+  Typography,
+  Grid,
+  Avatar,
+  Button
+} from "@material-ui/core";
+import ReactMarkDown from "react-markdown";
+import Photo from "../../assets/Photo.jpg";
+import aboutMeMd from "../../content/about.md";
 
 interface AboutMeProps {}
 
 const useStyles = makeStyles({
-  title: {
-    paddingBottom: 70
-  },
-  section: {
-    paddingTop: 90
-  },
   avatar: {
     marginBottom: 16,
     width: 240,
@@ -27,25 +26,29 @@ const useStyles = makeStyles({
 });
 
 const currentAge = new Date().getFullYear() - 1997;
-const processedAboutText = aboutMeMd
-  .replace('%TOKEN_AGE%', currentAge.toString())
+const processedAboutText = aboutMeMd.replace(
+  "%TOKEN_AGE%",
+  currentAge.toString()
+);
 
 export const AboutMe: React.FC<AboutMeProps> = () => {
   const styles = useStyles();
 
   return (
-    <Page className={styles.section}>
-      <Typography
-        variant="h2"
-        align="center"
-        className={styles.title}
-        gutterBottom
-      >
-        About me
-      </Typography>
+    <Page>
+      <PageTitle>About me</PageTitle>
 
       <Grid container justify="center">
-        <Grid xs={12} md={4} lg={3} xl={2} item container justify="center" alignItems="center">
+        <Grid
+          xs={12}
+          md={4}
+          lg={3}
+          xl={2}
+          item
+          container
+          justify="center"
+          alignItems="center"
+        >
           <Avatar alt="My photo" src={Photo} className={styles.avatar} />
         </Grid>
 

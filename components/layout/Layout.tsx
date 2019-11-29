@@ -4,6 +4,7 @@ import CuteTiger from "../_shared/icons/CuteTigerSvg";
 import { Theme, makeStyles } from "@material-ui/core";
 import { Footer } from "./Footer";
 import { useRouter } from "next/router";
+import { withGlobalStylesAndKeyframes } from "../utils/globalStylesAndKeyframes";
 
 interface LayoutProps {}
 
@@ -24,13 +25,13 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   const styles = useStyles();
   const router = useRouter();
 
-  if (["/resume", "/resumeFullCv"].includes(router!.pathname)) {
+  if (["/resume", "/resumeFullCv"].includes(router?.pathname)) {
     return <>{children}</>;
   }
 
   return (
     <main>
-      {router!.pathname !== "/" && (
+      {router?.pathname !== "/" && (
         <Link href="/">
           <div className={styles.homeBtn}>
             <CuteTiger />
@@ -44,4 +45,4 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   );
 };
 
-export default Layout;
+export default withGlobalStylesAndKeyframes(Layout);

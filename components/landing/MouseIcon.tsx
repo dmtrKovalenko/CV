@@ -1,5 +1,5 @@
 import { styled } from "@material-ui/core";
-import { isChrome } from "../../utils/helpers";
+import { isChrome } from "../utils/helpers";
 
 export const MouseIcon = styled("div")(props => ({
   opacity: 0,

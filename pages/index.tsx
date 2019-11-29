@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Landing } from "../components/sections/landing/Landing";
-import { AboutMe } from "../components/sections/about/AboutMe";
-import { withGlobalStylesAndKeyframes } from "../components/utils/globalStylesAndKeyframes";
+import { Landing } from "../components/landing/Landing";
+import { AboutMe } from "../components/landing/AboutMe";
+import { Speaking } from "../components/landing/Speaking";
 
 interface LandingProps {}
 
@@ -10,8 +10,9 @@ const Main: React.FunctionComponent<LandingProps> = () => {
     <>
       <Landing />
       <AboutMe />
+      <Speaking />
     </>
   );
 };
 
-export default withGlobalStylesAndKeyframes(Main);
+export default Main;
