@@ -157,7 +157,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
             <Hidden smDown>
               <Typography
                 gutterBottom
-                style={{ marginBottom: "1rem" }}
+                style={{ marginBottom: "2rem" }}
                 align="center"
                 variant="h5"
               >
