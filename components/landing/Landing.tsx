@@ -34,10 +34,10 @@ export function Landing() {
     <div id="landing" className={styles.landingContainer}>
       <Tiger />
       <div className={styles.title}>
-        <Typography variant="h3" align="center" color="inherit" gutterBottom>
+        <Typography component="h1" variant="h3" align="center" color="inherit" gutterBottom>
           Hi! I'm
           <Typography display="inline" variant="inherit" color="primary">
-            {" Dima "}
+            {" Dmitriy "}
           </Typography>
         </Typography>
         <Typography id="typing" className={styles.typingTitle} align="center" color="inherit" variant="h4" />

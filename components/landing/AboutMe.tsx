@@ -36,7 +36,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
 
   return (
     <Page>
-      <PageTitle>About me</PageTitle>
+      <PageTitle id="about">About me</PageTitle>
 
       <Grid container justify="center">
         <Grid

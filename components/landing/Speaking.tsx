@@ -43,13 +43,23 @@ const useStyles = makeStyles(theme => {
     talksContainer: {
       display: "flex",
       flexWrap: "nowrap",
-      alignItems: "center"
+      alignItems: "center",
+      overflowX: "scroll",
+      boxSizing: 'content-box',
+      WebkitOverflowScrolling: 'touch',
+      [theme.breakpoints.down("sm")]: {
+        margin: "0 32px"
+      }
     },
     talksGrid: {
       overflowX: "scroll",
+      WebkitOverflowScrolling: 'touch',
+      scrollSnapType: 'mandatory',
+      scrollSnapPointsX: 'repeat(250px)',
       padding: "70px 0 70px 70px",
       [theme.breakpoints.down("sm")]: {
-        padding: "70px 0"
+        width: '100%',
+        padding: "70px 32px"
       }
     },
     nextConf: {
@@ -75,7 +85,6 @@ const useStyles = makeStyles(theme => {
       willChange: "transform",
 
       "&:hover": {
-        marginRight: 40,
         transform: "translateY(-1.5rem)",
 
         "&~*": {
@@ -125,11 +134,11 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const styles = useStyles();
   return (
     <PageNoPadding>
-      <PageTitleNoPadding gutterBottom>Talks</PageTitleNoPadding>
+      <PageTitleNoPadding id="talks" gutterBottom>Talks</PageTitleNoPadding>
       <Typography variant="subtitle1" align="center">
         I am really passionate about technical speaking. <br /> I do want to
-        think that my talks are changing lives 🤓Here is a (non-full) list of my
-        talks.
+        think that my talks are changing lives. Here is a (non-full) list of my
+        talks:
       </Typography>
 
       <Grid
