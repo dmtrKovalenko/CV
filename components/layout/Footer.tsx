@@ -149,7 +149,7 @@ export const Footer: React.FunctionComponent<{}> = () => {
           justify="center"
           className={styles.social}
         >
-          <Typography variant="h4" gutterBottom>
+          <Typography id="contacts" variant="h4" gutterBottom>
             Find me
           </Typography>
 
@@ -171,14 +171,6 @@ export const Footer: React.FunctionComponent<{}> = () => {
         >
           <DeerToRabbit />
         </Grid>
-
-        <Typography gutterBottom className={styles.hint} align="center">
-          Built with <FavoriteIcon className={styles.heartIcon} /> and
-          typescript. Check the code on{" "}
-          <a href="https://github.com/dmtrKovalenko/CV">
-            github
-          </a>
-        </Typography>
       </Grid>
     </>
   );

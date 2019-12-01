@@ -8,6 +8,9 @@ import getPageContext, {
 } from "../components/utils/getPageContext";
 import Layout from "../components/layout/Layout";
 import { gradientColors } from "../components/utils/theme";
+import Router from "next/router";
+// @ts-ignore`
+import withGA from "next-ga";
 
 class MyApp extends App {
   private pageContext: PageContext;
@@ -59,8 +62,8 @@ class MyApp extends App {
           }}
         >
           <linearGradient id="svg-gradient" x2="1" y2="1">
-            <stop offset="0%" stop-color={gradientColors.from} />
-            <stop offset="100%" stop-color={gradientColors.to} />
+            <stop offset="0%" stopColor={gradientColors.from} />
+            <stop offset="100%" stopColor={gradientColors.to} />
           </linearGradient>
         </svg>
       </>
@@ -68,4 +71,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default withGA("UA-153671665-1", Router)(MyApp);

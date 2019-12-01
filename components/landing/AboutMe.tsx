@@ -36,7 +36,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
 
   return (
     <Page>
-      <PageTitle>About me</PageTitle>
+      <PageTitle id="about">About me</PageTitle>
 
       <Grid container justify="center">
         <Grid
@@ -59,7 +59,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
         </Grid>
 
         <Grid item container xs={12} justify="center" className={styles.hrBtn}>
-          <Link href="/forHrs" prefetch>
+          <Link href="/forHrs">
             <Button size="large" variant="outlined" color="primary">
               Button for HR managers
             </Button>

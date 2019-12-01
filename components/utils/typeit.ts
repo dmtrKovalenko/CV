@@ -15,6 +15,12 @@ export const start = () => {
     .pause(1000)
     .delete()
     .type(`and I am <span class="gradientText"> JavaScript </span> Developer`)
-    .pause(100)
+    .pause(10000)
+    .delete('Developer'.length)
+    .type('Speaker')
+    .pause(10000)
+    .delete('Speaker'.length)
+    .type('Hater')
+    .pause('1000')
     .go();
 };
