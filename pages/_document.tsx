@@ -79,9 +79,9 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
           <meta name="description" content={description} />
           <meta name="og:description" content={description} />
           <meta name="twitter:description" content={description} />
-          <meta name="twitter:image" content="/static/og_image.png" />
+          <meta name="twitter:image" content="/Photo-16x9.png" />
           <meta name="twitter:title" content={title} />
-          <meta property="og:image" content="/static/og_image.png" />
+          <meta property="og:image" content="/Photo-16x9.jpg" />
           <meta property="og:title" content={title} />
           <meta property="og:type" content="website" />
 
