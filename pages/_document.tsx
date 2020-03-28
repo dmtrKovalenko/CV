@@ -14,6 +14,8 @@ const title = "Dmitriy Kovalenko";
 const description =
   "Dmitriy Kovalenko - Software Engineer, Speaker and open-source contributor. Javascript/Ocaml lover";
 
+const HOST = "https://dmtrkovalenko.dev";
+
 //@ts-ignore
 class MyDocument extends Document<{ pageContext: PageContext }> {
   static getInitialProps = (ctx: DocumentContext) => {
@@ -75,15 +77,16 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             }
           />
 
-          <meta name="twitter:card" content="summary_large_image" />
           <meta name="description" content={description} />
-          <meta name="og:description" content={description} />
-          <meta name="twitter:description" content={description} />
-          <meta name="twitter:image" content="/static/og_image.png" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={title} />
-          <meta property="og:image" content="/static/og_image.png" />
-          <meta property="og:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content={`${HOST}/Photo-16x9.png`} />
+
           <meta property="og:type" content="website" />
+          <meta property="og:title" content={title} />
+          <meta name="og:description" content={description} />
+          <meta property="og:image" content={`${HOST}/Photo-16x9.png`} />
 
           <link
             rel="apple-touch-icon"
