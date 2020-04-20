@@ -7,6 +7,19 @@
     "talk": "Cypress. Simple as orange."
   },
   "talks": [
+     {
+      "title": "Intro into ReasonML for javascript-ers and geese 🦆",
+      "slides": "https://www.icloud.com/keynote/01dpiUSjqX4WAxvXTdKeB7y_w#reasonml",
+      "presentations": [
+        {
+          "when": "19/04/2020",
+          "conference": "«Typed goose» YouTube",
+          "confWebsite": "https://www.youtube.com/channel/UCTFSF1qHRod0YdQ8hYYW3nA?view_as=subscriber",
+          "confLogoUrl": "https://yt3.ggpht.com/a-/AOh14GiNjpv3cdVOccyesthbF85B9HLXmTO7R_B2UJ1d=s100-c-k-c0xffffffff-no-rj-mo",
+          "video": "https://www.youtube.com/watch?v=hHzdxOh8ZoA"
+        }
+      ]
+    },
     {
       "title": "Cypress. Hype and Reality (RU)",
       "slides": "https://slides.com/dkovalenko/functional-and-visual-testing-with-cypress-9ceb4e",
