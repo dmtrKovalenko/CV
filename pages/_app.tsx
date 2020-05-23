@@ -9,7 +9,7 @@ import getPageContext, {
 import Layout from "../components/layout/Layout";
 import { gradientColors } from "../components/utils/theme";
 import Router from "next/router";
-// @ts-ignore`
+// @ts-ignore
 import withGA from "next-ga";
 
 class MyApp extends App {

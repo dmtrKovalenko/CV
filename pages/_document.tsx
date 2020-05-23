@@ -4,7 +4,7 @@ import Document, {
   Head,
   Main,
   NextScript,
-  DocumentContext
+  DocumentContext,
 } from "next/document";
 import flush from "styled-jsx/server";
 import { PageContext } from "../components/utils/getPageContext";
@@ -21,14 +21,14 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
   static getInitialProps = (ctx: DocumentContext) => {
     // Render app and page and get the context of the page with collected side effects.
     let pageContext: PageContext | undefined = undefined;
-    const page = ctx.renderPage(Component => {
+    const page = ctx.renderPage((Component) => {
       const WrappedComponent = (props: any) => {
         pageContext = props.pageContext;
         return <Component {...props} />;
       };
 
       WrappedComponent.propTypes = {
-        pageContext: PropTypes.object.isRequired
+        pageContext: PropTypes.object.isRequired,
       };
 
       return WrappedComponent;
@@ -53,7 +53,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
           />
           {flush() || null}
         </React.Fragment>
-      )
+      ),
     };
   };
 
@@ -104,6 +104,14 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             type="image/png"
             sizes="16x16"
             href="/favicon-16x16.png"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Nunito:wght@400;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
+            rel="stylesheet"
           />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="theme-color" content={theme.palette.primary.light} />

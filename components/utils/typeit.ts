@@ -14,7 +14,7 @@ export const start = () => {
     .type("n awesome tiger, tap or hover it to see some magic")
     .pause(1000)
     .delete()
-    .type(`and I am <span class="gradientText"> JavaScript </span> Developer`)
+    .type(`and I am <span class="gradientText secondaryFont"> JavaScript </span> Developer`)
     .pause(10000)
     .delete('Developer'.length)
     .type('Speaker')

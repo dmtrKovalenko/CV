@@ -53,7 +53,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
         </Grid>
 
         <Grid xs={12} md={6} xl={4} item>
-          <Typography component="span" variant="subtitle1" gutterBottom>
+          <Typography component="span" variant="body1" gutterBottom>
             <ReactMarkDown source={processedAboutText} />
           </Typography>
         </Grid>
