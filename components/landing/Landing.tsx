@@ -2,6 +2,7 @@ import * as React from "react";
 import Tiger from "./Tiger";
 import { MouseIcon } from "./MouseIcon";
 import { Typography, makeStyles } from "@material-ui/core";
+import { SecondaryTypography } from "../_shared/Common";
 
 const useStyles = makeStyles({
   landingContainer: {
@@ -12,15 +13,15 @@ const useStyles = makeStyles({
     color: "white",
     minHeight: "100vh",
     width: "100%",
-    paddingBottom: 32
+    paddingBottom: 32,
   },
   title: {
     marginTop: "auto",
-    marginBottom: 160
+    marginBottom: 160,
   },
   typingTitle: {
-    minHeight: 42
-  }
+    minHeight: 42,
+  },
 });
 
 export function Landing() {
@@ -34,13 +35,29 @@ export function Landing() {
     <div id="landing" className={styles.landingContainer}>
       <Tiger />
       <div className={styles.title}>
-        <Typography component="h1" variant="h3" align="center" color="inherit" gutterBottom>
+        <Typography
+          component="h1"
+          variant="h3"
+          align="center"
+          color="inherit"
+          gutterBottom
+        >
           Hi! I'm
-          <Typography display="inline" variant="inherit" color="primary">
+          <SecondaryTypography
+            display="inline"
+            variant="inherit"
+            color="primary"
+          >
             {" Dmitriy "}
-          </Typography>
+          </SecondaryTypography>
         </Typography>
-        <Typography id="typing" className={styles.typingTitle} align="center" color="inherit" variant="h4" />
+        <Typography
+          id="typing"
+          className={styles.typingTitle}
+          align="center"
+          color="inherit"
+          variant="h4"
+        />
       </div>
 
       <MouseIcon />

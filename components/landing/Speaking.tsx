@@ -6,13 +6,14 @@ import {
   styled,
   Typography,
   IconButton,
-  Hidden
+  Hidden,
 } from "@material-ui/core";
 import {
   BoldTypography,
   NoDecorationColorLink,
   PageNoPadding,
-  PageTitleNoPadding
+  PageTitleNoPadding,
+  SecondaryTypography,
 } from "../../components/_shared/Common";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import { gradientColors } from "../utils/theme";
@@ -34,33 +35,33 @@ const TalkCard = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     minWidth: 200,
     maxWidth: 200,
-    minHeight: 440
-  }
+    minHeight: 440,
+  },
 }));
 
-const useStyles = makeStyles(theme => {
+const useStyles = makeStyles((theme) => {
   return {
     talksContainer: {
       display: "flex",
       flexWrap: "nowrap",
       alignItems: "center",
       overflowX: "scroll",
-      boxSizing: 'content-box',
-      WebkitOverflowScrolling: 'touch',
+      boxSizing: "content-box",
+      WebkitOverflowScrolling: "touch",
       [theme.breakpoints.down("sm")]: {
-        margin: "0 32px"
-      }
+        margin: "0 32px",
+      },
     },
     talksGrid: {
       overflowX: "scroll",
-      WebkitOverflowScrolling: 'touch',
-      scrollSnapType: 'mandatory',
-      scrollSnapPointsX: 'repeat(250px)',
+      WebkitOverflowScrolling: "touch",
+      scrollSnapType: "mandatory",
+      scrollSnapPointsX: "repeat(250px)",
       padding: "70px 0 70px 70px",
       [theme.breakpoints.down("sm")]: {
-        width: '100%',
-        padding: "70px 32px"
-      }
+        width: "100%",
+        padding: "70px 32px",
+      },
     },
     nextConf: {
       zIndex: 100,
@@ -74,8 +75,8 @@ const useStyles = makeStyles(theme => {
         maxWidth: 130,
         marginRight: 100,
         writingMode: "vertical-rl",
-        transform: "rotate(180deg)"
-      }
+        transform: "rotate(180deg)",
+      },
     },
     talkCard: {
       display: "flex",
@@ -90,17 +91,17 @@ const useStyles = makeStyles(theme => {
         "&~*": {
           transform: "translateX(50px)",
           [theme.breakpoints.down("sm")]: {
-            transform: "translateX(20px)"
-          }
-        }
+            transform: "translateX(20px)",
+          },
+        },
       },
 
       "&:not(:first-of-type)": {
         marginLeft: -80,
         [theme.breakpoints.down("sm")]: {
-          marginLeft: -50
-        }
-      }
+          marginLeft: -50,
+        },
+      },
     },
     talkTitle: {
       fontSize: "1.4rem",
@@ -109,24 +110,24 @@ const useStyles = makeStyles(theme => {
         cursor: "pointer",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
-        background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`
-      }
+        background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`,
+      },
     },
     actions: {
       marginBottom: "auto",
-      marginLeft: -12
+      marginLeft: -12,
     },
     presentations: {
       maxHeight: 64,
       overflow: "hidden",
 
       "&:hover": {
-        maxHeight: "unset"
-      }
+        maxHeight: "unset",
+      },
     },
     gradientIcon: {
-      fill: `url(#svg-gradient)`
-    }
+      fill: `url(#svg-gradient)`,
+    },
   };
 });
 
@@ -134,7 +135,9 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const styles = useStyles();
   return (
     <PageNoPadding>
-      <PageTitleNoPadding id="talks" gutterBottom>Talks</PageTitleNoPadding>
+      <PageTitleNoPadding id="talks" gutterBottom>
+        Talks
+      </PageTitleNoPadding>
       <Typography variant="subtitle1" align="center">
         I am really passionate about technical speaking. <br /> I do want to
         think that my talks are changing lives. Here is a (non-full) list of my
@@ -153,14 +156,18 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
             rel="noopener noreferrer"
             href={nextTalk.confWebsite}
           >
-            <BoldTypography align="center" variant="h4">
+            <BoldTypography
+              align="center"
+              variant="h4"
+              style={{ marginLeft: "1rem" }}
+            >
               Meet me at
             </BoldTypography>
 
             <Hidden smUp>
-              <Typography gutterBottom align="center" variant="h5">
-                {nextTalk.conference} <br /> «{nextTalk.talk}»
-              </Typography>
+              <SecondaryTypography gutterBottom align="center" variant="h5">
+                {nextTalk.conference}
+              </SecondaryTypography>
             </Hidden>
 
             <Hidden smDown>
@@ -209,7 +216,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           </NoDecorationColorLink>
         </TalkCard>
 
-        {[...talks].map(talk => (
+        {[...talks].map((talk) => (
           <TalkCard key={talk.title} className={styles.talkCard}>
             <Typography color="textSecondary" variant="overline">
               {talk.presentations[0].when}
@@ -242,7 +249,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
               )}
             </Grid>
 
-            {[...talk.presentations].map(presentation => (
+            {[...talk.presentations].map((presentation) => (
               <SpeakingPresentation
                 key={presentation.conference}
                 presentation={presentation}

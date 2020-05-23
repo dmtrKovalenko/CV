@@ -11,6 +11,10 @@ export const withGlobalStylesAndKeyframes = withStyles(theme => ({
       WebkitTextFillColor: "transparent",
       background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`
     },
+    '.secondaryFont': {
+      fontWeight: "bold",
+      fontFamily: "Nunito,-apple-system,BlinkMacSystemFont,sans-serif",
+    },
     "@keyframes mouse-icon-scroll": {
       from: { opacity: 1 },
       to: { opacity: 0, transform: "translateY(36px)" }
