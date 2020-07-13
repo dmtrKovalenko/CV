@@ -9,7 +9,6 @@ export const useTigerStyles = makeStyles({
     },
   },
   tigerAnimationLayer: {
-    // position: "relative",
     width: "auto",
     margin: "auto",
     zIndex: 2,
@@ -32,8 +31,7 @@ export const useTigerStyles = makeStyles({
         W: "50% 50%",
         transform: "translate(0)",
         transition:
-          "-webkit-transform 2.5s ease, opacity 0.2s ease,\n    stroke-dashoffset 1s ease-in-out",
-        transformOrigin: "50% 50%",
+          "-webkit-transform 2.5s ease, opacity 0.2s ease, stroke-dashoffset 1s ease-in-out",
         strokeDasharray: "500",
         strokeDashoffset: "500",
       },
@@ -61,7 +59,7 @@ export const useTigerStyles = makeStyles({
     },
     "&:hover > svg #right-side polygon:nth-of-type(5n + 2), &:hover > svg #right-side path:nth-of-type(5n + 2)": {
       transform: "translate(8000px, -6000px)",
-      opacity: "0.3",
+      opacity: "0.5",
     },
     "&:hover > svg #right-side polygon:nth-of-type(5n + 3), &:hover > svg #right-side path:nth-of-type(5n + 3)": {
       transform: "translate(10000px, 0)",
@@ -69,7 +67,7 @@ export const useTigerStyles = makeStyles({
     },
     "&:hover > svg #right-side polygon:nth-of-type(5n + 4), &:hover > svg #right-side path:nth-of-type(5n + 4)": {
       transform: "translate(10000px, 6000px)",
-      opacity: "0.3",
+      opacity: "0.5",
     },
     "&:hover > svg #right-side polygon:nth-of-type(5n + 5), &:hover > svg #right-side path:nth-of-type(5n + 5), &:hover > svg #right-side ellipse": {
       transform: "translate(0, 10000px)",
@@ -81,7 +79,7 @@ export const useTigerStyles = makeStyles({
     },
     "&:hover > svg #left-side polygon:nth-of-type(5n + 2), &:hover > svg #left-side path:nth-of-type(5n + 2)": {
       transform: "translate(-8000px, -1000px)",
-      opacity: "0.3",
+      opacity: "0.5",
     },
     "&:hover > svg #left-side polygon:nth-of-type(5n + 3), &:hover > svg #left-side path:nth-of-type(5n + 3)": {
       transform: "translate(-8000px, 1000px)",
