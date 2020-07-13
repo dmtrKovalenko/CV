@@ -1,5 +1,4 @@
 import { styled } from "@material-ui/core";
-import { isChrome } from "../utils/helpers";
 
 export const MouseIcon = styled("div")(props => ({
   opacity: 0,
@@ -27,6 +26,6 @@ export const MouseIcon = styled("div")(props => ({
     borderRadius: "4px",
     animationDuration: "2s",
     animationIterationCount: "infinite",
-    animationName: isChrome ?? true ? undefined : "mouse-icon-scroll"
+    animationName: "mouse-icon-scroll"
   }
 }));

@@ -4,7 +4,11 @@ import { useTigerStyles } from "./tigerStyles";
 function Tiger() {
   const styles = useTigerStyles();
   return (
-    <div className={styles.tigerAnimationLayer}>
+    <div
+      onClick={(e) => e.currentTarget.classList.add(styles.animating)}
+      onMouseLeave={(e) => e.currentTarget.classList.remove(styles.animating)}
+      className={styles.tigerAnimationLayer}
+    >
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
