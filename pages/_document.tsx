@@ -106,6 +106,10 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             href="/favicon-16x16.png"
           />
           <link
+            href="/fonts/sf.css"
+            rel="stylesheet"
+          />
+          <link
             href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Nunito:wght@400;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
             rel="stylesheet"
           />

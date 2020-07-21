@@ -4,13 +4,20 @@ import Head from "next/head";
 import { StylesProvider, MuiThemeProvider } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import getPageContext, {
-  PageContext
+  PageContext,
 } from "../components/utils/getPageContext";
 import Layout from "../components/layout/Layout";
 import { gradientColors } from "../components/utils/theme";
-import Router from "next/router";
+import Router, { withRouter } from "next/router";
+import { AnimatePresence, motion } from "framer-motion";
 // @ts-ignore
 import withGA from "next-ga";
+
+function handleExitComplete() {
+  if (typeof window !== "undefined") {
+    window.scrollTo({ top: 0 });
+  }
+}
 
 class MyApp extends App {
   private pageContext: PageContext;
@@ -30,7 +37,20 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, router, pageProps } = this.props;
+    const spring = {
+      type: "spring",
+      damping: 20,
+      stiffness: 100,
+      when: "afterChildren",
+    };
+
+    if (process.browser) {
+      console.log(window.document.referrer) 
+    }
+
+    const stackAnimationIn = { x: -300, opacity: 0 };
+    const stackAnimationOut = { x: 300, opacity: 1 };
     return (
       <>
         <Head>
@@ -45,7 +65,28 @@ class MyApp extends App {
           <MuiThemeProvider theme={this.pageContext.theme}>
             <CssBaseline />
             <Layout>
-              <Component pageContext={this.pageContext} {...pageProps} />
+              <AnimatePresence onExitComplete={handleExitComplete}>
+                <div className="page-transition-wrapper">
+                  <motion.div
+                    transition={spring}
+                    key={router.pathname}
+                    initial={
+                      router.pathname === "/"
+                        ? stackAnimationIn
+                        : stackAnimationOut
+                    }
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={
+                      router.pathname === "/"
+                        ? stackAnimationOut
+                        : stackAnimationIn
+                    }
+                    id="page-transition-container"
+                  >
+                    <Component {...pageProps} key={router.pathname} />
+                  </motion.div>
+                </div>
+              </AnimatePresence>
             </Layout>
           </MuiThemeProvider>
         </StylesProvider>
@@ -58,7 +99,7 @@ class MyApp extends App {
             width: 0,
             position: "absolute",
             visibility: "hidden",
-            height: 0
+            height: 0,
           }}
         >
           <linearGradient id="svg-gradient" x2="1" y2="1">
@@ -71,4 +112,4 @@ class MyApp extends App {
   }
 }
 
-export default withGA("UA-153671665-1", Router)(MyApp);
+export default withRouter(withGA("UA-153671665-1", Router)(MyApp));

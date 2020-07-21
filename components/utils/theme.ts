@@ -4,7 +4,7 @@ import { createMuiTheme } from "@material-ui/core";
 export const theme = createMuiTheme({
   typography: {
     htmlFontSize: 15,
-    fontFamily: 'Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif'
+    fontFamily: 'GT Walsheim Pro, Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif'
   },
   palette: {
     type: "dark",

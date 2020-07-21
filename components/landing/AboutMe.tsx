@@ -6,7 +6,7 @@ import {
   Typography,
   Grid,
   Avatar,
-  Button
+  Button,
 } from "@material-ui/core";
 import ReactMarkDown from "react-markdown";
 import Photo from "../../assets/Photo.jpg";
@@ -17,12 +17,12 @@ interface AboutMeProps {}
 const useStyles = makeStyles({
   avatar: {
     marginBottom: 16,
-    width: 240,
-    height: 240
+    width: 480,
+    height: 480,
   },
   hrBtn: {
-    marginTop: 64
-  }
+    marginTop: 64,
+  },
 });
 
 const currentAge = new Date().getFullYear() - 1997;
@@ -36,9 +36,15 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
 
   return (
     <Page>
-      <PageTitle id="about">About me</PageTitle>
-
       <Grid container justify="center">
+        <Grid xs={12} md={6} xl={4} item>
+          <PageTitle id="about">About me</PageTitle>
+
+          <Typography component="span" variant="body1" gutterBottom>
+            <ReactMarkDown source={processedAboutText} />
+          </Typography>
+        </Grid>
+
         <Grid
           xs={12}
           md={4}
@@ -51,13 +57,6 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
         >
           <Avatar alt="My photo" src={Photo} className={styles.avatar} />
         </Grid>
-
-        <Grid xs={12} md={6} xl={4} item>
-          <Typography component="span" variant="body1" gutterBottom>
-            <ReactMarkDown source={processedAboutText} />
-          </Typography>
-        </Grid>
-
         <Grid item container xs={12} justify="center" className={styles.hrBtn}>
           <Link href="/forHrs">
             <Button size="large" variant="outlined" color="primary">

@@ -13,6 +13,7 @@
     "@types/styled-jsx": "^2.2.8",
     "@zeit/next-typescript": "^1.1.1",
     "animejs": "^3.0.1",
+    "framer-motion": "^2.1.0",
     "global": "^4.4.0",
     "imagemin-mozjpeg": "^8.0.0",
     "jss": "^10.0.0",
@@ -25,6 +26,7 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-markdown": "^4.0.6",
+    "react-spring": "^8.0.27",
     "typeit": "6.0.2"
   },
   "scripts": {
