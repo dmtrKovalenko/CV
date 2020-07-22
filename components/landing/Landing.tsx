@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 90,
   },
   title: {
-    marginTop: "auto",
     marginBottom: 160,
   },
   typingTitle: {
