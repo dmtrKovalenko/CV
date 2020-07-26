@@ -34,9 +34,6 @@ const useStyles = makeStyles((theme) => ({
     justifySelf: "center",
     gridArea: "about",
   },
-  aboutText: {
-    fontSize: "1.3rem",
-  },
   title: {
     gridArea: "title",
   },
@@ -83,7 +80,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
         <Avatar alt="My photo" src={Photo} className={styles.avatar} />
 
         <div className={styles.text}>
-          <Typography component="div" className={styles.aboutText} gutterBottom>
+          <Typography component="div" gutterBottom>
             <ReactMarkDown source={processedAboutText} />
           </Typography>
 

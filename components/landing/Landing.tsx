@@ -105,7 +105,7 @@ export function Landing() {
           >
             I am engineer with a patience to{" "}
             <span className={styles.descriptionHighlight}>design</span> tests
-            and <span className={styles.descriptionHighlight}>cooking</span>{" "}
+            and cooking.
           </Typography>
 
           <Typography

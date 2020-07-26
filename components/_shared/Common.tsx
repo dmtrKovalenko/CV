@@ -42,3 +42,5 @@ export const Page = styled("div")(({ theme }) => ({
 }));
 
 export const PageNoPadding = styled(Page)({ padding: 0 });
+
+

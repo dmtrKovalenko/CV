@@ -45,9 +45,6 @@ class MyApp extends App {
       when: "afterChildren",
     };
 
-    if (process.browser) {
-      console.log(window.document.referrer) 
-    }
 
     const stackAnimationIn = { x: -300, opacity: 0 };
     const stackAnimationOut = { x: 300, opacity: 1 };
@@ -65,7 +62,7 @@ class MyApp extends App {
           <MuiThemeProvider theme={this.pageContext.theme}>
             <CssBaseline />
             <Layout>
-              <AnimatePresence onExitComplete={handleExitComplete}>
+              <AnimatePresence>
                 <div className="page-transition-wrapper">
                   <motion.div
                     transition={spring}
