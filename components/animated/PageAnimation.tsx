@@ -17,11 +17,17 @@ const spring = {
   when: "afterChildren",
 };
 
-const stackAnimationIn = { x: 0, opacity: 0 };
+const stackAnimationIn = { x: -300, opacity: 0 };
 const stackAnimationOut = { x: 300, opacity: 1 };
+
+let firstMount = true;
 
 export const PageAnimation: React.FC<PageAnimationProps> = ({ children }) => {
   const router = useRouter();
+
+  React.useEffect(() => {
+    firstMount = false
+  }, [])
 
   return (
     <AnimatePresence onExitComplete={handleExitComplete}>
@@ -30,7 +36,11 @@ export const PageAnimation: React.FC<PageAnimationProps> = ({ children }) => {
           transition={spring}
           key={router.pathname}
           initial={
-            router.pathname === "/" ? stackAnimationIn : stackAnimationOut
+            firstMount
+              ? {}
+              : router.pathname === "/"
+              ? stackAnimationIn
+              : stackAnimationOut
           }
           animate={{ x: 0, opacity: 1 }}
           exit={router.pathname === "/" ? stackAnimationOut : stackAnimationIn}
