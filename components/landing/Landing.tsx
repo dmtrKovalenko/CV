@@ -1,8 +1,8 @@
 import * as React from "react";
 import Tiger from "./Tiger";
-import { Typography, makeStyles, Box, Hidden } from "@material-ui/core";
-import { SecondaryTypography, BoldTypography } from "../_shared/Common";
 import { loremIpsum } from "../constants";
+import { BoldTypography } from "../_shared/Common";
+import { Typography, makeStyles, Hidden, useTheme, useMediaQuery } from "@material-ui/core";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function Landing() {
   const styles = useStyles();
+  const isDesktop = useMediaQuery("@media (pointer: fine)")
   const { scrollYProgress } = useViewportScroll();
   const scrollAnimationIndex = {
     1: useTransform(scrollYProgress, (p) => p * 500),
@@ -100,7 +101,7 @@ export function Landing() {
           <Typography
             component={motion.p}
             // @ts-expect-error
-            style={{ translateX: scrollAnimationIndex[2] }}
+            style={isDesktop && { translateX: scrollAnimationIndex[2] }}
             className={styles.descriptionText}
           >
             I am engineer with a patience to{" "}

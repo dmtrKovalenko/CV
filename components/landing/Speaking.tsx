@@ -23,7 +23,7 @@ import { SpeakingPresentation } from "./SpeakingPresentation";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
-import { AnimatedCard, cardOpenSpring } from "../AnimatedCard/AnimatedCard";
+import { AnimatedCard, cardOpenSpring } from "../animated/AnimatedCard";
 import { NoVideoFiller, Video } from "./Video";
 import { useRouter } from "next/router";
 import { useInvertedScale, motion } from "framer-motion";
@@ -113,7 +113,12 @@ const useStyles = makeStyles((theme) => {
       flexDirection: "column",
       height: "100%",
     },
-    youTubeIframe: {},
+    dragPin: {
+      width: 120,
+      height: 2,
+      border: "none",
+      backgroundColor: theme.palette.text.secondary,
+    },
     actions: {
       marginBottom: "auto",
       marginLeft: -12,
@@ -135,10 +140,9 @@ const useStyles = makeStyles((theme) => {
 export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const styles = useStyles();
   const router = useRouter();
-  const inverted = useInvertedScale();
 
   const [selectedCard, setSelectedTalk] = React.useState<string | null>(
-    typeof router.query.talk === "string" ? null : null
+    typeof router.query.talk === "string" ? router.query.talk : null
   );
 
   const openTalk = (title: string) => {
@@ -150,12 +154,6 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
     setSelectedTalk(null);
     window.history.pushState({}, "", "/");
   };
-
-  React.useEffect(() => {
-    if (typeof router.query.talk === "string") {
-      setTimeout(() => setSelectedTalk(router.query.talk), 250);
-    }
-  }, []);
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -272,6 +270,12 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
               onClick={() => openTalk(talk.title)}
             >
               <div className={styles.talkContent}>
+                {isSelected && (
+                  <Hidden smUp>
+                    <hr className={styles.dragPin} />
+                  </Hidden>
+                )}
+
                 <Typography color="textSecondary" variant="overline">
                   {talk.presentations[0].when}
                 </Typography>
@@ -307,7 +311,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                   </Grid>
                 )}
 
-                <div >
+                <div>
                   {isSelected && (
                     <>
                       {talk.presentations[0].youTubeVideoId ? (
