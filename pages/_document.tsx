@@ -1,14 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Document, {
   Head,
   Main,
   NextScript,
   DocumentContext,
 } from "next/document";
-import flush from "styled-jsx/server";
-import { PageContext } from "../components/utils/getPageContext";
 import { theme } from "../components/utils/theme";
+import { ServerStyleSheets } from "@material-ui/core/styles";
 
 const title = "Dmitriy Kovalenko";
 const description =
@@ -18,42 +16,26 @@ const HOST = "https://dmtrkovalenko.dev";
 
 //@ts-ignore
 class MyDocument extends Document<{ pageContext: PageContext }> {
-  static getInitialProps = (ctx: DocumentContext) => {
+  static getInitialProps = async (ctx: DocumentContext) => {
     // Render app and page and get the context of the page with collected side effects.
-    let pageContext: PageContext | undefined = undefined;
-    const page = ctx.renderPage((Component) => {
-      const WrappedComponent = (props: any) => {
-        pageContext = props.pageContext;
-        return <Component {...props} />;
-      };
+    // Render app and page and get the context of the page with collected side effects.
+    const sheets = new ServerStyleSheets();
+    const originalRenderPage = ctx.renderPage;
 
-      WrappedComponent.propTypes = {
-        pageContext: PropTypes.object.isRequired,
-      };
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
+      });
 
-      return WrappedComponent;
-    });
-
-    let css: string;
-    // It might be undefined, e.g. after an error.
-    if (pageContext) {
-      css = pageContext!.sheetsRegistry.toString();
-    }
+    const initialProps = await Document.getInitialProps(ctx);
 
     return {
-      ...page,
-      pageContext,
+      ...initialProps,
       // Styles fragment is rendered after the app and page rendering finish.
-      styles: (
-        <React.Fragment>
-          <style
-            id="jss-server-side"
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: css! }}
-          />
-          {flush() || null}
-        </React.Fragment>
-      ),
+      styles: [
+        ...React.Children.toArray(initialProps.styles),
+        sheets.getStyleElement(),
+      ],
     };
   };
 
@@ -105,10 +87,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             sizes="16x16"
             href="/favicon-16x16.png"
           />
-          <link
-            href="/fonts/sf.css"
-            rel="stylesheet"
-          />
+          <link href="/fonts/sf.css" rel="stylesheet" />
           <link
             href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Nunito:wght@400;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
             rel="stylesheet"
