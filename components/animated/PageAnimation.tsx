@@ -17,7 +17,7 @@ const spring = {
   when: "afterChildren",
 };
 
-const stackAnimationIn = { x: -300, opacity: 0 };
+const stackAnimationIn = { x: 0, opacity: 0 };
 const stackAnimationOut = { x: 300, opacity: 1 };
 
 export const PageAnimation: React.FC<PageAnimationProps> = ({ children }) => {
