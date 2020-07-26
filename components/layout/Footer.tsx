@@ -9,6 +9,7 @@ import { InstagramSvgIcon } from "../_shared/icons/Instagram";
 import { GithubSvgIcon } from "../_shared/icons/Github";
 import { FacebookSvgIcon } from "../_shared/icons/Facebook";
 import { EmailSvgIcon } from "../_shared/icons/Email";
+import { BoldTypography } from "../_shared/Common";
 
 const useStyles = makeStyles((theme: Theme) => ({
   clipPath: {
@@ -149,9 +150,9 @@ export const Footer: React.FunctionComponent<{}> = () => {
           justify="center"
           className={styles.social}
         >
-          <Typography id="contacts" variant="h4" gutterBottom>
+          <BoldTypography id="contacts" variant="h3" gutterBottom>
             Find me
-          </Typography>
+          </BoldTypography>
 
           {contacts.map(contact => (
             <SocialContact

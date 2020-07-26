@@ -13,7 +13,7 @@ export const useTigerStyles = makeStyles({
   },
   tigerAnimationLayer: {
     width: "auto",
-    margin: "auto",
+    margin: "32px auto",
     zIndex: 2,
     cursor: "pointer",
 
@@ -26,15 +26,16 @@ export const useTigerStyles = makeStyles({
         width: 450,
       },
       "@media (min-width: 1299px)": {
-        width: 550,
+        width: 400,
       },
 
       "& polygon, path, ellipse": {
         fillOpacity: 1,
         W: "50% 50%",
         transform: "translate(0)",
+        transformBox: 'fill-box',
         transition:
-          "-webkit-transform 2.5s ease, opacity 0.2s ease, stroke-dashoffset 1s ease-in-out",
+          "transform 3.5s ease, scale 0.3s ease-in-out, opacity 0.2s ease, stroke-dashoffset 1s ease-in-out",
         strokeDasharray: "500",
         strokeDashoffset: "500",
       },
@@ -58,44 +59,47 @@ export const useTigerStyles = makeStyles({
     // with some directory. For some of them also change stroke width, opacity.
     // You can also try to rotate and scale them, but it works awful in safari
     "&$animating > svg #right-side polygon:nth-of-type(5n + 1), &$animating > svg #right-side path:nth-of-type(5n + 1)": {
-      transform: "translate(2000px, -6000px)",
+      transform: "translate(2000px, -6000px) scale(8) rotate(-180deg)",
       opacity: "0.3",
     },
     "&$animating > svg #right-side polygon:nth-of-type(5n + 2), &$animating > svg #right-side path:nth-of-type(5n + 2)": {
-      transform: "translate(8000px, -6000px)",
+      transform: "translate(8000px, -6000px) scale(8) rotate(-180deg)",
       opacity: "0.5",
     },
     "&$animating > svg #right-side polygon:nth-of-type(5n + 3), &$animating > svg #right-side path:nth-of-type(5n + 3)": {
-      transform: "translate(10000px, 0)",
+      transform: "translate(10000px, 0) scale(8) rotate(-180deg)",
       opacity: "0.3",
     },
     "&$animating > svg #right-side polygon:nth-of-type(5n + 4), &$animating > svg #right-side path:nth-of-type(5n + 4)": {
-      transform: "translate(10000px, 6000px)",
+      transform: "translate(10000px, 6000px) scale(8) rotate(-180deg)",
       opacity: "0.5",
     },
     "&$animating > svg #right-side polygon:nth-of-type(5n + 5), &$animating > svg #right-side path:nth-of-type(5n + 5), &$animating > svg #right-side ellipse": {
-      transform: "translate(0, 10000px)",
+      transform: "translate(0, 10000px) scale(8) rotate(-180deg)",
       opacity: "0.3",
+
     },
     "&$animating > svg #left-side polygon:nth-of-type(5n + 1), &$animating > svg #left-side path:nth-of-type(5n + 1)": {
-      transform: "translate(-4000px, -4000px)",
+      transform: "translate(-4000px, -4000px) scale(8) rotate(180deg)",
       opacity: "0.3",
     },
     "&$animating > svg #left-side polygon:nth-of-type(5n + 2), &$animating > svg #left-side path:nth-of-type(5n + 2)": {
-      transform: "translate(-8000px, -1000px)",
+      transform: "translate(-8000px, -1000px) scale(8) rotate(180deg)",
       opacity: "0.5",
     },
     "&$animating > svg #left-side polygon:nth-of-type(5n + 3), &$animating > svg #left-side path:nth-of-type(5n + 3)": {
-      transform: "translate(-8000px, 1000px)",
+      transform: "translate(-8000px, 1000px) scale(8) rotate(180deg)",
       opacity: "0.3",
     },
     "&$animating > svg #left-side polygon:nth-of-type(5n + 4), &$animating > svg #left-side path:nth-of-type(5n + 4)": {
-      transform: "translate(-8000px, 5000px)",
+      transform: "translate(-8000px, 5000px) scale(8) rotate(180deg)",
       opacity: "0.5",
+      
     },
     "&$animating > svg #left-side polygon:nth-of-type(5n + 5), &$animating > svg #left-side path:nth-of-type(5n + 5), &$animating > svg #left-side ellipse": {
-      transform: "translate(0, 9000px)",
+      transform: "translate(0, 9000px) scale(8) rotate(180deg)",
       opacity: "0.3",
+      
     },
   },
   // not interesting vector colors

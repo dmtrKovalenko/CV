@@ -7,6 +7,8 @@ import {
   Typography,
   IconButton,
   Hidden,
+  Button,
+  Backdrop,
 } from "@material-ui/core";
 import {
   BoldTypography,
@@ -19,23 +21,27 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import { gradientColors } from "../utils/theme";
 import { SpeakingPresentation } from "./SpeakingPresentation";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
+import { AnimatedCard, cardOpenSpring } from "../animated/AnimatedCard";
+import { NoVideoFiller, Video } from "./Video";
+import { useRouter } from "next/router";
+import { useInvertedScale, motion } from "framer-motion";
 
 interface SpeakingProps {}
 
 const TalkCard = styled("div")(({ theme }) => ({
   maxWidth: 310,
   minWidth: 310,
-  minHeight: 400,
+  minHeight: 440,
   marginRight: "auto",
   borderRadius: 16,
-  padding: "1rem",
+  cursor: "pointer",
   transition: theme.transitions.create(["transform", "margin-right"]),
 
   [theme.breakpoints.down("sm")]: {
     minWidth: 200,
     maxWidth: 200,
-    minHeight: 440,
   },
 }));
 
@@ -54,9 +60,6 @@ const useStyles = makeStyles((theme) => {
     },
     talksGrid: {
       overflowX: "scroll",
-      WebkitOverflowScrolling: "touch",
-      scrollSnapType: "mandatory",
-      scrollSnapPointsX: "repeat(250px)",
       padding: "70px 0 70px 70px",
       [theme.breakpoints.down("sm")]: {
         width: "100%",
@@ -64,7 +67,7 @@ const useStyles = makeStyles((theme) => {
       },
     },
     nextConf: {
-      zIndex: 100,
+      paddingTop: 16,
       marginRight: 160,
       display: "flex",
       flexDirection: "column",
@@ -75,26 +78,13 @@ const useStyles = makeStyles((theme) => {
         maxWidth: 130,
         marginRight: 100,
         writingMode: "vertical-rl",
+        paddingRight: 16,
         transform: "rotate(180deg)",
       },
     },
     talkCard: {
       display: "flex",
       flexDirection: "column",
-      background: "#1a1a1a",
-      boxShadow: "-1rem 0 3rem #000",
-      willChange: "transform",
-
-      "&:hover": {
-        transform: "translateY(-1.5rem)",
-
-        "&~*": {
-          transform: "translateX(50px)",
-          [theme.breakpoints.down("sm")]: {
-            transform: "translateX(20px)",
-          },
-        },
-      },
 
       "&:not(:first-of-type)": {
         marginLeft: -80,
@@ -103,8 +93,14 @@ const useStyles = makeStyles((theme) => {
         },
       },
     },
+    talkCardContentContainer: {
+      overflowY: "auto",
+      padding: "1rem",
+      background: "#1a1a1a",
+      boxShadow: "-1rem 0 3rem #000",
+    },
     talkTitle: {
-      fontSize: "1.4rem",
+      margin: 0,
 
       "&:hover": {
         cursor: "pointer",
@@ -112,6 +108,17 @@ const useStyles = makeStyles((theme) => {
         WebkitTextFillColor: "transparent",
         background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`,
       },
+    },
+    talkContent: {
+      display: "flex",
+      flexDirection: "column",
+      height: "100%",
+    },
+    dragPin: {
+      width: 120,
+      height: 2,
+      border: "none",
+      backgroundColor: theme.palette.text.secondary,
     },
     actions: {
       marginBottom: "auto",
@@ -133,6 +140,33 @@ const useStyles = makeStyles((theme) => {
 
 export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const styles = useStyles();
+  const router = useRouter();
+
+  const [selectedCard, setSelectedTalk] = React.useState<string | null>(
+    typeof router.query.talk === "string" ? router.query.talk : null
+  );
+
+  const openTalk = (title: string) => {
+    window.history.pushState({}, "", `/?talk=${title}`);
+    setSelectedTalk(title);
+  };
+
+  const closeTalk = () => {
+    setSelectedTalk(null);
+    window.history.pushState({}, "", "/");
+  };
+
+  React.useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (selectedCard !== null && e.key === "Escape") {
+        closeTalk();
+      }
+    };
+
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, []);
+
   return (
     <PageNoPadding>
       <PageTitleNoPadding id="talks" gutterBottom>
@@ -216,47 +250,111 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           </NoDecorationColorLink>
         </TalkCard>
 
-        {[...talks].map((talk) => (
-          <TalkCard key={talk.title} className={styles.talkCard}>
-            <Typography color="textSecondary" variant="overline">
-              {talk.presentations[0].when}
-            </Typography>
+        <Backdrop
+          style={{ zIndex: 1 }}
+          open={selectedCard !== null}
+          onClick={closeTalk}
+        />
 
-            <NoDecorationColorLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href={talk.slides}
+        {[...talks].map((talk) => {
+          const isSelected = talk.title === selectedCard;
+          return (
+            <AnimatedCard
+              key={talk.title}
+              component={TalkCard}
+              classes={{
+                root: styles.talkCard,
+                contentContainer: styles.talkCardContentContainer,
+              }}
+              isSelected={isSelected}
+              onClose={closeTalk}
+              onClick={() => openTalk(talk.title)}
             >
-              <BoldTypography className={styles.talkTitle} variant="h5">
-                {talk.title}
-              </BoldTypography>
-            </NoDecorationColorLink>
+              <div className={styles.talkContent}>
+                {isSelected && (
+                  <Hidden smUp>
+                    <hr className={styles.dragPin} />
+                  </Hidden>
+                )}
 
-            <Grid container className={styles.actions}>
-              {talk.presentations[0].video && (
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={talk.presentations[0].video}
+                <Typography color="textSecondary" variant="overline">
+                  {talk.presentations[0].when}
+                </Typography>
+
+                <BoldTypography
+                  gutterBottom
+                  // layout
+                  style={{
+                    fontSize: isSelected ? 32 : 24,
+                  }}
+                  className={styles.talkTitle}
+                  variant={isSelected ? "h3" : "h5"}
                 >
-                  <IconButton>
-                    <YouTubeIcon
-                      fontSize="large"
-                      className={styles.gradientIcon}
-                    />
-                  </IconButton>
-                </a>
-              )}
-            </Grid>
+                  {talk.title}
+                </BoldTypography>
 
-            {[...talk.presentations].map((presentation) => (
-              <SpeakingPresentation
-                key={presentation.conference}
-                presentation={presentation}
-              />
-            ))}
-          </TalkCard>
-        ))}
+                {!isSelected && (
+                  <Grid container className={styles.actions}>
+                    {talk.presentations[0].youTubeVideoId && (
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
+                      >
+                        <IconButton>
+                          <YouTubeIcon
+                            fontSize="large"
+                            className={styles.gradientIcon}
+                          />
+                        </IconButton>
+                      </a>
+                    )}
+                  </Grid>
+                )}
+
+                <div>
+                  {isSelected && (
+                    <>
+                      {talk.presentations[0].youTubeVideoId ? (
+                        <Video
+                          youTubeVideoId={talk.presentations[0].youTubeVideoId}
+                        />
+                      ) : (
+                        <NoVideoFiller />
+                      )}
+
+                      <NoDecorationColorLink
+                        target="blank"
+                        rel="noopener noreferrer"
+                        href={talk.slides}
+                      >
+                        <Button
+                          size="large"
+                          variant="outlined"
+                          color="primary"
+                          style={{
+                            border: "none",
+                            marginBottom: 32,
+                            fontWeight: "bold",
+                          }}
+                          endIcon={<ArrowForwardIcon />}
+                        >
+                          Slides
+                        </Button>
+                      </NoDecorationColorLink>
+                    </>
+                  )}
+                </div>
+                {[...talk.presentations].map((presentation) => (
+                  <SpeakingPresentation
+                    key={presentation.conference}
+                    presentation={presentation}
+                  />
+                ))}
+              </div>
+            </AnimatedCard>
+          );
+        })}
       </Grid>
     </PageNoPadding>
   );

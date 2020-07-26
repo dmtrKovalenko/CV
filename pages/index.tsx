@@ -3,9 +3,7 @@ import { Landing } from "../components/landing/Landing";
 import { AboutMe } from "../components/landing/AboutMe";
 import { Speaking } from "../components/landing/Speaking";
 
-interface LandingProps {}
-
-const Main: React.FunctionComponent<LandingProps> = () => {
+const Main: React.FunctionComponent = () => {
   return (
     <>
       <Landing />

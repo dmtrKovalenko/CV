@@ -19,6 +19,7 @@ export const SecondaryTypography = styled(Typography)({
 export const PageTitle = styled(Typography)({
   marginTop: 90,
   paddingBottom: 70,
+  fontWeight: "bold",
 });
 
 PageTitle.defaultProps = {
@@ -41,3 +42,5 @@ export const Page = styled("div")(({ theme }) => ({
 }));
 
 export const PageNoPadding = styled(Page)({ padding: 0 });
+
+
