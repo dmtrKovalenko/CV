@@ -91,7 +91,7 @@ export function Landing() {
         <Typography
           component={motion.p}
           // @ts-expect-error
-          style={{ translateX: scrollAnimationIndex[1] }}
+          style={isDesktop && { translateX: scrollAnimationIndex[1] }}
           className={styles.descriptionText}
         >
           Hey, how its going?
@@ -101,7 +101,7 @@ export function Landing() {
           <Typography
             component={motion.p}
             // @ts-expect-error
-            style={isDesktop && { translateX: scrollAnimationIndex[2] }}
+            style={{ translateX: scrollAnimationIndex[2] }}
             className={styles.descriptionText}
           >
             I am engineer with a patience to{" "}

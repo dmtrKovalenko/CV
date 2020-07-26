@@ -7,7 +7,7 @@ import CloudIcon from "@material-ui/icons/CloudQueue";
 import PhoneIcon from "@material-ui/icons/DeveloperMode";
 import TestingIcon from "@material-ui/icons/Cached";
 import skills from "../content/skills.json";
-import { Page } from "../components/_shared/Common";
+import { Page, BoldTypography } from "../components/_shared/Common";
 import { GridSize } from "@material-ui/core/Grid";
 import { ChipArray } from "../components/_shared/ChipArray";
 import { Breakpoint } from "@material-ui/core/styles/createBreakpoints";
@@ -67,14 +67,14 @@ const forHrs: React.FC = () => {
         <title> Dmitriy Kovalenko - Skills </title>
       </Head>
 
-      <Typography
+      <BoldTypography
         className={styles.title}
         variant="h2"
         align="center"
         gutterBottom
       >
         Tech skills
-      </Typography>
+      </BoldTypography>
 
       <Grid container justify="center">
         <SkillSet skill="Languages" Icon={CodeIcon} GridProps={{ sm: 12 }} />
@@ -85,14 +85,14 @@ const forHrs: React.FC = () => {
         <SkillSet skill="Tools" Icon={ToolsIcon} />
       </Grid>
 
-      <Typography
+      <BoldTypography
         gutterBottom
         variant="h2"
         align="center"
         className={styles.subTitle}
       >
         Resume
-      </Typography>
+      </BoldTypography>
 
       <ResumePreview />
     </Page>

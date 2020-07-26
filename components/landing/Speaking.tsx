@@ -78,6 +78,7 @@ const useStyles = makeStyles((theme) => {
         maxWidth: 130,
         marginRight: 100,
         writingMode: "vertical-rl",
+        paddingRight: 16,
         transform: "rotate(180deg)",
       },
     },

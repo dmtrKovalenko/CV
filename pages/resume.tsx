@@ -16,6 +16,10 @@ import { Title } from "../components/_shared/Common";
 
 const useStyles = makeStyles({
   container: {
+    "&  *": {
+      // for better pdf converting
+      fontFamily: "Arial, sans-serif"
+    },
     padding: 32,
     background: "white",
     color: "black",
