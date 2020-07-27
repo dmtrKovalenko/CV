@@ -9,7 +9,7 @@ import {
   Grid,
   Avatar,
   makeStyles,
-  styled
+  styled,
 } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { Title } from "../components/_shared/Common";
@@ -21,28 +21,37 @@ const useStyles = makeStyles({
     color: "black",
     margin: "0 auto",
     minHeight: "100vh",
-    width: "800px"
+    width: "800px",
   },
   avatar: {
     width: 180,
     height: 180,
-    marginBottom: 16
+    marginBottom: 16,
   },
   notBold: {
-    fontWeight: "normal"
-  }
+    fontWeight: "normal",
+  },
 });
 
 const Link = styled("a")({
-  color: "blue"
+  color: "blue",
 });
 
 const renderSkills = (key: keyof typeof skills) => skills[key].join(", ");
 const resumeMuiTheme = createMuiTheme({
   palette: {
     type: "light",
-    primary: blue
-  }
+    primary: blue,
+  },
+  typography: {
+    fontFamily:
+      "GT Walsheim Pro, Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif",
+
+    fontWeightMedium: "normal",
+    h5: {
+      fontWeight: "bold",
+    },
+  },
 });
 
 const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
@@ -63,7 +72,7 @@ const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
             alignItems="center"
             justify="center"
           >
-            <Typography variant="h4">Dmitriy Kovalenko</Typography>
+            <Typography variant="h3">Dmitriy Kovalenko</Typography>
             <Typography variant="h6" gutterBottom>
               JavaScript engineer
             </Typography>
@@ -85,7 +94,7 @@ const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
         <Title variant="h5" gutterBottom>
           Technical skills
         </Title>
-        {Object.keys(skills).map(area => (
+        {Object.keys(skills).map((area) => (
           <div key={area}>
             <b>{area}: </b> {renderSkills(area as keyof typeof skills)}
           </div>
@@ -96,8 +105,8 @@ const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
         </Title>
 
         {resume.employment
-          .filter(employment => renderFullCV || !employment.showOnlyOnCV)
-          .map(employment => (
+          .filter((employment) => renderFullCV || !employment.showOnlyOnCV)
+          .map((employment) => (
             <React.Fragment key={employment.company}>
               <Typography variant="subtitle1">
                 <b>{employment.company}</b>, {employment.when}
@@ -108,7 +117,7 @@ const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
 
               <ul>
                 {renderFullCV &&
-                  employment.projects.map(project => (
+                  employment.projects.map((project) => (
                     <li key={project.idea}>
                       <Typography variant="subtitle2">
                         {project.idea}
@@ -140,7 +149,7 @@ const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
           Education
         </Title>
 
-        {resume.education.map(education => (
+        {resume.education.map((education) => (
           <React.Fragment key={education.place}>
             <Typography variant="subtitle1">{education.place}</Typography>
             <Typography gutterBottom variant="body2">

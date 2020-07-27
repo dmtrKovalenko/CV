@@ -1,5 +1,4 @@
 import * as React from "react";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import { Grid, Theme, Typography, makeStyles } from "@material-ui/core";
 import { DeerToRabbit } from "./DeerToRabbit";
 import { TwitterIconSvg } from "../_shared/icons/Twitter";
