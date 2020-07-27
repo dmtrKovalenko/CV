@@ -49,7 +49,7 @@ const resumeMuiTheme = createMuiTheme({
 
     fontWeightMedium: "normal",
     body1: {
-      fontFamily: "Roboto",
+      fontFamily: "Arial",
     },
     h5: {
       fontWeight: "bold",
