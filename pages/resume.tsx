@@ -117,7 +117,7 @@ const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
           .filter((employment) => renderFullCV || !employment.showOnlyOnCV)
           .map((employment) => (
             <React.Fragment key={employment.company}>
-              <Typography variant="subtitle1">
+              <Typography variant="body1">
                 <b>{employment.company}</b>, {employment.when}
               </Typography>
               <Typography gutterBottom variant="body2">
