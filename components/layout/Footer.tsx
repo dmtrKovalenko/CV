@@ -150,7 +150,7 @@ export const Footer: React.FunctionComponent<{}> = () => {
           justify="center"
           className={styles.social}
         >
-          <BoldTypography id="contacts" variant="h3" gutterBottom>
+          <BoldTypography id="contacts" variant="h4" gutterBottom>
             Find me
           </BoldTypography>
 
