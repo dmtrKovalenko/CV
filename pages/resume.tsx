@@ -49,7 +49,10 @@ const resumeMuiTheme = createMuiTheme({
 
     fontWeightMedium: "normal",
     body1: {
-      fontFamily: "Arial",
+      fontSize: 18
+    },
+    body2: {
+      fontSize: 16
     },
     h5: {
       fontWeight: "bold",
@@ -101,9 +104,9 @@ const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
           Technical skills
         </Title>
         {Object.keys(skills).map((area) => (
-          <div key={area}>
+          <Typography key={area}>
             <b>{area}: </b> {renderSkills(area as keyof typeof skills)}
-          </div>
+          </Typography>
         ))}
 
         <Title variant="h5" gutterBottom>
@@ -164,7 +167,7 @@ const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
 
         {resume.education.map((education) => (
           <React.Fragment key={education.place}>
-            <Typography variant="subtitle1">{education.place}</Typography>
+            <Typography variant="body1">{education.place}</Typography>
             <Typography gutterBottom variant="body2">
               {education.position}, {education.when}
             </Typography>
