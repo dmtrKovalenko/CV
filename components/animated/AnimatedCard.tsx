@@ -17,7 +17,7 @@ interface AnimatedCardProps extends React.HTMLProps<HTMLDivElement> {
   component: string | React.ComponentType<React.HTMLProps<HTMLDivElement>>;
 }
 
-const DISMISS_DISTANCE = 100;
+const DISMISS_DISTANCE = 75;
 export const cardOpenSpring = { type: "spring", stiffness: 200, damping: 30 };
 export const cardCloseSpring = { type: "spring", stiffness: 300, damping: 35 };
 
@@ -88,6 +88,14 @@ export const AnimatedCard = React.memo(
     // We'll use the opened card element to calculate the scroll constraints
     const cardRef = React.useRef(null);
     const constraints = useScrollConstraints(cardRef, isSelected);
+    
+    React.useEffect(() => {
+      if (isSelected) {
+        document.body.style.overflow = "hidden"
+      } else {
+        document.body.style.overflow = "auto"
+      }
+    }, [isSelected])
 
     function checkSwipeToDismiss(yPosition: number) {
       if (yPosition > DISMISS_DISTANCE) {

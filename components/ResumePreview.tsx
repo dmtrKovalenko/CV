@@ -34,7 +34,7 @@ const useStyles = makeStyles<Theme>(theme => ({
   },
   container: {
     position: "relative",
-    minHeight: 280,
+    minHeight: 350,
     cursor: "pointer"
   },
   scaleContainer: {

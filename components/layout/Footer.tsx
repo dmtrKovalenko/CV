@@ -1,5 +1,4 @@
 import * as React from "react";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import { Grid, Theme, Typography, makeStyles } from "@material-ui/core";
 import { DeerToRabbit } from "./DeerToRabbit";
 import { TwitterIconSvg } from "../_shared/icons/Twitter";
@@ -150,7 +149,7 @@ export const Footer: React.FunctionComponent<{}> = () => {
           justify="center"
           className={styles.social}
         >
-          <BoldTypography id="contacts" variant="h3" gutterBottom>
+          <BoldTypography id="contacts" variant="h4" gutterBottom>
             Find me
           </BoldTypography>
 

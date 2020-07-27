@@ -23,10 +23,9 @@ import { SpeakingPresentation } from "./SpeakingPresentation";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
-import { AnimatedCard, cardOpenSpring } from "../animated/AnimatedCard";
+import { AnimatedCard } from "../animated/AnimatedCard";
 import { NoVideoFiller, Video } from "./Video";
 import { useRouter } from "next/router";
-import { useInvertedScale, motion } from "framer-motion";
 
 interface SpeakingProps {}
 
@@ -140,11 +139,7 @@ const useStyles = makeStyles((theme) => {
 
 export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const styles = useStyles();
-  const router = useRouter();
-
-  const [selectedCard, setSelectedTalk] = React.useState<string | null>(
-    typeof router.query.talk === "string" ? router.query.talk : null
-  );
+  const [selectedCard, setSelectedTalk] = React.useState<string | null>(null);
 
   const openTalk = (title: string) => {
     window.history.pushState({}, "", `/?talk=${title}`);
@@ -157,8 +152,17 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
   };
 
   React.useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    const talk = searchParams.get("talk");
+    if (typeof talk === "string") {
+      setTimeout(() => setSelectedTalk(talk), 250);
+    }
+  }, []);
+
+  React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (selectedCard !== null && e.key === "Escape") {
+      if (e.key === "Escape") {
         closeTalk();
       }
     };
