@@ -42,6 +42,7 @@ export const SpeakingPresentation: React.FC<SpeakingPresentationProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       href={presentation.confWebsite}
+      onClick={e => e.stopPropagation}
     >
       <div key={presentation.conference} className={styles.talkPresentation}>
         <div className={styles.avatarBorder}>

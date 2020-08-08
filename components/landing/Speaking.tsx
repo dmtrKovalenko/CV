@@ -303,6 +303,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={e => e.stopPropagation()}
                         href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
                       >
                         <IconButton>
