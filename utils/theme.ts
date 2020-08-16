@@ -16,8 +16,9 @@ export const theme = createMuiTheme({
       }
     },
     h2: {
+      fontSize: "4.5rem",
       [breakpoints.down("sm")]: {
-        fontSize: "3.5rem"
+        fontSize: "4rem"
       }
     }
   },
