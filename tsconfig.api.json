@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": ".netlify/functions",
+    "noEmit": false,
+    "module": "CommonJS",
+  },
+  "include": ["./api/*.ts"]
+}
