@@ -4,8 +4,8 @@ import { Page, PageTitle } from "../components/Common";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { makeStyles, Typography, Avatar, Button } from "@material-ui/core";
 import ReactMarkDown from "react-markdown";
-import Photo from "../../assets/Photo.jpg";
-import aboutMeMd from "../../content/about.md";
+import Photo from "../assets/Photo.jpg";
+import aboutMeMd from "../content/about.md";
 
 interface AboutMeProps {}
 

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Landing } from "../components/landing/Landing";
+import { Landing } from "../pages-lib/Landing";
 import { AboutMe } from "../pages-lib/AboutMe";
-import { Speaking } from "../components/landing/Speaking";
+import { Speaking } from "../pages-lib/Speaking";
 
 const Main: React.FunctionComponent = () => {
   return (

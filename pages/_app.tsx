@@ -8,7 +8,7 @@ import { Router, useRouter } from "next/router";
 import { AppProps } from "next/app";
 import { MuiThemeProvider, useMediaQuery } from "@material-ui/core";
 import { gradientColors, theme } from "../utils/theme";
-import { PageAnimation } from "../components/animated/PageAnimation";
+import { PageAnimation } from "../components/PageAnimation";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();

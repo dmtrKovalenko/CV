@@ -3,7 +3,7 @@ import Resume from "../pages/resume";
 import SaveIcon from "@material-ui/icons/Save";
 import { PDF_FORMATTER_API_URL } from "../utils/constants";
 import { RESUME_URL } from "../utils/constants";
-import { NoDecorationLink } from "./_shared/Common";
+import { NoDecorationLink } from "./Common";
 import { styledBy } from "../utils/helpers";
 import { gradientColors } from "../utils/theme";
 import {

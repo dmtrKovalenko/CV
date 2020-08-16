@@ -12,7 +12,7 @@ import {
   styled,
 } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
-import { Title } from "../components/_shared/Common";
+import { Title } from "../components/Common";
 
 const useStyles = makeStyles({
   container: {

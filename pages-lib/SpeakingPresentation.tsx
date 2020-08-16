@@ -1,8 +1,8 @@
 import * as React from "react";
-import { talks } from "../../content/talks.json";
+import { talks } from "../content/talks.json";
 import { gradientColors } from "../utils/theme";
 import { Avatar, makeStyles, Typography } from "@material-ui/core";
-import { NoDecorationColorLink } from "../_shared/Common";
+import { NoDecorationColorLink } from "../components/Common";
 
 type Presentation = typeof talks[number]["presentations"][number];
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Tiger from "./Tiger";
-import { loremIpsum } from "../constants";
-import { BoldTypography } from "../_shared/Common";
+import { loremIpsum } from "../utils/constants";
+import { BoldTypography } from "../components/Common";
 import { Typography, makeStyles, Hidden, useTheme, useMediaQuery } from "@material-ui/core";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 

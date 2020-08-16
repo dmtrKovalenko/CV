@@ -1,5 +1,5 @@
 import * as React from "react";
-import { talks, nextTalk } from "../../content/talks.json";
+import { talks, nextTalk } from "../content/talks.json";
 import {
   makeStyles,
   Grid,
@@ -16,7 +16,7 @@ import {
   PageNoPadding,
   PageTitleNoPadding,
   SecondaryTypography,
-} from "../../components/_shared/Common";
+} from "../components/Common";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import { gradientColors } from "../utils/theme";
 import { SpeakingPresentation } from "./SpeakingPresentation";
@@ -24,7 +24,7 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
-import { AnimatedCard } from "../animated/AnimatedCard";
+import { AnimatedCard } from "../components/AnimatedCard";
 import { NoVideoFiller, Video } from "./Video";
 import { motion, useMotionValue } from "framer-motion";
 import { useWindowResize } from "../utils/useWindowResize";
