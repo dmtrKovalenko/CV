@@ -1,7 +1,5 @@
 import sgMail from "@sendgrid/mail";
 
-process.env.SENDGRID_API_KEY =
-  "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";
 if (!process.env.SENDGRID_API_KEY) {
   throw new Error("SENDGRID_API_KEY env variable must be provided");
 }
