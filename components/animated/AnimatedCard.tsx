@@ -1,6 +1,6 @@
 import * as React from "react";
 import clsx from "clsx";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useWheelScroll } from "../utils/useWheelScroll";
 import { useInvertedBorderRadius } from "../utils/useInvertedBorderRadius";
 import { useScrollConstraints } from "../utils/useScrollConstraints";
@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
   cardContentContainer: {
     width: "100%",
     height: "100%",
-    position: "relative",
     display: "block",
     pointerEvents: "none",
     "&$open": {
@@ -47,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     pointerEvents: "auto",
-    position: "relative",
     borderRadius: "20px",
     background: "#1c1c1e",
     width: "100%",
@@ -80,6 +78,7 @@ export const AnimatedCard = React.memo(
   }: AnimatedCardProps) => {
     const styles = useStyles();
     const y = useMotionValue(0);
+    const hoverXY = useSpring(0, cardOpenSpring);
     const zIndex = useMotionValue(isSelected ? 2 : 0);
 
     // Maintain the visual border radius when we perform the layoutTransition by inverting its scaleX/Y
@@ -88,14 +87,6 @@ export const AnimatedCard = React.memo(
     // We'll use the opened card element to calculate the scroll constraints
     const cardRef = React.useRef(null);
     const constraints = useScrollConstraints(cardRef, isSelected);
-    
-    React.useEffect(() => {
-      if (isSelected) {
-        document.body.style.overflow = "hidden"
-      } else {
-        document.body.style.overflow = "auto"
-      }
-    }, [isSelected])
 
     function checkSwipeToDismiss(yPosition: number) {
       if (yPosition > DISMISS_DISTANCE) {
@@ -103,12 +94,8 @@ export const AnimatedCard = React.memo(
       }
     }
 
-    function checkZIndex(latest: any) {
-      if (isSelected) {
-        zIndex.set(2);
-      } else if (!isSelected && latest.scaleX < 1.01) {
-        zIndex.set(0);
-      }
+    if (isSelected) {
+      hoverXY.set(0);
     }
 
     // When this card is selected, attach a wheel event listener
@@ -127,7 +114,12 @@ export const AnimatedCard = React.memo(
         className={clsx(styles.card, classes.root)}
         {...other}
       >
-        <div
+        <motion.div
+          style={{ x: hoverXY, y: hoverXY }}
+          transition={cardOpenSpring}
+          onHoverStart={() => !isSelected && hoverXY.set(-25)}
+          onHoverEnd={() => hoverXY.set(0)}
+          // whileHover={isSelected ? { x: 0, y: 0 } : { y: -25, x: -25 }}
           className={clsx(styles.cardContentContainer, {
             [styles.open]: isSelected,
           })}
@@ -140,8 +132,7 @@ export const AnimatedCard = React.memo(
             transition={isSelected ? cardOpenSpring : cardCloseSpring}
             drag={isSelected ? "y" : false}
             dragConstraints={constraints}
-            // whileHover={isSelected ? { y: 0, x: 0 } : { y: -25, x: -25 }}
-            onUpdate={checkZIndex}
+            animate={isSelected ? { y: 0, x: 0 } : undefined}
             onDragEnd={(_e, info) => {
               if (info.offset.y > DISMISS_DISTANCE + 100) {
                 onClose();
@@ -150,7 +141,7 @@ export const AnimatedCard = React.memo(
           >
             {children}
           </motion.div>
-        </div>
+        </motion.div>
       </Component>
     );
   },

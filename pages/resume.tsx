@@ -1,6 +1,6 @@
 import * as React from "react";
 import blue from "@material-ui/core/colors/blue";
-import Photo from "../assets/Photo.jpg";
+import Photo from "../assets/Photo2.jpg";
 import resume from "../content/resume.json";
 import skills from "../content/skills.json";
 import { MuiThemeProvider } from "@material-ui/core";

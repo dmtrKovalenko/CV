@@ -14,12 +14,11 @@ export const useTigerStyles = makeStyles({
   tigerAnimationLayer: {
     width: "auto",
     margin: "32px auto",
-    zIndex: 2,
+    zIndex: 1,
     cursor: "pointer",
 
     "& > svg": {
       overflow: "visible",
-      zIndex: 1,
       width: 300,
 
       "@media (min-width: 899px) and (max-width: 1299px)": {

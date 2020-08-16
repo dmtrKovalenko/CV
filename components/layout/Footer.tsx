@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Grid, Theme, Typography, makeStyles } from "@material-ui/core";
-import { DeerToRabbit } from "./DeerToRabbit";
+import { DeerToRabbit } from "../animated/DeerToRabbit";
 import { TwitterIconSvg } from "../_shared/icons/Twitter";
 import { contacts } from "../../content/contacts.json";
 import { LinkedinSvgIcon } from "../_shared/icons/LinkedinLogo";

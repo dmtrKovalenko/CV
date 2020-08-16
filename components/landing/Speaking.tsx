@@ -22,10 +22,12 @@ import { gradientColors } from "../utils/theme";
 import { SpeakingPresentation } from "./SpeakingPresentation";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import { AnimatedCard } from "../animated/AnimatedCard";
 import { NoVideoFiller, Video } from "./Video";
-import { useRouter } from "next/router";
+import { motion, useMotionValue } from "framer-motion";
+import { useWindowResize } from "../utils/useWindowResize";
 
 interface SpeakingProps {}
 
@@ -46,11 +48,16 @@ const TalkCard = styled("div")(({ theme }) => ({
 
 const useStyles = makeStyles((theme) => {
   return {
+    speakingSection: {
+      marginBottom: 64,
+      "@media(pointer: fine)": {
+        overflowX: "hidden",
+      },
+    },
     talksContainer: {
       display: "flex",
       flexWrap: "nowrap",
       alignItems: "center",
-      overflowX: "scroll",
       boxSizing: "content-box",
       WebkitOverflowScrolling: "touch",
       [theme.breakpoints.down("sm")]: {
@@ -59,7 +66,12 @@ const useStyles = makeStyles((theme) => {
     },
     talksGrid: {
       overflowX: "scroll",
-      padding: "70px 0 70px 70px",
+      "@media(pointer: fine)": {
+        overflowX: "visible",
+      },
+      display: "flex",
+      flexWrap: "nowrap",
+      padding: 70,
       [theme.breakpoints.down("sm")]: {
         width: "100%",
         padding: "70px 32px",
@@ -81,9 +93,29 @@ const useStyles = makeStyles((theme) => {
         transform: "rotate(180deg)",
       },
     },
+    scrollControls: {
+      position: "absolute",
+      right: 0,
+      display: "none",
+      "@media(pointer: fine)": {
+        display: "flex",
+        justifyContent: "flex-end",
+      },
+    },
+    floatingScrollButton: {
+      marginRight: 16,
+      zIndex: 1,
+      backgroundColor: theme.palette.background.paper,
+      borderRadius: "100%",
+      boxShadow: theme.shadows[14],
+    },
     talkCard: {
       display: "flex",
       flexDirection: "column",
+
+      "&:last-of-type": {
+        marginRight: 60,
+      },
 
       "&:not(:first-of-type)": {
         marginLeft: -80,
@@ -93,7 +125,6 @@ const useStyles = makeStyles((theme) => {
       },
     },
     talkCardContentContainer: {
-      overflowY: "auto",
       padding: "1rem",
       background: "#1a1a1a",
       boxShadow: "-1rem 0 3rem #000",
@@ -139,6 +170,10 @@ const useStyles = makeStyles((theme) => {
 
 export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const styles = useStyles();
+  const dimensions = useWindowResize();
+  const [_, setMounted] = React.useState(false);
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  const [talksGridScrollX, setTalksGridScrollX] = React.useState(0);
   const [selectedCard, setSelectedTalk] = React.useState<string | null>(null);
 
   const openTalk = (title: string) => {
@@ -161,6 +196,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
   }, []);
 
   React.useEffect(() => {
+    setMounted(true);
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         closeTalk();
@@ -171,8 +207,40 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
     return () => document.removeEventListener("keydown", handler);
   }, []);
 
+  const getSpeakingSectionScrollWidth = () => {
+    return scrollContainerRef.current?.scrollWidth ?? 0;
+  };
+
+  const canScroll = (side: "left" | "right") => {
+    if (!scrollContainerRef.current) {
+      return false;
+    }
+
+    return side === "left"
+      ? talksGridScrollX > 0
+      : getSpeakingSectionScrollWidth() > dimensions.width + talksGridScrollX;
+  };
+
+  const scroll = (side: "left" | "right") => {
+    if (!canScroll(side)) {
+      return;
+    }
+
+    const minScroll = 0;
+    const maxScroll = getSpeakingSectionScrollWidth() + 60; // add additional offset for better spring animation
+
+    const newScrollValue =
+      side === "right" ? talksGridScrollX + 450 : talksGridScrollX - 450;
+
+    setTalksGridScrollX(
+      side === "right"
+        ? Math.min(newScrollValue, maxScroll - dimensions.width)
+        : Math.max(minScroll, newScrollValue)
+    );
+  };
+
   return (
-    <PageNoPadding>
+    <PageNoPadding className={styles.speakingSection}>
       <PageTitleNoPadding id="talks" gutterBottom>
         Talks
       </PageTitleNoPadding>
@@ -182,10 +250,33 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
         talks:
       </Typography>
 
-      <Grid
-        container
-        wrap="nowrap"
-        direction="row"
+      {(getSpeakingSectionScrollWidth() > dimensions.width ||
+        talksGridScrollX > 0) && (
+        <div className={styles.scrollControls}>
+          <IconButton
+            disabled={!canScroll("left")}
+            className={styles.floatingScrollButton}
+            onClick={() => scroll("left")}
+          >
+            <ArrowBackIcon />
+          </IconButton>
+
+          <IconButton
+            disabled={!canScroll("right")}
+            className={styles.floatingScrollButton}
+            onClick={() => scroll("right")}
+          >
+            <ArrowForwardIcon />
+          </IconButton>
+        </div>
+      )}
+
+      <motion.div
+        ref={scrollContainerRef}
+        // using CPU accelerated margin-left animation here in order to unlock the ability to use position:fixed inside
+        // It doesn't harms performance for now and renders stable 60 FPS.
+        // http://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/
+        animate={{ marginLeft: -talksGridScrollX }}
         className={styles.talksGrid}
       >
         <TalkCard className={styles.nextConf}>
@@ -202,7 +293,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
               Meet me at
             </BoldTypography>
 
-            <Hidden smUp>
+            <Hidden smUp implementation="css">
               <SecondaryTypography gutterBottom align="center" variant="h5">
                 {nextTalk.conference}
               </SecondaryTypography>
@@ -303,7 +394,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={e => e.stopPropagation()}
+                        onClick={(e) => e.stopPropagation()}
                         href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
                       >
                         <IconButton>
@@ -360,7 +451,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
             </AnimatedCard>
           );
         })}
-      </Grid>
+      </motion.div>
     </PageNoPadding>
   );
 };
