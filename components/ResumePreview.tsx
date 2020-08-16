@@ -1,11 +1,11 @@
 import * as React from "react";
 import Resume from "../pages/resume";
 import SaveIcon from "@material-ui/icons/Save";
-import { PDF_FORMATTER_API_URL } from "./constants";
-import { RESUME_URL } from "./constants";
+import { PDF_FORMATTER_API_URL } from "../utils/constants";
+import { RESUME_URL } from "../utils/constants";
 import { NoDecorationLink } from "./_shared/Common";
-import { styledBy } from "./utils/helpers";
-import { gradientColors } from "./utils/theme";
+import { styledBy } from "../utils/helpers";
+import { gradientColors } from "../utils/theme";
 import {
   makeStyles,
   Paper,

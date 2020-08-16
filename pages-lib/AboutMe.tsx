@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { Page, PageTitle } from "../_shared/Common";
+import { Page, PageTitle } from "../components/Common";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { makeStyles, Typography, Avatar, Button } from "@material-ui/core";
 import ReactMarkDown from "react-markdown";

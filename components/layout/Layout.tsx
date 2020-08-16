@@ -1,10 +1,10 @@
 import * as React from "react";
 import Link from "next/link";
-import CuteTiger from "../_shared/icons/CuteTigerSvg";
+import CuteTiger from "../icons/CuteTigerSvg";
 import { Theme, makeStyles } from "@material-ui/core";
 import { Footer } from "./Footer";
 import { useRouter } from "next/router";
-import { withGlobalStylesAndKeyframes } from "../utils/globalStylesAndKeyframes";
+import { withGlobalStylesAndKeyframes } from "../../utils/globalStylesAndKeyframes";
 
 interface LayoutProps {}
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Landing } from "../components/landing/Landing";
-import { AboutMe } from "../components/landing/AboutMe";
+import { AboutMe } from "../pages-lib/AboutMe";
 import { Speaking } from "../components/landing/Speaking";
 
 const Main: React.FunctionComponent = () => {

@@ -5,7 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import { theme } from "../components/utils/theme";
+import { theme } from "../utils/theme";
 import { ServerStyleSheets } from "@material-ui/core/styles";
 
 const title = "Dmitriy Kovalenko";

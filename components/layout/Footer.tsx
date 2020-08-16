@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Grid, Theme, Typography, makeStyles } from "@material-ui/core";
-import { DeerToRabbit } from "../animated/DeerToRabbit";
-import { TwitterIconSvg } from "../_shared/icons/Twitter";
+import { DeerToRabbit } from "../DeerToRabbit";
+import { TwitterIconSvg } from "../icons/Twitter";
 import { contacts } from "../../content/contacts.json";
-import { LinkedinSvgIcon } from "../_shared/icons/LinkedinLogo";
-import { InstagramSvgIcon } from "../_shared/icons/Instagram";
-import { GithubSvgIcon } from "../_shared/icons/Github";
-import { FacebookSvgIcon } from "../_shared/icons/Facebook";
-import { EmailSvgIcon } from "../_shared/icons/Email";
-import { BoldTypography } from "../_shared/Common";
+import { LinkedinSvgIcon } from "../icons/LinkedinLogo";
+import { InstagramSvgIcon } from "../icons/Instagram";
+import { GithubSvgIcon } from "../icons/Github";
+import { FacebookSvgIcon } from "../icons/Facebook";
+import { EmailSvgIcon } from "../icons/Email";
+import { BoldTypography } from "../Common";
 
 const useStyles = makeStyles((theme: Theme) => ({
   clipPath: {
