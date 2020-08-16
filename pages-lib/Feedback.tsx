@@ -97,11 +97,11 @@ function getIcon(state: RequestState) {
 function getMessage(state: RequestState) {
   switch (state) {
     case "overlimit":
-      return "Your feedback was sent already, We have a quota of 100 emails per day, so please do not dudos this :)";
+      return "Your feedback was sent already. We have a quota of 100 emails per day, so please do not dudos this :)";
     case "error":
-      return "Error while sending. We have a quota of 100 emails per day, feel free to get back tomorrow 😋";
+      return "A critical error appeared while sending your feedback. We have a quota of 100 emails per day, feel free to get back tomorrow 😋";
     case "success":
-      return "Your feedback sent. Thanks for your words 🙏";
+      return "Your feedback was sent. Thanks for your words 🙏";
 
     default:
       return " ";
@@ -157,7 +157,7 @@ export const Feedback: React.FC = ({}) => {
             <Typography className={styles.description} gutterBottom>
               Say something! Send me a completely private and <b>anonymous</b>{" "}
               message. Feel free to say anything, even if it's not positive.
-              Looking forward for Your feedback!
+              Looking forward to your feedback!
             </Typography>
 
             <div className={styles.feedbackInput}>
