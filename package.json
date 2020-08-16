@@ -7,6 +7,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.7.4",
     "@material-ui/core": "^4.0.0-alpha.5",
     "@material-ui/icons": "^4.5.1",
+    "@sendgrid/mail": "^7.2.3",
     "@types/animejs": "^2.0.2",
     "@types/debounce": "^1.2.0",
     "@types/jss": "^9.5.8",
@@ -21,6 +22,8 @@
     "imagemin-mozjpeg": "^8.0.0",
     "jss": "^10.0.0",
     "jss-cli": "^5.0.2",
+    "netlify-cli": "2.54.0",
+    "netlify-lambda": "^2.0.1",
     "next": "^9.4.4",
     "next-ga": "^2.3.4",
     "next-optimized-images": "^2.5.4",
@@ -36,7 +39,8 @@
     "dev": "next -p 4000",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export && yarn build:api",
+    "build:api": "tsc -p tsconfig.api.json"
   },
   "devDependencies": {
     "typescript": "^3.7.2"
