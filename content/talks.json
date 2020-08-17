@@ -1,13 +1,24 @@
 {
-  "nextTalk": {
-    "when": "October 13-15",
-    "conference": "TestCon Europe 2020",
-    "confWebsite": "https://testcon.lt/",
-    "location": "Lithuania or Online",
-    "talk": "QA Automation Through the Eyes of Developers"
-  },
+  "nextTalks": [
+    {
+      "dueTo": "2020-09-25T00:00:00.000Z",
+      "when": "September 25-26",
+      "conference": "QA Fest 2020",
+      "confWebsite": "http://qafest.com/",
+      "location": "Kiev, Ukraine",
+      "talk": "Cypress is awful, but..."
+    },
+    {
+      "when": "October 13-15",
+      "dueTo": "2020-10-13T00:00:00.000Z",
+      "conference": "TestCon Europe 2020",
+      "confWebsite": "https://testcon.lt/",
+      "location": "Lithuania or Online",
+      "talk": "QA Automation Through the Eyes of Developers"
+    }
+  ],
   "talks": [
-     {
+    {
       "title": "Intro into ReasonML for javascript-ers and geese 🦆",
       "slides": "https://www.icloud.com/keynote/01dpiUSjqX4WAxvXTdKeB7y_w#reasonml",
       "presentations": [

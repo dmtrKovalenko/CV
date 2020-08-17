@@ -7,6 +7,7 @@ function Tiger() {
     <div
       onClick={(e) => e.currentTarget.classList.add(styles.animating)}
       onMouseLeave={(e) => e.currentTarget.classList.remove(styles.animating)}
+      onMouseMove={(e) => e.currentTarget.classList.remove(styles.animating)}
       className={styles.tigerAnimationLayer}
     >
       <svg

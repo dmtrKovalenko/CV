@@ -1,5 +1,5 @@
 import * as React from "react";
-import { talks, nextTalk } from "../content/talks.json";
+import { talks, nextTalks } from "../content/talks.json";
 import {
   makeStyles,
   Grid,
@@ -168,6 +168,11 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
+const nextTalk =
+  nextTalks.find(
+    (talk) => new Date(talk.dueTo) > new Date()
+  ) ?? nextTalks[nextTalks.length - 1];
+
 export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const styles = useStyles();
   const dimensions = useWindowResize();
@@ -248,11 +253,13 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
       <PageTitleNoPadding id="talks" gutterBottom>
         Talks
       </PageTitleNoPadding>
-      <Typography variant="subtitle1" align="center">
-        I am really passionate about technical speaking. <br /> I do want to
-        think that my talks are changing lives. Here is a (non-full) list of my
-        talks:
-      </Typography>
+      <div style={{ padding: 32 }}>
+        <Typography variant="subtitle1" align="center">
+          I am really passionate about technical speaking. I do want to think
+          that my talks are changing lives. <br /> Here is a (non-full) list of
+          my talks:
+        </Typography>
+      </div>
 
       {(getSpeakingSectionScrollWidth() > dimensions.width ||
         talksGridScrollX > 0) && (
