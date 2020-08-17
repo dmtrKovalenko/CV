@@ -36,11 +36,14 @@ export async function handler(event: HandlerEvent) {
     }
 
     await sgMail.send({
-      from: "feedback@dmtrkovalenko.dev",
+      from: "message@dmtrkovalenko.dev",
       to: "dmtr.kovalenko@outlook.com",
+      isMultiple: true,
       subject: "Your personal feedback",
       text: message,
-    }).then(console.log)
+    })
+
+    console.log("Feedback sent: ", message)
 
     return {
       headers,
