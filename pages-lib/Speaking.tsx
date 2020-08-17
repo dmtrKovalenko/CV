@@ -177,6 +177,10 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const [selectedCard, setSelectedTalk] = React.useState<string | null>(null);
 
   const openTalk = (title: string) => {
+    if (window.ga) {
+      window.ga("send", "event", "talk", "open", "speaking");
+    }
+
     window.history.pushState({}, "", `/?talk=${title}`);
     setSelectedTalk(title);
   };

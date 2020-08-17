@@ -497,7 +497,7 @@
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-syntax-nullish-coalescing-operator" "^7.8.0"
 
-"@babel/plugin-proposal-nullish-coalescing-operator@^7.10.4", "@babel/plugin-proposal-nullish-coalescing-operator@^7.7.4", "@babel/plugin-proposal-nullish-coalescing-operator@^7.8.3":
+"@babel/plugin-proposal-nullish-coalescing-operator@^7.10.4", "@babel/plugin-proposal-nullish-coalescing-operator@^7.8.3":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.10.4.tgz#02a7e961fc32e6d5b2db0649e01bf80ddee7e04a"
   integrity sha512-wq5n1M3ZUlHl9sqT2ok1T2/MTt6AXE0e1Lz4WzWBr95LsAZ5qDXe4KnFuauYyEyLiohvXFMdbsOTMyLZs91Zlw==
@@ -2041,6 +2041,11 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/google.analytics@0.0.40":
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/@types/google.analytics/-/google.analytics-0.0.40.tgz#35526e9d78333423c430ade1c821ce54d0f0f850"
+  integrity sha512-R3HpnLkqmKxhUAf8kIVvDVGJqPtaaZlW4yowNwjOZUTmYUQEgHh8Nh5wkSXKMroNAuQM8gbXJHmNbbgA8tdb7Q==
 
 "@types/got@^8":
   version "8.3.5"

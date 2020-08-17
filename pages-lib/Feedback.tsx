@@ -9,6 +9,8 @@ import {
   Button,
   TextField,
   CircularProgress,
+  useTheme,
+  useMediaQuery,
 } from "@material-ui/core";
 import { BASE_FUNCTIONS_PATH } from "../utils/constants";
 
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: 200,
     backgroundColor: "#1a1a1a",
-    // clipPath: "polygon(0 0, 0% 100%, 100% 100%)",
+    clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 100% 0)",
     "-webkit-clip-path": "polygon(0 100%, 100% 100%, 100% 100%, 100% 0)",
     [theme.breakpoints.down("sm")]: {
       height: 100,
@@ -26,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
   page: {
     backgroundColor: "#1a1a1a",
     paddingTop: 64,
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: 16,
+    },
     // compensation for the footer clip path
     paddingBottom: 200 + 64,
     marginBottom: -200,
@@ -110,6 +115,8 @@ function getMessage(state: RequestState) {
 
 export const Feedback: React.FC = ({}) => {
   const styles = useStyles();
+  const theme = useTheme();
+  const toShowLargeTextArea = useMediaQuery(theme.breakpoints.up("sm"));
   const [message, setMessage] = React.useState("");
   const [sendingState, setSendingState] = React.useState<RequestState>("idle");
 
@@ -124,6 +131,10 @@ export const Feedback: React.FC = ({}) => {
     }
 
     setSendingState("pending");
+    if (window.ga) {
+      window.ga("send", "event", "feedback message", "send", "feedback");
+    }
+
     fetch(`${BASE_FUNCTIONS_PATH}/sendFeedback`, {
       method: "POST",
       headers: {
@@ -165,7 +176,7 @@ export const Feedback: React.FC = ({}) => {
                 required
                 fullWidth
                 multiline
-                rows={12}
+                rows={toShowLargeTextArea ? 12 : 6}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 label="Your message"
@@ -195,9 +206,3 @@ export const Feedback: React.FC = ({}) => {
     </>
   );
 };
-
-fetch("/sendFeedback", {
-  method: "POST",
-
-  body: JSON.stringify({ message: "kwejfwe" }),
-}).then((res) => console.log(res.status));

@@ -13,29 +13,29 @@ import {
   Button,
   ClickAwayListener,
   Hidden,
-  Typography
+  Typography,
 } from "@material-ui/core";
 
-const useStyles = makeStyles<Theme>(theme => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   downloadButton: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     marginBottom: 16,
     "& > *": {
-      marginBottom: 8
-    }
+      marginBottom: 8,
+    },
   },
   gradientButton: {
-    background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`
+    background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`,
   },
   saveIcon: {
-    marginRight: 8
+    marginRight: 8,
   },
   container: {
     position: "relative",
     minHeight: 350,
-    cursor: "pointer"
+    cursor: "pointer",
   },
   scaleContainer: {
     zIndex: 1,
@@ -47,20 +47,28 @@ const useStyles = makeStyles<Theme>(theme => ({
     bottom: "100%",
     transformOrigin: "50% 0",
     transition: theme.transitions.create("transform"),
-    position: styledBy("isClicked", {
+    position: styledBy("isPreviewOpen", {
       true: "unset",
-      false: "absolute"
+      false: "absolute",
     }),
-    transform: styledBy("isClicked", {
+    transform: styledBy("isPreviewOpen", {
       true: "scale(1)",
-      false: "scale(0.3)"
-    })
-  }
+      false: "scale(0.3)",
+    }),
+  },
 }));
 
 export const ResumePreview: React.FC = () => {
-  const [isClicked, setIsClicked] = React.useState(false);
-  const styles = useStyles({ isClicked });
+  const [isPreviewOpen, setIsPreviewOpen] = React.useState(false);
+  const styles = useStyles({ isPreviewOpen: isPreviewOpen });
+
+  const openResumePreview = () => {
+    if (window.ga) {
+      window.ga("send", "event", "resumePreview", "open", "resume");
+    }
+
+    setIsPreviewOpen(true);
+  };
 
   return (
     <>
@@ -73,6 +81,11 @@ export const ResumePreview: React.FC = () => {
             className={styles.gradientButton}
             color="primary"
             variant="contained"
+            onClick={() => {
+              if (window.ga) {
+                window.ga("send", "event", "resumePDF", "download", "resume");
+              }
+            }}
           >
             <SaveIcon className={styles.saveIcon} /> Download .pdf
           </Button>
@@ -84,12 +97,12 @@ export const ResumePreview: React.FC = () => {
       </div>
 
       <Hidden mdDown>
-        <ClickAwayListener onClickAway={() => setIsClicked(false)}>
+        <ClickAwayListener onClickAway={() => setIsPreviewOpen(false)}>
           <div className={styles.container}>
             <Paper
               elevation={24}
               className={styles.scaleContainer}
-              onClick={() => setIsClicked(true)}
+              onClick={openResumePreview}
             >
               <Resume />
             </Paper>
