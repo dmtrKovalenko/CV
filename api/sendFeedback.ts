@@ -36,14 +36,22 @@ export async function handler(event: HandlerEvent) {
     }
 
     await sgMail.send({
-      from: "message@dmtrkovalenko.dev",
+      from: {
+        name: "Dmitriy Kovalenko",
+        email: "note@dmtrkovalenko.dev",
+      },
       to: "dmtr.kovalenko@outlook.com",
-      isMultiple: true,
-      subject: "Your personal feedback",
+      subject: `Personal feedback of ${new Intl.DateTimeFormat("ru", {
+        month: "numeric",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+      }).format(new Date())}`,
       text: message,
-    })
+    });
 
-    console.log("Feedback sent: ", message)
+    console.log("Feedback sent: ", message);
 
     return {
       headers,
