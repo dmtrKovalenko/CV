@@ -64,7 +64,7 @@ export const ResumePreview: React.FC = () => {
 
   const openResumePreview = () => {
     if (window.ga) {
-      window.ga("send", "event", "resumePreview", "open", "resume");
+      window.ga("send", "event", "resume", "open preview", "resume");
     }
 
     setIsPreviewOpen(true);
@@ -83,7 +83,7 @@ export const ResumePreview: React.FC = () => {
             variant="contained"
             onClick={() => {
               if (window.ga) {
-                window.ga("send", "event", "resumePDF", "download", "resume");
+                window.ga("send", "event", "resume", "download", "resume");
               }
             }}
           >
