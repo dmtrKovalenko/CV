@@ -40,7 +40,7 @@ export async function handler(event: HandlerEvent) {
         name: "Dmitriy Kovalenko",
         email: "note@dmtrkovalenko.dev",
       },
-      to: "dmtr.kovalenko@outlook.com",
+      to: "neroquint@gmail.com",
       subject: `Personal feedback of ${new Intl.DateTimeFormat("ru", {
         month: "numeric",
         day: "numeric",
