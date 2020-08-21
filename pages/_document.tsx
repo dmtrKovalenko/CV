@@ -55,12 +55,12 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
-          <meta name="twitter:image" content={`${HOST}/Photo-16x9.png`} />
+          <meta name="twitter:image" content={`${HOST}/Photo-16x9.jpg`} />
 
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
           <meta name="og:description" content={description} />
-          <meta property="og:image" content={`${HOST}/Photo-16x9.png`} />
+          <meta property="og:image" content={`${HOST}/Photo-16x9.jpg`} />
 
           <link
             rel="apple-touch-icon"
