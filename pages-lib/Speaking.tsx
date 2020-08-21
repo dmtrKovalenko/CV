@@ -15,7 +15,6 @@ import {
   NoDecorationColorLink,
   PageNoPadding,
   PageTitleNoPadding,
-  SecondaryTypography,
 } from "../components/Common";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import { gradientColors } from "../utils/theme";
@@ -169,9 +168,8 @@ const useStyles = makeStyles((theme) => {
 });
 
 const nextTalk =
-  nextTalks.find(
-    (talk) => new Date(talk.dueTo) > new Date()
-  ) ?? nextTalks[nextTalks.length - 1];
+  nextTalks.find((talk) => new Date(talk.dueTo) > new Date()) ??
+  nextTalks[nextTalks.length - 1];
 
 export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const styles = useStyles();
@@ -305,9 +303,9 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
             </BoldTypography>
 
             <Hidden smUp implementation="css">
-              <SecondaryTypography gutterBottom align="center" variant="h5">
+              <BoldTypography gutterBottom align="center" variant="h5">
                 {nextTalk.conference}
-              </SecondaryTypography>
+              </BoldTypography>
             </Hidden>
 
             <Hidden smDown>

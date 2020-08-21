@@ -40,8 +40,6 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
   };
 
   render() {
-    const { pageContext } = this.props;
-
     return (
       <html lang="en" dir="ltr">
         <Head>
@@ -51,13 +49,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
-          <meta
-            name="theme-color"
-            // @ts-ignore
-            content={
-              pageContext ? pageContext.theme.palette.primary.main : null
-            }
-          />
+          <meta name="theme-color" content={theme.palette.primary.main} />
 
           <meta name="description" content={description} />
           <meta name="twitter:card" content="summary_large_image" />
@@ -87,14 +79,12 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             sizes="16x16"
             href="/favicon-16x16.png"
           />
-          <link href="/fonts/sf.css" rel="stylesheet" />
+          <link rel="preload" as="stylesheet" href="/fonts/sf.css" />
+
           <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Nunito:wght@400;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
-            rel="stylesheet"
-          />
-          <link
+            rel="preload"
+            as="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
-            rel="stylesheet"
           />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="theme-color" content={theme.palette.primary.light} />

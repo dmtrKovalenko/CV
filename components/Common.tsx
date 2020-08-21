@@ -11,11 +11,6 @@ export const Title = styled(Typography)({ marginTop: 32 });
 
 export const BoldTypography = styled(Typography)({ fontWeight: "bold" });
 
-export const SecondaryTypography = styled(Typography)({
-  fontWeight: "bold",
-  fontFamily: "Nunito,-apple-system,BlinkMacSystemFont,sans-serif",
-});
-
 export const PageTitle = styled(Typography)({
   marginTop: 90,
   marginBottom: "4rem",
