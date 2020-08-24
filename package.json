@@ -20,6 +20,7 @@
     "debounce": "^1.2.0",
     "framer-motion": "^2.1.4",
     "global": "^4.4.0",
+    "imagemin-mozjpeg": "^9.0.0",
     "next": "^9.4.4",
     "next-ga": "^2.3.4",
     "next-optimized-images": "^2.5.4",
@@ -33,7 +34,7 @@
     "last 1 version",
     "not IE 11",
     "not IE_Mob 11",
-    "not dead", 
+    "not dead",
     "not op_mini all"
   ],
   "scripts": {
