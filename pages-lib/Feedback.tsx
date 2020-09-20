@@ -175,6 +175,7 @@ export const Feedback: React.FC = ({}) => {
 
             <div className={styles.feedbackInput}>
               <TextField
+                id="feedback-message"
                 required
                 fullWidth
                 multiline

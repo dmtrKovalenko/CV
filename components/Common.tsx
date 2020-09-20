@@ -1,4 +1,9 @@
-import { Typography, styled } from "@material-ui/core";
+import {
+  Typography,
+  styled,
+  TypographyProps,
+  makeStyles,
+} from "@material-ui/core";
 
 export const NoDecorationLink = styled("a")({ textDecoration: "none" });
 
@@ -9,7 +14,17 @@ export const NoDecorationColorLink = styled("a")({
 
 export const Title = styled(Typography)({ marginTop: 32 });
 
-export const BoldTypography = styled(Typography)({ fontWeight: "bold" });
+const useBoldTypographyStyles = makeStyles({
+  root: { fontWeight: "bold" },
+});
+
+export function BoldTypography<T extends React.ElementType>(
+  props: TypographyProps<T>
+) {
+  const classes = useBoldTypographyStyles();
+
+  return <Typography classes={classes} {...props} />;
+}
 
 export const PageTitle = styled(Typography)({
   marginTop: 90,

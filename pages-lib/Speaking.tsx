@@ -299,8 +299,9 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
             href={nextTalk.confWebsite}
           >
             <BoldTypography
-              align="center"
               variant="h4"
+              component="h3"
+              align="center"
               style={{ marginLeft: "1rem" }}
             >
               Meet me at
@@ -397,6 +398,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                   }}
                   className={styles.talkTitle}
                   variant={isSelected ? "h3" : "h5"}
+                  component={isSelected ? "h3" : "h3"}
                 >
                   {talk.title}
                 </BoldTypography>

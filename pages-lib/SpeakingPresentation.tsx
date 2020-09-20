@@ -18,23 +18,23 @@ const useStyles = makeStyles({
     alignItems: "center",
     "&:hover": {
       "& $avatarBorder": {
-        background: `linear-gradient(0deg,${gradientColors.from},${gradientColors.to})`
-      }
-    }
+        background: `linear-gradient(0deg,${gradientColors.from},${gradientColors.to})`,
+      },
+    },
   },
   conferenceLogo: {
     width: 64,
-    height: 64
+    height: 64,
   },
   avatarBorder: {
     padding: "3px 4px",
     borderRadius: "50%",
-    marginRight: 8
-  }
+    marginRight: 8,
+  },
 });
 
 export const SpeakingPresentation: React.FC<SpeakingPresentationProps> = ({
-  presentation
+  presentation,
 }) => {
   const styles = useStyles();
   return (
@@ -42,7 +42,7 @@ export const SpeakingPresentation: React.FC<SpeakingPresentationProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       href={presentation.confWebsite}
-      onClick={e => e.stopPropagation}
+      onClick={(e) => e.stopPropagation}
     >
       <div key={presentation.conference} className={styles.talkPresentation}>
         <div className={styles.avatarBorder}>
@@ -52,7 +52,9 @@ export const SpeakingPresentation: React.FC<SpeakingPresentationProps> = ({
             alt={presentation.conference + " logo"}
           />
         </div>
-        <Typography variant="subtitle1">{presentation.conference}</Typography>
+        <Typography component="p" variant="subtitle1">
+          {presentation.conference}
+        </Typography>
       </div>
     </NoDecorationColorLink>
   );
