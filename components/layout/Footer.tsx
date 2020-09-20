@@ -124,7 +124,7 @@ const SocialContact: React.FC<{ name: string; url: string }> = ({
       <div className={styles.socialContact}>
         <Grid container>
           <Icon />
-          <Typography className={styles.socialLabel} variant="subtitle1">
+          <Typography component="p" className={styles.socialLabel} variant="subtitle1">
             {"On " + name}
           </Typography>
         </Grid>

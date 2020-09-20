@@ -1,24 +1,24 @@
 {
-  "summary": "Advanced JavaScript developer, experienced in creation of modern, fast and scalable applications. OSS contributor of such projects like Material-UI, React-native, Formik, i18next and creator of material-ui-pickers. Good understanding of both OOP and FP paradigms, design patterns and architecture concepts. Experienced in developing large, scalable and sound web/mobile applications with a help of cutting-edge technologies.",
+  "summary": "Advanced JavaScript and OCaml developer, experienced in the creation of modern, fast, and scalable applications. Open-source contributor to such projects as Material-UI, React-native, Formik, i18next, and creator of @material-ui/pickers. Good understanding of both OOP and FP paradigms, design patterns, and architecture concepts. Experienced in developing large, scalable, and sound web/mobile applications with a help of cutting-edge technologies.",
   "employment": [
-     {
+    {
       "when": "September 2020 - now",
       "company": "Cypress.io",
-      "position": "Senior Software engenieer",
+      "position": "Senior Software Engineer",
       "responsibilities": "Getting back to Cypress.io to work on component testing.",
       "projects": []
-     },
-     {
+    },
+    {
       "when": "January 2020 - September 2020",
       "company": "Material UI",
-      "position": "Senior Software engenieer",
-      "responsibilities": "Working for Material-UI with a focus on making the most popular react datepicker in the world",
+      "position": "Senior Software Engineer",
+      "responsibilities": "Working for Material-UI with a focus on making the most popular react date picker in the world",
       "projects": []
     },
     {
       "when": "May 2019 - January 2020",
       "company": "Cypress.io",
-      "position": "Senior Software engenieer",
+      "position": "Senior Software Engineer",
       "responsibilities": "Development, designing and testing for the awesome Cypress.io",
       "projects": []
     },
@@ -60,13 +60,7 @@
         },
         {
           "idea": "Multi-platform chat-bot for company workflow organization and reporting",
-          "stack": [
-            "NodeJS",
-            "Typescript",
-            "Jest",
-            "Now",
-            "Docker"
-          ],
+          "stack": ["NodeJS", "Typescript", "Jest", "Now", "Docker"],
           "responsibilities": "Whole application development and architecture design."
         },
         {
@@ -131,27 +125,23 @@
         {
           "idea": "Landing survey for job searching system",
           "responsibilities": "Front-end application development and architecture design.",
-          "stack": [
-            "VueJS",
-            "Typescript",
-            "Vuetify",
-            "VueX",
-            "SCSS"
-          ]
+          "stack": ["VueJS", "Typescript", "Vuetify", "VueX", "SCSS"]
         },
         {
           "idea": "Streaming and online listening meetings application",
           "responsibilities": "Mobile application development and architecture design.",
           "stack": [
-            "React Native", "Typescript", "Firebase", "FastLane", "Fabric"
+            "React Native",
+            "Typescript",
+            "Firebase",
+            "FastLane",
+            "Fabric"
           ]
         },
         {
           "idea": "Fitness motivator and calories calculator app",
           "responsibilities": "Mobile application development and architecture design.",
-          "stack": [
-            "React Native", "Typescript", "GraphQl", "Expo", "MobX"
-          ]
+          "stack": ["React Native", "Typescript", "GraphQl", "Expo", "MobX"]
         },
         {
           "idea": "Uber for massage therapists, both client massage ordering flow and admin dashboard.",
@@ -164,7 +154,7 @@
             "SCSS",
             "Formik",
             "Jest"
-          ]         
+          ]
         }
       ]
     },

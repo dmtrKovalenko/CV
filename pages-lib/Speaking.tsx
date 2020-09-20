@@ -252,7 +252,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
         Talks
       </PageTitleNoPadding>
       <div style={{ padding: 32 }}>
-        <Typography variant="subtitle1" align="center">
+        <Typography component="p" variant="subtitle1" align="center">
           I am really passionate about technical speaking. I do want to think
           that my talks are changing lives. <br /> Here is a (non-full) list of
           my talks:
@@ -261,8 +261,10 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
 
       {(getSpeakingSectionScrollWidth() > dimensions.width ||
         talksGridScrollX > 0) && (
-        <div className={styles.scrollControls}>
+        <div aria-hidden className={styles.scrollControls}>
           <IconButton
+            tabIndex="-1"
+            aria-label="Scroll talks left"
             disabled={!canScroll("left")}
             className={styles.floatingScrollButton}
             onClick={() => scroll("left")}
@@ -271,6 +273,8 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           </IconButton>
 
           <IconButton
+            tabIndex="-1"
+            aria-label="Scroll talks right"
             disabled={!canScroll("right")}
             className={styles.floatingScrollButton}
             onClick={() => scroll("right")}
@@ -406,7 +410,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                         onClick={(e) => e.stopPropagation()}
                         href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
                       >
-                        <IconButton>
+                        <IconButton aria-label="Open YouTube video">
                           <YouTubeIcon
                             fontSize="large"
                             className={styles.gradientIcon}

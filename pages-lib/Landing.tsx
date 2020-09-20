@@ -2,7 +2,13 @@ import * as React from "react";
 import Tiger from "./Tiger";
 import { loremIpsum } from "../utils/constants";
 import { BoldTypography } from "../components/Common";
-import { Typography, makeStyles, Hidden, useTheme, useMediaQuery } from "@material-ui/core";
+import {
+  Typography,
+  makeStyles,
+  Hidden,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function Landing() {
   const styles = useStyles();
-  const isDesktop = useMediaQuery("@media (pointer: fine)")
+  const isDesktop = useMediaQuery("@media (pointer: fine)");
   const { scrollYProgress } = useViewportScroll();
   const scrollAnimationIndex = {
     1: useTransform(scrollYProgress, (p) => p * 500),
@@ -68,7 +74,7 @@ export function Landing() {
       <Tiger />
       <div className={styles.title}>
         <BoldTypography
-          variant="h2"
+          variant="h1"
           align="center"
           color="inherit"
           gutterBottom
@@ -76,6 +82,7 @@ export function Landing() {
           Dmitriy <span className="gradientText"> Kovalenko*</span>
         </BoldTypography>
         <Typography
+          component="h2"
           id="typing"
           className={styles.typingTitle}
           align="center"

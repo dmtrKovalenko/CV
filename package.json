@@ -28,7 +28,8 @@
     "raw-loader": "^2.0.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-markdown": "^4.0.6"
+    "react-markdown": "^4.0.6",
+    "webp-loader": "^0.6.0"
   },
   "browserslist": [
     "last 1 version",
