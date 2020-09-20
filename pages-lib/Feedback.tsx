@@ -141,13 +141,15 @@ export const Feedback: React.FC = ({}) => {
         "Content-type": "application/json",
       },
       body: JSON.stringify({ message }),
-    }).then((res) => {
-      if (res.status > 400) {
-        setSendingState("error");
-      } else {
-        setSendingState("success");
-      }
-    });
+    })
+      .then((res) => {
+        if (res.status > 400) {
+          setSendingState("error");
+        } else {
+          setSendingState("success");
+        }
+      })
+      .catch(() => setSendingState("error"));
   };
 
   return (
@@ -173,6 +175,7 @@ export const Feedback: React.FC = ({}) => {
 
             <div className={styles.feedbackInput}>
               <TextField
+                id="feedback-message"
                 required
                 fullWidth
                 multiline

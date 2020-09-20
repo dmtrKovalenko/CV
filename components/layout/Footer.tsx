@@ -18,23 +18,23 @@ const useStyles = makeStyles((theme: Theme) => ({
     clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 100% 0)",
     "-webkit-clip-path": "polygon(0 100%, 100% 100%, 100% 100%, 100% 0)",
     [theme.breakpoints.down("sm")]: {
-      height: 100
-    }
+      height: 100,
+    },
   },
   container: {
-    backgroundColor: "black"
+    backgroundColor: "black",
   },
   social: {
     [theme.breakpoints.down("sm")]: {
       order: 1,
-      marginBottom: 32
-    }
+      marginBottom: 32,
+    },
   },
   animation: {
     marginTop: -50,
     [theme.breakpoints.down("xs")]: {
-      margin: "-100px 0"
-    }
+      margin: "-100px 0",
+    },
   },
   socialContact: {
     marginTop: 32,
@@ -52,44 +52,44 @@ const useStyles = makeStyles((theme: Theme) => ({
       borderBottom: `3px solid ${theme.palette.primary.light}`,
       transformOrigin: "0% 100%",
       transform: "scale(0)",
-      transition: theme.transitions.create("transform")
+      transition: theme.transitions.create("transform"),
     },
 
     "& svg": {
-      transition: theme.transitions.create("transform")
+      transition: theme.transitions.create("transform"),
     },
 
     "&:hover": {
       "& svg": {
         willChange: "transform",
-        transform: "translateY(-10px)"
+        transform: "translateY(-10px)",
       },
 
       "&:after": {
         willChange: "transform",
-        transform: "scale(1)"
-      }
-    }
+        transform: "scale(1)",
+      },
+    },
   },
   socialLink: {
-    textDecoration: "none"
+    textDecoration: "none",
   },
   socialLabel: {
     marginLeft: 20,
-    color: "white"
+    color: "white",
   },
   heartIcon: {
     transform: "translateY(5px)",
-    fill: `url(#svg-gradient)`
+    fill: `url(#svg-gradient)`,
   },
   hint: {
     marginLeft: "auto",
     marginRight: "auto",
     [theme.breakpoints.down("sm")]: {
       order: 2,
-      padding: "0 48px"
-    }
-  }
+      padding: "0 48px",
+    },
+  },
 }));
 
 const icons: Record<string, React.ComponentType> = {
@@ -98,12 +98,12 @@ const icons: Record<string, React.ComponentType> = {
   LinkedIn: LinkedinSvgIcon,
   Instagram: InstagramSvgIcon,
   Github: GithubSvgIcon,
-  Facebook: FacebookSvgIcon
+  Facebook: FacebookSvgIcon,
 };
 
 const SocialContact: React.FC<{ name: string; url: string }> = ({
   name,
-  url
+  url,
 }) => {
   const styles = useStyles();
   const Icon = icons[name];
@@ -124,7 +124,11 @@ const SocialContact: React.FC<{ name: string; url: string }> = ({
       <div className={styles.socialContact}>
         <Grid container>
           <Icon />
-          <Typography className={styles.socialLabel} variant="subtitle1">
+          <Typography
+            component="p"
+            className={styles.socialLabel}
+            variant="subtitle1"
+          >
             {"On " + name}
           </Typography>
         </Grid>
@@ -149,11 +153,16 @@ export const Footer: React.FunctionComponent<{}> = () => {
           justify="center"
           className={styles.social}
         >
-          <BoldTypography id="contacts" variant="h4" gutterBottom>
+          <BoldTypography
+            id="contacts"
+            variant="h3"
+            component="h2"
+            gutterBottom
+          >
             Find me
           </BoldTypography>
 
-          {contacts.map(contact => (
+          {contacts.map((contact) => (
             <SocialContact
               key={contact.name}
               name={contact.name}

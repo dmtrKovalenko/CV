@@ -2,9 +2,17 @@ import * as React from "react";
 import Link from "next/link";
 import { Page, PageTitle } from "../components/Common";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import { makeStyles, Typography, Avatar, Button } from "@material-ui/core";
+import {
+  makeStyles,
+  Typography,
+  Avatar,
+  Button,
+  useTheme,
+} from "@material-ui/core";
 import ReactMarkDown from "react-markdown";
-import Photo from "../assets/Photo.jpg";
+import Photo300 from "../assets/Photo-300.jpeg";
+import Photo360 from "../assets/Photo-360.jpeg";
+import Photo480 from "../assets/Photo-480.jpg";
 import aboutMeMd from "../content/about.md";
 
 interface AboutMeProps {}
@@ -27,6 +35,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       width: 480,
       height: 480,
+    },
+
+    "& img": {
+      width: "100%",
     },
   },
   text: {
@@ -68,6 +80,7 @@ const processedAboutText = aboutMeMd.replace(
 );
 
 export const AboutMe: React.FC<AboutMeProps> = () => {
+  const theme = useTheme();
   const styles = useStyles();
 
   return (
@@ -77,7 +90,19 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
           About me
         </PageTitle>
 
-        <Avatar alt="My photo" src={Photo} className={styles.avatar} />
+        <Avatar alt="My photo" className={styles.avatar}>
+          <picture>
+            <source
+              media={theme.breakpoints.up("lg").replace("@media", "")}
+              srcSet={Photo480}
+            />
+            <source
+              media={theme.breakpoints.up("md").replace("@media", "")}
+              srcSet={Photo360}
+            />
+            <img src={Photo300} alt="kek" />
+          </picture>
+        </Avatar>
 
         <div className={styles.text}>
           <Typography component="div" gutterBottom>
@@ -89,7 +114,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
               size="large"
               variant="outlined"
               color="primary"
-              style={{fontWeight: 'bold'}}
+              style={{ fontWeight: "bold" }}
               endIcon={<ArrowForwardIcon />}
             >
               Lets work together
