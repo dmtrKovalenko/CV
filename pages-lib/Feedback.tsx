@@ -197,6 +197,7 @@ export const Feedback: React.FC = ({}) => {
                 label="Your message"
                 placeholder="Any text"
                 variant="outlined"
+                name="message"
                 FormHelperTextProps={{ className: styles.helperMessage }}
                 helperText={getMessage(sendingState)}
               />
