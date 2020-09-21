@@ -143,7 +143,7 @@ export const Feedback: React.FC = ({}) => {
       body: JSON.stringify({ message }),
     })
       .then((res) => {
-        if (res.status > 400) {
+        if (res.status >= 400) {
           setSendingState("error");
         } else {
           setSendingState("success");
