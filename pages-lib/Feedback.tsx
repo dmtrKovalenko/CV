@@ -13,6 +13,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { BASE_FUNCTIONS_PATH } from "../utils/constants";
+import { encodeFormUri } from "../utils/helpers";
 
 const useStyles = makeStyles((theme) => ({
   clipPath: {
@@ -135,12 +136,12 @@ export const Feedback: React.FC = ({}) => {
       window.ga("send", "event", "feedback message", "send", "feedback");
     }
 
-    fetch(`${BASE_FUNCTIONS_PATH}/sendFeedback`, {
+    fetch("/", {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-type": "application/x-www-form-urlencoded",
       },
-      body: JSON.stringify({ message }),
+      body: encodeFormUri({ message }),
     })
       .then((res) => {
         if (res.status >= 400) {
@@ -157,11 +158,15 @@ export const Feedback: React.FC = ({}) => {
       <div className={styles.clipPath} />
       <Page className={styles.page}>
         <form
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
           onSubmit={(e) => {
             e.preventDefault();
             sendFeedback();
           }}
         >
+          <input type="hidden" name="form-name" value="feedback" />
+
           <div className={styles.grid}>
             <PageTitle id="about" align="left" className={styles.title}>
               Drop me a <span className="gradientText"> note</span>
