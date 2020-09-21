@@ -13,6 +13,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { BASE_FUNCTIONS_PATH } from "../utils/constants";
+import { encodeFormUri } from "../utils/helpers";
 
 const useStyles = makeStyles((theme) => ({
   clipPath: {
@@ -116,6 +117,7 @@ function getMessage(state: RequestState) {
 export const Feedback: React.FC = ({}) => {
   const styles = useStyles();
   const theme = useTheme();
+  const formRef = React.useRef<HTMLFormElement>(null);
   const toShowLargeTextArea = useMediaQuery(theme.breakpoints.up("sm"));
   const [message, setMessage] = React.useState("");
   const [sendingState, setSendingState] = React.useState<RequestState>("idle");
@@ -135,12 +137,17 @@ export const Feedback: React.FC = ({}) => {
       window.ga("send", "event", "feedback message", "send", "feedback");
     }
 
-    fetch(`${BASE_FUNCTIONS_PATH}/sendFeedback`, {
+    if (!formRef.current) {
+      setSendingState("error");
+      return;
+    }
+
+    fetch(formRef.current.action, {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-type": "application/x-www-form-urlencoded",
       },
-      body: JSON.stringify({ message }),
+      body: encodeFormUri({ message, "form-name": "Feedback" }),
     })
       .then((res) => {
         if (res.status >= 400) {
@@ -157,6 +164,9 @@ export const Feedback: React.FC = ({}) => {
       <div className={styles.clipPath} />
       <Page className={styles.page}>
         <form
+          name="Feedback"
+          ref={formRef}
+          data-netlify="true"
           onSubmit={(e) => {
             e.preventDefault();
             sendFeedback();
@@ -185,6 +195,7 @@ export const Feedback: React.FC = ({}) => {
                 label="Your message"
                 placeholder="Any text"
                 variant="outlined"
+                name="message"
                 FormHelperTextProps={{ className: styles.helperMessage }}
                 helperText={getMessage(sendingState)}
               />
