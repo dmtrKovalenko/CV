@@ -138,7 +138,7 @@ export const Feedback: React.FC = ({}) => {
     }
 
     if (!formRef.current) {
-      setSendingState("error")
+      setSendingState("error");
       return;
     }
 
@@ -147,7 +147,7 @@ export const Feedback: React.FC = ({}) => {
       headers: {
         "Content-type": "application/x-www-form-urlencoded",
       },
-      body: encodeFormUri({ message }),
+      body: encodeFormUri({ message, "form-name": "Feedback" }),
     })
       .then((res) => {
         if (res.status >= 400) {
@@ -164,16 +164,14 @@ export const Feedback: React.FC = ({}) => {
       <div className={styles.clipPath} />
       <Page className={styles.page}>
         <form
+          name="Feedback"
           ref={formRef}
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
           onSubmit={(e) => {
             e.preventDefault();
             sendFeedback();
           }}
         >
-          <input type="hidden" name="form-name" value="feedback" />
-
           <div className={styles.grid}>
             <PageTitle id="about" align="left" className={styles.title}>
               Drop me a <span className="gradientText"> note</span>
