@@ -117,6 +117,7 @@ function getMessage(state: RequestState) {
 export const Feedback: React.FC = ({}) => {
   const styles = useStyles();
   const theme = useTheme();
+  const formRef = React.useRef<HTMLFormElement>(null);
   const toShowLargeTextArea = useMediaQuery(theme.breakpoints.up("sm"));
   const [message, setMessage] = React.useState("");
   const [sendingState, setSendingState] = React.useState<RequestState>("idle");
@@ -136,7 +137,12 @@ export const Feedback: React.FC = ({}) => {
       window.ga("send", "event", "feedback message", "send", "feedback");
     }
 
-    fetch("/", {
+    if (!formRef.current) {
+      setSendingState("error")
+      return;
+    }
+
+    fetch(formRef.current.action, {
       method: "POST",
       headers: {
         "Content-type": "application/x-www-form-urlencoded",
@@ -158,6 +164,7 @@ export const Feedback: React.FC = ({}) => {
       <div className={styles.clipPath} />
       <Page className={styles.page}>
         <form
+          ref={formRef}
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={(e) => {
