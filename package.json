@@ -21,7 +21,7 @@
     "framer-motion": "2.3.0",
     "global": "^4.4.0",
     "imagemin-mozjpeg": "^9.0.0",
-    "next": "^9.4.4",
+    "next": "^9.5.4",
     "next-ga": "^2.3.4",
     "next-optimized-images": "^2.5.4",
     "prop-types": "latest",
