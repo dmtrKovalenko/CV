@@ -25,7 +25,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import { AnimatedCard } from "../components/AnimatedCard";
 import { NoVideoFiller, Video } from "./Video";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import { useWindowResize } from "../utils/useWindowResize";
 
 interface SpeakingProps {}
@@ -285,11 +285,13 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
       )}
 
       <motion.div
+        layoutId="scroll"
         ref={scrollContainerRef}
         // using CPU accelerated margin-left animation here in order to unlock the ability to use position:fixed inside
         // It doesn't harms performance for now and renders stable 60 FPS.
         // http://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/
-        animate={{ marginLeft: -talksGridScrollX }}
+        // using string based px because of https://github.com/framer/motion/issues/741
+        animate={{ marginLeft: `${-talksGridScrollX}px` }}
         className={styles.talksGrid}
       >
         <TalkCard className={styles.nextConf}>
@@ -364,108 +366,111 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           open={selectedCard !== null}
           onClick={closeTalk}
         />
-
-        {[...talks].map((talk) => {
-          const isSelected = talk.title === selectedCard;
-          return (
-            <AnimatedCard
-              key={talk.title}
-              component={TalkCard}
-              classes={{
-                root: styles.talkCard,
-                contentContainer: styles.talkCardContentContainer,
-              }}
-              isSelected={isSelected}
-              onClose={closeTalk}
-              onClick={() => openTalk(talk.title)}
-            >
-              <div className={styles.talkContent}>
-                {isSelected && (
-                  <Hidden smUp>
-                    <hr className={styles.dragPin} />
-                  </Hidden>
-                )}
-
-                <Typography color="textSecondary" variant="overline">
-                  {talk.presentations[0].when}
-                </Typography>
-
-                <BoldTypography
-                  gutterBottom
-                  // layout
-                  style={{
-                    fontSize: isSelected ? 32 : 24,
-                  }}
-                  className={styles.talkTitle}
-                  variant={isSelected ? "h3" : "h5"}
-                  component={isSelected ? "h3" : "h3"}
-                >
-                  {talk.title}
-                </BoldTypography>
-
-                {!isSelected && (
-                  <Grid container className={styles.actions}>
-                    {talk.presentations[0].youTubeVideoId && (
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
-                      >
-                        <IconButton aria-label="Open YouTube video">
-                          <YouTubeIcon
-                            fontSize="large"
-                            className={styles.gradientIcon}
-                          />
-                        </IconButton>
-                      </a>
-                    )}
-                  </Grid>
-                )}
-
-                <div>
+        {/* <AnimateSharedLayout type="crossfade"> */}
+          {[...talks].map((talk) => {
+            const isSelected = talk.title === selectedCard;
+            return (
+              <AnimatedCard
+                key={talk.title}
+                component={TalkCard}
+                classes={{
+                  root: styles.talkCard,
+                  contentContainer: styles.talkCardContentContainer,
+                }}
+                isSelected={isSelected}
+                onClose={closeTalk}
+                onClick={() => openTalk(talk.title)}
+              >
+                <div className={styles.talkContent}>
                   {isSelected && (
-                    <>
-                      {talk.presentations[0].youTubeVideoId ? (
-                        <Video
-                          youTubeVideoId={talk.presentations[0].youTubeVideoId}
-                        />
-                      ) : (
-                        <NoVideoFiller />
-                      )}
-
-                      <NoDecorationColorLink
-                        target="blank"
-                        rel="noopener noreferrer"
-                        href={talk.slides}
-                      >
-                        <Button
-                          size="large"
-                          variant="outlined"
-                          color="primary"
-                          style={{
-                            border: "none",
-                            marginBottom: 32,
-                            fontWeight: "bold",
-                          }}
-                          endIcon={<ArrowForwardIcon />}
-                        >
-                          Slides
-                        </Button>
-                      </NoDecorationColorLink>
-                    </>
+                    <Hidden smUp>
+                      <hr className={styles.dragPin} />
+                    </Hidden>
                   )}
+
+                  <Typography color="textSecondary" variant="overline">
+                    {talk.presentations[0].when}
+                  </Typography>
+
+                  <BoldTypography
+                    gutterBottom
+                    // layout
+                    style={{
+                      fontSize: isSelected ? 32 : 24,
+                    }}
+                    className={styles.talkTitle}
+                    variant={isSelected ? "h3" : "h5"}
+                    component={isSelected ? "h3" : "h3"}
+                  >
+                    {talk.title}
+                  </BoldTypography>
+
+                  {!isSelected && (
+                    <Grid container className={styles.actions}>
+                      {talk.presentations[0].youTubeVideoId && (
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
+                        >
+                          <IconButton aria-label="Open YouTube video">
+                            <YouTubeIcon
+                              fontSize="large"
+                              className={styles.gradientIcon}
+                            />
+                          </IconButton>
+                        </a>
+                      )}
+                    </Grid>
+                  )}
+
+                  <div>
+                    {isSelected && (
+                      <>
+                        {talk.presentations[0].youTubeVideoId ? (
+                          <Video
+                            youTubeVideoId={
+                              talk.presentations[0].youTubeVideoId
+                            }
+                          />
+                        ) : (
+                          <NoVideoFiller />
+                        )}
+
+                        <NoDecorationColorLink
+                          target="blank"
+                          rel="noopener noreferrer"
+                          href={talk.slides}
+                        >
+                          <Button
+                            size="large"
+                            variant="outlined"
+                            color="primary"
+                            style={{
+                              border: "none",
+                              marginBottom: 32,
+                              fontWeight: "bold",
+                            }}
+                            endIcon={<ArrowForwardIcon />}
+                          >
+                            Slides
+                          </Button>
+                        </NoDecorationColorLink>
+                      </>
+                    )}
+                  </div>
+                  {[...talk.presentations].map((presentation) => (
+                    <SpeakingPresentation
+                      key={presentation.conference}
+                      presentation={presentation}
+                    />
+                  ))}
                 </div>
-                {[...talk.presentations].map((presentation) => (
-                  <SpeakingPresentation
-                    key={presentation.conference}
-                    presentation={presentation}
-                  />
-                ))}
-              </div>
-            </AnimatedCard>
-          );
-        })}
+              </AnimatedCard>
+            );
+          })}
+        {/* </AnimateSharedLayout> */}
       </motion.div>
     </PageNoPadding>
   );

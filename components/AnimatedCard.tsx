@@ -1,6 +1,11 @@
 import * as React from "react";
 import clsx from "clsx";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
 import { useWheelScroll } from "../utils/useWheelScroll";
 import { useInvertedBorderRadius } from "../utils/useInvertedBorderRadius";
 import { useScrollConstraints } from "../utils/useScrollConstraints";
@@ -77,43 +82,14 @@ export const AnimatedCard = React.memo(
     ...other
   }: AnimatedCardProps) => {
     const styles = useStyles();
-    const y = useMotionValue(0);
     const hoverXY = useSpring(0, cardOpenSpring);
-    const zIndex = useMotionValue(isSelected ? 2 : 0);
-
-    // Maintain the visual border radius when we perform the layoutTransition by inverting its scaleX/Y
-    const inverted = useInvertedBorderRadius(20);
-
-    // We'll use the opened card element to calculate the scroll constraints
-    const cardRef = React.useRef(null);
-    const constraints = useScrollConstraints(cardRef, isSelected);
-
-    function checkSwipeToDismiss(yPosition: number) {
-      if (yPosition > DISMISS_DISTANCE) {
-        onClose();
-      }
-    }
 
     if (isSelected) {
       hoverXY.set(0);
     }
 
-    // When this card is selected, attach a wheel event listener
-    const containerRef = React.useRef(null);
-    useWheelScroll({
-      y,
-      constraints,
-      ref: containerRef,
-      isActive: isSelected,
-      onWheelCallback: () => checkSwipeToDismiss(y.get()),
-    });
-
     return (
-      <Component
-        ref={containerRef}
-        className={clsx(styles.card, classes.root)}
-        {...other}
-      >
+      <Component className={clsx(styles.card, classes.root)} {...other}>
         <motion.div
           style={{ x: hoverXY, y: hoverXY }}
           transition={cardOpenSpring}
@@ -125,13 +101,9 @@ export const AnimatedCard = React.memo(
           })}
         >
           <motion.div
-            ref={cardRef}
-            className={clsx(styles.cardContent, classes.contentContainer)}
-            style={{ ...inverted, zIndex, y }}
             layout
+            className={clsx(styles.cardContent, classes.contentContainer)}
             transition={isSelected ? cardOpenSpring : cardCloseSpring}
-            drag={isSelected ? "y" : false}
-            dragConstraints={constraints}
             animate={isSelected ? { y: 0, x: 0 } : undefined}
             onDragEnd={(_e, info) => {
               if (info.offset.y > DISMISS_DISTANCE + 100) {

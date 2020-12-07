@@ -18,7 +18,7 @@
     "animejs": "^3.0.1",
     "clsx": "^1.1.1",
     "debounce": "^1.2.0",
-    "framer-motion": "2.3.0",
+    "framer-motion": "^2.9.5",
     "global": "^4.4.0",
     "imagemin-mozjpeg": "^9.0.0",
     "next": "^9.5.4",
