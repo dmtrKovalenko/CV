@@ -361,117 +361,113 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           </NoDecorationColorLink>
         </TalkCard>
 
-        <Backdrop
-          style={{ zIndex: 1 }}
-          open={selectedCard !== null}
-          onClick={closeTalk}
-        />
-        {/* <AnimateSharedLayout type="crossfade"> */}
-          {[...talks].map((talk) => {
-            const isSelected = talk.title === selectedCard;
-            return (
-              <AnimatedCard
-                key={talk.title}
-                component={TalkCard}
-                classes={{
-                  root: styles.talkCard,
-                  contentContainer: styles.talkCardContentContainer,
-                }}
-                isSelected={isSelected}
-                onClose={closeTalk}
-                onClick={() => openTalk(talk.title)}
-              >
-                <div className={styles.talkContent}>
-                  {isSelected && (
-                    <Hidden smUp>
-                      <hr className={styles.dragPin} />
-                    </Hidden>
-                  )}
+        {[...talks].map((talk) => {
+          const isSelected = talk.title === selectedCard;
+          return (
+            <AnimatedCard
+              key={talk.title}
+              component={TalkCard}
+              classes={{
+                root: styles.talkCard,
+                contentContainer: styles.talkCardContentContainer,
+              }}
+              isSelected={isSelected}
+              onClose={closeTalk}
+              onClick={() => openTalk(talk.title)}
+            >
+              <div className={styles.talkContent}>
+                {isSelected && (
+                  <Hidden smUp>
+                    <hr className={styles.dragPin} />
+                  </Hidden>
+                )}
 
-                  <Typography color="textSecondary" variant="overline">
-                    {talk.presentations[0].when}
-                  </Typography>
+                <Typography color="textSecondary" variant="overline">
+                  {talk.presentations[0].when}
+                </Typography>
 
-                  <BoldTypography
-                    gutterBottom
-                    // layout
-                    style={{
-                      fontSize: isSelected ? 32 : 24,
-                    }}
-                    className={styles.talkTitle}
-                    variant={isSelected ? "h3" : "h5"}
-                    component={isSelected ? "h3" : "h3"}
-                  >
-                    {talk.title}
-                  </BoldTypography>
+                <BoldTypography
+                  gutterBottom
+                  // layout
+                  style={{
+                    fontSize: isSelected ? 32 : 24,
+                  }}
+                  className={styles.talkTitle}
+                  variant={isSelected ? "h3" : "h5"}
+                  component={isSelected ? "h3" : "h3"}
+                >
+                  {talk.title}
+                </BoldTypography>
 
-                  {!isSelected && (
-                    <Grid container className={styles.actions}>
-                      {talk.presentations[0].youTubeVideoId && (
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
-                        >
-                          <IconButton aria-label="Open YouTube video">
-                            <YouTubeIcon
-                              fontSize="large"
-                              className={styles.gradientIcon}
-                            />
-                          </IconButton>
-                        </a>
-                      )}
-                    </Grid>
-                  )}
-
-                  <div>
-                    {isSelected && (
-                      <>
-                        {talk.presentations[0].youTubeVideoId ? (
-                          <Video
-                            youTubeVideoId={
-                              talk.presentations[0].youTubeVideoId
-                            }
+                {!isSelected && (
+                  <Grid container className={styles.actions}>
+                    {talk.presentations[0].youTubeVideoId && (
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
+                      >
+                        <IconButton aria-label="Open YouTube video">
+                          <YouTubeIcon
+                            fontSize="large"
+                            className={styles.gradientIcon}
                           />
-                        ) : (
-                          <NoVideoFiller />
-                        )}
-
-                        <NoDecorationColorLink
-                          target="blank"
-                          rel="noopener noreferrer"
-                          href={talk.slides}
-                        >
-                          <Button
-                            size="large"
-                            variant="outlined"
-                            color="primary"
-                            style={{
-                              border: "none",
-                              marginBottom: 32,
-                              fontWeight: "bold",
-                            }}
-                            endIcon={<ArrowForwardIcon />}
-                          >
-                            Slides
-                          </Button>
-                        </NoDecorationColorLink>
-                      </>
+                        </IconButton>
+                      </a>
                     )}
-                  </div>
-                  {[...talk.presentations].map((presentation) => (
-                    <SpeakingPresentation
-                      key={presentation.conference}
-                      presentation={presentation}
-                    />
-                  ))}
+                  </Grid>
+                )}
+
+                <div>
+                  {isSelected && (
+                    <>
+                      {talk.presentations[0].youTubeVideoId ? (
+                        <Video
+                          youTubeVideoId={talk.presentations[0].youTubeVideoId}
+                        />
+                      ) : (
+                        <NoVideoFiller />
+                      )}
+
+                      <NoDecorationColorLink
+                        target="blank"
+                        rel="noopener noreferrer"
+                        href={talk.slides}
+                      >
+                        <Button
+                          size="large"
+                          variant="outlined"
+                          color="primary"
+                          style={{
+                            border: "none",
+                            marginBottom: 32,
+                            fontWeight: "bold",
+                          }}
+                          endIcon={<ArrowForwardIcon />}
+                        >
+                          Slides
+                        </Button>
+                      </NoDecorationColorLink>
+                    </>
+                  )}
                 </div>
-              </AnimatedCard>
-            );
-          })}
-        {/* </AnimateSharedLayout> */}
+                {[...talk.presentations].map((presentation) => (
+                  <SpeakingPresentation
+                    key={presentation.conference}
+                    presentation={presentation}
+                  />
+                ))}
+              </div>
+            </AnimatedCard>
+          );
+        })}
       </motion.div>
+      <Backdrop
+        style={{ zIndex: 1 }}
+        open={selectedCard !== null}
+        onClick={closeTalk}
+      />
     </PageNoPadding>
   );
 };

@@ -1,14 +1,6 @@
 import * as React from "react";
 import clsx from "clsx";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  AnimatePresence,
-} from "framer-motion";
-import { useWheelScroll } from "../utils/useWheelScroll";
-import { useInvertedBorderRadius } from "../utils/useInvertedBorderRadius";
-import { useScrollConstraints } from "../utils/useScrollConstraints";
+import { motion, useSpring } from "framer-motion";
 import { makeStyles } from "@material-ui/core";
 
 interface AnimatedCardProps extends React.HTMLProps<HTMLDivElement> {
@@ -91,11 +83,11 @@ export const AnimatedCard = React.memo(
     return (
       <Component className={clsx(styles.card, classes.root)} {...other}>
         <motion.div
+          layout
           style={{ x: hoverXY, y: hoverXY }}
           transition={cardOpenSpring}
           onHoverStart={() => !isSelected && hoverXY.set(-25)}
           onHoverEnd={() => hoverXY.set(0)}
-          // whileHover={isSelected ? { x: 0, y: 0 } : { y: -25, x: -25 }}
           className={clsx(styles.cardContentContainer, {
             [styles.open]: isSelected,
           })}
