@@ -7,6 +7,7 @@ describe("dmtrkovalenko.dev", () => {
   it("opens video talk card", () => {
     cy.visit("/")
     cy.contains("Stop using console for component testing").click()
+    cy.wait(1000)
     cy.percySnapshot()
   })
 
