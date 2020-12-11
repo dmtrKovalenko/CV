@@ -1,0 +1,22 @@
+name: Visual
+on: [push]
+jobs:
+  e2e:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          build: yarn build
+          start: yan start
+          install-command: yarn install --frozen-lockfile --silent
+          # quote the url to be safe against YML parsing surprises
+          wait-on: "http://localhost:3000"
+          # the entire command will automatically be prefixed with "npm"
+          # and we need the second "npm" to execute "cypress run ..." command line
+          command-prefix: "percy exec -- npx"
+        env:
+          PERCY_TOKE: ${{ secrets.PERCY_TOKE }}

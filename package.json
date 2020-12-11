@@ -47,6 +47,8 @@
     "build:api": "tsc -p tsconfig.api.json"
   },
   "devDependencies": {
+    "@percy/cypress": "^2.3.3",
+    "cypress": "^6.1.0",
     "typescript": "^3.7.2"
   }
 }
