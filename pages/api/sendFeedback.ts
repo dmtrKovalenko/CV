@@ -18,11 +18,17 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  bot.sendMessage(
-    Number(process.env.TELEGRAM_CHAT),
-    `New feedback: ${message}`
-  );
-  
-  res.status(200);
-  res.end("");
+  bot
+    .sendMessage(Number(process.env.TELEGRAM_CHAT), `New feedback: ${message}`)
+    .then((msg) => {
+      console.log("Sent telegram message", msg)
+
+      res.status(200);
+      res.end("");
+    })
+    .catch(e => {
+      console.error("Telegram error", e)
+      res.status(500)
+      res.end(JSON.stringify({ error: "Can not send feedback"}))
+    })
 };
