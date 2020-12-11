@@ -11,7 +11,7 @@ jobs:
         with:
           browser: chrome
           build: yarn build
-          start: yan start
+          start: yarn start
           install-command: yarn install --frozen-lockfile --silent
           # quote the url to be safe against YML parsing surprises
           wait-on: "http://localhost:3000"
