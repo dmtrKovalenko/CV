@@ -12,8 +12,6 @@ import {
   useTheme,
   useMediaQuery,
 } from "@material-ui/core";
-import { BASE_FUNCTIONS_PATH } from "../utils/constants";
-import { encodeFormUri } from "../utils/helpers";
 
 const useStyles = makeStyles((theme) => ({
   clipPath: {
@@ -103,9 +101,9 @@ function getIcon(state: RequestState) {
 function getMessage(state: RequestState) {
   switch (state) {
     case "overlimit":
-      return "Your feedback was sent already. We have a quota of 100 emails per day, so please do not dudos this :)";
+      return "Your feedback was sent already. Please please please, do not dudos this form :)";
     case "error":
-      return "A critical error appeared while sending your feedback. We have a quota of 100 emails per day, feel free to get back tomorrow 😋";
+      return "A critical error appeared while sending your feedback. This is really weird that you see this. I am sorry 🙈! I`ll be notified about this error and will try to fix this ASAP.";
     case "success":
       return "Your feedback was sent. Thanks for your words 🙏";
 
@@ -142,16 +140,13 @@ export const Feedback: React.FC = ({}) => {
       return;
     }
 
-    fetch(formRef.current.action, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/x-www-form-urlencoded",
-      },
-      body: encodeFormUri({ message, "form-name": "Feedback" }),
+    fetch(`/api/sendFeedback?message=${message}`, {
+      method: "GET",
     })
       .then((res) => {
         if (res.status >= 400) {
           setSendingState("error");
+          window.ga("send", "event", "feedback message", "error", "feedback")
         } else {
           setSendingState("success");
         }
@@ -166,7 +161,6 @@ export const Feedback: React.FC = ({}) => {
         <form
           name="Feedback"
           ref={formRef}
-          data-netlify="true"
           onSubmit={(e) => {
             e.preventDefault();
             sendFeedback();
