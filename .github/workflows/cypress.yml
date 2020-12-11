@@ -19,4 +19,4 @@ jobs:
           # and we need the second "npm" to execute "cypress run ..." command line
           command-prefix: "percy exec -- npx"
         env:
-          PERCY_TOKE: ${{ secrets.PERCY_TOKE }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
