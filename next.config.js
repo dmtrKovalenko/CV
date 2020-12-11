@@ -1,13 +1,12 @@
-const withImages = require("next-optimized-images");
-
-module.exports = withImages({
+module.exports = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-  webpack: config => {
+ 
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.md$/,
-      use: "raw-loader"
+      use: "raw-loader",
     });
 
     return config;
-  }
-});
+  },
+};

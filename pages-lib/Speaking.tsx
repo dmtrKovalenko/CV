@@ -143,12 +143,6 @@ const useStyles = makeStyles((theme) => {
       flexDirection: "column",
       height: "100%",
     },
-    dragPin: {
-      width: 120,
-      height: 2,
-      border: "none",
-      backgroundColor: theme.palette.text.secondary,
-    },
     actions: {
       marginBottom: "auto",
       marginLeft: -12,
@@ -188,10 +182,10 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
     setSelectedTalk(title);
   };
 
-  const closeTalk = () => {
+  const closeTalk = React.useCallback(() => {
     setSelectedTalk(null);
     window.history.pushState({}, "", "/");
-  };
+  }, []);
 
   React.useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -253,9 +247,9 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
       </PageTitleNoPadding>
       <div style={{ padding: 32 }}>
         <Typography component="p" variant="subtitle1" align="center">
-          I am really passionate about technical speaking. I do want to think
-          that my talks are changing lives. <br /> Here is a (non-full) list of
-          my talks:
+          I do want to think that my talks are changing lives, but it looks like
+          they are changing only conference schedule 😃 <br /> Here is a
+          (non-full) list of my talks:
         </Typography>
       </div>
 
@@ -309,18 +303,24 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
               Meet me at
             </BoldTypography>
 
-            <Hidden smUp implementation="css">
-              <BoldTypography gutterBottom align="center" variant="h5">
+            <Hidden mdUp implementation="css">
+              <BoldTypography
+                component="p"
+                gutterBottom
+                align="center"
+                variant="h5"
+              >
                 {nextTalk.conference}
               </BoldTypography>
             </Hidden>
 
-            <Hidden smDown>
+            <Hidden smDown implementation="css">
               <Typography
                 gutterBottom
                 style={{ marginBottom: "2rem" }}
                 align="center"
                 variant="h5"
+                component="p"
               >
                 {nextTalk.conference}
               </Typography>
@@ -333,7 +333,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                   alignItems="center"
                 >
                   <QueryBuilderIcon />
-                  <Typography align="center" variant="subtitle1">
+                  <Typography align="center" variant="subtitle1" component="p">
                     {nextTalk.when}
                   </Typography>
                 </Grid>
@@ -346,13 +346,18 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                   alignItems="center"
                 >
                   <LocationOnIcon />
-                  <Typography gutterBottom align="center" variant="subtitle1">
+                  <Typography
+                    gutterBottom
+                    align="center"
+                    variant="subtitle1"
+                    component="p"
+                  >
                     {nextTalk.location}
                   </Typography>
                 </Grid>
               </Grid>
 
-              <BoldTypography gutterBottom align="center" variant="h5">
+              <BoldTypography gutterBottom align="center" variant="h5" component="p">
                 «<br />
                 {nextTalk.talk}
                 <br />»
@@ -372,16 +377,10 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                 contentContainer: styles.talkCardContentContainer,
               }}
               isSelected={isSelected}
-              onClose={closeTalk}
+              onClose={() => closeTalk()}
               onClick={() => openTalk(talk.title)}
             >
               <div className={styles.talkContent}>
-                {isSelected && (
-                  <Hidden smUp>
-                    <hr className={styles.dragPin} />
-                  </Hidden>
-                )}
-
                 <Typography color="textSecondary" variant="overline">
                   {talk.presentations[0].when}
                 </Typography>

@@ -1,7 +1,8 @@
 import * as React from "react";
+import Image from "next/image";
 import { talks } from "../content/talks.json";
 import { gradientColors } from "../utils/theme";
-import { Avatar, makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 import { NoDecorationColorLink } from "../components/Common";
 
 type Presentation = typeof talks[number]["presentations"][number];
@@ -17,17 +18,16 @@ const useStyles = makeStyles({
     marginBottom: 8,
     alignItems: "center",
     "&:hover": {
-      "& $avatarBorder": {
+      "& $conferenceLogoBorder": {
         background: `linear-gradient(0deg,${gradientColors.from},${gradientColors.to})`,
       },
     },
   },
   conferenceLogo: {
-    width: 64,
-    height: 64,
+    borderRadius: "50%",
   },
-  avatarBorder: {
-    padding: "3px 4px",
+  conferenceLogoBorder: {
+    padding: "4px 4px 0px 4px",
     borderRadius: "50%",
     marginRight: 8,
   },
@@ -45,11 +45,13 @@ export const SpeakingPresentation: React.FC<SpeakingPresentationProps> = ({
       onClick={(e) => e.stopPropagation}
     >
       <div key={presentation.conference} className={styles.talkPresentation}>
-        <div className={styles.avatarBorder}>
-          <Avatar
-            src={presentation.confLogoUrl}
-            className={styles.conferenceLogo}
+        <div className={styles.conferenceLogoBorder}>
+          <Image
             alt={presentation.conference + " logo"}
+            className={styles.conferenceLogo}
+            width={64}
+            height={64}
+            src={presentation.confLogoUrl}
           />
         </div>
         <Typography component="p" variant="subtitle1">

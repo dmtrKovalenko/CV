@@ -1,5 +1,6 @@
 import React from "react";
 import Document, {
+  Html,
   Head,
   Main,
   NextScript,
@@ -41,7 +42,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
 
   render() {
     return (
-      <html lang="en" dir="ltr">
+      <Html lang="en" dir="ltr">
         <Head>
           <meta charSet="utf-8" />
           <meta name="robots" content="index,follow" />
@@ -93,7 +94,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

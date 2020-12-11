@@ -1,7 +1,8 @@
 import * as React from "react";
 import clsx from "clsx";
-import { motion, useSpring } from "framer-motion";
-import { makeStyles } from "@material-ui/core";
+import { motion, useSpring, AnimatePresence } from "framer-motion";
+import { makeStyles, Hidden } from "@material-ui/core";
+import { AnimatedCross } from "./AnimatedCross";
 
 interface AnimatedCardProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactChild;
@@ -14,7 +15,6 @@ interface AnimatedCardProps extends React.HTMLProps<HTMLDivElement> {
   component: string | React.ComponentType<React.HTMLProps<HTMLDivElement>>;
 }
 
-const DISMISS_DISTANCE = 75;
 export const cardOpenSpring = { type: "spring", stiffness: 200, damping: 30 };
 export const cardCloseSpring = { type: "spring", stiffness: 300, damping: 35 };
 
@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   cardContent: {
+    position: "relative",
     pointerEvents: "auto",
     borderRadius: "20px",
     background: "#1c1c1e",
@@ -49,12 +50,20 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     margin: "0 auto",
   },
+  cardCloseButton: {
+    position: "absolute",
+    top: 16,
+    right: 16,
+  },
   open: {
     "& $cardContent": {
       padding: 32,
       height: "auto",
       maxWidth: "700px",
       overflow: "auto",
+      [theme.breakpoints.down("md")]: {
+        paddingTop: 48,
+      },
     },
   },
   contentContainer: {
@@ -97,17 +106,25 @@ export const AnimatedCard = React.memo(
             className={clsx(styles.cardContent, classes.contentContainer)}
             transition={isSelected ? cardOpenSpring : cardCloseSpring}
             animate={isSelected ? { y: 0, x: 0 } : undefined}
-            onDragEnd={(_e, info) => {
-              if (info.offset.y > DISMISS_DISTANCE + 100) {
-                onClose();
-              }
-            }}
           >
+            {isSelected && (
+              <Hidden smUp>
+                <AnimatedCross
+                  aria-label="close talk"
+                  className={styles.cardCloseButton}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onClose();
+                  }}
+                />
+              </Hidden>
+            )}
             {children}
           </motion.div>
         </motion.div>
       </Component>
     );
   },
-  (prev, next) => prev.isSelected === next.isSelected
+  (prev, next) =>
+    prev.isSelected === next.isSelected || prev.onClose === next.onClose
 );
