@@ -47,15 +47,4 @@
 }
 
 
-@font-face {
-    font-family: 'GT Walsheim Pro';
-    src: url('GTWalsheimPro-Black.eot');
-    src: local('GT Walsheim Pro Black'), local('GTWalsheimPro-Black'),
-        url('GTWalsheimPro-Black.eot?#iefix') format('embedded-opentype'),
-        url('GTWalsheimPro-Black.woff2') format('woff2'),
-        url('GTWalsheimPro-Black.woff') format('woff'),
-        url('GTWalsheimPro-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
 

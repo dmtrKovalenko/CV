@@ -104,7 +104,7 @@ export function Landing() {
           Hey, how its going?
         </Typography>
 
-        <Hidden smDown>
+        <Hidden smDown implementation="css">
           <Typography
             component={motion.p}
             // @ts-expect-error

@@ -56,6 +56,9 @@ const useStyles = makeStyles<Theme>((theme) => ({
       false: "scale(0.3)",
     }),
   },
+  resumeContainer: {
+    borderRadius: 8,
+  },
 }));
 
 export const ResumePreview: React.FC = () => {
@@ -75,7 +78,7 @@ export const ResumePreview: React.FC = () => {
       <div className={styles.downloadButton}>
         <NoDecorationLink
           download
-          href={`${PDF_FORMATTER_API_URL}/api/render?url=${RESUME_URL}&attachmentName=DmitriyKovalenko.pdf`}
+          href="/api/renderResume"
         >
           <Button
             className={styles.gradientButton}
@@ -92,7 +95,7 @@ export const ResumePreview: React.FC = () => {
         </NoDecorationLink>
 
         <Typography variant="caption">
-          This may take a while, please be patient
+          This may take a while, please be patient 🐢
         </Typography>
       </div>
 
@@ -104,7 +107,7 @@ export const ResumePreview: React.FC = () => {
               className={styles.scaleContainer}
               onClick={openResumePreview}
             >
-              <Resume />
+              <Resume className={styles.resumeContainer} />
             </Paper>
           </div>
         </ClickAwayListener>

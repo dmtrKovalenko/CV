@@ -25,7 +25,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import { AnimatedCard } from "../components/AnimatedCard";
 import { NoVideoFiller, Video } from "./Video";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import { useWindowResize } from "../utils/useWindowResize";
 
 interface SpeakingProps {}
@@ -34,6 +34,7 @@ const TalkCard = styled("div")(({ theme }) => ({
   maxWidth: 310,
   minWidth: 310,
   minHeight: 440,
+  maxHeight: 440,
   marginRight: "auto",
   borderRadius: 16,
   cursor: "pointer",
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => {
     speakingSection: {
       marginBottom: 64,
       "@media(pointer: fine)": {
-        overflowX: "hidden",
+        overflow: "hidden",
       },
     },
     talksContainer: {
@@ -66,11 +67,12 @@ const useStyles = makeStyles((theme) => {
     talksGrid: {
       overflowX: "scroll",
       "@media(pointer: fine)": {
-        overflowX: "visible",
+        overflow: "visible",
       },
       display: "flex",
       flexWrap: "nowrap",
       padding: 70,
+      height: 440 + 70 + 70,
       [theme.breakpoints.down("sm")]: {
         width: "100%",
         padding: "70px 32px",
@@ -143,12 +145,6 @@ const useStyles = makeStyles((theme) => {
       flexDirection: "column",
       height: "100%",
     },
-    dragPin: {
-      width: 120,
-      height: 2,
-      border: "none",
-      backgroundColor: theme.palette.text.secondary,
-    },
     actions: {
       marginBottom: "auto",
       marginLeft: -12,
@@ -188,10 +184,10 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
     setSelectedTalk(title);
   };
 
-  const closeTalk = () => {
+  const closeTalk = React.useCallback(() => {
     setSelectedTalk(null);
     window.history.pushState({}, "", "/");
-  };
+  }, []);
 
   React.useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -253,14 +249,13 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
       </PageTitleNoPadding>
       <div style={{ padding: 32 }}>
         <Typography component="p" variant="subtitle1" align="center">
-          I am really passionate about technical speaking. I do want to think
-          that my talks are changing lives. <br /> Here is a (non-full) list of
-          my talks:
+          I do want to think that my talks are changing lives, but it looks like
+          they are changing only conference schedule 😃 <br /> Here is a
+          (non-full) list of my talks:
         </Typography>
       </div>
 
-      {(getSpeakingSectionScrollWidth() > dimensions.width ||
-        talksGridScrollX > 0) && (
+      {(getSpeakingSectionScrollWidth() > dimensions.width || talksGridScrollX > 0) && (
         <div aria-hidden className={styles.scrollControls}>
           <IconButton
             tabIndex="-1"
@@ -284,12 +279,15 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
         </div>
       )}
 
+
       <motion.div
+        layoutId="scroll"
         ref={scrollContainerRef}
         // using CPU accelerated margin-left animation here in order to unlock the ability to use position:fixed inside
         // It doesn't harms performance for now and renders stable 60 FPS.
         // http://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/
-        animate={{ marginLeft: -talksGridScrollX }}
+        // using string based px because of https://github.com/framer/motion/issues/741
+        animate={{ marginLeft: `${-talksGridScrollX}px` }}
         className={styles.talksGrid}
       >
         <TalkCard className={styles.nextConf}>
@@ -307,18 +305,24 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
               Meet me at
             </BoldTypography>
 
-            <Hidden smUp implementation="css">
-              <BoldTypography gutterBottom align="center" variant="h5">
+            <Hidden mdUp implementation="css">
+              <BoldTypography
+                component="p"
+                gutterBottom
+                align="center"
+                variant="h5"
+              >
                 {nextTalk.conference}
               </BoldTypography>
             </Hidden>
 
-            <Hidden smDown>
+            <Hidden smDown implementation="css">
               <Typography
                 gutterBottom
                 style={{ marginBottom: "2rem" }}
                 align="center"
                 variant="h5"
+                component="p"
               >
                 {nextTalk.conference}
               </Typography>
@@ -331,7 +335,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                   alignItems="center"
                 >
                   <QueryBuilderIcon />
-                  <Typography align="center" variant="subtitle1">
+                  <Typography align="center" variant="subtitle1" component="p">
                     {nextTalk.when}
                   </Typography>
                 </Grid>
@@ -344,13 +348,18 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                   alignItems="center"
                 >
                   <LocationOnIcon />
-                  <Typography gutterBottom align="center" variant="subtitle1">
+                  <Typography
+                    gutterBottom
+                    align="center"
+                    variant="subtitle1"
+                    component="p"
+                  >
                     {nextTalk.location}
                   </Typography>
                 </Grid>
               </Grid>
 
-              <BoldTypography gutterBottom align="center" variant="h5">
+              <BoldTypography gutterBottom align="center" variant="h5" component="p">
                 «<br />
                 {nextTalk.talk}
                 <br />»
@@ -358,12 +367,6 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
             </Hidden>
           </NoDecorationColorLink>
         </TalkCard>
-
-        <Backdrop
-          style={{ zIndex: 1 }}
-          open={selectedCard !== null}
-          onClick={closeTalk}
-        />
 
         {[...talks].map((talk) => {
           const isSelected = talk.title === selectedCard;
@@ -376,16 +379,10 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                 contentContainer: styles.talkCardContentContainer,
               }}
               isSelected={isSelected}
-              onClose={closeTalk}
+              onClose={() => closeTalk()}
               onClick={() => openTalk(talk.title)}
             >
               <div className={styles.talkContent}>
-                {isSelected && (
-                  <Hidden smUp>
-                    <hr className={styles.dragPin} />
-                  </Hidden>
-                )}
-
                 <Typography color="textSecondary" variant="overline">
                   {talk.presentations[0].when}
                 </Typography>
@@ -467,6 +464,11 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           );
         })}
       </motion.div>
+      <Backdrop
+        style={{ zIndex: 1 }}
+        open={selectedCard !== null}
+        onClick={closeTalk}
+      />
     </PageNoPadding>
   );
 };

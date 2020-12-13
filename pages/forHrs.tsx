@@ -47,6 +47,7 @@ const SkillSet: React.FC<SkillSetProps> = ({ skill, Icon, GridProps }) => {
       <Icon className={styles.icon} />
       <Typography
         variant="h5"
+        component="h2"
         align="center"
         gutterBottom
       >
