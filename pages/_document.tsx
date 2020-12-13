@@ -80,7 +80,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             sizes="16x16"
             href="/favicon-16x16.png"
           />
-          {/* <link rel="preload" as="stylesheet" href="/fonts/sf.css" /> */}
+          <link rel="preload" as="stylesheet" href="/fonts/sf.css" />
 
           <link
             rel="preload"

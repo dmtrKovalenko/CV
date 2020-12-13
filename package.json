@@ -9,6 +9,7 @@
     "@babel/preset-env": "^7.12.7",
     "@material-ui/core": "^4.0.0-alpha.5",
     "@material-ui/icons": "^4.5.1",
+    "@percy/cypress": "^2.3.3",
     "@sendgrid/mail": "^7.2.3",
     "@types/animejs": "^2.0.2",
     "@types/debounce": "^1.2.0",
@@ -16,10 +17,13 @@
     "@types/jss": "^9.5.8",
     "@types/next": "^8.0.1",
     "@types/node-telegram-bot-api": "^0.50.4",
+    "@types/puppeteer-core": "^2.0.0",
     "@types/styled-jsx": "^2.2.8",
     "@zeit/next-typescript": "^1.1.1",
     "animejs": "^3.0.1",
+    "chrome-aws-lambda": "^5.5.0",
     "clsx": "^1.1.1",
+    "cypress": "^6.1.0",
     "debounce": "^1.2.0",
     "framer-motion": "^2.9.5",
     "global": "^4.4.0",
@@ -27,11 +31,15 @@
     "next": "^10.0.3",
     "next-ga": "^2.3.4",
     "node-telegram-bot-api": "^0.50.0",
+    "playwright-aws-lambda": "^0.6.0",
+    "playwright-core": "^1.6.2",
     "prop-types": "latest",
+    "puppeteer-core": "^5.5.0",
     "raw-loader": "^2.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-markdown": "^4.0.6",
+    "typescript": "^3.7.2",
     "webp-loader": "^0.6.0"
   },
   "browserslist": [
@@ -47,10 +55,5 @@
     "start": "next start",
     "export": "next build && next export && yarn build:api",
     "build:api": "tsc -p tsconfig.api.json"
-  },
-  "devDependencies": {
-    "@percy/cypress": "^2.3.3",
-    "cypress": "^6.1.0",
-    "typescript": "^3.7.2"
   }
 }
