@@ -16,7 +16,7 @@ interface AnimatedCardProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const cardOpenSpring = { type: "spring", stiffness: 200, damping: 30 };
-export const cardCloseSpring = { type: "spring", stiffness: 300, damping: 35 };
+export const cardCloseSpring = { type: "spring", stiffness: 400, damping: 35, duration: 0.3 };
 
 const useStyles = makeStyles((theme) => ({
   card: {

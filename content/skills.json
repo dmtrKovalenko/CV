@@ -1,10 +1,10 @@
 {
-  "Languages": ["JavaScript", "TypeScript", "ReasonML"],
+  "Languages": ["JavaScript", "TypeScript", "ReasonML", "OCaml"],
   "Front-end": [
     "React",
     "Webpack",
-    "Parcel",
     "Babel",
+    "Apollo",
     "Redux",
     "MobX",
     "VueJS (less)",
@@ -16,6 +16,8 @@
   "Back-end": [
     "NodeJS",
     "Express",
+    "GraphQL",
+    "Apollo",
     "Koa",
     "PostgreSQL",
     "Redis",

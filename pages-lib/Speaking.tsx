@@ -34,6 +34,7 @@ const TalkCard = styled("div")(({ theme }) => ({
   maxWidth: 310,
   minWidth: 310,
   minHeight: 440,
+  maxHeight: 440,
   marginRight: "auto",
   borderRadius: 16,
   cursor: "pointer",
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => {
     speakingSection: {
       marginBottom: 64,
       "@media(pointer: fine)": {
-        overflowX: "hidden",
+        overflow: "hidden",
       },
     },
     talksContainer: {
@@ -66,11 +67,12 @@ const useStyles = makeStyles((theme) => {
     talksGrid: {
       overflowX: "scroll",
       "@media(pointer: fine)": {
-        overflowX: "visible",
+        overflow: "visible",
       },
       display: "flex",
       flexWrap: "nowrap",
       padding: 70,
+      height: 440 + 70 + 70,
       [theme.breakpoints.down("sm")]: {
         width: "100%",
         padding: "70px 32px",
@@ -253,8 +255,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
         </Typography>
       </div>
 
-      {(getSpeakingSectionScrollWidth() > dimensions.width ||
-        talksGridScrollX > 0) && (
+      {(getSpeakingSectionScrollWidth() > dimensions.width || talksGridScrollX > 0) && (
         <div aria-hidden className={styles.scrollControls}>
           <IconButton
             tabIndex="-1"
@@ -277,6 +278,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           </IconButton>
         </div>
       )}
+
 
       <motion.div
         layoutId="scroll"
