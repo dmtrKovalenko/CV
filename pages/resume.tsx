@@ -7,11 +7,11 @@ import { MuiThemeProvider } from "@material-ui/core";
 import { Typography, Grid, makeStyles, styled } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { Title } from "../components/Common";
+import clsx from "clsx";
 
 const useStyles = makeStyles({
   container: {
     padding: 32,
-    borderRadius: 8,
     background: "white",
     color: "black",
     margin: "0 auto",
@@ -33,6 +33,7 @@ const Link = styled("a")({
 
 const RegularTypography = styled(Typography)({
   fontFamily: "roboto, sans-serif",
+  fontWeight: "normal",
 });
 
 const renderSkills = (key: keyof typeof skills) => skills[key].join(", ");
@@ -58,12 +59,18 @@ const resumeMuiTheme = createMuiTheme({
   },
 });
 
-const Resume = ({ renderFullCV = false }: { renderFullCV?: boolean }) => {
+const Resume = ({
+  renderFullCV = false,
+  className,
+}: {
+  className?: string;
+  renderFullCV?: boolean;
+}) => {
   const styles = useStyles();
 
   return (
     <MuiThemeProvider theme={resumeMuiTheme}>
-      <div className={styles.container}>
+      <div className={clsx(styles.container, className)}>
         <Grid container>
           <Grid item xs={12} container justify="center">
             <Image

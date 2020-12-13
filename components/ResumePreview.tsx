@@ -56,6 +56,9 @@ const useStyles = makeStyles<Theme>((theme) => ({
       false: "scale(0.3)",
     }),
   },
+  resumeContainer: {
+    borderRadius: 8,
+  },
 }));
 
 export const ResumePreview: React.FC = () => {
@@ -104,7 +107,7 @@ export const ResumePreview: React.FC = () => {
               className={styles.scaleContainer}
               onClick={openResumePreview}
             >
-              <Resume />
+              <Resume className={styles.resumeContainer} />
             </Paper>
           </div>
         </ClickAwayListener>
