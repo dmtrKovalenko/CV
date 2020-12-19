@@ -1,12 +1,12 @@
 {
   "nextTalks": [
     {
-      "when": "December 19",
-      "dueTo": "2020-11-28T00:00:00.000Z",
-      "conference": "Goodness Squad Ukraine",
-      "confWebsite": "https://www.wixengevents.com/",
+      "when": "January 28-29",
+      "dueTo": "2021-01-28T00:00:00.000Z",
+      "conference": "TestJS summit",
+      "confWebsite": "https://www.testjssummit.com/",
       "location": "Online",
-      "talk": "Hackathon: Contributing to Cypress.io plugin."
+      "talk": "Visual regression under the hood"
     }
   ],
   "talks": [
