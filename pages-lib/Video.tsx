@@ -49,7 +49,7 @@ export const NoVideoFiller: React.FC<{}> = ({}) => {
   return (
     <NoVideoFillerContainer>
       <Typography>
-        It looks like there is no video for this talk 😓. If this is, new talk
+        It looks like there is no video for this talk 😓. If you interested,
         please get back in a few weeks.
         <b> But </b> if you still in the mood to watch something I can propose a
         video of{" "}
