@@ -9,8 +9,7 @@ const PrimaryChip = styled(Chip)({
 
 PrimaryChip.defaultProps = {
   color: "primary",
-  variant: "outlined",
-  onClick: () => {}
+  variant: "outlined"
 };
 
 const ChipContainer = styled(Grid)({ marginTop: 16 })
