@@ -101,7 +101,7 @@ function getIcon(state: RequestState) {
 function getMessage(state: RequestState) {
   switch (state) {
     case "overlimit":
-      return "Your feedback was sent already. Please please please, do not dudos this form :)";
+      return "Your feedback was sent already. Please please please, do not perform DoS-attack on this form XD";
     case "error":
       return "A critical error appeared while sending your feedback. This is really weird that you see this. I am sorry 🙈! I`ll be notified about this error and will try to fix this ASAP.";
     case "success":
