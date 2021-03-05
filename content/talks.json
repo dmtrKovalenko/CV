@@ -1,12 +1,12 @@
 {
   "nextTalks": [
     {
-      "when": "March 25",
-      "dueTo": "2021-01-28T00:00:00.000Z",
-      "conference": "Math.random community",
-      "confWebsite": "https://www.youtube.com/watch?v=KHMCzIKb8DY&ab_channel=Math.random%3Ajavascriptcommunity",
-      "location": "Stream",
-      "talk": "Let's think about Component Testing (RU)"
+      "when": "April 20-23",
+      "dueTo": "2021-04-23T00:00:00.000Z",
+      "conference": "HolyJS 2021",
+      "confWebsite": "https://holyjs-piter.ru/#speakers",
+      "location": "Online",
+      "talk": "Why OCaml for frontend?"
     }
   ],
   "talks": [
