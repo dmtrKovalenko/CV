@@ -1,15 +1,28 @@
 {
   "nextTalks": [
     {
-      "when": "April 20-23",
-      "dueTo": "2021-04-23T00:00:00.000Z",
-      "conference": "HolyJS 2021",
-      "confWebsite": "https://holyjs-piter.ru/#speakers",
-      "location": "Online",
-      "talk": "Why OCaml for frontend?"
+      "when": "September 7-9",
+      "dueTo": "2021-08-09T00:00:00.000Z",
+      "conference": "TestCon Europe 2021",
+      "confWebsite": "https://testcon.lt/",
+      "location": "Vilnius Or Online",
+      "talk": "How is it possible? Deep dive into Cypress.io architecture."
     }
   ],
   "talks": [
+    {
+      "title": "Why OCaml for frontend",
+      "slides": "https://www.icloud.com/keynote/04eJEIbjViUsmfUkvXxT-mUMw#holyjs-2021",
+      "presentations": [
+        {
+          "when": "23/04/2021",
+          "conference": "HolyJS 2021",
+          "confWebsite": "https://holyjs-piter.ru/#speakers",
+          "confLogoUrl": "/conf-logos/holyjs.svg",
+          "youTubeVideoId": "5FdmV_H5ggk"
+        }
+      ]
+    },
     {
       "title": "Let's think about 'right' component testing (RU)",
       "slides": "https://slides.com/dkovalenko/gus-component-tests",
