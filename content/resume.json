@@ -2,11 +2,27 @@
   "summary": "Advanced JavaScript and OCaml developer, experienced in the creation of modern, fast, pretty, and scalable applications. Open-source maintainer of such projects as Material-UI, React-native, Cypress.io, ODiff, i18next, and others.\n Have a good understanding of both OOP and FP paradigms, design patterns, and software architecture principles. Experienced in developing and shipping large, scalable, and sound web/mobile applications using cutting-edge technologies.",
   "employment": [
     {
-      "when": "September 2020 - now",
+      "when": "May 2021 – now",
+      "company": "LightSource.ai",
+      "position": "Lead Software Engineer",
+      "responsibilities": "Joined the very start of innovative supply chain startup as a lead developer.",
+      "projects": []
+    },
+    {
+      "when": "September 2020 - May 2021",
       "company": "Cypress.io",
       "position": "Senior Software Engineer",
       "responsibilities": "Getting back to Cypress.io to work on component testing.",
-      "projects": []
+      "projects": [ {
+        "idea": "Cypress Component Testing",
+        "stack": [
+          "Typescript",
+          "React",
+          "MobX",
+          "Nodejs"
+        ],
+        "responsibilities": "Author and main architect of cypress component testing https://www.cypress.io/blog/2021/04/06/introducing-the-cypress-component-test-runner/"
+      }]
     },
     {
       "when": "January 2020 - September 2020",
