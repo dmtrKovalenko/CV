@@ -6,7 +6,6 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import { theme } from "../utils/theme";
 import { ServerStyleSheets } from "@material-ui/core/styles";
 
 const title = "Dmitriy Kovalenko";
@@ -50,7 +49,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="theme-color" content="#1a1a1a" />
 
           <meta name="description" content={description} />
           <meta name="twitter:card" content="summary_large_image" />
@@ -88,7 +87,6 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
           />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-          <meta name="theme-color" content={theme.palette.primary.light} />
         </Head>
         <body>
           <Main />
