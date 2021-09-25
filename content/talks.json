@@ -1,12 +1,12 @@
 {
   "nextTalks": [
     {
-      "when": "September 7-9",
-      "dueTo": "2021-08-09T00:00:00.000Z",
-      "conference": "TestCon Europe 2021",
-      "confWebsite": "https://testcon.lt/",
-      "location": "Vilnius Or Online",
-      "talk": "How is it possible? Deep dive into Cypress.io architecture."
+      "when": "November 2-5",
+      "dueTo": "2021-11-05T00:00:00.000Z",
+      "conference": "HolyJS 2021 Moscow",
+      "confWebsite": "https://holyjs-moscow.ru/2021/msk/talks/1tidh354z1mrzlvhrpq0s3/",
+      "location": "Online",
+      "talk": "Do you think TDD doesn't work? I have bad news for you..."
     }
   ],
   "talks": [
