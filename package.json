@@ -28,7 +28,7 @@
     "framer-motion": "^2.9.5",
     "global": "^4.4.0",
     "imagemin-mozjpeg": "^9.0.0",
-    "next": "^10.0.3",
+    "next": "^11.1.1",
     "next-ga": "^2.3.4",
     "node-telegram-bot-api": "^0.50.0",
     "playwright-aws-lambda": "^0.6.0",
