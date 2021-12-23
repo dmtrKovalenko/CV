@@ -1,15 +1,28 @@
 {
   "nextTalks": [
     {
-      "when": "November 2-5",
+      "when": "eventually",
       "dueTo": "2021-11-05T00:00:00.000Z",
-      "conference": "HolyJS 2021 Moscow",
-      "confWebsite": "https://holyjs-moscow.ru/2021/msk/talks/1tidh354z1mrzlvhrpq0s3/",
-      "location": "Online",
-      "talk": "Do you think TDD doesn't work? I have bad news for you..."
+      "conference": "...some conference in the future...",
+      "confWebsite": "mailto:dmtr.kovalenko@outlook.com",
+      "location": "somewhere",
+      "talk": "Or invite me to your conference!"
     }
   ],
   "talks": [
+    {
+      "title": "Think TDD doesn't work? I have bad news for you... (RU)",
+      "slides": "https://www.icloud.com/keynote/05FzKrSe6sBYix65801zWwItQ#TDD_doesnt_work?",
+      "presentations": [
+        {
+          "when": "05/11/2021",
+          "conference": "HolyJS Moscow 2021",
+          "confWebsite": "https://holyjs-moscow.ru/",
+          "confLogoUrl": "/conf-logos/holyjs.svg",
+          "youTubeVideoId": "ZJgaTwdLNIg"
+        }
+      ]
+    },
     {
       "title": "Why OCaml for frontend (RU)",
       "slides": "https://www.icloud.com/keynote/04eJEIbjViUsmfUkvXxT-mUMw#holyjs-2021",
