@@ -1,5 +1,5 @@
 {
-  "Languages": ["TypeScript/JavaScript" "Ocaml/Reasonml/Rescript", "Rust", "C"],
+  "Languages": ["TypeScript/JavaScript", "Ocaml/Reasonml/Rescript", "Rust", "C"],
   "Front-end": [
     "React",
     "Apollo",
