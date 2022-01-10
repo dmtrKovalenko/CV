@@ -1,31 +1,27 @@
 {
-  "Languages": ["JavaScript", "TypeScript", "ReasonML", "OCaml"],
+  "Languages": ["TypeScript/JavaScript" "Ocaml/Reasonml/Rescript", "Rust", "C"],
   "Front-end": [
     "React",
-    "Webpack",
-    "Babel",
     "Apollo",
-    "Redux",
-    "MobX",
-    "VueJS (less)",
-    "VueX (less)",
+    "Relay",
+    "Webpack",
+    "Vite",
+    "Vue (less)",
+    "Vuex",
     "CSS",
-    "SCSS",
-    "CSS-in-JS"
+    "emotion",
+    "tailwindcss"
   ],
   "Back-end": [
-    "NodeJS",
-    "Express",
+    "NodeJS (nestjs, fastify, express)",
+    "OCaml (Dream)",
+    "Rust (warp, juniper)",
     "GraphQL",
-    "Apollo",
-    "Koa",
     "PostgreSQL",
     "Redis",
-    "Socket-io",
     "Nginx",
-    "InversifyJS (DI)"
   ],
   "Mobile": ["React Native", "Firebase", "Expo", "FastLane", "Fabric"],
-  "Testing": ["Cypress", "Jest", "Mocha", "Supertest", "Detox", "Docker"],
-  "Tools": ["Git", "CI/CD", "GitHub", "GitLab", "Jira", "...and many more"]
+  "Testing": ["Cypress", "Playwright", "Jest", "Mocha"],
+  "Tools": ["Git", "Docker", "CI/CD", "GitHub", "GitLab", "Jira", "...and many more"]
 }
