@@ -19,7 +19,7 @@
     "GraphQL",
     "PostgreSQL",
     "Redis",
-    "Nginx",
+    "Nginx"
   ],
   "Mobile": ["React Native", "Firebase", "Expo", "FastLane", "Fabric"],
   "Testing": ["Cypress", "Playwright", "Jest", "Mocha"],
