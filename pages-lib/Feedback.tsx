@@ -12,6 +12,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@material-ui/core";
+import { useAnalytics } from "../utils/useAnalytics";
 
 const useStyles = makeStyles((theme) => ({
   clipPath: {
@@ -119,6 +120,7 @@ export const Feedback: React.FC = ({}) => {
   const toShowLargeTextArea = useMediaQuery(theme.breakpoints.up("sm"));
   const [message, setMessage] = React.useState("");
   const [sendingState, setSendingState] = React.useState<RequestState>("idle");
+  const send = useAnalytics();
 
   const sendFeedback = () => {
     if (!message) {
@@ -131,9 +133,6 @@ export const Feedback: React.FC = ({}) => {
     }
 
     setSendingState("pending");
-    if (window.ga) {
-      window.ga("send", "event", "feedback message", "send", "feedback");
-    }
 
     if (!formRef.current) {
       setSendingState("error");
@@ -146,9 +145,10 @@ export const Feedback: React.FC = ({}) => {
       .then((res) => {
         if (res.status >= 400) {
           setSendingState("error");
-          window.ga("send", "event", "feedback message", "error", "feedback")
+          send("FeedbackError", { props: res });
         } else {
           setSendingState("success");
+          send("FeedbackSent");
         }
       })
       .catch(() => setSendingState("error"));

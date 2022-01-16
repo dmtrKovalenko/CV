@@ -77,7 +77,7 @@ const forHrs: React.FC = () => {
         Tech skills
       </BoldTypography>
 
-      <Grid container justify="center">
+      <Grid container justifyContent="center">
         <SkillSet skill="Languages" Icon={CodeIcon} GridProps={{ sm: 12 }} />
         <SkillSet skill="Front-end" Icon={WebIcon} />
         <SkillSet skill="Back-end" Icon={CloudIcon} />

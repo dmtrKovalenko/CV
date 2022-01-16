@@ -1,18 +1,16 @@
 import * as React from "react";
-// @ts-ignore
-import withGA from "next-ga";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { AppProps } from "next/app";
 import { MuiThemeProvider, useMediaQuery } from "@material-ui/core";
 import { gradientColors, theme } from "../utils/theme";
 import { PageAnimation } from "../components/PageAnimation";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const isDesktop = useMediaQuery("@media (pointer: fine)")
+  const isDesktop = useMediaQuery("@media (pointer: fine)");
   const PageAnimationContainer = isDesktop ? PageAnimation : React.Fragment;
 
   React.useEffect(() => {
@@ -56,6 +54,4 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       </svg>
     </>
   );
-};
-
-export default withGA("UA-153671665-1", Router)(MyApp);
+}
