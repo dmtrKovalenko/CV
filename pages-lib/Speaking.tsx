@@ -27,6 +27,7 @@ import { AnimatedCard } from "../components/AnimatedCard";
 import { NoVideoFiller, Video } from "./Video";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import { useWindowResize } from "../utils/useWindowResize";
+import { useAnalytics } from "../utils/useAnalytics";
 
 interface SpeakingProps {}
 
@@ -174,11 +175,10 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   const [talksGridScrollX, setTalksGridScrollX] = React.useState(0);
   const [selectedCard, setSelectedTalk] = React.useState<string | null>(null);
+  const send = useAnalytics();
 
   const openTalk = (title: string) => {
-    if (window.ga) {
-      window.ga("send", "event", "talk", "open", "speaking");
-    }
+    send("TalkPreview");
 
     window.history.pushState({}, "", `/?talk=${title}`);
     setSelectedTalk(title);
@@ -255,7 +255,8 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
         </Typography>
       </div>
 
-      {(getSpeakingSectionScrollWidth() > dimensions.width || talksGridScrollX > 0) && (
+      {(getSpeakingSectionScrollWidth() > dimensions.width ||
+        talksGridScrollX > 0) && (
         <div aria-hidden className={styles.scrollControls}>
           <IconButton
             tabIndex="-1"
@@ -278,7 +279,6 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           </IconButton>
         </div>
       )}
-
 
       <motion.div
         layoutId="scroll"
@@ -359,7 +359,12 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                 </Grid>
               </Grid>
 
-              <BoldTypography gutterBottom align="center" variant="h5" component="p">
+              <BoldTypography
+                gutterBottom
+                align="center"
+                variant="h5"
+                component="p"
+              >
                 «<br />
                 {nextTalk.talk}
                 <br />»

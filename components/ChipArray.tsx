@@ -20,8 +20,8 @@ type ChipArrayProps = {
 
 export const ChipArray: React.FC<ChipArrayProps> = ({ items }) => {
   return (
-    <ChipContainer container justify="center">
-      {items.map(label => (
+    <ChipContainer container justifyContent="center">
+      {items.map((label) => (
         <PrimaryChip key={label} label={label} />
       ))}
     </ChipContainer>

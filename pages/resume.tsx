@@ -72,7 +72,7 @@ const Resume = ({
     <MuiThemeProvider theme={resumeMuiTheme}>
       <div className={clsx(styles.container, className)}>
         <Grid container>
-          <Grid item xs={12} container justify="center">
+          <Grid item xs={12} container justifyContent="center">
             <Image
               alt="Dmitriy's photo"
               src="/img/Photo2.jpg"
@@ -87,7 +87,7 @@ const Resume = ({
             container
             direction="column"
             alignItems="center"
-            justify="center"
+            justifyContent="center"
           >
             <Typography variant="h3" gutterBottom>
               Dmitriy Kovalenko

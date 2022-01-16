@@ -142,7 +142,11 @@ export const Footer: React.FunctionComponent<{}> = () => {
   return (
     <>
       <div className={styles.clipPath} />
-      <Grid className={styles.container} container justify="space-between">
+      <Grid
+        className={styles.container}
+        container
+        justifyContent="space-between"
+      >
         <Grid item md={1} />
         <Grid
           item
@@ -150,7 +154,7 @@ export const Footer: React.FunctionComponent<{}> = () => {
           container
           direction="column"
           alignItems="center"
-          justify="center"
+          justifyContent="center"
           className={styles.social}
         >
           <BoldTypography
@@ -176,7 +180,7 @@ export const Footer: React.FunctionComponent<{}> = () => {
           container
           md={6}
           className={styles.animation}
-          justify="center"
+          justifyContent="center"
         >
           <DeerToRabbit />
         </Grid>

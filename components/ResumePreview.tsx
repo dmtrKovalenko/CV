@@ -15,6 +15,7 @@ import {
   Hidden,
   Typography,
 } from "@material-ui/core";
+import { useAnalytics } from "../utils/useAnalytics";
 
 const useStyles = makeStyles<Theme>((theme) => ({
   downloadButton: {
@@ -64,31 +65,22 @@ const useStyles = makeStyles<Theme>((theme) => ({
 export const ResumePreview: React.FC = () => {
   const [isPreviewOpen, setIsPreviewOpen] = React.useState(false);
   const styles = useStyles({ isPreviewOpen: isPreviewOpen });
+  const send = useAnalytics();
 
   const openResumePreview = () => {
-    if (window.ga) {
-      window.ga("send", "event", "resume", "open preview", "resume");
-    }
-
+    send("ResumePreviewOpen");
     setIsPreviewOpen(true);
   };
 
   return (
     <>
       <div className={styles.downloadButton}>
-        <NoDecorationLink
-          download
-          href="/api/renderResume"
-        >
+        <NoDecorationLink download href="/api/renderResume">
           <Button
             className={styles.gradientButton}
             color="primary"
             variant="contained"
-            onClick={() => {
-              if (window.ga) {
-                window.ga("send", "event", "resume", "download", "resume");
-              }
-            }}
+            onClick={() => send("ResumeDownload")}
           >
             <SaveIcon className={styles.saveIcon} /> Download .pdf
           </Button>
