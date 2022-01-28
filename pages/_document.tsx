@@ -41,7 +41,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
 
   render() {
     return (
-      <Html lang="en" dir="ltr">
+      <Html lang="en" dir="ltr" style={{ colorScheme: "dark" }}>
         <Head>
           <meta charSet="utf-8" />
           <meta name="robots" content="index,follow" />
