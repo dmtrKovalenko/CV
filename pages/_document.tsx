@@ -41,7 +41,7 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
 
   render() {
     return (
-      <Html lang="en" dir="ltr">
+      <Html lang="en" dir="ltr" style={{ colorScheme: "dark" }}>
         <Head>
           <meta charSet="utf-8" />
           <meta name="robots" content="index,follow" />
@@ -80,17 +80,14 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
             href="/favicon-16x16.png"
           />
           <link rel="preload" as="stylesheet" href="/fonts/sf.css" />
-          <script
-            defer
-            data-domain="dmtrkovalenko.dev"
-            src="https://plausible.io/js/plausible.js"
-          />
+
           <link
             rel="preload"
             as="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
           />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+          <script defer data-domain="dmtrkovalenko.dev" src="https://plausible.io/js/plausible.js" />
         </Head>
         <body>
           <Main />
