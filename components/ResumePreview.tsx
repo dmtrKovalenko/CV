@@ -75,16 +75,15 @@ export const ResumePreview: React.FC = () => {
   return (
     <>
       <div className={styles.downloadButton}>
-        <NoDecorationLink download href="/api/renderResume">
-          <Button
-            className={styles.gradientButton}
-            color="primary"
-            variant="contained"
-            onClick={() => send("ResumeDownload")}
-          >
-            <SaveIcon className={styles.saveIcon} /> Download .pdf
-          </Button>
-        </NoDecorationLink>
+        <Button
+          className={styles.gradientButton}
+          color="primary"
+          variant="contained"
+          onClick={() => send("ResumeDownload")}
+          href="/api/renderResume"
+        >
+          <SaveIcon className={styles.saveIcon} /> Download .pdf
+        </Button>
 
         <Typography variant="caption">
           This may take a while, please be patient 🐢
