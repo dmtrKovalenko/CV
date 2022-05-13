@@ -26,10 +26,15 @@ export const withGlobalStylesAndKeyframes = withStyles((theme) => ({
       from: { opacity: 0 },
       to: { opacity: 1 },
     },
-    '.gradientText': {
+    ".gradientText": {
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
-      background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`
+      background: `-webkit-gradient(linear,left top,right top,from(${gradientColors.to}),to(${gradientColors.from}))`,
+    },
+    ".gradientTextToTop": {
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      background: `linear-gradient(to top, ${gradientColors.to}, ${gradientColors.from})`,
     },
   },
 }));

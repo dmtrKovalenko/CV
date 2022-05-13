@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Page, PageTitle } from "../components/Common";
+import { BoldTypography, Page, PageTitle } from "../components/Common";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import DoneAllIcon from "@material-ui/icons/DoneAll";
 import WarningIcon from "@material-ui/icons/Warning";
@@ -167,9 +167,9 @@ export const Feedback: React.FC = ({}) => {
           }}
         >
           <div className={styles.grid}>
-            <PageTitle id="about" align="left" className={styles.title}>
+            <BoldTypography variant="h3" id="about" align="left" className={styles.title}>
               Drop me a <span className="gradientText"> note</span>
-            </PageTitle>
+            </BoldTypography>
 
             <Typography className={styles.description} gutterBottom>
               Say something! Send me a completely private and <b>anonymous</b>{" "}

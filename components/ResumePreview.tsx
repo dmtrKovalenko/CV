@@ -1,23 +1,20 @@
 import * as React from "react";
 import Resume from "../pages/resume";
 import SaveIcon from "@material-ui/icons/Save";
-import { PDF_FORMATTER_API_URL } from "../utils/constants";
-import { RESUME_URL } from "../utils/constants";
-import { NoDecorationLink } from "./Common";
-import { styledBy } from "../utils/helpers";
 import { gradientColors } from "../utils/theme";
 import {
   makeStyles,
   Paper,
   Theme,
   Button,
-  ClickAwayListener,
   Hidden,
   Typography,
 } from "@material-ui/core";
 import { useAnalytics } from "../utils/useAnalytics";
+import { motion } from "framer-motion";
+import { AnimatedText } from "./AnimatedText";
 
-const useStyles = makeStyles<Theme>((theme) => ({
+const useStyles = makeStyles<Theme>(() => ({
   downloadButton: {
     display: "flex",
     flexDirection: "column",
@@ -39,37 +36,18 @@ const useStyles = makeStyles<Theme>((theme) => ({
     cursor: "pointer",
   },
   scaleContainer: {
-    zIndex: 1,
-    width: 800,
-    margin: "0 auto",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: "100%",
-    transformOrigin: "50% 0",
-    transition: theme.transitions.create("transform"),
-    position: styledBy("isPreviewOpen", {
-      true: "unset",
-      false: "absolute",
-    }),
-    transform: styledBy("isPreviewOpen", {
-      true: "scale(1)",
-      false: "scale(0.3)",
-    }),
-  },
-  resumeContainer: {
-    borderRadius: 8,
+    borderRadius: "0.5rem",
+    overflow: "hidden",
   },
 }));
 
 export const ResumePreview: React.FC = () => {
-  const [isPreviewOpen, setIsPreviewOpen] = React.useState(false);
-  const styles = useStyles({ isPreviewOpen: isPreviewOpen });
+  const styles = useStyles();
   const send = useAnalytics();
+  const [isDownloading, setIsDownloading] = React.useState(false);
 
   const openResumePreview = () => {
     send("ResumePreviewOpen");
-    setIsPreviewOpen(true);
   };
 
   return (
@@ -79,7 +57,12 @@ export const ResumePreview: React.FC = () => {
           className={styles.gradientButton}
           color="primary"
           variant="contained"
-          onClick={() => send("ResumeDownload")}
+          onClick={(e) => {
+            e.preventDefault();
+
+            send("ResumeDownload");
+            setIsDownloading(true);
+          }}
           href="/api/renderResume"
         >
           <SaveIcon className={styles.saveIcon} /> Download .pdf
@@ -91,8 +74,64 @@ export const ResumePreview: React.FC = () => {
       </div>
 
       <Hidden mdDown>
-        <ClickAwayListener onClickAway={() => setIsPreviewOpen(false)}>
-          <div className={styles.container}>
+        <div
+          style={{
+            position: "relative",
+            width: 800,
+            height: 1700,
+            margin: "0 auto",
+          }}
+        >
+          <motion.div
+            aria-hidden
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100",
+              margin: "0 auto",
+            }}
+          >
+            <motion.div
+              initial="hidden"
+              style={{ marginTop: "20%" }}
+              animate={isDownloading ? "visible" : "hidden"}
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.025,
+                  },
+                },
+              }}
+            >
+              <div className="container">
+                {["Take care!", "My resume is already", "In your computer"].map(
+                  (item, index) => {
+                    return (
+                      <AnimatedText
+                        highlightWords={["resume", "computer"]}
+                        text={item}
+                        key={index}
+                      />
+                    );
+                  }
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+          <motion.div
+            style={{ position: "absolute", transformOrigin: "0% 0" }}
+            animate={
+              isDownloading
+                ? {
+                    x: [0, -100, -400],
+                    y: [0, 0, 3500],
+                    scale: 0.1,
+                  }
+                : {
+                    x: 0,
+                  }
+            }
+          >
             <Paper
               elevation={24}
               className={styles.scaleContainer}
@@ -100,8 +139,8 @@ export const ResumePreview: React.FC = () => {
             >
               <Resume className={styles.resumeContainer} />
             </Paper>
-          </div>
-        </ClickAwayListener>
+          </motion.div>
+        </div>
       </Hidden>
     </>
   );
