@@ -58,8 +58,6 @@ export const ResumePreview: React.FC = () => {
           color="primary"
           variant="contained"
           onClick={(e) => {
-            e.preventDefault();
-
             send("ResumeDownload");
             setIsDownloading(true);
           }}
@@ -119,6 +117,7 @@ export const ResumePreview: React.FC = () => {
             </motion.div>
           </motion.div>
           <motion.div
+            transition={{ delay: 0.6 }}
             style={{ position: "absolute", transformOrigin: "0% 0" }}
             animate={
               isDownloading
