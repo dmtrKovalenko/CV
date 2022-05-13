@@ -57,7 +57,7 @@ export const ResumePreview: React.FC = () => {
           className={styles.gradientButton}
           color="primary"
           variant="contained"
-          onClick={(e) => {
+          onClick={() => {
             send("ResumeDownload");
             setIsDownloading(true);
           }}
