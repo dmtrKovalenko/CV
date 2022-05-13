@@ -18,19 +18,19 @@ import { ResumePreview } from "../components/ResumePreview";
 const GridItem = styled(Grid)({ marginBottom: 32 });
 
 const iconSize = 60;
-const useStyles = makeStyles<Theme>(theme => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   title: {
-    marginBottom: 64
+    marginBottom: 64,
   },
   subTitle: {
     marginTop: 64,
-    marginBottom: 32
+    marginBottom: 32,
   },
   icon: {
     fontSize: iconSize,
     color: theme.palette.primary.light,
-    marginLeft: `calc(50% - ${iconSize / 2}px)`
-  }
+    marginLeft: `calc(50% - ${iconSize / 2}px)`,
+  },
 }));
 
 type SkillSetProps = {
@@ -45,12 +45,7 @@ const SkillSet: React.FC<SkillSetProps> = ({ skill, Icon, GridProps }) => {
   return (
     <GridItem item xs={12} sm={4} {...GridProps}>
       <Icon className={styles.icon} />
-      <Typography
-        variant="h5"
-        component="h2"
-        align="center"
-        gutterBottom
-      >
+      <Typography variant="h5" component="h2" align="center" gutterBottom>
         {skill}
       </Typography>
 
@@ -63,7 +58,7 @@ const forHrs: React.FC = () => {
   const styles = useStyles();
 
   return (
-    <Page>
+    <Page style={{ overflow: "hidden" }}>
       <Head>
         <title> Dmitriy Kovalenko - Skills </title>
       </Head>

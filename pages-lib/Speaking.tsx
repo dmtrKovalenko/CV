@@ -80,12 +80,18 @@ const useStyles = makeStyles((theme) => {
       },
     },
     nextConf: {
-      paddingTop: 16,
       marginRight: 160,
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       background: `linear-gradient(0deg,${gradientColors.from},${gradientColors.to})`,
+
+      "& > a": {
+        paddingTop: 16,
+        width: "100%",
+        height: "100%",
+      },
+
       [theme.breakpoints.down("sm")]: {
         minWidth: 130,
         maxWidth: 130,
@@ -408,19 +414,17 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
                 {!isSelected && (
                   <Grid container className={styles.actions}>
                     {talk.presentations[0].youTubeVideoId && (
-                      <a
+                      <IconButton
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
                         href={`https://www.youtube.com/watch?v=${talk.presentations[0].youTubeVideoId}`}
+                        aria-label="Open YouTube video"
                       >
-                        <IconButton aria-label="Open YouTube video">
-                          <YouTubeIcon
-                            fontSize="large"
-                            className={styles.gradientIcon}
-                          />
-                        </IconButton>
-                      </a>
+                        <YouTubeIcon
+                          fontSize="large"
+                          className={styles.gradientIcon}
+                        />
+                      </IconButton>
                     )}
                   </Grid>
                 )}
