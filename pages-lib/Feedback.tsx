@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BoldTypography, Page, PageTitle } from "../components/Common";
+import { Page, PageTitle } from "../components/Common";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import DoneAllIcon from "@material-ui/icons/DoneAll";
 import WarningIcon from "@material-ui/icons/Warning";
@@ -60,12 +60,15 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginTop: 0,
-    gridArea: "title",
+    // marginBottom: "4rem",
+    [theme.breakpoints.up("md")]: {
+      marginBottom: "1rem",
+    },
   },
   description: {
     gridArea: "description",
     [theme.breakpoints.down("md")]: {
-      marginBottom: "3rem",
+      marginBottom: "2rem",
     },
   },
   feedbackInput: {
@@ -167,9 +170,13 @@ export const Feedback: React.FC = ({}) => {
           }}
         >
           <div className={styles.grid}>
-            <BoldTypography variant="h3" id="about" align="left" className={styles.title}>
+            <PageTitle
+              id="about"
+              align="left"
+              className={styles.title}
+            >
               Drop me a <span className="gradientText"> note</span>
-            </BoldTypography>
+            </PageTitle>
 
             <Typography className={styles.description} gutterBottom>
               Say something! Send me a completely private and <b>anonymous</b>{" "}
