@@ -1,12 +1,12 @@
 {
   "nextTalks": [
     {
-      "when": "eventually",
-      "dueTo": "2021-11-05T00:00:00.000Z",
-      "conference": "...some conference in the future...",
-      "confWebsite": "mailto:dmtr.kovalenko@outlook.com",
-      "location": "somewhere",
-      "talk": "Or invite me to your conference!"
+      "when": "01/09/2022",
+      "dueTo": "2022-09-01T00:00:00.000Z",
+      "conference": "Conf42: Rustlang 2022",
+      "confWebsite": "https://www.conf42.com/Rustlang_2022_Dmitriy_Kovalenko_programmatic_videos",
+      "location": "Berlin/Online",
+      "talk": "The art of programmatic videos with rust"
     }
   ],
   "talks": [
