@@ -1,5 +1,5 @@
 {
-  "nextTalks": [],
+  "nextTalks": null,
   "talks": [
     {
       "title": "The art of programmatic videos with rust",
@@ -9,7 +9,8 @@
           "when": "14/10/2022",
           "conference": "Euro Rust",
           "confWebsite": "https://eurorust.eu/",
-          "confLogoUrl": "/conf-logos/euro-rust.svg"
+          "confLogoUrl": "/conf-logos/euro-rust.svg",
+          "youTubeVideoId": "8FKXPUkTQLE"
         }
       ]
     },
