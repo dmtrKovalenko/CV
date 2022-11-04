@@ -1,5 +1,14 @@
 {
-  "nextTalks": [],
+  "nextTalks": [
+    {
+      "when": "in the future",
+      "dueTo": "2023-10-15T00:00:00.000Z",
+      "conference": "unknown yet",
+      "confWebsite": "mailto:dmtrkovalenko.dev",
+      "location": "somwehere",
+      "talk": "I built feature-complete video editor with Rust, OCaml and Wasm. And didn't regret."
+    }
+  ],
   "talks": [
     {
       "title": "The art of programmatic videos with rust",

@@ -171,7 +171,6 @@ const useStyles = makeStyles((theme) => {
 });
 
 const nextTalk =
-  // @ts-ignore
   nextTalks.find((talk) => new Date(talk.dueTo) > new Date()) ??
   nextTalks[nextTalks.length - 1];
 
