@@ -3,7 +3,7 @@
     {
       "when": "in the future",
       "dueTo": "2023-10-15T00:00:00.000Z",
-      "conference": "unknown yet",
+      "conference": "some future conference",
       "confWebsite": "mailto:dmtrkovalenko.dev",
       "location": "somwehere",
       "talk": "I built feature-complete video editor with Rust, OCaml and Wasm. And didn't regret."
