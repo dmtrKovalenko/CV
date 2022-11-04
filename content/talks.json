@@ -1,5 +1,5 @@
 {
-  "nextTalks": null,
+  "nextTalks": [],
   "talks": [
     {
       "title": "The art of programmatic videos with rust",
