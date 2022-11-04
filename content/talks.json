@@ -1,15 +1,18 @@
 {
-  "nextTalks": [
-    {
-      "when": "October 13-14",
-      "dueTo": "2022-10-15T00:00:00.000Z",
-      "conference": "Euro Rust",
-      "confWebsite": "https://eurorust.eu/",
-      "location": "Berlin",
-      "talk": "The art of programmatic videos with rust"
-    }
-  ],
+  "nextTalks": [],
   "talks": [
+    {
+      "title": "The art of programmatic videos with rust",
+      "slides": "https://www.icloud.com/keynote/042LDVB2TQTE5wy36brtl8lSA#TheARt",
+      "presentations": [
+        {
+          "when": "14/10/2022",
+          "conference": "Euro Rust",
+          "confWebsite": "https://eurorust.eu/",
+          "confLogoUrl": "/conf-logos/euro-rust.svg"
+        }
+      ]
+    },
     {
       "title": "Think TDD doesn't work? I have bad news for you... (RU)",
       "slides": "https://www.icloud.com/keynote/05FzKrSe6sBYix65801zWwItQ#TDD_doesnt_work?",
