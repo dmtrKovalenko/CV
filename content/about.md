@@ -1,3 +1,6 @@
-Hello again! My name is Dmitriy and I am software engineer from Ukraine. And I really love my work! You may know me by [public speaking](#talks), my [podcast](https://anchor.fm/goose-duck) or contributions to such cool open source projects like [Material-UI](https://material-ui.com), [Cypress.io](https://cypress.io), [react-native-community](https://github.com/react-native-community) and many more. 
+Hello again! My name is Dmitriy, and I am a software engineer who truly loves his work! You may know me by my [public speaking engagements](#talks) or my contributions to amazing open source projects such as [Material-UI](https://material-ui.com), [Cypress.io](https://cypress.io), [react-native-community](https://github.com/react-native-community), and many others.
 
-Nice to meet you here and I hope you enjoy **the design** of this website.
+By the way now I am ~~actively~~ working on [fframes](https://fframes.studio/) – extremely fast declarive video creation framwork.
+
+It's a pleasure to meet you here, and I hope you enjoy **the design** of this website.
+
