@@ -170,18 +170,14 @@ export const Feedback: React.FC = ({}) => {
           }}
         >
           <div className={styles.grid}>
-            <PageTitle
-              id="about"
-              align="left"
-              className={styles.title}
-            >
+            <PageTitle id="about" align="left" className={styles.title}>
               Drop me a <span className="gradientText"> note</span>
             </PageTitle>
 
             <Typography className={styles.description} gutterBottom>
               Say something! Send me a completely private and <b>anonymous</b>{" "}
-              message. Feel free to say anything, even if it's not positive.
-              Looking forward to your feedback!
+              message. I'll get a real time notification, so please don't spam
+              😵‍💫. Looking forward to your feedback!
             </Typography>
 
             <div className={styles.feedbackInput}>
