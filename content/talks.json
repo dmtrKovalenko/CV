@@ -1,5 +1,14 @@
 {
-  "nextTalks": null,
+  "nextTalks": [
+    {
+      "when": "it's time for release",
+      "dueTo": "2023-10-15T00:00:00.000Z",
+      "conference": "some conference",
+      "confWebsite": "https://fframes.studio",
+      "location": "somwehere",
+      "talk": "Introducing fframes: the first real Video generation framework"
+    }
+  ],
   "talks": [
     {
       "title": "Everything about media files in WASM: Fonts, Images, Audio all in Rust.",
