@@ -11,6 +11,19 @@
   ],
   "talks": [
     {
+      "title": "Everything about media files in wasm: Fonts, Images, Audios all in Rust.",
+      "slides": "https://www.icloud.com/keynote/0c5EUU1O2WMpdmwHlGVXG2vrQ#Wasm",
+      "presentations": [
+        {
+          "when": "14/03/2024",
+          "conference": "Wasm.IO 2024",
+          "confWebsite": "https://2024.wasmio.tech/sessions/everything-about-media-files-in-wasm-fonts-images-audios-all-in-rust/",
+          "confLogoUrl": "/conf-logos/wasm-io.svg",
+          "youTubeVideoId": null
+        }
+      ]
+    },
+    {
       "title": "The art of programmatic videos with rust",
       "slides": "https://www.icloud.com/keynote/042LDVB2TQTE5wy36brtl8lSA#TheARt",
       "presentations": [
