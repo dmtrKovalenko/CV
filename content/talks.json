@@ -1,7 +1,5 @@
 {
-  "nextTalks": [
-    
-  ],
+  "nextTalks": null,
   "talks": [
     {
       "title": "Everything about media files in WASM: Fonts, Images, Audio all in Rust.",
