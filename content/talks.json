@@ -11,7 +11,7 @@
   ],
   "talks": [
     {
-      "title": "Everything about media files in wasm: Fonts, Images, Audios all in Rust.",
+      "title": "Everything about media files in WASM: Fonts, Images, Audio all in Rust.",
       "slides": "https://www.icloud.com/keynote/0c5EUU1O2WMpdmwHlGVXG2vrQ#Wasm",
       "presentations": [
         {
