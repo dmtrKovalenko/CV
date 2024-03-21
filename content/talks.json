@@ -1,13 +1,6 @@
 {
   "nextTalks": [
-    {
-      "when": "March 14-15",
-      "dueTo": "2024-03-15T00:00:00.000Z",
-      "conference": "Wasm.IO 2024",
-      "confWebsite": "https://2024.wasmio.tech/sessions/everything-about-media-files-in-wasm-fonts-images-audios-all-in-rust/",
-      "location": "Barcelona, Spain",
-      "talk": "Everything about media files in wasm: Fonts, Images, Audios all in Rust."
-    }
+    
   ],
   "talks": [
     {
