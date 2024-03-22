@@ -1,6 +1,5 @@
 import { Page, BoldTypography } from "../components/Common";
 import Head from "next/head";
-import ReactMarkDown from "react-markdown";
 import { Typography } from "@material-ui/core";
 import { ResumePreview } from "../components/ResumePreview";
 
