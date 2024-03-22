@@ -14,11 +14,12 @@ import { useAnalytics } from "../utils/useAnalytics";
 import { motion } from "framer-motion";
 import { AnimatedText } from "./AnimatedText";
 
-const useStyles = makeStyles<Theme>(() => ({
+type ResumePreviewProps = { align?: "start" | "center" };
+const useStyles = makeStyles<Theme, ResumePreviewProps>(() => ({
   downloadButton: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: ({ align }) => align ?? "center",
     marginBottom: 16,
     "& > *": {
       marginBottom: 8,
@@ -41,8 +42,8 @@ const useStyles = makeStyles<Theme>(() => ({
   },
 }));
 
-export const ResumePreview: React.FC = () => {
-  const styles = useStyles();
+export const ResumePreview: React.FC<ResumePreviewProps> = (props) => {
+  const styles = useStyles(props);
   const send = useAnalytics();
   const [isDownloading, setIsDownloading] = React.useState(false);
 
@@ -76,8 +77,8 @@ export const ResumePreview: React.FC = () => {
           style={{
             position: "relative",
             width: 800,
-            height: 1700,
-            margin: "0 auto",
+            height: 1800,
+            margin: props.align === "center" ? "0 auto" : "0 0",
           }}
         >
           <motion.div
@@ -111,7 +112,7 @@ export const ResumePreview: React.FC = () => {
                         key={index}
                       />
                     );
-                  }
+                  },
                 )}
               </div>
             </motion.div>
@@ -143,4 +144,8 @@ export const ResumePreview: React.FC = () => {
       </Hidden>
     </>
   );
+};
+
+ResumePreview.defaultProps = {
+  align: "center",
 };

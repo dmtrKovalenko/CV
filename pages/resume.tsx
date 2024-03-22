@@ -89,10 +89,10 @@ const Resume = ({
             alignItems="center"
             justifyContent="center"
           >
-            <Typography variant="h3" gutterBottom>
+            <Typography style={{ fontWeight: 500 }} variant="h3">
               Dmitriy Kovalenko
             </Typography>
-            <RegularTypography variant="h6" gutterBottom>
+            <RegularTypography variant="h6">
               Your Friendly Software Engineer
             </RegularTypography>
           </Grid>
