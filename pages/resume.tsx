@@ -166,10 +166,13 @@ const Resume = ({
           Languages
         </Title>
         <RegularTypography variant="subtitle1">
-          English – Upper Intermediate
+          English – Advanced (C1)
         </RegularTypography>
         <RegularTypography variant="subtitle1">
-          Russian & Ukrainian – Native
+          Deutsch – Basic (B1)
+        </RegularTypography>
+        <RegularTypography variant="subtitle1">
+          Russian & Ukrainian – Native (C2)
         </RegularTypography>
 
         <Title variant="h5" gutterBottom>
