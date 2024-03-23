@@ -65,8 +65,8 @@ export default function Tailwind() {
               backend) which is a pure C and assembly codebase.
               <br />
               And overall, <strong>I truly love</strong> responsive, fast, and
-              GPU-accelerated UIs so I usually spend tons of time polishing and
-              optimizing my UIs (it's sometimes hard to do in startups though).
+              GPU-accelerated software so I usually spend tons of time polishing
+              and optimizing (it's sometimes hard to do in startups though).
             </Typography>
           </li>
 
@@ -105,7 +105,7 @@ export default function Tailwind() {
         Let's have a chat?
       </BoldTypography>
 
-      <Typography gutterBottom variant="body1">
+      <Typography paragraph variant="body1">
         I already have a ton of ideas on how we can make tailwind much better.
         Quick example: I recently had some issues with changing of the generated
         classnames order, I think it should be easy to make the order of classes
@@ -118,9 +118,9 @@ export default function Tailwind() {
 
       <Typography variant="body1">
         Here is my resume, and I will wait for your response just like I was
-        waiting for the Hogwarts letter when I was eleven!
+        waiting for the 🦉 Hogwarts letter when I was eleven!
       </Typography>
-      <Typography variant="body1" style={{ color: "#cbd5e1" }}>
+      <Typography variant="body2" style={{ color: "#cbd5e1" }}>
         P.S. You should try clicking the "Download" button below!
       </Typography>
       <br />

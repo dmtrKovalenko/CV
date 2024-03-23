@@ -169,7 +169,7 @@ const Resume = ({
           English – Advanced (C1)
         </RegularTypography>
         <RegularTypography variant="subtitle1">
-          Deutsch – Basic (B1)
+          Deutsch – Intermediate (B1)
         </RegularTypography>
         <RegularTypography variant="subtitle1">
           Russian & Ukrainian – Native (C2)
