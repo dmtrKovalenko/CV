@@ -1,20 +1,18 @@
-{
-  "contacts": [
-    {
-      "name": "Twitter",
-      "url": "https://twitter.com/neogoose_btw"
-    },
-    {
-      "name": "E-mail",
-      "url": "mailto:dmtr.kovalenko@outlook.com"
-    },
-    {
-      "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/dmtrKovalenko/"
-    },
-    {
-      "name": "Github",
-      "url": "https://github.com/dmtrKovalenko"
-    }
-  ]
-}
+[
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/neogoose_btw"
+  },
+  {
+    "name": "E-mail",
+    "url": "mailto:dmtr.kovalenko@outlook.com"
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/dmtrKovalenko/"
+  },
+  {
+    "name": "Github",
+    "url": "https://github.com/dmtrKovalenko"
+  }
+]

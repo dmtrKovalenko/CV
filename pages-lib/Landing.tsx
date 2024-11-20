@@ -104,6 +104,7 @@ export function Landing() {
           Hey, how its going?
         </Typography>
 
+        {/** @ts-ignore children*/}
         <Hidden smDown implementation="css">
           <Typography
             component={motion.p}

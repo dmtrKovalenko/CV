@@ -2,7 +2,9 @@ import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-interface PageAnimationProps {}
+interface PageAnimationProps {
+  children: React.ReactNode;
+}
 
 function handleExitComplete() {
   if (typeof window !== "undefined") {
@@ -30,6 +32,7 @@ export const PageAnimation: React.FC<PageAnimationProps> = ({ children }) => {
   }, [])
 
   return (
+    // @ts-expect-error children prop
     <AnimatePresence onExitComplete={handleExitComplete}>
       <div className="page-transition-wrapper">
         <motion.div
@@ -39,8 +42,8 @@ export const PageAnimation: React.FC<PageAnimationProps> = ({ children }) => {
             firstMount
               ? {}
               : router.pathname === "/"
-              ? stackAnimationIn
-              : stackAnimationOut
+                ? stackAnimationIn
+                : stackAnimationOut
           }
           animate={{ x: 0, opacity: 1 }}
           exit={router.pathname === "/" ? stackAnimationOut : stackAnimationIn}

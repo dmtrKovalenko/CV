@@ -1,8 +1,10 @@
 import * as React from "react";
 import clsx from "clsx";
-import { motion, useSpring, AnimatePresence } from "framer-motion";
+import { motion, useSpring, } from "framer-motion";
 import { makeStyles, Hidden } from "@material-ui/core";
 import { AnimatedCross } from "./AnimatedCross";
+
+const Hidden2 = Hidden as any;
 
 interface AnimatedCardProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactChild;
@@ -108,7 +110,7 @@ export const AnimatedCard = React.memo(
             animate={isSelected ? { y: 0, x: 0 } : undefined}
           >
             {isSelected && (
-              <Hidden smUp>
+              <Hidden2 smUp>
                 <AnimatedCross
                   aria-label="close talk"
                   className={styles.cardCloseButton}
@@ -117,12 +119,12 @@ export const AnimatedCard = React.memo(
                     onClose();
                   }}
                 />
-              </Hidden>
+              </Hidden2>
             )}
             {children}
           </motion.div>
         </motion.div>
-      </Component>
+      </Component >
     );
   },
   (prev, next) =>
