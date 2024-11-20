@@ -1,15 +1,28 @@
 {
   "nextTalks": [
     {
-      "when": "when done",
-      "dueTo": "2023-10-15T00:00:00.000Z",
-      "conference": "some conference",
-      "confWebsite": "https://fframes.studio",
-      "location": "somwehere",
-      "talk": "Introducing fframes: generative video framework"
+      "when": "December 13th, 2024",
+      "dueTo": "2024-12-13T00:00:00.000Z",
+      "conference": "React Day Berlin",
+      "confWebsite": "https://reactday.berlin/",
+      "location": "Berlin, Germany",
+      "talk": "React via Rust and Rescipt. Why and how?"
     }
   ],
   "talks": [
+    {
+      "title": "The Story Behind the Fastest Image Comparison Library",
+      "slides": "https://www.icloud.com/keyote/0afdzx9YRgDKGtzhuOlsA59_A#ocaml",
+      "presentations": [
+        {
+          "when": "16/09/2024",
+          "conference": "Fun OCaml 2024",
+          "confWebsite": "https://fun-ocaml.com/",
+          "confLogoUrl": "/conf-logos/fun-ocaml-logo.svg",
+          "youTubeVideoId": "hTAvAKolWd8"
+        }
+      ]
+    },
     {
       "title": "Everything about media files in WASM: Fonts, Images, Audio all in Rust.",
       "slides": "https://www.icloud.com/keynote/0c5EUU1O2WMpdmwHlGVXG2vrQ#Wasm",
@@ -222,4 +235,3 @@
     }
   ]
 }
-

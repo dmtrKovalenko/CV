@@ -72,6 +72,7 @@ export const ResumePreview: React.FC<ResumePreviewProps> = (props) => {
         </Typography>
       </div>
 
+      {/* @ts-ignore children prop */}
       <Hidden mdDown>
         <div
           style={{
@@ -123,13 +124,13 @@ export const ResumePreview: React.FC<ResumePreviewProps> = (props) => {
             animate={
               isDownloading
                 ? {
-                    x: [0, -100, -400],
-                    y: [0, 0, 3500],
-                    scale: 0.1,
-                  }
+                  x: [0, -100, -400],
+                  y: [0, 0, 3500],
+                  scale: 0.1,
+                }
                 : {
-                    x: 0,
-                  }
+                  x: 0,
+                }
             }
           >
             <Paper

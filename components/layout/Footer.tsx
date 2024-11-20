@@ -2,7 +2,7 @@ import * as React from "react";
 import { Grid, Theme, Typography, makeStyles } from "@material-ui/core";
 import { DeerToRabbit } from "../DeerToRabbit";
 import { TwitterIconSvg } from "../icons/Twitter";
-import { contacts } from "../../content/contacts.json";
+import contacts from "../../content/contacts.json";
 import { LinkedinSvgIcon } from "../icons/LinkedinLogo";
 import { InstagramSvgIcon } from "../icons/Instagram";
 import { GithubSvgIcon } from "../icons/Github";

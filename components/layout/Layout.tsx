@@ -6,7 +6,9 @@ import { Footer } from "./Footer";
 import { useRouter } from "next/router";
 import { withGlobalStylesAndKeyframes } from "../../utils/globalStylesAndKeyframes";
 
-interface LayoutProps {}
+interface LayoutProps {
+  children: React.ReactNode
+}
 
 const useStyles = makeStyles((theme: Theme) => ({
   homeBtn: {

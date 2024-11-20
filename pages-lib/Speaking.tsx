@@ -1,5 +1,5 @@
 import * as React from "react";
-import { talks, nextTalks } from "../content/talks.json";
+import talks from "../content/talks.json";
 import {
   makeStyles,
   Grid,
@@ -25,11 +25,11 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import { AnimatedCard } from "../components/AnimatedCard";
 import { NoVideoFiller, Video } from "./Video";
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useWindowResize } from "../utils/useWindowResize";
 import { useAnalytics } from "../utils/useAnalytics";
 
-interface SpeakingProps {}
+interface SpeakingProps { }
 
 const TalkCard = styled("div")(({ theme }) => ({
   maxWidth: 310,
@@ -171,10 +171,10 @@ const useStyles = makeStyles((theme) => {
 });
 
 const nextTalk =
-  nextTalks.find((talk) => new Date(talk.dueTo) > new Date()) ??
-  nextTalks[nextTalks.length - 1];
+  talks.nextTalks.find((talk) => new Date(talk.dueTo) > new Date()) ??
+  talks.nextTalks[talks.nextTalks.length - 1];
 
-export const Speaking: React.FC<SpeakingProps> = ({}) => {
+export const Speaking: React.FC<SpeakingProps> = ({ }) => {
   const styles = useStyles();
   const dimensions = useWindowResize();
   const [_, setMounted] = React.useState(false);
@@ -263,28 +263,28 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
 
       {(getSpeakingSectionScrollWidth() > dimensions.width ||
         talksGridScrollX > 0) && (
-        <div aria-hidden className={styles.scrollControls}>
-          <IconButton
-            tabIndex="-1"
-            aria-label="Scroll talks left"
-            disabled={!canScroll("left")}
-            className={styles.floatingScrollButton}
-            onClick={() => scroll("left")}
-          >
-            <ArrowBackIcon />
-          </IconButton>
+          <div aria-hidden className={styles.scrollControls}>
+            <IconButton
+              tabIndex="-1"
+              aria-label="Scroll talks left"
+              disabled={!canScroll("left")}
+              className={styles.floatingScrollButton}
+              onClick={() => scroll("left")}
+            >
+              <ArrowBackIcon />
+            </IconButton>
 
-          <IconButton
-            tabIndex="-1"
-            aria-label="Scroll talks right"
-            disabled={!canScroll("right")}
-            className={styles.floatingScrollButton}
-            onClick={() => scroll("right")}
-          >
-            <ArrowForwardIcon />
-          </IconButton>
-        </div>
-      )}
+            <IconButton
+              tabIndex="-1"
+              aria-label="Scroll talks right"
+              disabled={!canScroll("right")}
+              className={styles.floatingScrollButton}
+              onClick={() => scroll("right")}
+            >
+              <ArrowForwardIcon />
+            </IconButton>
+          </div>
+        )}
 
       <motion.div
         layoutId="scroll"
@@ -311,6 +311,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
               Meet me at
             </BoldTypography>
 
+            {/** @ts-ignore children*/}
             <Hidden mdUp implementation="css">
               <BoldTypography
                 component="p"
@@ -322,6 +323,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
               </BoldTypography>
             </Hidden>
 
+            {/** @ts-ignore children*/}
             <Hidden smDown implementation="css">
               <Typography
                 gutterBottom
@@ -379,7 +381,7 @@ export const Speaking: React.FC<SpeakingProps> = ({}) => {
           </NoDecorationColorLink>
         </TalkCard>
 
-        {[...talks].map((talk) => {
+        {[...talks.talks].map((talk) => {
           const isSelected = talk.title === selectedCard;
           return (
             <AnimatedCard

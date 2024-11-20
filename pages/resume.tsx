@@ -5,7 +5,7 @@ import resume from "../content/resume.json";
 import skills from "../content/skills.json";
 import { MuiThemeProvider } from "@material-ui/core";
 import { Typography, Grid, makeStyles, styled } from "@material-ui/core";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import { Title } from "../components/Common";
 import clsx from "clsx";
 
@@ -37,7 +37,7 @@ const RegularTypography = styled(Typography)({
 });
 
 const renderSkills = (key: keyof typeof skills) => skills[key].join(", ");
-const resumeMuiTheme = createMuiTheme({
+const resumeMuiTheme = createTheme({
   palette: {
     type: "light",
     primary: blue,
