@@ -1,5 +1,5 @@
 import * as React from "react";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import blue from "@material-ui/core/colors/blue";
 import resume from "../content/resume.json";
 import skills from "../content/skills.json";
@@ -73,7 +73,7 @@ const Resume = ({
       <div className={clsx(styles.container, className)}>
         <Grid container>
           <Grid item xs={12} container justifyContent="center">
-            <Image
+            <ExportedImage
               alt="Dmitriy's photo"
               src="/img/Photo2.jpg"
               height={180}

@@ -7,6 +7,7 @@ import { AppProps } from "next/app";
 import { MuiThemeProvider, useMediaQuery } from "@material-ui/core";
 import { gradientColors, theme } from "../utils/theme";
 import { PageAnimation } from "../components/PageAnimation";
+import Script from "next/script";
 
 const title = "Dmitriy Kovalenko";
 const description =
@@ -70,11 +71,6 @@ export default function App({ Component, pageProps }: AppProps) {
           href="/favicon-16x16.png"
         />
         <link rel="preload" as="stylesheet" href="/fonts/sf.css" />
-        <script
-          defer
-          data-domain="dmtrkovalenko.dev"
-          src="https://plausible.io/js/plausible.js"
-        />
         <link
           rel="preload"
           as="stylesheet"
@@ -92,6 +88,12 @@ export default function App({ Component, pageProps }: AppProps) {
           </PageAnimationContainer>
         </Layout>
       </MuiThemeProvider>
+
+      <Script
+        defer
+        data-domain="dmtrkovalenko.dev"
+        src="https://plausible.io/js/plausible.js"
+      />
 
       {/* needs to fill svg values with gradient */}
       <svg

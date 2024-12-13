@@ -1,5 +1,5 @@
 {
-  "summary": "Advanced software engineer with experience in creating modern, fast, aesthetically pleasing, and scalable software products. I have actively participated as a core contributor in industry-leading open-source projects such as Material-UI, React Native, and Cypress.io. Additionally, I have created several popular open-source projects myself.\n\nPossess a strong understanding of both object-oriented programming (OOP) and functional programming (FP) paradigms, as well as algorithms and software architecture principles. My expertise lies in developing and shipping large, scalable, and robust web and mobile applications utilizing cutting-edge technologies.",
+  "summary": "Advanced software engineer with experience in creating modern, fast, aesthetically pleasing, and scalable software products. I have actively participated as a contributor in industry-leading open-source projects such as Material-UI, React Native, and Cypress.io, and even ffmpeg. Additionally, I have created several popular open-source projects myself.\n\nI possess a strong understanding of both object-oriented programming (OOP) and functional programming (FP) paradigms, as well as algorithms and software architecture principles. My expertise lies in developing and shipping large, scalable, robust, and efficient software used by millions people all over the world.",
   "employment": [
     {
       "when": "May 2021 – now",
@@ -186,7 +186,7 @@
     {
       "place": "Kharkiv computer and technology college - Ukraine",
       "when": "2013-2017",
-      "position": "Software development"
+      "position": "Computer science"
     }
   ]
 }

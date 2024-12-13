@@ -32,7 +32,7 @@ export const PageAnimation: React.FC<PageAnimationProps> = ({ children }) => {
   }, [])
 
   return (
-    // @ts-expect-error children prop
+    // @ts-expect-error
     <AnimatePresence onExitComplete={handleExitComplete}>
       <div className="page-transition-wrapper">
         <motion.div
