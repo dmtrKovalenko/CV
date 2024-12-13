@@ -11,6 +11,19 @@
   ],
   "talks": [
     {
+      "title": "React via Rust and Rescipt. Why and how?",
+      "slides": "https://www.icloud.com/keyote/0afdzx9YRgDKGtzhuOlsA59_A#ocaml",
+      "presentations": [
+        {
+          "when": "13/12/2024",
+          "conference": "React Day Berlin 2024",
+          "confWebsite": "https://reactday.berlin/",
+          "confLogoUrl": "/conf-logos/react-day-berlin.svg",
+          "youTubeVideoId": null
+        }
+      ]
+    },
+    {
       "title": "The Story Behind the Fastest Image Comparison Library",
       "slides": "https://www.icloud.com/keyote/0afdzx9YRgDKGtzhuOlsA59_A#ocaml",
       "presentations": [

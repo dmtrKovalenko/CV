@@ -6,7 +6,6 @@ import {
   Typography,
   makeStyles,
   Hidden,
-  useTheme,
   useMediaQuery,
 } from "@material-ui/core";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
@@ -112,9 +111,9 @@ export function Landing() {
             style={{ translateX: scrollAnimationIndex[2] }}
             className={styles.descriptionText}
           >
-            I am engineer with a patience to{" "}
-            <span className={styles.descriptionHighlight}>design</span> tests
-            and cooking.
+            I am an engineer with the patience to{" "}
+            <span className={styles.descriptionHighlight}>performance</span>, correctness,
+            and photography.
           </Typography>
 
           <Typography

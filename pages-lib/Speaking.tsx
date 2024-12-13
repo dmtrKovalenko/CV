@@ -253,7 +253,7 @@ export const Speaking: React.FC<SpeakingProps> = ({ }) => {
       <PageTitleNoPadding id="talks" gutterBottom>
         Talks
       </PageTitleNoPadding>
-      <div style={{ padding: 32 }}>
+      <div style={{ padding: 24 }}>
         <Typography component="p" variant="subtitle1" align="center">
           I do want to think that my talks are changing lives, but it looks like
           they are changing only conference schedule 😃 <br /> Here is a

@@ -1,5 +1,5 @@
 import * as React from "react";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import { talks } from "../content/talks.json";
 import { gradientColors } from "../utils/theme";
 import { makeStyles, Typography } from "@material-ui/core";
@@ -46,7 +46,7 @@ export const SpeakingPresentation: React.FC<SpeakingPresentationProps> = ({
     >
       <div key={presentation.conference} className={styles.talkPresentation}>
         <div className={styles.conferenceLogoBorder}>
-          <Image
+          <ExportedImage
             alt={presentation.conference + " logo"}
             className={styles.conferenceLogo}
             width={64}

@@ -1,13 +1,14 @@
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import { Page, PageTitle } from "../components/Common";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { makeStyles, Typography, Button, useTheme } from "@material-ui/core";
 import ReactMarkDown from "react-markdown";
+import AVATAR_URL from "../public/img/Photo-480.jpg"
 import aboutMeMd from "../content/about.md";
 
-interface AboutMeProps {}
+interface AboutMeProps { }
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -72,7 +73,6 @@ const processedAboutText = aboutMeMd.replace(
 );
 
 export const AboutMe: React.FC<AboutMeProps> = () => {
-  const theme = useTheme();
   const styles = useStyles();
 
   return (
@@ -83,11 +83,12 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
         </PageTitle>
 
         <div className={styles.avatar}>
-          <Image
-            alt="Dmitriy's Photo"
-            src="/img/Photo-480.jpg"
-            width={480}
-            height={480}
+          <ExportedImage
+            className={styles.avatar}
+            alt="Dmitriy's Photo at a conference JS Fest 2019"
+            src={AVATAR_URL}
+            sizes="(min-width: 1025px) 480px,
+            300px"
           />
         </div>
 
@@ -104,7 +105,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
               style={{ fontWeight: "bold" }}
               endIcon={<ArrowForwardIcon />}
             >
-              Lets work together
+              Let's collaborate
             </Button>
           </Link>
         </div>
