@@ -12,12 +12,12 @@
   "talks": [
     {
       "title": "React via Rust and Rescipt. Why and how?",
-      "slides": "https://www.icloud.com/keyote/0afdzx9YRgDKGtzhuOlsA59_A#ocaml",
+      "slides": "https://www.icloud.com/keynote/052eX5evls8SYoGmiWplEa-Og#react",
       "presentations": [
         {
           "when": "13/12/2024",
           "conference": "React Day Berlin 2024",
-          "confWebsite": "https://reactday.berlin/",
+          "confWebsite": "https://gitnation.com/contents/react-via-rust-and-rescript-why-and-how",
           "confLogoUrl": "/conf-logos/react-day-berlin.svg",
           "youTubeVideoId": null
         }
