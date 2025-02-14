@@ -1,14 +1,5 @@
 {
-  "nextTalks": [
-    {
-      "when": "December 13th, 2024",
-      "dueTo": "2024-12-13T00:00:00.000Z",
-      "conference": "React Day Berlin",
-      "confWebsite": "https://reactday.berlin/",
-      "location": "Berlin, Germany",
-      "talk": "React via Rust and Rescipt. Why and how?"
-    }
-  ],
+  "nextTalks": [],
   "talks": [
     {
       "title": "React via Rust and Rescipt. Why and how?",
