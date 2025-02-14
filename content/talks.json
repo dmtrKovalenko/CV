@@ -1,5 +1,14 @@
 {
-  "nextTalks": [],
+  "nextTalks": [
+    {
+      "when": "when invited",
+      "dueTo": "2025-12-31T00:00:00.000Z",
+      "conference": "some conference",
+      "confWebsite": "https://fframes.studio",
+      "location": "somwehere",
+      "talk": "fframes: Video automation framework in rust. Why so fast?"
+    }
+  ],
   "talks": [
     {
       "title": "React via Rust and Rescipt. Why and how?",
