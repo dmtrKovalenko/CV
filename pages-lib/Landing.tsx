@@ -111,9 +111,11 @@ export function Landing() {
             style={{ translateX: scrollAnimationIndex[2] }}
             className={styles.descriptionText}
           >
-            I am an engineer with the patience to{" "}
-            <span className={styles.descriptionHighlight}>performance</span>,
-            correctness, and photography.
+            It's a website of a software engineer,
+            <span className={styles.descriptionHighlight}>
+              performance nerd
+            </span>{" "}
+            and photographer.
           </Typography>
 
           <Typography
