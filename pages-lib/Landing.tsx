@@ -100,7 +100,7 @@ export function Landing() {
           style={isDesktop && { translateX: scrollAnimationIndex[1] }}
           className={styles.descriptionText}
         >
-          Hey, how its going?
+          Hey, how's it going?
         </Typography>
 
         {/** @ts-ignore children*/}
@@ -112,8 +112,8 @@ export function Landing() {
             className={styles.descriptionText}
           >
             I am an engineer with the patience to{" "}
-            <span className={styles.descriptionHighlight}>performance</span>, correctness,
-            and photography.
+            <span className={styles.descriptionHighlight}>performance</span>,
+            correctness, and photography.
           </Typography>
 
           <Typography
