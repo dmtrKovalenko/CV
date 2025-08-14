@@ -88,7 +88,7 @@ export function Landing() {
           color="inherit"
           variant="h5"
         >
-          <span className="gradientText"> * </span> Your [un]Friendly Software
+          <span className="gradientText"> * </span> Your unFriendly Software
           Engineer
         </Typography>
       </div>
