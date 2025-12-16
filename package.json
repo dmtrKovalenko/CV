@@ -30,7 +30,7 @@
     "debounce": "^1.2.0",
     "framer-motion": "^2.9.5",
     "imagemin-mozjpeg": "^9.0.0",
-    "next": "^15.0.3",
+    "next": "15.0.7",
     "next-image-export-optimizer": "^1.18.0",
     "node-telegram-bot-api": "^0.50.0",
     "playwright-aws-lambda": "^0.9.0",
