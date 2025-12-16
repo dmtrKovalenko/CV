@@ -1,13 +1,25 @@
+declare global {
+  interface Window {
+    plausible: (
+      label: string,
+      options?: { props?: any; callback?: () => void },
+    ) => void & { q: any[] };
+  }
+}
+
 export function useAnalytics(): (
   label: string,
-  options?: { props?: any; callback?: () => void }
+  options?: { props?: any; callback?: () => void },
 ) => void {
   if (typeof window === "undefined") {
     return () => {};
   }
 
+  if (!window.plausible) {
+    return function () {};
+  }
+
   return (
-    // @ts-expect-error analytics types
     window.plausible ||
     function () {
       // @ts-expect-error analytics types
