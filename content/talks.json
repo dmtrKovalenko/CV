@@ -11,6 +11,19 @@
   ],
   "talks": [
     {
+      "title": "0xCaml From a System Engineer's Point of View",
+      "slides": "https://www.icloud.com/keynote/052eX5evls8SYoGmiWplEa-Og#react",
+      "presentations": [
+        {
+          "when": "16/09/2025",
+          "conference": "Fun OCaml 2025",
+          "confWebsite": "https://fun-ocaml.com/",
+          "confLogoUrl": "/conf-logos/fun-ocaml-logo.svg",
+          "youTubeVideoId": "iQc5fHW5SZA" 
+        }
+      ]
+    },
+    {
       "title": "React via Rust and Rescipt. Why and how?",
       "slides": "https://www.icloud.com/keynote/052eX5evls8SYoGmiWplEa-Og#react",
       "presentations": [

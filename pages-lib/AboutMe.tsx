@@ -5,6 +5,7 @@ import { Page, PageTitle } from "../components/Common";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { makeStyles, Typography, Button, useTheme } from "@material-ui/core";
 import ReactMarkDown from "react-markdown";
+import "katex/dist/katex.min.css";
 import AVATAR_URL from "../public/img/Photo-480.jpg"
 import aboutMeMd from "../content/about.md";
 
@@ -72,6 +73,70 @@ const processedAboutText = aboutMeMd.replace(
   currentAge.toString()
 );
 
+// Custom inline renderer for paragraphs
+const InlineParagraph: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return <>{children}</>;
+};
+
+// Custom component to render markdown with inline LaTeX
+const TextWithMath = ({ text }: { text: string }) => {
+  const katexModule = require('katex');
+  
+  // Split by paragraph breaks first
+  const paragraphs = text.split(/\n\s*\n/);
+  
+  return (
+    <>
+      {paragraphs.map((paragraph, pIndex) => {
+        if (!paragraph.trim()) return null;
+        
+        // Split each paragraph by LaTeX delimiters
+        const parts = paragraph.split(/(\\\([^)]*\\\))/gs);
+        
+        // Check if this paragraph contains LaTeX
+        const hasLatex = parts.some(p => p.startsWith('\\(') && p.endsWith('\\)'));
+        
+        if (hasLatex) {
+          // Render as inline content
+          return (
+            <p key={pIndex}>
+              {parts.map((part, index) => {
+                if (part.startsWith('\\(') && part.endsWith('\\)')) {
+                  const mathContent = part.slice(2, -2);
+                  try {
+                    const html = katexModule.renderToString(mathContent, { 
+                      throwOnError: false,
+                      displayMode: false 
+                    });
+                    return <span key={index} dangerouslySetInnerHTML={{ __html: html }} />;
+                  } catch (e) {
+                    console.error('KaTeX rendering error:', e);
+                    return <span key={index}>{part}</span>;
+                  }
+                }
+                // Render markdown inline
+                if (part.trim()) {
+                  return (
+                    <ReactMarkDown 
+                      key={index} 
+                      source={part}
+                      renderers={{ paragraph: InlineParagraph }}
+                    />
+                  );
+                }
+                return null;
+              })}
+            </p>
+          );
+        }
+        
+        // Regular paragraph without LaTeX
+        return <ReactMarkDown key={pIndex} source={paragraph} />;
+      })}
+    </>
+  );
+};
+
 export const AboutMe: React.FC<AboutMeProps> = () => {
   const styles = useStyles();
 
@@ -94,7 +159,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
 
         <div className={styles.text}>
           <Typography component="div" gutterBottom>
-            <ReactMarkDown source={processedAboutText} />
+            <TextWithMath text={processedAboutText} />
           </Typography>
 
           <Link href="/forHrs">
