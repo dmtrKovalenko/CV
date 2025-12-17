@@ -4,6 +4,6 @@ You may know me by my [public speaking](#talks), [my X](https://twitter.com/neog
 
 By the way, now I am ~~actively~~ working on some of my own side-projects which are worth to check out: [fframes](https://fframes.studio/), [fff](https://github.com/dmtrKovalenko/fff.nvim), and [odiff](https://github.com/dmtrKovalenko/odiff). Every single one of them is the fastest in its niche, just saying.
 
-And yes I'm weirdly obssed with "f"s in my project names :)
+And yeah, I'm wierdly obsessed with "f"s in my project names :)
 
 It's a pleasure to have you here, and I hope you enjoy **the design** of this website.
