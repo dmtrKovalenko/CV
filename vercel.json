@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/install-fff-mcp.sh",
+      "destination": "https://raw.githubusercontent.com/dmtrKovalenko/fff.nvim/refs/heads/main/install-mcp.sh",
+      "permanent": false
+    }
+  ]
+}
