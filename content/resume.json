@@ -35,12 +35,19 @@
     {
       "when": "April 2016 – May 2019",
       "company": "Nix Solutions",
-      "position": "JavaScript Engineer",
-      "responsibilities": "Full-stack JavaScript engineer and team lead. Owned architecture, delivery, and code quality across multiple client projects; mentored junior engineers and drove hiring.",
+      "position": "Software Engineer",
+      "responsibilities": "Full-stack JavaScript engineer and team lead. Owned architecture, delivery, and code quality across multiple client projects.",
       "projects": [
         {
           "idea": "Credit-union / customer matching platform",
-          "stack": [".NET", "ASP.NET MVC", "React", "jQuery", "D3", "Bootstrap"],
+          "stack": [
+            ".NET",
+            "ASP.NET MVC",
+            "React",
+            "jQuery",
+            "D3",
+            "Bootstrap"
+          ],
           "responsibilities": "Built front-end and back-end modules; designed matching and reporting subsystems."
         },
         {
@@ -50,7 +57,15 @@
         },
         {
           "idea": "Slide-synced video playback for a video-hosting platform",
-          "stack": ["React", "Redux", "SCSS", "Redux-Thunk", "S3", "Mocha", "Karma"],
+          "stack": [
+            "React",
+            "Redux",
+            "SCSS",
+            "Redux-Thunk",
+            "S3",
+            "Mocha",
+            "Karma"
+          ],
           "responsibilities": "Designed and implemented the full application architecture."
         },
         {
@@ -60,12 +75,40 @@
         },
         {
           "idea": "Systems health monitoring and analytics platform",
-          "stack": ["React", "Flow", "Redux", "Redux-Thunk", "SCSS", "Node.js", "Express", "Sequelize", "Socket.IO", "PostgreSQL", "Redis", "Nginx", "Jest", "Mocha"],
+          "stack": [
+            "React",
+            "Flow",
+            "Redux",
+            "Redux-Thunk",
+            "SCSS",
+            "Node.js",
+            "Express",
+            "Sequelize",
+            "Socket.IO",
+            "PostgreSQL",
+            "Redis",
+            "Nginx",
+            "Jest",
+            "Mocha"
+          ],
           "responsibilities": "Led the front-end sub-team; owned front-end architecture and contributed to back-end services."
         },
         {
           "idea": "B2B integrations and advertising platform",
-          "stack": ["React", "MobX", "TypeScript", "CSS-in-JS (JSS)", "Formik", "Node.js", "Koa", "TypeORM", "Inversify", "Jest", "Cypress", "Docker"],
+          "stack": [
+            "React",
+            "MobX",
+            "TypeScript",
+            "CSS-in-JS (JSS)",
+            "Formik",
+            "Node.js",
+            "Koa",
+            "TypeORM",
+            "Inversify",
+            "Jest",
+            "Cypress",
+            "Docker"
+          ],
           "responsibilities": "Technical lead. Drove product architecture and delivery."
         }
       ]
@@ -73,8 +116,8 @@
     {
       "when": "June 2015 – December 2015",
       "company": "Syject",
-      "position": "Web Developer (part-time)",
-      "responsibilities": "Contributed to the development of a large-scale, high-traffic web application.",
+      "position": "Software Engineering intern",
+      "responsibilities": "Individual contributor to the large-scale, high-traffic web application for courier delivery.",
       "projects": [
         {
           "idea": "Customer-to-customer delivery service",
@@ -82,19 +125,13 @@
           "stack": [".NET", "ASP.NET MVC", "MySQL", "Bootstrap", "D3"]
         }
       ]
-    },
-    {
-      "when": "Ongoing",
-      "company": "Open Source",
-      "position": "Author & Core Contributor",
-      "responsibilities": "Author of fff and odiff. Core collaborator on Material-UI, Cypress.io, React Native, and FFmpeg."
     }
   ],
   "ossProjects": [
     {
       "name": "fff",
       "role": "Author",
-      "description": "High-performance file search toolkit. Frecency-ranked results, sub-millisecond search across massive codebases. Adopted by projects like opencode, nushell, and vicinae.",
+      "description": "High-performance file search toolkit. Frecency-ranked results, sub-millisecond search across massive codebases. Used by millions people every day.",
       "url": "https://github.com/dmtrKovalenko/fff",
       "stars": "6k",
       "tech": ["Rust", "Assembly"]
@@ -105,12 +142,12 @@
       "description": "Fastest pixel-by-pixel image diffing tool. Powers millions of screenshot comparisons under the hood of every major visual regression testing pipeline.",
       "url": "https://github.com/dmtrKovalenko/odiff",
       "stars": "3k",
-      "tech": ["Zig", "C", "Image processing"]
+      "tech": ["Zig", "C"]
     },
     {
       "name": "Material-UI",
       "role": "Core Contributor",
-      "description": "Core contributor to Material-UI up to v5. Implemented and maintained the most popular React date picker, with millions of weekly downloads.",
+      "description": "Core contributor to Material-UI up to v5. Created and maintained date/time pickers. 80% react websites used by date picker at somet point.",
       "url": "https://github.com/mui/material-ui",
       "stars": "100k",
       "tech": ["React", "TypeScript", "CSS"]

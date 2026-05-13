@@ -36,5 +36,5 @@
     "Observability (Prometheus, Grafana)",
     "CI/CD for models"
   ],
-  "Tools": ["Git", "Docker", "CI/CD", "GitHub", "GitLab", "Jira", "...and many more"]
+  "Tools": ["Claude Code", "OpenCode", "Conductor", "Docker", "GitHub", "Neovim", "...and many more"]
 }

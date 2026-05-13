@@ -37,7 +37,18 @@ class MyDocument extends Document<{ pageContext: PageContext }> {
   render() {
     return (
       <Html lang="en" dir="ltr" style={{ colorScheme: "dark" }}>
-        <Head></Head>
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -27,7 +27,14 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   const styles = useStyles();
   const router = useRouter();
 
-  if (["/resume", "/resumeFullCv"].includes(router?.pathname)) {
+  if (
+    [
+      "/resume",
+      "/resumeFullCv",
+      "/resumeNoPhoto",
+      "/resumeFullCvNoPhoto",
+    ].includes(router?.pathname)
+  ) {
     return <>{children}</>;
   }
 
