@@ -138,7 +138,7 @@ export const ResumePreview: React.FC<ResumePreviewProps> = (props) => {
               className={styles.scaleContainer}
               onClick={openResumePreview}
             >
-              <Resume className={styles.resumeContainer} />
+              <Resume preview className={styles.resumeContainer} />
             </Paper>
           </motion.div>
         </div>

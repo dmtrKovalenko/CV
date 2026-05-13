@@ -1,113 +1,107 @@
 {
-  "summary": "Advanced software engineer with experience in creating modern, fast, aesthetically pleasing, and scalable software products. I have actively participated as a contributor in industry-leading open-source projects such as Material-UI, React Native, and Cypress.io, and even ffmpeg. Additionally, I have created several popular open-source projects myself.\n\nI possess a strong understanding of both object-oriented programming (OOP) and functional programming (FP) paradigms, as well as algorithms and software architecture principles. My expertise lies in developing and shipping large, scalable, robust, and efficient software used by millions people all over the world.",
+  "summary": "Senior software engineer experienced in designing and shipping modern, fast products loved by millions of users every single day. Author of popular open-source tools (fff, odiff) and core collaborator on industry-leading projects including Material-UI, Cypress.io, React Native, and FFmpeg.\n\nLeading expert in performance optimization for any kind of system: SIMD, GPU acceleration, native real-time processing pipelines, and distributed systems performance tuning. Applying AI tools at scale and implementing top-performing AI-native products. Passionate about shaping my own agentic AI toolset to produce the most qualified software solutions and amazing products for users.",
   "employment": [
     {
-      "when": "May 2021 – now",
+      "when": "May 2021 – Present",
       "company": "LightSource.ai",
-      "position": "Lead Software Engineer",
-      "responsibilities": "Founding engineer at procurement automation startup. Built essentially everything.",
-      "projects": []
+      "position": "Founding Software Engineer",
+      "responsibilities": "Founding engineer at a procurement-automation startup. Designed and built the core platform end-to-end: web app, backend, data pipelines, and infrastructure. Drove technical direction and deep product involvement."
     },
     {
-      "when": "September 2020 - May 2021",
+      "when": "September 2020 – May 2021",
       "company": "Cypress.io",
       "position": "Senior Software Engineer",
-      "responsibilities": "Getting back to Cypress.io to work on component testing.",
-      "projects": [ {
-        "idea": "Cypress Component Testing",
-        "stack": [
-          "Typescript",
-          "React",
-          "MobX",
-          "Nodejs"
-        ],
-        "responsibilities": "Author and main architect of cypress component testing https://www.cypress.io/blog/2021/04/06/introducing-the-cypress-component-test-runner/"
-      }]
-    },
-    {
-      "when": "January 2020 - September 2020",
-      "company": "Material UI",
-      "position": "Senior Software Engineer",
-      "responsibilities": "Working for Material-UI with a focus on making the most popular react date picker in the world",
-      "projects": []
-    },
-    {
-      "when": "May 2019 - January 2020",
-      "company": "Cypress.io",
-      "position": "Senior Software Engineer",
-      "responsibilities": "Development, designing and testing for the awesome Cypress.io",
-      "projects": []
-    },
-    {
-      "when": "April 2016 - May 2019",
-      "company": "Nix Solutions",
-      "position": "Javascript Engineer",
-      "responsibilities": "Full-stack javascript development, team leadership, designing project architecture and development flow",
+      "responsibilities": "Returned to Cypress to lead the launch of Component Testing.",
       "projects": [
         {
-          "idea": "System for matching credit unions with customers",
+          "idea": "Cypress Component Testing",
+          "stack": ["TypeScript", "React", "MobX", "Node.js"],
+          "responsibilities": "Author and lead architect of Cypress Component Test Runner (https://www.cypress.io/blog/2021/04/06/introducing-the-cypress-component-test-runner/). Designed the runtime, dev-server integration, and public API adopted by thousands of teams."
+        }
+      ]
+    },
+    {
+      "when": "January 2020 – September 2020",
+      "company": "Material-UI",
+      "position": "Senior Software Engineer",
+      "responsibilities": "Core collaborator & owner of date/time picker components with millions of weekly downloads. Drove accessibility, localization, and API design."
+    },
+    {
+      "when": "May 2019 – January 2020",
+      "company": "Cypress.io",
+      "position": "Senior Software Engineer",
+      "responsibilities": "Shipped features across the Cypress test runner and dashboard: authoring, designing, and testing end-to-end product workflows used by millions of developers."
+    },
+    {
+      "when": "April 2016 – May 2019",
+      "company": "Nix Solutions",
+      "position": "Software Engineer",
+      "responsibilities": "Full-stack JavaScript engineer and team lead. Owned architecture, delivery, and code quality across multiple client projects.",
+      "projects": [
+        {
+          "idea": "Credit-union / customer matching platform",
           "stack": [
-            ".Net",
-            "ASP .Net MVC",
+            ".NET",
+            "ASP.NET MVC",
             "React",
-            "JQuery",
+            "jQuery",
             "D3",
             "Bootstrap"
           ],
-          "responsibilities": "Back-end and front-end development, designing separate parts of system."
+          "responsibilities": "Built front-end and back-end modules; designed matching and reporting subsystems."
         },
         {
-          "idea": "Bus and train tickets selling platform",
-          "stack": ["Angular", "Typescript", "Karma", "jasmine", "Bootstrap"],
-          "responsibilities": "Front-end development, code review and new features design."
+          "idea": "Bus and train ticketing platform",
+          "stack": ["Angular", "TypeScript", "Karma", "Jasmine", "Bootstrap"],
+          "responsibilities": "Led front-end feature delivery and code review."
         },
         {
-          "idea": "Syncing slides with video integration for video-hosting platform",
+          "idea": "Slide-synced video playback for a video-hosting platform",
           "stack": [
             "React",
             "Redux",
             "SCSS",
-            "Redux-thunk",
+            "Redux-Thunk",
             "S3",
             "Mocha",
             "Karma"
           ],
-          "responsibilities": "Whole application development and architecture design."
+          "responsibilities": "Designed and implemented the full application architecture."
         },
         {
-          "idea": "Multi-platform chat-bot for company workflow organization and reporting",
-          "stack": ["NodeJS", "Typescript", "Jest", "Now", "Docker"],
-          "responsibilities": "Whole application development and architecture design."
+          "idea": "Multi-platform chat-bot for workflow automation and reporting",
+          "stack": ["Node.js", "TypeScript", "Jest", "Now", "Docker"],
+          "responsibilities": "Designed and built the full system end-to-end."
         },
         {
-          "idea": "Online systems health monitoring and statistics collector.",
+          "idea": "Systems health monitoring and analytics platform",
           "stack": [
             "React",
             "Flow",
             "Redux",
-            "Redux-thunk",
+            "Redux-Thunk",
             "SCSS",
-            "NodeJS",
+            "Node.js",
             "Express",
             "Sequelize",
-            "Socket-io",
+            "Socket.IO",
             "PostgreSQL",
             "Redis",
-            "NginX",
+            "Nginx",
             "Jest",
             "Mocha"
           ],
-          "responsibilities": "Front-end sub-team leadership. Front-end design and architecture, back-end development."
+          "responsibilities": "Led the front-end sub-team; owned front-end architecture and contributed to back-end services."
         },
         {
-          "idea": "B2B platform for user-oriented integrations. (B2B advertisements)",
+          "idea": "B2B integrations and advertising platform",
           "stack": [
             "React",
             "MobX",
-            "Typescript",
+            "TypeScript",
             "CSS-in-JS (JSS)",
             "Formik",
-            "NodeJS",
+            "Node.js",
             "Koa",
             "TypeORM",
             "Inversify",
@@ -115,78 +109,79 @@
             "Cypress",
             "Docker"
           ],
-          "responsibilities": "Technical team leadership. Product architecture and development"
+          "responsibilities": "Technical lead. Drove product architecture and delivery."
         }
       ]
     },
     {
-      "when": "June 2015 - December 2015",
-      "company": "Syject company",
-      "position": "Web developer (part time)",
-      "responsibilities": "Studying and participating in development of large, scaling web application.",
+      "when": "June 2015 – December 2015",
+      "company": "Syject",
+      "position": "Software Engineering intern",
+      "responsibilities": "Individual contributor to the large-scale, high-traffic web application for courier delivery.",
       "projects": [
         {
           "idea": "Customer-to-customer delivery service",
-          "responsibilities": "Back-end and front-end development",
-          "stack": [".Net", "ASP .Net MVC", "MySql", "Bootstrap", "D3"]
+          "responsibilities": "Back-end and front-end development.",
+          "stack": [".NET", "ASP.NET MVC", "MySQL", "Bootstrap", "D3"]
         }
       ]
+    }
+  ],
+  "ossProjects": [
+    {
+      "name": "fff",
+      "role": "Author",
+      "description": "High-performance file search toolkit. Frecency-ranked results, sub-millisecond search across massive codebases. Used by millions people every day.",
+      "url": "https://github.com/dmtrKovalenko/fff",
+      "stars": "6k",
+      "tech": ["Rust", "Assembly"]
     },
     {
-      "showOnlyOnCV": true,
-      "when": "Some weekends 😴",
-      "company": "Freelance",
-      "position": "Javascript Developer",
-      "projects": [
-        {
-          "idea": "Landing survey for job searching system",
-          "responsibilities": "Front-end application development and architecture design.",
-          "stack": ["VueJS", "Typescript", "Vuetify", "VueX", "SCSS"]
-        },
-        {
-          "idea": "Streaming and online listening meetings application",
-          "responsibilities": "Mobile application development and architecture design.",
-          "stack": [
-            "React Native",
-            "Typescript",
-            "Firebase",
-            "FastLane",
-            "Fabric"
-          ]
-        },
-        {
-          "idea": "Fitness motivator and calories calculator app",
-          "responsibilities": "Mobile application development and architecture design.",
-          "stack": ["React Native", "Typescript", "GraphQl", "Expo", "MobX"]
-        },
-        {
-          "idea": "Uber for massage therapists, both client massage ordering flow and admin dashboard.",
-          "responsibilities": "Front-end application development and architecture design.",
-          "stack": [
-            "React",
-            "Typescript",
-            "Redux",
-            "Redux-sagas",
-            "SCSS",
-            "Formik",
-            "Jest"
-          ]
-        }
-      ]
+      "name": "odiff",
+      "role": "Author",
+      "description": "Fastest pixel-by-pixel image diffing tool. Powers millions of screenshot comparisons under the hood of every major visual regression testing pipeline.",
+      "url": "https://github.com/dmtrKovalenko/odiff",
+      "stars": "3k",
+      "tech": ["Zig", "C"]
     },
     {
-      "when": "Forever",
-      "company": "Open-source",
-      "position": "Javascript Contributor",
-      "responsibilities": "Support and maintain popular open-source projects",
-      "projects": []
+      "name": "Material-UI",
+      "role": "Core Contributor",
+      "description": "Core contributor to Material-UI up to v5. Created and maintained date/time pickers. 80% react websites used by date picker at somet point.",
+      "url": "https://github.com/mui/material-ui",
+      "stars": "100k",
+      "tech": ["React", "TypeScript", "CSS"]
+    },
+    {
+      "name": "Cypress",
+      "role": "Core Contributor",
+      "description": "Author and lead architect of Cypress Component Testing. Core contributor to Cypress and a former employee of the company.",
+      "url": "https://github.com/cypress-io/cypress",
+      "stars": "47k+",
+      "tech": ["TypeScript", "C++"]
+    },
+    {
+      "name": "React Native",
+      "role": "Maintainer",
+      "description": "Maintained the status bar module for Android & iOS.",
+      "url": "https://github.com/facebook/react-native",
+      "stars": "120k",
+      "tech": ["JavaScript", "Java", "Objective-C"]
+    },
+    {
+      "name": "FFmpeg",
+      "role": "Maintainer",
+      "description": "Maintained the UDP streaming protocol: audio, video, and subtitles.",
+      "url": "https://code.ffmpeg.org/",
+      "stars": "50k",
+      "tech": ["C", "Video"]
     }
   ],
   "education": [
     {
-      "place": "Kharkiv computer and technology college - Ukraine",
-      "when": "2013-2017",
-      "position": "Computer science"
+      "place": "Kharkiv Computer and Technology College — Ukraine",
+      "when": "2013 – 2017",
+      "position": "Computer Science"
     }
   ]
 }

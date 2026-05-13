@@ -4,8 +4,8 @@ import WebIcon from "@material-ui/icons/Web";
 import CodeIcon from "@material-ui/icons/Code";
 import ToolsIcon from "@material-ui/icons/Settings";
 import CloudIcon from "@material-ui/icons/CloudQueue";
-import PhoneIcon from "@material-ui/icons/DeveloperMode";
-import TestingIcon from "@material-ui/icons/Cached";
+import DataIcon from "@material-ui/icons/Storage";
+import MlOpsIcon from "@material-ui/icons/Memory";
 import skills from "../content/skills.json";
 import { Page, BoldTypography } from "../components/Common";
 import { GridSize } from "@material-ui/core/Grid";
@@ -76,8 +76,8 @@ const forHrs: React.FC = () => {
         <SkillSet skill="Languages" Icon={CodeIcon} GridProps={{ sm: 12 }} />
         <SkillSet skill="Front-end" Icon={WebIcon} />
         <SkillSet skill="Back-end" Icon={CloudIcon} />
-        <SkillSet skill="Mobile" Icon={PhoneIcon} />
-        <SkillSet skill="Testing" Icon={TestingIcon} />
+        <SkillSet skill="Data" Icon={DataIcon} />
+        <SkillSet skill="ML Ops" Icon={MlOpsIcon} />
         <SkillSet skill="Tools" Icon={ToolsIcon} />
       </Grid>
 

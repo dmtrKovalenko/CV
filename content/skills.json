@@ -1,15 +1,11 @@
 {
-  "Languages": ["OCaml/ReasonML", "Rust", "C", "TypeScript/JavaScript,ReScript"],
+  "Languages": ["Rust", "C", "Java/Scala", "TypeScript/JavaScript"],
   "Front-end": [
     "React",
-    "Apollo",
-    "Relay",
-    "Webpack",
+    "JavaScript",
+    "TypeScript",
     "Vite",
-    "Vue (less)",
-    "Vuex",
     "CSS",
-    "emotion",
     "tailwindcss"
   ],
   "Back-end": [
@@ -23,7 +19,22 @@
     "Redis",
     "Nginx"
   ],
-  "Mobile": ["React Native", "Firebase", "Expo", "FastLane", "Fabric"],
-  "Testing": ["Cypress", "Playwright", "Jest", "Mocha"],
-  "Tools": ["Git", "Docker", "CI/CD", "GitHub", "GitLab", "Jira", "...and many more"]
+  "Data": [
+    "Apache Spark",
+    "Kafka",
+    "Flink",
+    "Hadoop",
+    "Airflow"
+  ],
+  "ML Ops": [
+    "MLflow",
+    "Kubeflow",
+    "Feature stores",
+    "Model serving (Triton, TorchServe)",
+    "Ray",
+    "Vector DBs (pgvector, turbopuffer)",
+    "Observability (Prometheus, Grafana)",
+    "CI/CD for models"
+  ],
+  "Tools": ["Claude Code", "OpenCode", "Conductor", "Docker", "GitHub", "Neovim", "...and many more"]
 }
