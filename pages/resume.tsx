@@ -9,8 +9,10 @@ import { makeStyles } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
 import clsx from "clsx";
 
-const DISPLAY_FONT = "'Josefin Sans', 'Inter', sans-serif";
-const BODY_FONT = "'Inter', 'Helvetica Neue', Arial, sans-serif";
+const EMOJI_STACK =
+  "EmojiFallback, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji'";
+const DISPLAY_FONT = `'Josefin Sans', 'Inter', sans-serif, ${EMOJI_STACK}`;
+const BODY_FONT = `'Inter', 'Helvetica Neue', Arial, sans-serif, ${EMOJI_STACK}`;
 const INK = "#1a1a1a";
 const INK_SOFT = "#3a3a3a";
 const MUTED = "#7a7a7a";

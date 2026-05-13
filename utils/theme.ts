@@ -8,7 +8,7 @@ export const theme = createTheme({
   typography: {
     htmlFontSize: 15,
     fontFamily:
-      "GT Walsheim Pro, Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif",
+      "GT Walsheim Pro, Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif,EmojiFallback,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Noto Color Emoji\"",
     body1: {
       fontSize: "1.3rem",
       [breakpoints.down("sm")]: {
