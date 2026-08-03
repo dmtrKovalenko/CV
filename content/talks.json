@@ -1,12 +1,12 @@
 {
   "nextTalks": [
     {
-      "when": "when invited",
-      "dueTo": "2025-12-31T00:00:00.000Z",
-      "conference": "some conference",
-      "confWebsite": "https://fframes.studio",
-      "location": "somwehere",
-      "talk": "fframes: Video automation framework in rust. Why so fast?"
+      "when": "October 16,17",
+      "dueTo": "2026-10-17T11:30:00.000Z",
+      "conference": "EuroRust",
+      "confWebsite": "https://eurorust.eu/talks/how-i-built-a-file-search-that-is-50x-faster-than-ripgrep-and-made-it-into-opencode/",
+      "location": "Barcelona",
+      "talk": "How I built a file search that is 50x faster than ripgrep and made it into opencode"
     }
   ],
   "talks": [
