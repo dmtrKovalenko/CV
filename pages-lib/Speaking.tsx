@@ -170,9 +170,17 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
-const nextTalk =
-  talks.nextTalks.find((talk) => new Date(talk.dueTo) > new Date()) ??
-  talks.nextTalks[talks.nextTalks.length - 1];
+interface UpcomingTalk {
+  when: string;
+  dueTo: string;
+  conference: string;
+  confWebsite: string;
+  location: string;
+  talk: string;
+}
+
+const upcomingTalks: UpcomingTalk[] = talks.nextTalks;
+const nextTalk = upcomingTalks.find((talk) => new Date(talk.dueTo) > new Date());
 
 export const Speaking: React.FC<SpeakingProps> = ({ }) => {
   const styles = useStyles();
@@ -296,90 +304,92 @@ export const Speaking: React.FC<SpeakingProps> = ({ }) => {
         animate={{ marginLeft: `${-talksGridScrollX}px` }}
         className={styles.talksGrid}
       >
-        <TalkCard className={styles.nextConf}>
-          <NoDecorationColorLink
-            target="_blank"
-            rel="noopener noreferrer"
-            href={nextTalk.confWebsite}
-          >
-            <BoldTypography
-              variant="h4"
-              component="h3"
-              align="center"
-              style={{ marginLeft: "1rem" }}
+        {nextTalk && (
+          <TalkCard className={styles.nextConf}>
+            <NoDecorationColorLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href={nextTalk.confWebsite}
             >
-              Meet me at
-            </BoldTypography>
-
-            {/** @ts-ignore children*/}
-            <Hidden mdUp implementation="css">
               <BoldTypography
-                component="p"
-                gutterBottom
+                variant="h4"
+                component="h3"
                 align="center"
-                variant="h5"
+                style={{ marginLeft: "1rem" }}
               >
-                {nextTalk.conference}
+                Meet me at
               </BoldTypography>
-            </Hidden>
 
-            {/** @ts-ignore children*/}
-            <Hidden smDown implementation="css">
-              <Typography
-                gutterBottom
-                style={{ marginBottom: "2rem" }}
-                align="center"
-                variant="h5"
-                component="p"
-              >
-                {nextTalk.conference}
-              </Typography>
-              <Grid container style={{ marginBottom: 24 }}>
-                <Grid
-                  xs={6}
-                  item
-                  container
-                  direction="column"
-                  alignItems="center"
+              {/** @ts-ignore children*/}
+              <Hidden mdUp implementation="css">
+                <BoldTypography
+                  component="p"
+                  gutterBottom
+                  align="center"
+                  variant="h5"
                 >
-                  <QueryBuilderIcon />
-                  <Typography align="center" variant="subtitle1" component="p">
-                    {nextTalk.when}
-                  </Typography>
-                </Grid>
+                  {nextTalk.conference}
+                </BoldTypography>
+              </Hidden>
 
-                <Grid
-                  xs={6}
-                  item
-                  container
-                  direction="column"
-                  alignItems="center"
+              {/** @ts-ignore children*/}
+              <Hidden smDown implementation="css">
+                <Typography
+                  gutterBottom
+                  style={{ marginBottom: "2rem" }}
+                  align="center"
+                  variant="h5"
+                  component="p"
                 >
-                  <LocationOnIcon />
-                  <Typography
-                    gutterBottom
-                    align="center"
-                    variant="subtitle1"
-                    component="p"
+                  {nextTalk.conference}
+                </Typography>
+                <Grid container style={{ marginBottom: 24 }}>
+                  <Grid
+                    xs={6}
+                    item
+                    container
+                    direction="column"
+                    alignItems="center"
                   >
-                    {nextTalk.location}
-                  </Typography>
-                </Grid>
-              </Grid>
+                    <QueryBuilderIcon />
+                    <Typography align="center" variant="subtitle1" component="p">
+                      {nextTalk.when}
+                    </Typography>
+                  </Grid>
 
-              <BoldTypography
-                gutterBottom
-                align="center"
-                variant="h5"
-                component="p"
-              >
-                «<br />
-                {nextTalk.talk}
-                <br />»
-              </BoldTypography>
-            </Hidden>
-          </NoDecorationColorLink>
-        </TalkCard>
+                  <Grid
+                    xs={6}
+                    item
+                    container
+                    direction="column"
+                    alignItems="center"
+                  >
+                    <LocationOnIcon />
+                    <Typography
+                      gutterBottom
+                      align="center"
+                      variant="subtitle1"
+                      component="p"
+                    >
+                      {nextTalk.location}
+                    </Typography>
+                  </Grid>
+                </Grid>
+
+                <BoldTypography
+                  gutterBottom
+                  align="center"
+                  variant="h5"
+                  component="p"
+                >
+                  «<br />
+                  {nextTalk.talk}
+                  <br />»
+                </BoldTypography>
+              </Hidden>
+            </NoDecorationColorLink>
+          </TalkCard>
+        )}
 
         {[...talks.talks].map((talk) => {
           const isSelected = talk.title === selectedCard;
