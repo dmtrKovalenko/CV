@@ -45,10 +45,10 @@ const createCustomError = (message: string, statusCode: number): GeneratePDFErro
 
 async function generatePDF(): Promise<Buffer> {
   const browser = await puppeteer.launch({
-    args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
-    defaultViewport: chromium.defaultViewport,
+    args: chromium.args,
+    defaultViewport: { width: 1200, height: 1800 },
     executablePath: await chromium.executablePath(),
-    headless: true,
+    headless: "shell",
   });
 
   try {

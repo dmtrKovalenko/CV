@@ -25,6 +25,15 @@ yarn build
 yarn start -p 4000
 ```
 
+## Resume PDF export
+
+The PDF API uses bundled Chromium for Linux deployments. Validate downloads
+on the Vercel preview, since the bundled browser does not run on macOS or
+Windows. Keep `@sparticuz/chromium` and `puppeteer-core` on compatible Chrome
+versions when updating them. The Chromium package must support the deployed
+Node.js runtime; older releases can select incompatible Linux libraries after
+a Node.js upgrade.
+
 ## Search metadata
 
 `utils/profile.ts` defines the public identity and homepage `ProfilePage` /
