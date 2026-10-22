@@ -641,7 +641,7 @@ const Resume = ({
         </h1>
 
         <div className={styles.titleBarWrap}>
-          <div className={styles.titleBarText}>Senior Software Engineer</div>
+          <div className={styles.titleBarText}>{resume.employment[0].position}</div>
         </div>
 
         <div className={styles.body}>
@@ -768,7 +768,7 @@ const Resume = ({
               <div className={styles.printPageHeader}>
                 <h1 className={styles.printPageName}>Dmitriy Kovalenko</h1>
                 <div className={styles.printPageTitleBar}>
-                  Senior Software Engineer
+                  {resume.employment[0].position}
                 </div>
               </div>
 
