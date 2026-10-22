@@ -8,6 +8,7 @@ import { MuiThemeProvider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
 import clsx from "clsx";
+import { getResumeIcon } from "../utils/resumeIcons";
 import { contactLabel, RESUME_PAGE_BREAK_AFTER, resumeLanguages } from "../utils/resume";
 
 const EMOJI_STACK =
@@ -471,50 +472,19 @@ const resumeMuiTheme = createTheme({
 });
 
 const contactIcon = (name: string) => {
-  switch (name) {
-    case "E-mail":
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <rect x="3" y="5" width="18" height="14" rx="1" />
-          <path d="M3 7l9 6 9-6" />
-        </svg>
-      );
-    case "LinkedIn":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M4.98 3.5a2.5 2.5 0 11.02 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.6 8.65 22 11.2 22 14.25V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4z" />
-        </svg>
-      );
-    case "Github":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.97 3.22 9.18 7.69 10.67.56.1.77-.25.77-.55v-2c-3.13.68-3.79-1.34-3.79-1.34-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.17 1.72 1.17 1 1.72 2.63 1.22 3.27.94.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.97 0 0 .95-.3 3.12 1.15a10.83 10.83 0 015.68 0c2.17-1.45 3.12-1.15 3.12-1.15.61 1.54.23 2.69.11 2.97.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.27-5.15 5.55.4.34.76 1.02.76 2.05v3.03c0 .3.21.66.78.55 4.47-1.49 7.69-5.7 7.69-10.67C23.25 5.48 18.27.5 12 .5z" />
-        </svg>
-      );
-    case "Twitter":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2H21l-6.56 7.5L22.5 22h-6.25l-4.89-6.39L5.5 22H2.74l7.02-8.02L1.5 2h6.41l4.41 5.83L18.24 2zm-1.1 18h1.74L7.02 4H5.2l11.95 16z" />
-        </svg>
-      );
-    default:
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <circle cx="12" cy="12" r="9" />
-          <path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" />
-        </svg>
-      );
-  }
+  const icon = getResumeIcon(name);
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill={icon.paint === "fill" ? "currentColor" : "none"}
+      stroke={icon.paint === "stroke" ? "currentColor" : undefined}
+      strokeWidth="1.5"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d={icon.path} />
+    </svg>
+  );
 };
 
 type Employment = (typeof resume.employment)[number];
@@ -656,14 +626,7 @@ const Resume = ({
                   ))}
                   <li className={styles.contactItem}>
                     <span className={styles.contactIcon}>
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      >
-                        <path d="M3 11l9-8 9 8M5 10v10h14V10" />
-                      </svg>
+                      {contactIcon("Website")}
                     </span>
                     <a
                       className={styles.contactLink}

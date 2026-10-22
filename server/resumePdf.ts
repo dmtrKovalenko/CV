@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import PDFDocument from "pdfkit";
+import { getResumeIcon } from "../utils/resumeIcons";
 import resume from "../content/resume.json";
 import contacts from "../content/contacts.json";
 import skills from "../content/skills.json";
@@ -47,6 +48,17 @@ function drawResume(doc: PDFKit.PDFDocument, variant: ResumeVariant) {
     return doc.y;
   }
 
+  function icon(name: string, x: number, top: number, size: number, color = INK) {
+    const definition = getResumeIcon(name);
+    doc.save().translate(x, top).scale(size / 24).path(definition.path);
+    if (definition.paint === "fill") {
+      doc.fill(color);
+    } else {
+      doc.lineWidth(1.5).stroke(color);
+    }
+    doc.restore();
+  }
+
   function line(x: number, top: number, lineWidth: number) {
     doc.strokeColor(RULE).lineWidth(0.5).moveTo(x, top).lineTo(x + lineWidth, top).stroke();
   }
@@ -90,7 +102,9 @@ function drawResume(doc: PDFKit.PDFDocument, variant: ResumeVariant) {
   let sideY = heading("Contact", MARGIN, y, SIDEBAR_WIDTH);
   const allContacts = [...contacts, { name: "Website", url: "https://dmtrkovalenko.dev" }];
   for (const contact of allContacts) {
-    sideY = text(contactLabel(contact), MARGIN, sideY, SIDEBAR_WIDTH, {
+    icon(contact.name, MARGIN, sideY + 0.5, 10);
+    doc.link(MARGIN, sideY, 10, 11, contact.url);
+    sideY = text(contactLabel(contact), MARGIN + 16, sideY, SIDEBAR_WIDTH - 16, {
       size: 8, link: contact.url,
     }) + 5;
   }
@@ -172,7 +186,12 @@ function drawResume(doc: PDFKit.PDFDocument, variant: ResumeVariant) {
       const x = MARGIN + column * (cardWidth + 18);
       doc.strokeColor(RULE).lineWidth(0.5).rect(x, y, cardWidth, rowHeight).stroke();
       let cardY = text(project.name.toUpperCase(), x + 10, y + 10, cardWidth - 20, { font: "bold", size: 10 }) + 4;
-      cardY = text(`${project.role}  ·  ${project.stars} stars`, x + 10, cardY, cardWidth - 20, { size: 7.5, color: MUTED }) + 7;
+      const roleEnd = text(project.role, x + 10, cardY, cardWidth - 20, { size: 7.5, color: MUTED });
+      const starsWidth = doc.widthOfString(project.stars);
+      const starsX = x + cardWidth - 10 - starsWidth;
+      icon("Star", starsX - 11, cardY + 1, 8, MUTED);
+      text(project.stars, starsX, cardY, starsWidth + 1, { size: 7.5, color: MUTED });
+      cardY = roleEnd + 7;
       cardY = text(project.description, x + 10, cardY, cardWidth - 20, { size: 8 }) + 7;
       cardY = text(project.tech.join(" · "), x + 10, cardY, cardWidth - 20, { size: 7, font: "bold" }) + 4;
       text(project.url.replace(/^https?:\/\//, ""), x + 10, cardY, cardWidth - 20, { size: 7, link: project.url });
