@@ -1057,12 +1057,12 @@
 
 "@fontsource/inter@5.3.0":
   version "5.3.0"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/@fontsource/inter/-/inter-5.3.0.tgz#866278dc2357659f8be1755c8b67f29d3697b440"
+  resolved "https://registry.npmjs.org/@fontsource/inter/-/inter-5.3.0.tgz#866278dc2357659f8be1755c8b67f29d3697b440"
   integrity sha512-RofMylZmjlJEfELXeNHFWBRcSs75rGU/6bV2S2jfnvv/3rPXPGe0LgUJTklcHZ9lM4OZmAVFhcJPnACfb91A3g==
 
 "@fontsource/josefin-sans@5.3.0":
   version "5.3.0"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/@fontsource/josefin-sans/-/josefin-sans-5.3.0.tgz#ce7831deb3c3681abd8b9b1834a82e867d50fb2f"
+  resolved "https://registry.npmjs.org/@fontsource/josefin-sans/-/josefin-sans-5.3.0.tgz#ce7831deb3c3681abd8b9b1834a82e867d50fb2f"
   integrity sha512-N2xY1l8gBCNrlRa0tMnjUtbSJb/rqWmPLgLSMq6H+EY2/uerAHtbyoHsQQKwhMA8hJat7S+OSk6saxGMceKKvA==
 
 "@img/colour@^1.0.0":
@@ -1475,12 +1475,12 @@
 
 "@noble/ciphers@^1.3.0":
   version "1.3.0"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/@noble/ciphers/-/ciphers-1.3.0.tgz#f64b8ff886c240e644e5573c097f86e5b43676dc"
+  resolved "https://registry.npmjs.org/@noble/ciphers/-/ciphers-1.3.0.tgz#f64b8ff886c240e644e5573c097f86e5b43676dc"
   integrity sha512-2I0gnIVPtfnMw9ee9h1dJG7tp81+8Ob3OJb3Mv37rx5L40/b0i7djjCVvGOVqc9AEIQyvyu1i6ypKdFw8R8gQw==
 
 "@noble/hashes@^1.8.0":
   version "1.8.0"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/@noble/hashes/-/hashes-1.8.0.tgz#cee43d801fcef9644b11b8194857695acd5f815a"
+  resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-1.8.0.tgz#cee43d801fcef9644b11b8194857695acd5f815a"
   integrity sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==
 
 "@nodelib/fs.scandir@2.1.4":
@@ -1518,7 +1518,7 @@
 
 "@swc/helpers@^0.5.12":
   version "0.5.23"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/@swc/helpers/-/helpers-0.5.23.tgz#19287d0d86d962b111376039a50c792902c9a86a"
+  resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.23.tgz#19287d0d86d962b111376039a50c792902c9a86a"
   integrity sha512-5lSsMOTXURePglDfvuAQUqkGek9Hg2kksOYay2m0+XR++b2NWYL/4sWyuvVBIs8oKnJaxkdi9whaL/sqN13afw==
   dependencies:
     tslib "^2.8.0"
@@ -1598,7 +1598,7 @@
 
 "@types/pdfkit@0.17.6":
   version "0.17.6"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/@types/pdfkit/-/pdfkit-0.17.6.tgz#b0a4b728b1d0bfb7ec6e574efebba7dc6bf4cca1"
+  resolved "https://registry.npmjs.org/@types/pdfkit/-/pdfkit-0.17.6.tgz#b0a4b728b1d0bfb7ec6e574efebba7dc6bf4cca1"
   integrity sha512-tIwzxk2uWKp0Cq9JIluQXJid77lYhF52EsIOwhsMF4iWLA6YneoBR1xVKYYdAysHuepUB0OX4tdwMiUDdGKmig==
   dependencies:
     "@types/node" "*"
@@ -1847,7 +1847,7 @@ balanced-match@^1.0.0:
 
 base64-js@0.0.8:
   version "0.0.8"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
+  resolved "https://registry.npmjs.org/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
   integrity sha512-3XSA2cR/h/73EzlXXdU6YNycmYI7+kicTxks4eJg2g39biHR84slg2+des+p7iHYhbRg/udIS4TD53WabcOUkw==
 
 base64-js@^1.1.2, base64-js@^1.3.0, base64-js@^1.3.1:
@@ -1953,7 +1953,7 @@ braces@^3.0.1:
 
 brotli@^1.3.2:
   version "1.3.3"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/brotli/-/brotli-1.3.3.tgz#7365d8cc00f12cf765d2b2c898716bcf4b604d48"
+  resolved "https://registry.npmjs.org/brotli/-/brotli-1.3.3.tgz#7365d8cc00f12cf765d2b2c898716bcf4b604d48"
   integrity sha512-oTKjJdShmDuGW94SyyaoQvAjf30dZaHnjJ8uAF+u2/vGJkJbJPJAT1gDiOJP5v1Zb6f9KEyW/1HpuaWIXtGHPg==
   dependencies:
     base64-js "^1.1.2"
@@ -2128,7 +2128,7 @@ clone-response@1.0.2:
 
 clone@^2.1.2:
   version "2.1.2"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  resolved "https://registry.npmjs.org/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==
 
 clsx@^1.0.4:
@@ -2524,7 +2524,7 @@ detect-libc@^2.1.2:
 
 dfa@^1.2.0:
   version "1.2.0"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/dfa/-/dfa-1.2.0.tgz#96ac3204e2d29c49ea5b57af8d92c2ae12790657"
+  resolved "https://registry.npmjs.org/dfa/-/dfa-1.2.0.tgz#96ac3204e2d29c49ea5b57af8d92c2ae12790657"
   integrity sha512-ED3jP8saaweFTjeGX8HQPjeC1YYyZs98jGNZx6IiBvxW7JG5v492kamAQB3m2wop07CvU/RQmzcKr6bgcC5D/Q==
 
 dir-glob@^3.0.1:
@@ -2871,7 +2871,7 @@ fd-slicer@~1.1.0:
 
 fflate@^0.8.2, fflate@^0.8.3:
   version "0.8.3"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/fflate/-/fflate-0.8.3.tgz#bc27d8eb30343d4d512abb03480202ce65d825fc"
+  resolved "https://registry.npmjs.org/fflate/-/fflate-0.8.3.tgz#bc27d8eb30343d4d512abb03480202ce65d825fc"
   integrity sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==
 
 figures@^1.3.5:
@@ -2957,7 +2957,7 @@ find-versions@^3.0.0:
 
 fontkit@^2.0.4:
   version "2.0.4"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/fontkit/-/fontkit-2.0.4.tgz#4765d664c68b49b5d6feb6bd1051ee49d8ec5ab0"
+  resolved "https://registry.npmjs.org/fontkit/-/fontkit-2.0.4.tgz#4765d664c68b49b5d6feb6bd1051ee49d8ec5ab0"
   integrity sha512-syetQadaUEDNdxdugga9CpEYVaQIxOwk7GlwZWWZ19//qW4zE5bknOKeMBDYAASwnpaSHKJITRLMF9m1fp3s6g==
   dependencies:
     "@swc/helpers" "^0.5.12"
@@ -3768,7 +3768,7 @@ keyv@3.0.0:
 
 linebreak@^1.1.0:
   version "1.1.0"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/linebreak/-/linebreak-1.1.0.tgz#831cf378d98bced381d8ab118f852bd50d81e46b"
+  resolved "https://registry.npmjs.org/linebreak/-/linebreak-1.1.0.tgz#831cf378d98bced381d8ab118f852bd50d81e46b"
   integrity sha512-MHp03UImeVhB7XZtjd0E4n6+3xr5Dq/9xI/5FptGk5FrbDR3zagPa2DS6U8ks/3HjbKWG9Q1M2ufOzxV2qLYSQ==
   dependencies:
     base64-js "0.0.8"
@@ -4312,7 +4312,7 @@ p-try@^2.0.0:
 
 pako@^0.2.5:
   version "0.2.9"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
+  resolved "https://registry.npmjs.org/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
   integrity sha512-NUcwaKxUxWrZLpDG+z/xZaCgQITkA/Dv4V/T6bw7VON6l1Xz/VnrBqrYjZQ12TamKHzITTfOEIYUj48y2KXImA==
 
 parse-entities@^1.1.0:
@@ -4399,7 +4399,7 @@ path-type@^4.0.0:
 
 pdfkit@0.20.2:
   version "0.20.2"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/pdfkit/-/pdfkit-0.20.2.tgz#6a979d812c75b6bc1b554a0641f699228cc94e61"
+  resolved "https://registry.npmjs.org/pdfkit/-/pdfkit-0.20.2.tgz#6a979d812c75b6bc1b554a0641f699228cc94e61"
   integrity sha512-Q/w03ICAQyXfHNfTsg1udp0ADerdBN0s7a6XSPL7J7Ro6ABnafoBOCDBstIO9U02mvzHEV8HrvFIw5iV5ejIRA==
   dependencies:
     "@noble/ciphers" "^1.3.0"
@@ -4458,7 +4458,7 @@ pinkie@^2.0.0:
 
 png-js@^2.0.0:
   version "2.0.0"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/png-js/-/png-js-2.0.0.tgz#7bc521aea1d47f5e3bf42eeecdd77095cba98d5f"
+  resolved "https://registry.npmjs.org/png-js/-/png-js-2.0.0.tgz#7bc521aea1d47f5e3bf42eeecdd77095cba98d5f"
   integrity sha512-GdzJuUMc6ZSpxFJWVxtOH1bzYHym+TOnveqUjb+VJIbZWbZzyiRGFiKhbiielfpYbgMlhHVhsJ0FTazfuRFkMA==
   dependencies:
     fflate "^0.8.2"
@@ -4878,7 +4878,7 @@ responselike@1.0.2:
 
 restructure@^3.0.0:
   version "3.0.2"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/restructure/-/restructure-3.0.2.tgz#e6b2fad214f78edee21797fa8160fef50eb9b49a"
+  resolved "https://registry.npmjs.org/restructure/-/restructure-3.0.2.tgz#e6b2fad214f78edee21797fa8160fef50eb9b49a"
   integrity sha512-gSfoiOEA0VPE6Tukkrr7I0RBdE0s7H1eFCDBk05l1KIQT1UIKNc5JZy6jdyW6eYH3aR3g5b3PuL77rq0hvwtAw==
 
 reusify@^1.0.4:
@@ -5402,7 +5402,7 @@ timed-out@^4.0.0, timed-out@^4.0.1:
 
 tiny-inflate@^1.0.0, tiny-inflate@^1.0.3:
   version "1.0.3"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/tiny-inflate/-/tiny-inflate-1.0.3.tgz#122715494913a1805166aaf7c93467933eea26c4"
+  resolved "https://registry.npmjs.org/tiny-inflate/-/tiny-inflate-1.0.3.tgz#122715494913a1805166aaf7c93467933eea26c4"
   integrity sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==
 
 tiny-warning@^1.0.2:
@@ -5540,7 +5540,7 @@ unicode-match-property-value-ecmascript@^1.2.0:
 
 unicode-properties@^1.4.0:
   version "1.4.1"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/unicode-properties/-/unicode-properties-1.4.1.tgz#96a9cffb7e619a0dc7368c28da27e05fc8f9be5f"
+  resolved "https://registry.npmjs.org/unicode-properties/-/unicode-properties-1.4.1.tgz#96a9cffb7e619a0dc7368c28da27e05fc8f9be5f"
   integrity sha512-CLjCCLQ6UuMxWnbIylkisbRj31qxHPAurvena/0iwSVbQ2G1VY5/HjV0IRabOEbDHlzZlRdCrD4NhB0JtU40Pg==
   dependencies:
     base64-js "^1.3.0"
@@ -5553,7 +5553,7 @@ unicode-property-aliases-ecmascript@^1.0.4:
 
 unicode-trie@^2.0.0:
   version "2.0.0"
-  resolved "https://socket-firewall-registry.gateway.unified-30.internal.api.openai.org/npm/unicode-trie/-/unicode-trie-2.0.0.tgz#8fd8845696e2e14a8b67d78fa9e0dd2cad62fec8"
+  resolved "https://registry.npmjs.org/unicode-trie/-/unicode-trie-2.0.0.tgz#8fd8845696e2e14a8b67d78fa9e0dd2cad62fec8"
   integrity sha512-x7bc76x0bm4prf1VLg79uhAzKw8DVboClSN5VxJuQ+LKDOVEW9CdH+VY7SP+vX7xCYQqzzgQpFqz15zeLvAtZQ==
   dependencies:
     pako "^0.2.5"
