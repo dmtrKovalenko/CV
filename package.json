@@ -2,11 +2,16 @@
   "name": "dmtrkovalenko.dev",
   "version": "3.0.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "dev": "next -p 4000",
     "build": "next build && yarn next-image-export-optimizer",
     "start": "next start",
-    "build:api": "tsc -p tsconfig.api.json"
+    "build:api": "tsc -p tsconfig.api.json",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/core": "^7.12.9",
