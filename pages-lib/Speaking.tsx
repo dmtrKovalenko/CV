@@ -308,7 +308,7 @@ export const Speaking: React.FC<SpeakingProps> = ({ }) => {
               align="center"
               style={{ marginLeft: "1rem" }}
             >
-              Meet me at
+              Featured talk
             </BoldTypography>
 
             {/** @ts-ignore children*/}

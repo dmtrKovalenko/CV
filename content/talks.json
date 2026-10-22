@@ -1,7 +1,7 @@
 {
   "nextTalks": [
     {
-      "when": "October 16,17",
+      "when": "October 16–17, 2026",
       "dueTo": "2026-10-17T11:30:00.000Z",
       "conference": "EuroRust",
       "confWebsite": "https://eurorust.eu/talks/how-i-built-a-file-search-that-is-50x-faster-than-ripgrep-and-made-it-into-opencode/",

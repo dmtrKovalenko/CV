@@ -116,7 +116,7 @@ const SocialContact: React.FC<{ name: string; url: string }> = ({
 
   return (
     <a
-      rel="noopenner noreferrer"
+      rel={url.startsWith("https://") ? "me noopener noreferrer" : undefined}
       target="_blank"
       className={styles.socialLink}
       href={url}

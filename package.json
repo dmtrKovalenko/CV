@@ -2,11 +2,16 @@
   "name": "dmtrkovalenko.dev",
   "version": "3.0.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "dev": "next -p 4000",
     "build": "next build && yarn next-image-export-optimizer",
     "start": "next start",
-    "build:api": "tsc -p tsconfig.api.json"
+    "build:api": "tsc -p tsconfig.api.json",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/core": "^7.12.9",
@@ -14,9 +19,10 @@
     "@babel/plugin-proposal-optional-chaining": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.25.9",
     "@babel/preset-env": "^7.12.7",
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/josefin-sans": "5.3.0",
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
-    "@sparticuz/chromium": "^131.0.1",
     "@types/animejs": "^2.0.2",
     "@types/debounce": "^1.2.0",
     "@types/jss": "^9.5.8",
@@ -33,9 +39,7 @@
     "next": "15.5.18",
     "next-image-export-optimizer": "^1.18.0",
     "node-telegram-bot-api": "^0.50.0",
-    "playwright-aws-lambda": "^0.9.0",
-    "playwright-core": "^1.27.1",
-    "puppeteer-core": "^23.10.4",
+    "pdfkit": "0.20.2",
     "raw-loader": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -49,5 +53,8 @@
     "not IE_Mob 11",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/pdfkit": "0.17.6"
+  }
 }
