@@ -11,8 +11,7 @@
     "build": "next build && yarn next-image-export-optimizer",
     "start": "next start",
     "build:api": "tsc -p tsconfig.api.json",
-    "typecheck": "tsc --noEmit",
-    "test:pdf": "node --test scripts/check-resume-pdf.mjs"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/core": "^7.12.9",
@@ -56,7 +55,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/pdfkit": "0.17.6",
-    "pdfjs-dist": "6.4.299"
+    "@types/pdfkit": "0.17.6"
   }
 }

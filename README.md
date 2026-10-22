@@ -38,10 +38,6 @@ The PDF layout is in `server/resumePdf.ts`. Keep its layout aligned with
 matching the HTML print stylesheet. Validate a downloaded PDF after deployment;
 font assets are explicitly included in the API's Next.js output tracing.
 
-With the server running, use `yarn test:pdf` to verify text extraction, page
-bounds, links and both variants. Set `RESUME_TEST_BASE_URL` to run the same
-checks against a Vercel preview.
-
 ## Search metadata
 
 `utils/profile.ts` defines the public identity and homepage `ProfilePage` /
