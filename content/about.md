@@ -1,4 +1,4 @@
-I'm **Dmitriy Kovalenko**, a **Member of Technical Staff at [OpenAI](https://openai.com/)**. I'm a Codex harness engineer, making Codex fast and efficient! I also build **open and fast** software and speak about performance and systems programming.
+Performance engineer with over a decade of experience optimizing software and building systems. Now working on Codex at OpenAI. Author of popular open-source tools (fff, odiff) and core collaborator on industry-leading projects including Material-UI, Cypress.io, React Native, and FFmpeg.
 
 I created [fff](https://github.com/dmtrKovalenko/fff) for fast file and code search, [odiff](https://github.com/dmtrKovalenko/odiff) for image comparison, and [fframes](https://fframes.studio/) for programmatic video rendering in Rust. And yeah, I'm weirdly obsessed with "f"s in my project names :)
 
