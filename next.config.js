@@ -1,4 +1,12 @@
 module.exports = {
+  serverExternalPackages: ["pdfkit"],
+  outputFileTracingIncludes: {
+    "/api/renderResume": [
+      "./node_modules/@fontsource/inter/files/inter-latin-400-normal.woff",
+      "./node_modules/@fontsource/inter/files/inter-latin-600-normal.woff",
+      "./node_modules/@fontsource/josefin-sans/files/josefin-sans-latin-300-normal.woff",
+    ],
+  },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 
   webpack: (config, { isServer }) => {

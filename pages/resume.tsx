@@ -8,6 +8,7 @@ import { MuiThemeProvider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
 import clsx from "clsx";
+import { contactLabel, RESUME_PAGE_BREAK_AFTER, resumeLanguages } from "../utils/resume";
 
 const EMOJI_STACK =
   "EmojiFallback, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji'";
@@ -35,6 +36,7 @@ const useStyles = makeStyles({
     color: "white",
     border: "none",
     cursor: "pointer",
+    textDecoration: "none",
     boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
     "&:hover": { background: "#000" },
   },
@@ -515,16 +517,6 @@ const contactIcon = (name: string) => {
   }
 };
 
-const contactLabel = (c: { name: string; url: string }) => {
-  if (c.url.startsWith("mailto:")) return c.url.replace("mailto:", "");
-  if (c.name === "LinkedIn") return "dmtrkovalenko";
-  if (c.name === "Github") return "dmtrKovalenko";
-  if (c.name === "Twitter") return "@neogoose_btw";
-  return c.url.replace(/^https?:\/\//, "");
-};
-
-const PAGE_BREAK_AFTER = 4;
-
 type Employment = (typeof resume.employment)[number];
 
 const JobEntry: React.FC<{
@@ -615,13 +607,13 @@ const Resume = ({
         />
       )}
       {!preview && (
-        <button
+        <a
           className={clsx(styles.printButton, "no-print")}
-          onClick={() => typeof window !== "undefined" && window.print()}
-          type="button"
+          href={`/api/renderResume?variant=${renderFullCV ? "full" : "resume"}`}
+          download
         >
-          Print / Save PDF
-        </button>
+          Download PDF
+        </a>
       )}
       <div className={clsx(styles.container, className)}>
         {!hidePhoto && (
@@ -703,22 +695,12 @@ const Resume = ({
 
               <section className={styles.section}>
                 <h2 className={styles.sectionHeading}>Languages</h2>
-                <div className={styles.langRow}>
-                  <span className={styles.langLabel}>English</span>
-                  <span>Advanced · C1</span>
-                </div>
-                <div className={styles.langRow}>
-                  <span className={styles.langLabel}>German</span>
-                  <span>Intermediate · B1</span>
-                </div>
-                <div className={styles.langRow}>
-                  <span className={styles.langLabel}>Ukrainian</span>
-                  <span>Native · C2</span>
-                </div>
-                <div className={styles.langRow}>
-                  <span className={styles.langLabel}>Russian</span>
-                  <span>Native · C2</span>
-                </div>
+                {resumeLanguages.map(language => (
+                  <div className={styles.langRow} key={language.name}>
+                    <span className={styles.langLabel}>{language.name}</span>
+                    <span>{language.level}</span>
+                  </div>
+                ))}
               </section>
 
               <hr
@@ -755,7 +737,7 @@ const Resume = ({
                     styles={styles}
                     renderFullCV={renderFullCV}
                     className={clsx(
-                      idx >= PAGE_BREAK_AFTER && styles.hiddenInPrint
+                      idx >= RESUME_PAGE_BREAK_AFTER && styles.hiddenInPrint
                     )}
                   />
                 ))}
@@ -763,7 +745,7 @@ const Resume = ({
             </div>
           </div>
 
-          {visibleJobs.length > PAGE_BREAK_AFTER && (
+          {visibleJobs.length > RESUME_PAGE_BREAK_AFTER && (
             <div className={styles.printOnlyContinuation}>
               <div className={styles.printPageHeader}>
                 <h1 className={styles.printPageName}>Dmitriy Kovalenko</h1>
@@ -790,7 +772,7 @@ const Resume = ({
                   <h2 className={styles.printContinuedHeading}>
                     Work Experience (continued)
                   </h2>
-                  {visibleJobs.slice(PAGE_BREAK_AFTER).map((employment) => (
+                  {visibleJobs.slice(RESUME_PAGE_BREAK_AFTER).map((employment) => (
                     <JobEntry
                       key={employment.company + employment.when}
                       employment={employment}

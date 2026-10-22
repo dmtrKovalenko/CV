@@ -27,12 +27,20 @@ yarn start -p 4000
 
 ## Resume PDF export
 
-The PDF API uses bundled Chromium for Linux deployments. Validate downloads
-on the Vercel preview, since the bundled browser does not run on macOS or
-Windows. Keep `@sparticuz/chromium` and `puppeteer-core` on compatible Chrome
-versions when updating them. The Chromium package must support the deployed
-Node.js runtime; older releases can select incompatible Linux libraries after
-a Node.js upgrade.
+`/api/renderResume` renders the print layout with PDFKit in Node.js. It uses
+the same resume, skills, contact and language data as the HTML page, with
+locally embedded Inter and Josefin Sans fonts. Text stays selectable and links
+stay clickable. No browser, page fetch, external font request or subprocess is
+needed. `?variant=full` includes the detailed employment projects.
+
+The PDF layout is in `server/resumePdf.ts`. Keep its layout aligned with
+`pages/resume.tsx` when changing the resume design. The portrait is omitted,
+matching the HTML print stylesheet. Validate a downloaded PDF after deployment;
+font assets are explicitly included in the API's Next.js output tracing.
+
+With the server running, use `yarn test:pdf` to verify text extraction, page
+bounds, links and both variants. Set `RESUME_TEST_BASE_URL` to run the same
+checks against a Vercel preview.
 
 ## Search metadata
 
