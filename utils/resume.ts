@@ -11,6 +11,6 @@ export function contactLabel(contact: { name: string; url: string }) {
   if (contact.url.startsWith("mailto:")) return contact.url.replace("mailto:", "");
   if (contact.name === "LinkedIn") return "dmtrkovalenko";
   if (contact.name === "Github") return "dmtrKovalenko";
-  if (contact.name === "Twitter") return "@neogoose_btw";
+  if (contact.name === "Twitter") return "@0xfflock";
   return contact.url.replace(/^https?:\/\//, "");
 }
