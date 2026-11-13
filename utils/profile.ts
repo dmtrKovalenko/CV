@@ -2,7 +2,7 @@ import contacts from "../content/contacts.json";
 
 export const profile = {
   name: "Dmitriy Kovalenko",
-  alternateName: ["Dmitry Kovalenko", "dmtrKovalenko", "neogoose_btw"],
+  alternateName: ["Dmitry Kovalenko", "dmtrKovalenko", "0xfflock"],
   url: "https://dmtrkovalenko.dev/",
   jobTitle: "Member of Technical Staff",
   worksFor: {
