@@ -64,7 +64,7 @@ export function PageMetadata({ pathname }: { pathname: string }) {
       <meta property="og:image:height" content="1067" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content="@neogoose_btw" />
+      <meta name="twitter:creator" content="@0xfflock" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={profile.socialImage} />
