@@ -1,5 +1,4 @@
 import * as React from "react";
-import Head from "next/head";
 import WebIcon from "@material-ui/icons/Web";
 import CodeIcon from "@material-ui/icons/Code";
 import ToolsIcon from "@material-ui/icons/Settings";
@@ -59,10 +58,6 @@ const forHrs: React.FC = () => {
 
   return (
     <Page style={{ overflow: "hidden" }}>
-      <Head>
-        <title> Dmitriy Kovalenko - Skills </title>
-      </Head>
-
       <BoldTypography
         className={styles.title}
         variant="h2"

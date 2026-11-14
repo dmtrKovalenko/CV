@@ -8,13 +8,7 @@ import { MuiThemeProvider, useMediaQuery } from "@material-ui/core";
 import { gradientColors, theme } from "../utils/theme";
 import { PageAnimation } from "../components/PageAnimation";
 import Script from "next/script";
-
-const title = "Dmitriy Kovalenko";
-const description =
-  "Dmitriy Kovalenko - Software Engineer, Speaker and open-source contributor. Rust and C multimedia expert.";
-
-const HOST = "https://dmtrkovalenko.dev";
-
+import { PageMetadata } from "../components/PageMetadata";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -31,27 +25,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <PageMetadata pathname={router.pathname} />
       <Head>
-        <title> Dmitriy Kovalenko </title>
-
         <meta charSet="utf-8" />
-        <meta name="robots" content="index,follow" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
         <meta name="theme-color" content="#1a1a1a" />
-
-        <meta name="description" content={description} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${HOST}/Photo-16x9.jpg`} />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta name="og:description" content={description} />
-        <meta property="og:image" content={`${HOST}/Photo-16x9.jpg`} />
 
         <link
           rel="apple-touch-icon"

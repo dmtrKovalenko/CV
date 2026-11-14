@@ -68,7 +68,7 @@ export const ResumePreview: React.FC<ResumePreviewProps> = (props) => {
         </Button>
 
         <Typography variant="caption">
-          This may take a while, please be patient 🐢
+          PDF with selectable text and clickable links.
         </Typography>
       </div>
 

@@ -150,7 +150,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
         <div className={styles.avatar}>
           <ExportedImage
             className={styles.avatar}
-            alt="Dmitriy's Photo at a conference JS Fest 2019"
+            alt="Portrait of Dmitriy Kovalenko"
             src={AVATAR_URL}
             sizes="(min-width: 1025px) 480px,
             300px"
